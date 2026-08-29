@@ -5,7 +5,6 @@ updated: "2026-08-30T04:10:00+08:00"
 permalink: "/2026/08/research-loop.html"
 tags: ["Trading", "Research", "Reproducibility", "Python"]
 layout: post
-draft: true
 ---
 
 回測跑出漂亮的曲線很容易，難的是三個月後回答：這條曲線是哪一版資料、哪一版程式碼跑出來的？中間換過幾次參數？

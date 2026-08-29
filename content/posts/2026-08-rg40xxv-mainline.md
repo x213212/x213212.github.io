@@ -5,7 +5,6 @@ updated: "2026-08-30T04:30:00+08:00"
 permalink: "/2026/08/rg40xxv-mainline.html"
 tags: ["Linux Kernel", "Allwinner", "DRM", "Embedded", "Reverse Engineering"]
 layout: post
-draft: true
 ---
 
 Anbernic RG40XX V 是一台 Allwinner H700 的掌機，出廠跑廠商的 BSP kernel。我想讓它跑 **mainline Linux 7.2**。
