@@ -1,5 +1,5 @@
 ---
-title: "把 RG40XX V 搬上 mainline kernel：一塊點不亮的螢幕"
+title: "RG40XX V mainline kernel"
 date: "2026-08-30T04:30:00+08:00"
 updated: "2026-08-30T04:30:00+08:00"
 permalink: "/2026/08/rg40xxv-mainline.html"
