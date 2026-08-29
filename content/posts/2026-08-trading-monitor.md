@@ -11,7 +11,9 @@ layout: post
 
 所以把所有判斷條件拉到同一頁。以下只講功能，引擎以 A/B/C/D/E 代稱。
 
-介面快照（識別字與數值均已置換）：**<https://x213212.github.io/monitor/>**
+![監控面板：左欄是引擎與主機狀態，右側是事件與每服務資源計量](/assets/uploads/monitor-dashboard.jpg)
+
+介面快照（可點分頁，識別字與數值均已置換）：**<https://x213212.github.io/monitor/>**
 
 ## 串接的 API
 
