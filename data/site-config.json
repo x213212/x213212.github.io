@@ -1,0 +1,49 @@
+{
+  "title": "Coding の ORZ",
+  "description": "Technical notes on systems, software engineering, and reverse engineering.",
+  "site_url": "https://x213212.github.io",
+  "github_url": "https://github.com/x213212",
+  "source_blog_url": "https://x8795278.blogspot.com",
+  "per_page": 18,
+  "rss": {
+    "legacy_feedburner_url": "http://feeds.feedburner.com/blogspot/aHycb"
+  },
+  "analytics": {
+    "ga4_measurement_id": "G-BQ4HYCHGZW",
+    "goatcounter_code": "x213212",
+    "legacy_pageviews": 246514,
+    "legacy_source": "Blogger"
+  },
+  "media": {
+    "use_local_mirror": true,
+    "variant": "optimized"
+  },
+  "giscus": {
+    "repo": "x213212/x213212.github.io",
+    "repo_id": "MDEwOlJlcG9zaXRvcnk3NjcxMjA4OA==",
+    "category": "Announcements",
+    "category_id": "DIC_kwDOBJKImM4DEdsZ",
+    "mapping": "pathname",
+    "strict": "0",
+    "reactions_enabled": "1",
+    "emit_metadata": "0",
+    "input_position": "bottom",
+    "theme": "preferred_color_scheme",
+    "lang": "zh-TW"
+  },
+  "profile": {
+    "name": "CODING の ORZ",
+    "photo_path": "assets/profile.jpg",
+    "email": "x8795278@gmail.com",
+    "website": "https://x213212.github.io/",
+    "blogger_profile_url": "https://www.blogger.com/profile/06205957841262607002",
+    "joined": "June 2012",
+    "profile_views": "306",
+    "gender": "Male",
+    "industry": "Internet",
+    "introduction": "Technical exchanges can be sent to my"
+  },
+  "maintenance": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,4240 @@
+{
+  "schema_version": 1,
+  "description": "Curated categories are independent from article Markdown and original Blogger tags.",
+  "category_order": [
+    "Security & Reverse Engineering",
+    "Systems & Low-Level",
+    "Embedded & Hardware",
+    "AI & Data",
+    "Finance & Blockchain",
+    "Games & Multimedia",
+    "DevOps & Infrastructure",
+    "Backend & Cloud",
+    "Web & Frontend",
+    "Languages & Software Engineering",
+    "Life & Misc",
+    "General Technical Notes"
+  ],
+  "assignments": {
+    "2026/05/3d-scanner.html": [
+      "Embedded & Hardware"
+    ],
+    "2026/05/vibeos-fpga.html": [
+      "General Technical Notes"
+    ],
+    "2026/05/blog-post.html": [
+      "Embedded & Hardware",
+      "Life & Misc"
+    ],
+    "2026/04/vibeos.html": [
+      "General Technical Notes"
+    ],
+    "2026/04/build-self-os-in-riscv.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2025/09/llm-cli-idapro-mcp-server-ga.html": [
+      "Security & Reverse Engineering",
+      "AI & Data",
+      "DevOps & Infrastructure"
+    ],
+    "2025/08/qemu-risc-v-ubuntu.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2025/08/openmanus-or-dify-workflow.html": [
+      "AI & Data"
+    ],
+    "2025/08/qemu-virtio-net-lwip.html": [
+      "Systems & Low-Level"
+    ],
+    "2025/07/radio-rtl-sdr.html": [
+      "General Technical Notes"
+    ],
+    "2025/07/oscilloscope-art.html": [
+      "General Technical Notes"
+    ],
+    "2025/07/opensbi.html": [
+      "General Technical Notes"
+    ],
+    "2025/07/qemu.html": [
+      "Systems & Low-Level"
+    ],
+    "2025/02/app.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2025/01/android-porting-ollvm.html": [
+      "Security & Reverse Engineering",
+      "Systems & Low-Level"
+    ],
+    "2025/01/frida-burn-intercept-https-traffic.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2025/01/using-ida-pro-debug-apk-hook-native.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2025/01/use-magisck-root-image-frida-example.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2025/01/study-nuitka-module-cache.html": [
+      "Languages & Software Engineering"
+    ],
+    "2025/01/webassmbly-gb-simulator-support-audio.html": [
+      "General Technical Notes"
+    ],
+    "2025/01/modify-gcc-plugin-to-detect-linklist.html": [
+      "Security & Reverse Engineering",
+      "Systems & Low-Level",
+      "AI & Data"
+    ],
+    "2025/01/split-nuitka-flow-by-dll.html": [
+      "Languages & Software Engineering"
+    ],
+    "2024/12/improving-binary-security-in-nuitka.html": [
+      "Systems & Low-Level",
+      "Languages & Software Engineering"
+    ],
+    "2024/12/finding-antivirus-detection-virus.html": [
+      "Languages & Software Engineering"
+    ],
+    "2024/11/mstc-dqn-cube.html": [
+      "General Technical Notes"
+    ],
+    "2024/10/graphrag.html": [
+      "AI & Data"
+    ],
+    "2024/10/automated-anomaly-range-detection.html": [
+      "Languages & Software Engineering"
+    ],
+    "2024/10/nix-build-system.html": [
+      "Languages & Software Engineering"
+    ],
+    "2024/09/quick-project-report-llama32.html": [
+      "AI & Data",
+      "Languages & Software Engineering"
+    ],
+    "2024/09/quick-project-report.html": [
+      "AI & Data",
+      "Languages & Software Engineering"
+    ],
+    "2024/08/gdbserver.html": [
+      "Systems & Low-Level",
+      "DevOps & Infrastructure"
+    ],
+    "2024/08/load-binary-to-shared-memory-using-gdb.html": [
+      "Systems & Low-Level"
+    ],
+    "2024/08/in-windows-python-java.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2024/07/pyhton-nuitka-cross-build.html": [
+      "Languages & Software Engineering"
+    ],
+    "2024/06/bitcoin-auto-trade.html": [
+      "Finance & Blockchain"
+    ],
+    "2024/05/elf-diff-call-graph.html": [
+      "Systems & Low-Level"
+    ],
+    "2024/05/nutika-replace-dynamic-shared-library.html": [
+      "General Technical Notes"
+    ],
+    "2024/05/git-command.html": [
+      "General Technical Notes"
+    ],
+    "2024/04/creating-jenkins-tasklets-to-k8s.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2024/04/install-k8s-on-centos7.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2024/04/gitlab-autodevops.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2024/04/jenkins-gitlab.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2024/04/afl.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2024/01/build-huawei-wifi-iot.html": [
+      "General Technical Notes"
+    ],
+    "2024/01/finance-backtrader.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2024/01/python-package.html": [
+      "Languages & Software Engineering"
+    ],
+    "2023/10/install-asli.html": [
+      "Systems & Low-Level"
+    ],
+    "2023/10/use-docker-file-to-create-separate-site.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2023/10/try-to-find-redundant-area-with-python.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware",
+      "Languages & Software Engineering"
+    ],
+    "2023/10/install-bugzilla.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2023/09/valgrind-taint-analysis-tool-taintgrind.html": [
+      "Systems & Low-Level"
+    ],
+    "2023/09/trying-to-get-variable-dependencies.html": [
+      "General Technical Notes"
+    ],
+    "2023/08/q-learning-maze.html": [
+      "General Technical Notes"
+    ],
+    "2023/07/gcc-rtl.html": [
+      "Systems & Low-Level"
+    ],
+    "2023/03/trace-gdb-source.html": [
+      "Systems & Low-Level"
+    ],
+    "2023/02/pytorch.html": [
+      "AI & Data",
+      "Languages & Software Engineering"
+    ],
+    "2023/02/pytorch-stock-lstm.html": [
+      "AI & Data",
+      "Finance & Blockchain"
+    ],
+    "2023/02/python-chatgpt.html": [
+      "AI & Data",
+      "Languages & Software Engineering"
+    ],
+    "2023/01/refactor-prev-version-stock.html": [
+      "Finance & Blockchain"
+    ],
+    "2023/01/linux-hook-record.html": [
+      "General Technical Notes"
+    ],
+    "2022/12/custom-llvm-pass-inlineunroll-loop-pass.html": [
+      "Systems & Low-Level"
+    ],
+    "2022/12/gdb-python-script.html": [
+      "Systems & Low-Level",
+      "Languages & Software Engineering"
+    ],
+    "2022/12/asm2cfg-update-new-control-flow-graph.html": [
+      "Systems & Low-Level"
+    ],
+    "2022/12/pwn-double-free-after-free.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2022/12/custom-llvm-pass-inline-pass.html": [
+      "Systems & Low-Level"
+    ],
+    "2022/12/gcc-plugin-rtl-unroll-loop-inline-pass.html": [
+      "Systems & Low-Level"
+    ],
+    "2022/11/riscv-asm-control-flow-graph-find-loop.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2022/11/riscv-asm-compare-viewer.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2022/11/compare-compiler-versions-riscv-asm.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2022/11/walk-asm-call-graph.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2022/10/riscv-riscv-physical-memory-protection.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2022/10/rsicv-asm2cfg.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2022/10/mini-riscv-os.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2022/10/run-gbemulator-in-webassembly-reload.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware",
+      "Games & Multimedia"
+    ],
+    "2022/10/antlr4ts-online-ide-auto-completion.html": [
+      "Web & Frontend",
+      "Languages & Software Engineering"
+    ],
+    "2022/10/antlr4ts-visitor-listener-example.html": [
+      "Languages & Software Engineering"
+    ],
+    "2022/09/mini-riscv-os-vga-conways-game-of-life.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware",
+      "Life & Misc"
+    ],
+    "2022/09/mini-riscv-os-vga.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2022/09/run-gbemulator-in-webassembly-fix.html": [
+      "Security & Reverse Engineering",
+      "Systems & Low-Level",
+      "Games & Multimedia"
+    ],
+    "2022/09/run-gbemulator-in-webassembly.html": [
+      "Systems & Low-Level",
+      "Games & Multimedia",
+      "Web & Frontend"
+    ],
+    "2022/09/ghost-cube.html": [
+      "Games & Multimedia"
+    ],
+    "2022/09/run-riscvemulator-in-webassembly.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware",
+      "Games & Multimedia"
+    ],
+    "2022/09/study-riscvemulator.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware",
+      "Games & Multimedia"
+    ],
+    "2022/09/rust-riscv-os-c-to-rust-virtio-drivers_8.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware",
+      "Languages & Software Engineering"
+    ],
+    "2022/09/rust-riscv-os-c-to-rust-virtio-drivers.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware",
+      "Languages & Software Engineering"
+    ],
+    "2022/08/realtime-save-gameboy-stage.html": [
+      "Games & Multimedia"
+    ],
+    "2022/08/mini-bittorrent.html": [
+      "General Technical Notes"
+    ],
+    "2022/08/gcc-plugin.html": [
+      "Security & Reverse Engineering",
+      "Systems & Low-Level"
+    ],
+    "2022/05/angr-pyvexir.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2022/05/synology-port-tp-link-wifi-driver.html": [
+      "General Technical Notes"
+    ],
+    "2022/04/addresssanitizer.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2022/03/megaminx.html": [
+      "General Technical Notes"
+    ],
+    "2022/03/angr-symbolic-execution-2.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2022/03/angr-symbolic-execution.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2022/03/linux-ipc.html": [
+      "General Technical Notes"
+    ],
+    "2022/02/golang-rpc.html": [
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-redis.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-ntf-ipfs.html": [
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-smart-contract-deploy-use.html": [
+      "Finance & Blockchain",
+      "DevOps & Infrastructure",
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-create-smart-contract.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-eth-transfer.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-nsq-kafka.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-dtm-server.html": [
+      "DevOps & Infrastructure",
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-mvc-pattern.html": [
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-mongodb-redis.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-design-pattern-unit-test.html": [
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-websocket.html": [
+      "Backend & Cloud",
+      "Web & Frontend",
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-grpc.html": [
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-gorm-orm-org-sqllite.html": [
+      "Languages & Software Engineering"
+    ],
+    "2022/02/blog-post.html": [
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-channel.html": [
+      "Languages & Software Engineering"
+    ],
+    "2022/02/golang-simple-web-server.html": [
+      "DevOps & Infrastructure",
+      "Languages & Software Engineering"
+    ],
+    "2022/01/rust-mutithread-web-server-diesel-orm.html": [
+      "DevOps & Infrastructure",
+      "Languages & Software Engineering"
+    ],
+    "2022/01/learn-rust-build-mutithread-webserver.html": [
+      "DevOps & Infrastructure",
+      "Languages & Software Engineering"
+    ],
+    "2022/01/learn-rust.html": [
+      "Languages & Software Engineering"
+    ],
+    "2022/01/linux-namespace-container.html": [
+      "General Technical Notes"
+    ],
+    "2021/12/gcc-12-static-analyzer.html": [
+      "Security & Reverse Engineering",
+      "Systems & Low-Level"
+    ],
+    "2021/12/xv6-lab-6-lib-3-way-handshake.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2021/12/risc-v-xv6-lab-net2-network-device.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware",
+      "DevOps & Infrastructure"
+    ],
+    "2021/11/risc-v-xv6-lab-net.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware",
+      "DevOps & Infrastructure"
+    ],
+    "2021/10/custom-vscode-extension-analyzer-debug-2.html": [
+      "Security & Reverse Engineering",
+      "Web & Frontend"
+    ],
+    "2021/10/custom-vscode-extension-analyzer-debug.html": [
+      "Security & Reverse Engineering",
+      "Web & Frontend"
+    ],
+    "2021/10/symbolic-execution-z3-solver.html": [
+      "General Technical Notes"
+    ],
+    "2021/09/gcp-loadblance-setting.html": [
+      "Systems & Low-Level",
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2021/09/rebuild-jetson-kernel-in-tx1-add-ebpf.html": [
+      "Systems & Low-Level",
+      "Embedded & Hardware"
+    ],
+    "2021/09/ebpf-dynamic-memleak-detect-free.html": [
+      "Security & Reverse Engineering",
+      "Systems & Low-Level",
+      "Languages & Software Engineering"
+    ],
+    "2021/08/ebpf-dynamic-memleak-detect.html": [
+      "Security & Reverse Engineering",
+      "Systems & Low-Level",
+      "Languages & Software Engineering"
+    ],
+    "2021/07/30-day-os-timer_13.html": [
+      "Systems & Low-Level"
+    ],
+    "2021/07/30-day-os-timer.html": [
+      "Systems & Low-Level"
+    ],
+    "2021/07/30-day-os-memory-memory-manager.html": [
+      "Systems & Low-Level"
+    ],
+    "2021/07/30-day-os-day2.html": [
+      "Systems & Low-Level"
+    ],
+    "2021/07/30-day-os-day1.html": [
+      "Systems & Low-Level"
+    ],
+    "2021/06/goodlock-deadlock-detection.html": [
+      "General Technical Notes"
+    ],
+    "2021/05/pthreadcreated-memory-leak.html": [
+      "Security & Reverse Engineering",
+      "Systems & Low-Level"
+    ],
+    "2021/05/kubernetes-auto-scaling.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2021/02/build-linux-kernel-ebpf-version.html": [
+      "Systems & Low-Level"
+    ],
+    "2021/02/trace-memory-using-ebpf-script.html": [
+      "Systems & Low-Level"
+    ],
+    "2021/01/mtrace-runtime-output.html": [
+      "General Technical Notes"
+    ],
+    "2021/01/activeloop-hub.html": [
+      "AI & Data"
+    ],
+    "2021/01/ida-pro-use-python-plugin-remote.html": [
+      "Security & Reverse Engineering",
+      "Systems & Low-Level",
+      "Languages & Software Engineering"
+    ],
+    "2021/01/how-to-enabledisable-debug-information.html": [
+      "Security & Reverse Engineering",
+      "DevOps & Infrastructure"
+    ],
+    "2021/01/blog-post.html": [
+      "General Technical Notes"
+    ],
+    "2021/01/crc-checker.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2020/12/blog-post.html": [
+      "Systems & Low-Level"
+    ],
+    "2020/12/openmp-shard-libraries.html": [
+      "Systems & Low-Level"
+    ],
+    "2020/11/simple-gcc-plugin-analysis.html": [
+      "Systems & Low-Level"
+    ],
+    "2020/11/simple-llvm-pass-analysis.html": [
+      "Systems & Low-Level"
+    ],
+    "2020/08/keep-going.html": [
+      "Life & Misc"
+    ],
+    "2020/07/devops-cicd-build-image-golang.html": [
+      "DevOps & Infrastructure",
+      "Languages & Software Engineering"
+    ],
+    "2020/07/blog-post_11.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2020/07/devops-cicd-drone-plugin.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2020/07/devops-cicd-gitlab-drone-pipeline.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2020/07/devops-cicd-docker-drone.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2020/07/blog-post.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2020/07/devops-cicd-wsl2-harbor-docker.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2020/07/devops-cicd-docker.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2020/07/circleci-nodejs-app-gcp-app-engine-cd.html": [
+      "DevOps & Infrastructure",
+      "Web & Frontend"
+    ],
+    "2020/07/circleci-nodejs-app-gcp-app-engine-ci.html": [
+      "DevOps & Infrastructure",
+      "Web & Frontend"
+    ],
+    "2020/07/google-cloud-platform-sshfs-gcp-vm.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2020/07/google-cloud-platform-ssh-gcp-vm.html": [
+      "DevOps & Infrastructure"
+    ],
+    "2020/06/websotmp-rabbitmq.html": [
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2020/06/blog-post.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2020/06/spring-mvc-mybatis.html": [
+      "Backend & Cloud"
+    ],
+    "2020/06/spring-mvc-boot-application-by.html": [
+      "Backend & Cloud"
+    ],
+    "2020/05/spring-mvc.html": [
+      "Backend & Cloud"
+    ],
+    "2020/05/spring-aop.html": [
+      "Backend & Cloud"
+    ],
+    "2020/05/spring-ioc.html": [
+      "Backend & Cloud"
+    ],
+    "2020/05/wsl2-docker-run-pxc-server-haporxy.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2020/05/mysql-pxc-docker-for-windows.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2020/05/logstash-mysql-elasticsearch.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2020/05/spring-elasticsearch-java-high-level_20.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2020/05/spring-elasticsearch-java-high-level.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2020/05/spring-elasticsearch-spring-data-es.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2020/05/spring-elasticsearch.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2020/05/oauth20-facebook.html": [
+      "Backend & Cloud"
+    ],
+    "2020/05/oauth-google.html": [
+      "Backend & Cloud"
+    ],
+    "2020/04/spring-security-nginx-loadblance-auth.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2020/04/spring-security-redis-cache.html": [
+      "Backend & Cloud"
+    ],
+    "2020/04/spring-cloud-bus.html": [
+      "Backend & Cloud"
+    ],
+    "2020/04/id.html": [
+      "Backend & Cloud"
+    ],
+    "2020/04/blog-post_37.html": [
+      "Systems & Low-Level",
+      "DevOps & Infrastructure"
+    ],
+    "2020/04/blog-post_12.html": [
+      "Backend & Cloud"
+    ],
+    "2020/04/api.html": [
+      "Backend & Cloud"
+    ],
+    "2020/04/blog-post.html": [
+      "Backend & Cloud"
+    ],
+    "2020/03/blog-post_17.html": [
+      "Systems & Low-Level"
+    ],
+    "2020/03/blog-post_15.html": [
+      "Systems & Low-Level"
+    ],
+    "2020/03/blog-post.html": [
+      "Systems & Low-Level"
+    ],
+    "2020/02/cb-compiler-for-int-stmt.html": [
+      "Systems & Low-Level"
+    ],
+    "2020/02/blog-post_3.html": [
+      "Life & Misc"
+    ],
+    "2020/01/cb-compiler-netloverubycflat-package.html": [
+      "Systems & Low-Level"
+    ],
+    "2020/01/spring-cloud-vue.html": [
+      "Finance & Blockchain",
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2020/01/java.html": [
+      "Finance & Blockchain",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2020/01/blog-post.html": [
+      "Finance & Blockchain"
+    ],
+    "2020/01/spring-cloud-restemplete-docker.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2020/01/spring-cloud-elk.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-cloud-zipkin-rabbitmq.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-cloud-zipkin.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-cloud-zuul-spring-security_29.html": [
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-cloud-zuul-spring-security.html": [
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-cloud-zuul-gateway.html": [
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-cloud-hystrix-ribbon-feign.html": [
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-cloud-eureka-consumer-feign-rest.html": [
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-cloud-eureka-consumer-feign.html": [
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-cloud-eureka-consumer-restribbon.html": [
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-cloud-eureka.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/12/spring-cloud-ssm.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/12/zookeeper.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/12/blog-post_21.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2019/12/spring-boot-jar-linux.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/12/spring-boot-spring-security-rest-api.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/12/spring-boot-spring-security-loginmenu.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/12/spring-boot-api-server-spring-data-jpa.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/12/ssm-spring-data-jpa.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/12/ssm-spring-boot-mybatis.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/12/net-entity-framework-code-first.html": [
+      "Languages & Software Engineering"
+    ],
+    "2019/12/net-entity-framework-ef-model-first.html": [
+      "Languages & Software Engineering"
+    ],
+    "2019/12/net-entity-framework.html": [
+      "Languages & Software Engineering"
+    ],
+    "2019/12/mvcmvpmvvm.html": [
+      "General Technical Notes"
+    ],
+    "2019/11/blog-post.html": [
+      "Life & Misc"
+    ],
+    "2019/10/webassembly-ffmpegjs-stdio-async.html": [
+      "Systems & Low-Level",
+      "Games & Multimedia",
+      "Web & Frontend"
+    ],
+    "2019/10/webassembly-ffmpegjs-arraybuffer.html": [
+      "Systems & Low-Level",
+      "Games & Multimedia",
+      "Web & Frontend"
+    ],
+    "2019/10/blog-post.html": [
+      "Backend & Cloud"
+    ],
+    "2019/09/apc-ups-status.html": [
+      "Embedded & Hardware",
+      "Life & Misc"
+    ],
+    "2019/09/apc-ups.html": [
+      "Embedded & Hardware",
+      "Life & Misc"
+    ],
+    "2019/09/d218j.html": [
+      "Embedded & Hardware",
+      "Life & Misc"
+    ],
+    "2019/09/nas.html": [
+      "Embedded & Hardware",
+      "Life & Misc"
+    ],
+    "2019/09/219.html": [
+      "Life & Misc"
+    ],
+    "2019/08/websocket_17.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2019/08/websocket-rabbitmq.html": [
+      "Backend & Cloud",
+      "Web & Frontend",
+      "Languages & Software Engineering"
+    ],
+    "2019/08/ai.html": [
+      "Embedded & Hardware",
+      "AI & Data",
+      "Languages & Software Engineering"
+    ],
+    "2019/08/websocket.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2019/08/flask-python-vue_7.html": [
+      "Finance & Blockchain",
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2019/08/flask-python-vue.html": [
+      "Finance & Blockchain",
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2019/07/blog-post.html": [
+      "Life & Misc"
+    ],
+    "2019/07/vue-e2e.html": [
+      "Web & Frontend"
+    ],
+    "2019/07/emscripten-file-system-pipe.html": [
+      "Systems & Low-Level",
+      "Games & Multimedia",
+      "Web & Frontend"
+    ],
+    "2019/07/webassembly-ffmpeg.html": [
+      "Systems & Low-Level",
+      "Games & Multimedia",
+      "Web & Frontend"
+    ],
+    "2019/07/openresty-nginx-redis-spring-openresty.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2019/07/openresty-nginx-redis-spring-session.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2019/07/openresty-nginx-redis-openresty-lua.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/07/openresty-nginx-redis_7.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2019/07/openresty-nginx-redis.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2019/07/vue.html": [
+      "Web & Frontend"
+    ],
+    "2019/07/vue-router-lazyloading.html": [
+      "Web & Frontend"
+    ],
+    "2019/06/blog-post.html": [
+      "General Technical Notes"
+    ],
+    "2019/06/nginx.html": [
+      "DevOps & Infrastructure",
+      "Web & Frontend"
+    ],
+    "2019/06/simple-loginmenu.html": [
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2019/06/vue-router.html": [
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2019/06/www.html": [
+      "Life & Misc"
+    ],
+    "2019/06/vue-element-admin-table_17.html": [
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2019/06/vue-element-admin-table.html": [
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2019/05/vue-element-admin-mockjs.html": [
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2019/05/vue-element-admin.html": [
+      "Backend & Cloud",
+      "Web & Frontend"
+    ],
+    "2019/05/ver-00.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2019/05/vuejs.html": [
+      "Web & Frontend"
+    ],
+    "2019/05/search-path.html": [
+      "General Technical Notes"
+    ],
+    "2019/04/docker-redis_5.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud"
+    ],
+    "2019/04/docker-redis.html": [
+      "DevOps & Infrastructure",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2019/03/objectdetection-yolov3.html": [
+      "Languages & Software Engineering"
+    ],
+    "2019/03/objectdetection-tensorflow.html": [
+      "AI & Data",
+      "Languages & Software Engineering"
+    ],
+    "2019/02/http-mixed-content.html": [
+      "Games & Multimedia",
+      "DevOps & Infrastructure",
+      "Web & Frontend"
+    ],
+    "2019/02/https-nodejs-rtmp-publisher-use-openssl.html": [
+      "Games & Multimedia",
+      "DevOps & Infrastructure",
+      "Web & Frontend"
+    ],
+    "2019/02/android-rtmp-server-end.html": [
+      "Games & Multimedia",
+      "DevOps & Infrastructure"
+    ],
+    "2019/01/cxffmpeg.html": [
+      "Games & Multimedia",
+      "DevOps & Infrastructure",
+      "Languages & Software Engineering"
+    ],
+    "2019/01/html5-publish-to-adobe-media-server.html": [
+      "Games & Multimedia",
+      "DevOps & Infrastructure",
+      "Web & Frontend"
+    ],
+    "2019/01/adobemediaserver-part3.html": [
+      "Games & Multimedia",
+      "DevOps & Infrastructure"
+    ],
+    "2019/01/adobemediaserver-part2.html": [
+      "Games & Multimedia",
+      "DevOps & Infrastructure"
+    ],
+    "2019/01/adobe-media-server-part1.html": [
+      "Games & Multimedia",
+      "DevOps & Infrastructure"
+    ],
+    "2019/01/blog-post_2.html": [
+      "Life & Misc"
+    ],
+    "2019/01/blog-post.html": [
+      "Life & Misc"
+    ],
+    "2018/11/google-tends-fixdata.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/11/blog-post_24.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/11/google-tends.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/11/fbprophet.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/11/blog-post.html": [
+      "Life & Misc"
+    ],
+    "2018/10/flex.html": [
+      "Games & Multimedia",
+      "Life & Misc"
+    ],
+    "2018/10/blog-post.html": [
+      "Languages & Software Engineering"
+    ],
+    "2018/10/blog-post_3.html": [
+      "Life & Misc"
+    ],
+    "2018/10/blog-post_2.html": [
+      "Security & Reverse Engineering",
+      "Life & Misc"
+    ],
+    "2018/09/golang-json.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/09/golang-mysql.html": [
+      "Finance & Blockchain",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2018/09/golang-server.html": [
+      "DevOps & Infrastructure",
+      "Languages & Software Engineering"
+    ],
+    "2018/09/golang-install-with-ubutun.html": [
+      "Languages & Software Engineering"
+    ],
+    "2018/09/facebookbot-echo-ngork.html": [
+      "AI & Data",
+      "Languages & Software Engineering"
+    ],
+    "2018/09/linebot-echo-ngork.html": [
+      "AI & Data",
+      "Languages & Software Engineering"
+    ],
+    "2018/09/linebot.html": [
+      "General Technical Notes"
+    ],
+    "2018/09/kali-install-legacy.html": [
+      "General Technical Notes"
+    ],
+    "2018/09/indows10-ubuntu.html": [
+      "General Technical Notes"
+    ],
+    "2018/09/blog-post_23.html": [
+      "General Technical Notes"
+    ],
+    "2018/09/ducky.html": [
+      "Life & Misc"
+    ],
+    "2018/09/uefi.html": [
+      "General Technical Notes"
+    ],
+    "2018/09/windows-10-iis-setting.html": [
+      "General Technical Notes"
+    ],
+    "2018/09/pygameopengl.html": [
+      "Languages & Software Engineering"
+    ],
+    "2018/08/pyopengl-cubecontrol.html": [
+      "Games & Multimedia",
+      "Languages & Software Engineering"
+    ],
+    "2018/08/mysql.html": [
+      "Backend & Cloud"
+    ],
+    "2018/08/java.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2018/08/android-googlemap-key.html": [
+      "General Technical Notes"
+    ],
+    "2018/08/google-map.html": [
+      "Life & Misc"
+    ],
+    "2018/08/blog-post_25.html": [
+      "General Technical Notes"
+    ],
+    "2018/08/lcd.html": [
+      "Embedded & Hardware",
+      "Games & Multimedia"
+    ],
+    "2018/08/x-ylcd2d-main.html": [
+      "Embedded & Hardware",
+      "Games & Multimedia"
+    ],
+    "2018/08/blog-post.html": [
+      "Life & Misc"
+    ],
+    "2018/07/python-runlstm.html": [
+      "AI & Data",
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/07/pyhton-bband.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/07/pyhton-macd_10.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/07/pyhton-macd.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/07/blog-post.html": [
+      "Life & Misc"
+    ],
+    "2018/06/nodejs.html": [
+      "Backend & Cloud",
+      "Web & Frontend",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/blog-post_60.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2018/06/unity2drpg.html": [
+      "Games & Multimedia",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/unity.html": [
+      "Games & Multimedia",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/blog-post_23.html": [
+      "Games & Multimedia",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/c-2d-rpg.html": [
+      "Games & Multimedia",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/javabattole-tetris.html": [
+      "Games & Multimedia",
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/javamessage.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/face-detection.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/python.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/binance-apigooglecoin-ip-qq-binance.html": [
+      "Finance & Blockchain"
+    ],
+    "2018/06/kucoin.html": [
+      "Finance & Blockchain"
+    ],
+    "2018/06/blog-post_99.html": [
+      "Life & Misc"
+    ],
+    "2018/06/google-drive-api-net-c.html": [
+      "Languages & Software Engineering"
+    ],
+    "2018/06/blog-post.html": [
+      "Life & Misc"
+    ],
+    "2018/05/blog-post_25.html": [
+      "Life & Misc"
+    ],
+    "2018/04/android-soundtouch-jni.html": [
+      "General Technical Notes"
+    ],
+    "2018/06/android-include-source-form-github.html": [
+      "General Technical Notes"
+    ],
+    "2018/06/android-app.html": [
+      "General Technical Notes"
+    ],
+    "2018/06/blog-post_12.html": [
+      "General Technical Notes"
+    ],
+    "2018/04/c-serial-arduino-or-rs232.html": [
+      "Embedded & Hardware",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/blog-post_97.html": [
+      "Life & Misc"
+    ],
+    "2018/06/android-update-photo-php.html": [
+      "Languages & Software Engineering"
+    ],
+    "2018/03/blog-post.html": [
+      "Life & Misc"
+    ],
+    "2018/06/tensorflow-object-detection.html": [
+      "AI & Data"
+    ],
+    "2018/06/android-post-json-to-php-mysql.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2018/03/blog-post_23.html": [
+      "Life & Misc"
+    ],
+    "2018/06/blog-post_70.html": [
+      "Life & Misc"
+    ],
+    "2018/03/android-google-map.html": [
+      "Life & Misc"
+    ],
+    "2018/06/android-google-map.html": [
+      "Life & Misc"
+    ],
+    "2018/03/c-android-bluetooth.html": [
+      "Embedded & Hardware",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/blog-post_6.html": [
+      "Life & Misc"
+    ],
+    "2018/03/blog-post_3.html": [
+      "Life & Misc"
+    ],
+    "2018/02/imacros-script-rewrite-python-bypass.html": [
+      "Finance & Blockchain",
+      "Languages & Software Engineering"
+    ],
+    "2018/02/install-tensorflow-gpu-in-windows10.html": [
+      "AI & Data",
+      "Languages & Software Engineering"
+    ],
+    "2018/01/blog-post_19.html": [
+      "Life & Misc"
+    ],
+    "2018/01/blog-post_16.html": [
+      "Life & Misc"
+    ],
+    "2019/09/xbox360-arduino.html": [
+      "Embedded & Hardware"
+    ],
+    "2017/09/blog-post.html": [
+      "Life & Misc"
+    ],
+    "2017/06/php-mongodb.html": [
+      "Backend & Cloud",
+      "Languages & Software Engineering"
+    ],
+    "2017/05/qq.html": [
+      "Life & Misc"
+    ],
+    "2018/11/blog-post_30.html": [
+      "Life & Misc"
+    ],
+    "2017/03/nodemcu.html": [
+      "Embedded & Hardware",
+      "Languages & Software Engineering"
+    ],
+    "2018/12/arduino-nodemcu-i2c.html": [
+      "Embedded & Hardware",
+      "Languages & Software Engineering"
+    ],
+    "2017/03/arduino_6.html": [
+      "Embedded & Hardware"
+    ],
+    "2017/03/arduino.html": [
+      "Embedded & Hardware",
+      "Languages & Software Engineering"
+    ],
+    "2018/12/arduino-rfid.html": [
+      "Embedded & Hardware",
+      "Languages & Software Engineering"
+    ],
+    "2018/12/arduino.html": [
+      "Embedded & Hardware"
+    ],
+    "2017/03/ardunino.html": [
+      "Embedded & Hardware"
+    ],
+    "2017/02/repairsamsung.html": [
+      "Life & Misc"
+    ],
+    "2017/01/2017.html": [
+      "Life & Misc"
+    ],
+    "2014/09/discuz-xss-script.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2014/07/blog-post.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2014/07/eaaaa.html": [
+      "Security & Reverse Engineering"
+    ],
+    "2013/06/php.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vb_4.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vb_5.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vbmax.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vbftp.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vb_88.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/blog-post_11.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/blog-post_56.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vb_31.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vbdll.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vb_36.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/winio.html": [
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vbnp.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vbxuetr.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vbuce.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vb_18.html": [
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vb_23.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ],
+    "2018/06/vblockfolder.html": [
+      "Security & Reverse Engineering",
+      "Languages & Software Engineering"
+    ]
+  },
+  "evidence": {
+    "2026/05/3d-scanner.html": {
+      "Embedded & Hardware": [
+        "3d scanner"
+      ]
+    },
+    "2026/05/vibeos-fpga.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2026/05/blog-post.html": {
+      "Embedded & Hardware": [
+        "3d printer"
+      ],
+      "Life & Misc": [
+        "3d printer"
+      ]
+    },
+    "2026/04/vibeos.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2026/04/build-self-os-in-riscv.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        "elf"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ]
+    },
+    "2025/09/llm-cli-idapro-mcp-server-ga.html": {
+      "Security & Reverse Engineering": [
+        "ida"
+      ],
+      "AI & Data": [
+        "llm"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2025/08/qemu-risc-v-ubuntu.html": {
+      "Systems & Low-Level": [
+        "qemu"
+      ],
+      "Embedded & Hardware": [
+        "risc-v"
+      ]
+    },
+    "2025/08/openmanus-or-dify-workflow.html": {
+      "AI & Data": [
+        "dify"
+      ]
+    },
+    "2025/08/qemu-virtio-net-lwip.html": {
+      "Systems & Low-Level": [
+        "qemu",
+        "virtio"
+      ]
+    },
+    "2025/07/radio-rtl-sdr.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2025/07/oscilloscope-art.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2025/07/opensbi.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2025/07/qemu.html": {
+      "Systems & Low-Level": [
+        "qemu"
+      ]
+    },
+    "2025/02/app.html": {
+      "Security & Reverse Engineering": [
+        "ida",
+        "frida"
+      ]
+    },
+    "2025/01/android-porting-ollvm.html": {
+      "Security & Reverse Engineering": [
+        "ida"
+      ],
+      "Systems & Low-Level": [
+        "llvm"
+      ]
+    },
+    "2025/01/frida-burn-intercept-https-traffic.html": {
+      "Security & Reverse Engineering": [
+        "ida",
+        "frida"
+      ]
+    },
+    "2025/01/using-ida-pro-debug-apk-hook-native.html": {
+      "Security & Reverse Engineering": [
+        "ida",
+        "frida"
+      ]
+    },
+    "2025/01/use-magisck-root-image-frida-example.html": {
+      "Security & Reverse Engineering": [
+        "ida",
+        "frida"
+      ]
+    },
+    "2025/01/study-nuitka-module-cache.html": {
+      "Languages & Software Engineering": [
+        "nuitka"
+      ]
+    },
+    "2025/01/webassmbly-gb-simulator-support-audio.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2025/01/modify-gcc-plugin-to-detect-linklist.html": {
+      "Security & Reverse Engineering": [
+        "memory leak"
+      ],
+      "Systems & Low-Level": [
+        "gcc"
+      ],
+      "AI & Data": [
+        "dify"
+      ]
+    },
+    "2025/01/split-nuitka-flow-by-dll.html": {
+      "Languages & Software Engineering": [
+        "nuitka"
+      ]
+    },
+    "2024/12/improving-binary-security-in-nuitka.html": {
+      "Systems & Low-Level": [
+        "llvm",
+        "binary"
+      ],
+      "Languages & Software Engineering": [
+        "nuitka"
+      ]
+    },
+    "2024/12/finding-antivirus-detection-virus.html": {
+      "Languages & Software Engineering": [
+        "nuitka"
+      ]
+    },
+    "2024/11/mstc-dqn-cube.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2024/10/graphrag.html": {
+      "AI & Data": [
+        "graphrag"
+      ]
+    },
+    "2024/10/automated-anomaly-range-detection.html": {
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2024/10/nix-build-system.html": {
+      "Languages & Software Engineering": [
+        " rust"
+      ]
+    },
+    "2024/09/quick-project-report-llama32.html": {
+      "AI & Data": [
+        "llama"
+      ],
+      "Languages & Software Engineering": [
+        " rust"
+      ]
+    },
+    "2024/09/quick-project-report.html": {
+      "AI & Data": [
+        "chatgpt",
+        "ai "
+      ],
+      "Languages & Software Engineering": [
+        " rust"
+      ]
+    },
+    "2024/08/gdbserver.html": {
+      "Systems & Low-Level": [
+        "gdb",
+        "gdbserver"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ]
+    },
+    "2024/08/load-binary-to-shared-memory-using-gdb.html": {
+      "Systems & Low-Level": [
+        "gdb",
+        "binary"
+      ]
+    },
+    "2024/08/in-windows-python-java.html": {
+      "Backend & Cloud": [
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "python",
+        "java"
+      ]
+    },
+    "2024/07/pyhton-nuitka-cross-build.html": {
+      "Languages & Software Engineering": [
+        "python",
+        "nuitka"
+      ]
+    },
+    "2024/06/bitcoin-auto-trade.html": {
+      "Finance & Blockchain": [
+        "bitcoin"
+      ]
+    },
+    "2024/05/elf-diff-call-graph.html": {
+      "Systems & Low-Level": [
+        "elf"
+      ]
+    },
+    "2024/05/nutika-replace-dynamic-shared-library.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2024/05/git-command.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2024/04/creating-jenkins-tasklets-to-k8s.html": {
+      "DevOps & Infrastructure": [
+        "kubernetes",
+        "jenkins"
+      ]
+    },
+    "2024/04/install-k8s-on-centos7.html": {
+      "DevOps & Infrastructure": [
+        "kubernetes"
+      ]
+    },
+    "2024/04/gitlab-autodevops.html": {
+      "DevOps & Infrastructure": [
+        "devops",
+        "gitlab",
+        "autodevops"
+      ]
+    },
+    "2024/04/jenkins-gitlab.html": {
+      "DevOps & Infrastructure": [
+        "jenkins",
+        "gitlab"
+      ]
+    },
+    "2024/04/afl.html": {
+      "Security & Reverse Engineering": [
+        "afl"
+      ]
+    },
+    "2024/01/build-huawei-wifi-iot.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2024/01/finance-backtrader.html": {
+      "Finance & Blockchain": [
+        "finance"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2024/01/python-package.html": {
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2023/10/install-asli.html": {
+      "Systems & Low-Level": [
+        "arm"
+      ]
+    },
+    "2023/10/use-docker-file-to-create-separate-site.html": {
+      "DevOps & Infrastructure": [
+        "docker"
+      ],
+      "Backend & Cloud": [
+        "redis",
+        "mongodb",
+        "flask"
+      ],
+      "Web & Frontend": [
+        "vue",
+        "frontend"
+      ]
+    },
+    "2023/10/try-to-find-redundant-area-with-python.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        "gdb"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2023/10/install-bugzilla.html": {
+      "DevOps & Infrastructure": [
+        "devops"
+      ]
+    },
+    "2023/09/valgrind-taint-analysis-tool-taintgrind.html": {
+      "Systems & Low-Level": [
+        "valgrind"
+      ]
+    },
+    "2023/09/trying-to-get-variable-dependencies.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2023/08/q-learning-maze.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2023/07/gcc-rtl.html": {
+      "Systems & Low-Level": [
+        "gcc"
+      ]
+    },
+    "2023/03/trace-gdb-source.html": {
+      "Systems & Low-Level": [
+        "gdb"
+      ]
+    },
+    "2023/02/pytorch.html": {
+      "AI & Data": [
+        "pytorch"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2023/02/pytorch-stock-lstm.html": {
+      "AI & Data": [
+        "pytorch",
+        "lstm"
+      ],
+      "Finance & Blockchain": [
+        "stock"
+      ]
+    },
+    "2023/02/python-chatgpt.html": {
+      "AI & Data": [
+        "chatgpt"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2023/01/refactor-prev-version-stock.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ]
+    },
+    "2023/01/linux-hook-record.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2022/12/custom-llvm-pass-inlineunroll-loop-pass.html": {
+      "Systems & Low-Level": [
+        "llvm",
+        "inline",
+        "unroll loop"
+      ]
+    },
+    "2022/12/gdb-python-script.html": {
+      "Systems & Low-Level": [
+        "gdb"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2022/12/asm2cfg-update-new-control-flow-graph.html": {
+      "Systems & Low-Level": [
+        " asm",
+        "cfg"
+      ]
+    },
+    "2022/12/pwn-double-free-after-free.html": {
+      "Security & Reverse Engineering": [
+        "angr",
+        "double free"
+      ]
+    },
+    "2022/12/custom-llvm-pass-inline-pass.html": {
+      "Systems & Low-Level": [
+        "llvm",
+        "inline"
+      ]
+    },
+    "2022/12/gcc-plugin-rtl-unroll-loop-inline-pass.html": {
+      "Systems & Low-Level": [
+        "gcc",
+        "inline",
+        "unroll loop"
+      ]
+    },
+    "2022/11/riscv-asm-control-flow-graph-find-loop.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        " asm"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ]
+    },
+    "2022/11/riscv-asm-compare-viewer.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        " asm"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ]
+    },
+    "2022/11/compare-compiler-versions-riscv-asm.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        " asm",
+        "compiler"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ]
+    },
+    "2022/11/walk-asm-call-graph.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        " asm",
+        "cfg"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ]
+    },
+    "2022/10/riscv-riscv-physical-memory-protection.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ]
+    },
+    "2022/10/rsicv-asm2cfg.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        " asm",
+        "cfg"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ]
+    },
+    "2022/10/mini-riscv-os.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ]
+    },
+    "2022/10/run-gbemulator-in-webassembly-reload.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        "assembly",
+        "binary"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ],
+      "Games & Multimedia": [
+        "emulator"
+      ],
+      "Web & Frontend": [
+        "webassembly"
+      ]
+    },
+    "2022/10/antlr4ts-online-ide-auto-completion.html": {
+      "Web & Frontend": [
+        "node.js"
+      ],
+      "Languages & Software Engineering": [
+        "antlr"
+      ]
+    },
+    "2022/10/antlr4ts-visitor-listener-example.html": {
+      "Languages & Software Engineering": [
+        "antlr"
+      ]
+    },
+    "2022/09/mini-riscv-os-vga-conways-game-of-life.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ],
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2022/09/mini-riscv-os-vga.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ]
+    },
+    "2022/09/run-gbemulator-in-webassembly-fix.html": {
+      "Security & Reverse Engineering": [
+        "memleak"
+      ],
+      "Systems & Low-Level": [
+        "assembly",
+        "pthread"
+      ],
+      "Games & Multimedia": [
+        "emulator"
+      ],
+      "Web & Frontend": [
+        "webassembly"
+      ]
+    },
+    "2022/09/run-gbemulator-in-webassembly.html": {
+      "Systems & Low-Level": [
+        "assembly"
+      ],
+      "Games & Multimedia": [
+        "emulator"
+      ],
+      "Web & Frontend": [
+        "webassembly"
+      ]
+    },
+    "2022/09/ghost-cube.html": {
+      "Games & Multimedia": [
+        "ghost cube"
+      ]
+    },
+    "2022/09/run-riscvemulator-in-webassembly.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        "assembly"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ],
+      "Games & Multimedia": [
+        "emulator"
+      ],
+      "Web & Frontend": [
+        "webassembly",
+        "wasm"
+      ]
+    },
+    "2022/09/study-riscvemulator.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ],
+      "Games & Multimedia": [
+        "emulator"
+      ]
+    },
+    "2022/09/rust-riscv-os-c-to-rust-virtio-drivers_8.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        "virtio"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ],
+      "Languages & Software Engineering": [
+        " rust",
+        "rust ",
+        " c "
+      ]
+    },
+    "2022/09/rust-riscv-os-c-to-rust-virtio-drivers.html": {
+      "Systems & Low-Level": [
+        "riscv",
+        "riscv",
+        "virtio"
+      ],
+      "Embedded & Hardware": [
+        "riscv"
+      ],
+      "Languages & Software Engineering": [
+        " rust",
+        "rust ",
+        " c "
+      ]
+    },
+    "2022/08/realtime-save-gameboy-stage.html": {
+      "Games & Multimedia": [
+        "gameboy"
+      ]
+    },
+    "2022/08/mini-bittorrent.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2022/08/gcc-plugin.html": {
+      "Security & Reverse Engineering": [
+        "static analyzer"
+      ],
+      "Systems & Low-Level": [
+        "gcc"
+      ]
+    },
+    "2022/05/angr-pyvexir.html": {
+      "Security & Reverse Engineering": [
+        "angr"
+      ]
+    },
+    "2022/05/synology-port-tp-link-wifi-driver.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2022/04/addresssanitizer.html": {
+      "Security & Reverse Engineering": [
+        "addresssanitizer",
+        "sanitizer"
+      ]
+    },
+    "2022/03/megaminx.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2022/03/angr-symbolic-execution-2.html": {
+      "Security & Reverse Engineering": [
+        "angr"
+      ]
+    },
+    "2022/03/angr-symbolic-execution.html": {
+      "Security & Reverse Engineering": [
+        "angr"
+      ]
+    },
+    "2022/03/linux-ipc.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2022/02/golang-rpc.html": {
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-redis.html": {
+      "Backend & Cloud": [
+        "redis"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-ntf-ipfs.html": {
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-smart-contract-deploy-use.html": {
+      "Finance & Blockchain": [
+        "geth",
+        "ganache"
+      ],
+      "DevOps & Infrastructure": [
+        "deploy"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-create-smart-contract.html": {
+      "Finance & Blockchain": [
+        " eth"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-eth-transfer.html": {
+      "Finance & Blockchain": [
+        "geth",
+        " eth"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-nsq-kafka.html": {
+      "Backend & Cloud": [
+        "kafka"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-dtm-server.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-mvc-pattern.html": {
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-mongodb-redis.html": {
+      "Backend & Cloud": [
+        "redis",
+        "mongodb"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-design-pattern-unit-test.html": {
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-websocket.html": {
+      "Backend & Cloud": [
+        "websocket"
+      ],
+      "Web & Frontend": [
+        "websocket"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-grpc.html": {
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-gorm-orm-org-sqllite.html": {
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/blog-post.html": {
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-channel.html": {
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/02/golang-simple-web-server.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2022/01/rust-mutithread-web-server-diesel-orm.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Languages & Software Engineering": [
+        " rust",
+        "rust "
+      ]
+    },
+    "2022/01/learn-rust-build-mutithread-webserver.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Languages & Software Engineering": [
+        " rust",
+        "rust "
+      ]
+    },
+    "2022/01/learn-rust.html": {
+      "Languages & Software Engineering": [
+        " rust",
+        "rust "
+      ]
+    },
+    "2022/01/linux-namespace-container.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2021/12/gcc-12-static-analyzer.html": {
+      "Security & Reverse Engineering": [
+        "static analyzer"
+      ],
+      "Systems & Low-Level": [
+        "gcc"
+      ]
+    },
+    "2021/12/xv6-lab-6-lib-3-way-handshake.html": {
+      "Systems & Low-Level": [
+        "xv6"
+      ],
+      "Embedded & Hardware": [
+        "risc-v"
+      ]
+    },
+    "2021/12/risc-v-xv6-lab-net2-network-device.html": {
+      "Systems & Low-Level": [
+        "xv6"
+      ],
+      "Embedded & Hardware": [
+        "risc-v"
+      ],
+      "DevOps & Infrastructure": [
+        "lab-net"
+      ]
+    },
+    "2021/11/risc-v-xv6-lab-net.html": {
+      "Systems & Low-Level": [
+        "xv6"
+      ],
+      "Embedded & Hardware": [
+        "risc-v"
+      ],
+      "DevOps & Infrastructure": [
+        "lab-net"
+      ]
+    },
+    "2021/10/custom-vscode-extension-analyzer-debug-2.html": {
+      "Security & Reverse Engineering": [
+        "static analyzer"
+      ],
+      "Web & Frontend": [
+        "vscode extension"
+      ]
+    },
+    "2021/10/custom-vscode-extension-analyzer-debug.html": {
+      "Security & Reverse Engineering": [
+        "static analyzer"
+      ],
+      "Web & Frontend": [
+        "vscode extension"
+      ]
+    },
+    "2021/10/symbolic-execution-z3-solver.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2021/09/gcp-loadblance-setting.html": {
+      "Systems & Low-Level": [
+        "arm"
+      ],
+      "DevOps & Infrastructure": [
+        "gcp"
+      ],
+      "Backend & Cloud": [
+        "loadblance"
+      ]
+    },
+    "2021/09/rebuild-jetson-kernel-in-tx1-add-ebpf.html": {
+      "Systems & Low-Level": [
+        "kernel",
+        "ebpf",
+        " bpf"
+      ],
+      "Embedded & Hardware": [
+        "jetson"
+      ]
+    },
+    "2021/09/ebpf-dynamic-memleak-detect-free.html": {
+      "Security & Reverse Engineering": [
+        "memleak"
+      ],
+      "Systems & Low-Level": [
+        "ebpf",
+        "dtrace"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2021/08/ebpf-dynamic-memleak-detect.html": {
+      "Security & Reverse Engineering": [
+        "memleak"
+      ],
+      "Systems & Low-Level": [
+        "ebpf",
+        "dtrace"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2021/07/30-day-os-timer_13.html": {
+      "Systems & Low-Level": [
+        "osdev"
+      ]
+    },
+    "2021/07/30-day-os-timer.html": {
+      "Systems & Low-Level": [
+        "osdev"
+      ]
+    },
+    "2021/07/30-day-os-memory-memory-manager.html": {
+      "Systems & Low-Level": [
+        "osdev"
+      ]
+    },
+    "2021/07/30-day-os-day2.html": {
+      "Systems & Low-Level": [
+        "osdev"
+      ]
+    },
+    "2021/07/30-day-os-day1.html": {
+      "Systems & Low-Level": [
+        "osdev"
+      ]
+    },
+    "2021/06/goodlock-deadlock-detection.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2021/05/pthreadcreated-memory-leak.html": {
+      "Security & Reverse Engineering": [
+        "memory leak"
+      ],
+      "Systems & Low-Level": [
+        "pthread"
+      ]
+    },
+    "2021/05/kubernetes-auto-scaling.html": {
+      "DevOps & Infrastructure": [
+        "kubernetes",
+        "auto scaling"
+      ]
+    },
+    "2021/02/build-linux-kernel-ebpf-version.html": {
+      "Systems & Low-Level": [
+        "linux kernel",
+        "kernel",
+        "ebpf"
+      ]
+    },
+    "2021/02/trace-memory-using-ebpf-script.html": {
+      "Systems & Low-Level": [
+        "linux kernel",
+        "kernel",
+        "ebpf"
+      ]
+    },
+    "2021/01/mtrace-runtime-output.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2021/01/activeloop-hub.html": {
+      "AI & Data": [
+        "pytorch",
+        "tensorflow",
+        "activeloop"
+      ]
+    },
+    "2021/01/ida-pro-use-python-plugin-remote.html": {
+      "Security & Reverse Engineering": [
+        "ida"
+      ],
+      "Systems & Low-Level": [
+        "gcc"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2021/01/how-to-enabledisable-debug-information.html": {
+      "Security & Reverse Engineering": [
+        "ida"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ]
+    },
+    "2021/01/blog-post.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2021/01/crc-checker.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ]
+    },
+    "2020/12/blog-post.html": {
+      "Systems & Low-Level": [
+        "llvm",
+        "pthread"
+      ]
+    },
+    "2020/12/openmp-shard-libraries.html": {
+      "Systems & Low-Level": [
+        "gcc"
+      ]
+    },
+    "2020/11/simple-gcc-plugin-analysis.html": {
+      "Systems & Low-Level": [
+        "gcc",
+        "complier"
+      ]
+    },
+    "2020/11/simple-llvm-pass-analysis.html": {
+      "Systems & Low-Level": [
+        "llvm",
+        "complier"
+      ]
+    },
+    "2020/08/keep-going.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2020/07/devops-cicd-build-image-golang.html": {
+      "DevOps & Infrastructure": [
+        "devops",
+        "cicd"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2020/07/blog-post_11.html": {
+      "DevOps & Infrastructure": [
+        "devops",
+        "docker",
+        "cicd"
+      ]
+    },
+    "2020/07/devops-cicd-drone-plugin.html": {
+      "DevOps & Infrastructure": [
+        "devops",
+        "docker",
+        "drone",
+        "cicd"
+      ]
+    },
+    "2020/07/devops-cicd-gitlab-drone-pipeline.html": {
+      "DevOps & Infrastructure": [
+        "devops",
+        "docker",
+        "drone",
+        "gitlab",
+        "cicd"
+      ]
+    },
+    "2020/07/devops-cicd-docker-drone.html": {
+      "DevOps & Infrastructure": [
+        "devops",
+        "docker",
+        "drone",
+        "cicd"
+      ]
+    },
+    "2020/07/blog-post.html": {
+      "DevOps & Infrastructure": [
+        "devops",
+        "docker",
+        "gitlab",
+        "cicd"
+      ]
+    },
+    "2020/07/devops-cicd-wsl2-harbor-docker.html": {
+      "DevOps & Infrastructure": [
+        "devops",
+        "docker",
+        "cicd"
+      ]
+    },
+    "2020/07/devops-cicd-docker.html": {
+      "DevOps & Infrastructure": [
+        "devops",
+        "docker",
+        "cicd"
+      ]
+    },
+    "2020/07/circleci-nodejs-app-gcp-app-engine-cd.html": {
+      "DevOps & Infrastructure": [
+        "circleci",
+        "cicd",
+        "gcp"
+      ],
+      "Web & Frontend": [
+        "node.js"
+      ]
+    },
+    "2020/07/circleci-nodejs-app-gcp-app-engine-ci.html": {
+      "DevOps & Infrastructure": [
+        "circleci",
+        "cicd",
+        "gcp"
+      ],
+      "Web & Frontend": [
+        "node.js"
+      ]
+    },
+    "2020/07/google-cloud-platform-sshfs-gcp-vm.html": {
+      "DevOps & Infrastructure": [
+        "gcp"
+      ]
+    },
+    "2020/07/google-cloud-platform-ssh-gcp-vm.html": {
+      "DevOps & Infrastructure": [
+        "gcp"
+      ]
+    },
+    "2020/06/websotmp-rabbitmq.html": {
+      "Backend & Cloud": [
+        "rabbitmq"
+      ],
+      "Web & Frontend": [
+        "react"
+      ]
+    },
+    "2020/06/blog-post.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Backend & Cloud": [
+        "rabbitmq"
+      ],
+      "Web & Frontend": [
+        "react"
+      ]
+    },
+    "2020/06/spring-mvc-mybatis.html": {
+      "Backend & Cloud": [
+        "spring",
+        "mybatis"
+      ]
+    },
+    "2020/06/spring-mvc-boot-application-by.html": {
+      "Backend & Cloud": [
+        "spring"
+      ]
+    },
+    "2020/05/spring-mvc.html": {
+      "Backend & Cloud": [
+        "spring"
+      ]
+    },
+    "2020/05/spring-aop.html": {
+      "Backend & Cloud": [
+        "spring"
+      ]
+    },
+    "2020/05/spring-ioc.html": {
+      "Backend & Cloud": [
+        "spring"
+      ]
+    },
+    "2020/05/wsl2-docker-run-pxc-server-haporxy.html": {
+      "DevOps & Infrastructure": [
+        "docker",
+        "server"
+      ],
+      "Backend & Cloud": [
+        "mysql"
+      ]
+    },
+    "2020/05/mysql-pxc-docker-for-windows.html": {
+      "DevOps & Infrastructure": [
+        "docker"
+      ],
+      "Backend & Cloud": [
+        "mysql"
+      ]
+    },
+    "2020/05/logstash-mysql-elasticsearch.html": {
+      "DevOps & Infrastructure": [
+        "elasticsearch",
+        "logstash"
+      ],
+      "Backend & Cloud": [
+        "mysql"
+      ]
+    },
+    "2020/05/spring-elasticsearch-java-high-level_20.html": {
+      "DevOps & Infrastructure": [
+        "elasticsearch"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "rest",
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2020/05/spring-elasticsearch-java-high-level.html": {
+      "DevOps & Infrastructure": [
+        "elasticsearch"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "rest",
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2020/05/spring-elasticsearch-spring-data-es.html": {
+      "DevOps & Infrastructure": [
+        "elasticsearch"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "rest",
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2020/05/spring-elasticsearch.html": {
+      "DevOps & Infrastructure": [
+        "elasticsearch"
+      ],
+      "Backend & Cloud": [
+        "spring"
+      ]
+    },
+    "2020/05/oauth20-facebook.html": {
+      "Backend & Cloud": [
+        "spring",
+        "oauth"
+      ]
+    },
+    "2020/05/oauth-google.html": {
+      "Backend & Cloud": [
+        "spring",
+        "oauth"
+      ]
+    },
+    "2020/04/spring-security-nginx-loadblance-auth.html": {
+      "DevOps & Infrastructure": [
+        "nginx"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "redis",
+        "loadblance"
+      ]
+    },
+    "2020/04/spring-security-redis-cache.html": {
+      "Backend & Cloud": [
+        "spring",
+        "redis"
+      ]
+    },
+    "2020/04/spring-cloud-bus.html": {
+      "Backend & Cloud": [
+        "spring"
+      ]
+    },
+    "2020/04/id.html": {
+      "Backend & Cloud": [
+        "distributed system",
+        "id generator"
+      ]
+    },
+    "2020/04/blog-post_37.html": {
+      "Systems & Low-Level": [
+        "callgraph"
+      ],
+      "DevOps & Infrastructure": [
+        "zipkin"
+      ]
+    },
+    "2020/04/blog-post_12.html": {
+      "Backend & Cloud": [
+        "distributed system"
+      ]
+    },
+    "2020/04/api.html": {
+      "Backend & Cloud": [
+        "spring"
+      ]
+    },
+    "2020/04/blog-post.html": {
+      "Backend & Cloud": [
+        "spring"
+      ]
+    },
+    "2020/03/blog-post_17.html": {
+      "Systems & Low-Level": [
+        "assembly",
+        "complier"
+      ]
+    },
+    "2020/03/blog-post_15.html": {
+      "Systems & Low-Level": [
+        " asm",
+        "complier"
+      ]
+    },
+    "2020/03/blog-post.html": {
+      "Systems & Low-Level": [
+        "assembly",
+        " asm"
+      ]
+    },
+    "2020/02/cb-compiler-for-int-stmt.html": {
+      "Systems & Low-Level": [
+        "compiler",
+        "complier"
+      ]
+    },
+    "2020/02/blog-post_3.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2020/01/cb-compiler-netloverubycflat-package.html": {
+      "Systems & Low-Level": [
+        "compiler",
+        "complier"
+      ]
+    },
+    "2020/01/spring-cloud-vue.html": {
+      "Finance & Blockchain": [
+        "geth"
+      ],
+      "Backend & Cloud": [
+        "spring"
+      ],
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2020/01/java.html": {
+      "Finance & Blockchain": [
+        "geth"
+      ],
+      "Backend & Cloud": [
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2020/01/blog-post.html": {
+      "Finance & Blockchain": [
+        "geth"
+      ]
+    },
+    "2020/01/spring-cloud-restemplete-docker.html": {
+      "DevOps & Infrastructure": [
+        "docker",
+        "zipkin"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "rabbitmq",
+        "rest"
+      ]
+    },
+    "2020/01/spring-cloud-elk.html": {
+      "DevOps & Infrastructure": [
+        "docker",
+        "elk",
+        "elasticsearch",
+        "logstash",
+        "kibana"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "rabbitmq"
+      ]
+    },
+    "2019/12/spring-cloud-zipkin-rabbitmq.html": {
+      "DevOps & Infrastructure": [
+        "zipkin"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "rabbitmq"
+      ]
+    },
+    "2019/12/spring-cloud-zipkin.html": {
+      "DevOps & Infrastructure": [
+        "zipkin"
+      ],
+      "Backend & Cloud": [
+        "spring"
+      ]
+    },
+    "2019/12/spring-cloud-zuul-spring-security_29.html": {
+      "Backend & Cloud": [
+        "spring",
+        "zuul"
+      ]
+    },
+    "2019/12/spring-cloud-zuul-spring-security.html": {
+      "Backend & Cloud": [
+        "spring",
+        "zuul"
+      ]
+    },
+    "2019/12/spring-cloud-zuul-gateway.html": {
+      "Backend & Cloud": [
+        "spring",
+        "zuul"
+      ]
+    },
+    "2019/12/spring-cloud-hystrix-ribbon-feign.html": {
+      "Backend & Cloud": [
+        "spring",
+        "feign",
+        "hystrix"
+      ]
+    },
+    "2019/12/spring-cloud-eureka-consumer-feign-rest.html": {
+      "Backend & Cloud": [
+        "spring",
+        "feign",
+        "rest"
+      ]
+    },
+    "2019/12/spring-cloud-eureka-consumer-feign.html": {
+      "Backend & Cloud": [
+        "spring",
+        "feign"
+      ]
+    },
+    "2019/12/spring-cloud-eureka-consumer-restribbon.html": {
+      "Backend & Cloud": [
+        "spring",
+        "rest"
+      ]
+    },
+    "2019/12/spring-cloud-eureka.html": {
+      "Backend & Cloud": [
+        "spring",
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2019/12/spring-cloud-ssm.html": {
+      "Backend & Cloud": [
+        "spring",
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2019/12/zookeeper.html": {
+      "Backend & Cloud": [
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2019/12/blog-post_21.html": {
+      "DevOps & Infrastructure": [
+        "nginx"
+      ],
+      "Backend & Cloud": [
+        "spring"
+      ]
+    },
+    "2019/12/spring-boot-jar-linux.html": {
+      "Backend & Cloud": [
+        "spring",
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2019/12/spring-boot-spring-security-rest-api.html": {
+      "Backend & Cloud": [
+        "spring",
+        "rest",
+        "jave"
+      ],
+      "Languages & Software Engineering": [
+        "jave"
+      ]
+    },
+    "2019/12/spring-boot-spring-security-loginmenu.html": {
+      "Backend & Cloud": [
+        "spring",
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2019/12/spring-boot-api-server-spring-data-jpa.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "api server",
+        "rest",
+        "jave"
+      ],
+      "Languages & Software Engineering": [
+        "jave"
+      ]
+    },
+    "2019/12/ssm-spring-data-jpa.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "api server",
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2019/12/ssm-spring-boot-mybatis.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "mybatis",
+        "api server",
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2019/12/net-entity-framework-code-first.html": {
+      "Languages & Software Engineering": [
+        "c#",
+        ".net"
+      ]
+    },
+    "2019/12/net-entity-framework-ef-model-first.html": {
+      "Languages & Software Engineering": [
+        "c#",
+        ".net"
+      ]
+    },
+    "2019/12/net-entity-framework.html": {
+      "Languages & Software Engineering": [
+        "c#",
+        ".net"
+      ]
+    },
+    "2019/12/mvcmvpmvvm.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2019/11/blog-post.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2019/10/webassembly-ffmpegjs-stdio-async.html": {
+      "Systems & Low-Level": [
+        "assembly"
+      ],
+      "Games & Multimedia": [
+        "ffmpeg"
+      ],
+      "Web & Frontend": [
+        "webassembly"
+      ]
+    },
+    "2019/10/webassembly-ffmpegjs-arraybuffer.html": {
+      "Systems & Low-Level": [
+        "assembly"
+      ],
+      "Games & Multimedia": [
+        "ffmpeg"
+      ],
+      "Web & Frontend": [
+        "webassembly"
+      ]
+    },
+    "2019/10/blog-post.html": {
+      "Backend & Cloud": [
+        "microservice",
+        "rabbitmq"
+      ]
+    },
+    "2019/09/apc-ups-status.html": {
+      "Embedded & Hardware": [
+        "ups",
+        "nas"
+      ],
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2019/09/apc-ups.html": {
+      "Embedded & Hardware": [
+        "ups",
+        "nas"
+      ],
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2019/09/d218j.html": {
+      "Embedded & Hardware": [
+        "ups",
+        "nas"
+      ],
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2019/09/nas.html": {
+      "Embedded & Hardware": [
+        "ups",
+        "nas"
+      ],
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2019/09/219.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2019/08/websocket_17.html": {
+      "DevOps & Infrastructure": [
+        "docker",
+        "server"
+      ],
+      "Backend & Cloud": [
+        "websocket"
+      ],
+      "Web & Frontend": [
+        "websocket"
+      ]
+    },
+    "2019/08/websocket-rabbitmq.html": {
+      "Backend & Cloud": [
+        "rabbitmq",
+        "websocket"
+      ],
+      "Web & Frontend": [
+        "websocket"
+      ],
+      "Languages & Software Engineering": [
+        "erlang"
+      ]
+    },
+    "2019/08/ai.html": {
+      "Embedded & Hardware": [
+        "jetson",
+        "embedded"
+      ],
+      "AI & Data": [
+        "tesorflow",
+        "ai "
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2019/08/websocket.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Backend & Cloud": [
+        "websocket"
+      ],
+      "Web & Frontend": [
+        "websocket"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2019/08/flask-python-vue_7.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Backend & Cloud": [
+        "flask"
+      ],
+      "Web & Frontend": [
+        "vue"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2019/08/flask-python-vue.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Backend & Cloud": [
+        "flask"
+      ],
+      "Web & Frontend": [
+        "vue"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2019/07/blog-post.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2019/07/vue-e2e.html": {
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/07/emscripten-file-system-pipe.html": {
+      "Systems & Low-Level": [
+        "assembly"
+      ],
+      "Games & Multimedia": [
+        "ffmpeg"
+      ],
+      "Web & Frontend": [
+        "webassembly"
+      ]
+    },
+    "2019/07/webassembly-ffmpeg.html": {
+      "Systems & Low-Level": [
+        "assembly"
+      ],
+      "Games & Multimedia": [
+        "ffmpeg"
+      ],
+      "Web & Frontend": [
+        "webassembly"
+      ]
+    },
+    "2019/07/openresty-nginx-redis-spring-openresty.html": {
+      "DevOps & Infrastructure": [
+        "nginx",
+        "openresty",
+        "server"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "redis",
+        "rest"
+      ]
+    },
+    "2019/07/openresty-nginx-redis-spring-session.html": {
+      "DevOps & Infrastructure": [
+        "nginx",
+        "openresty"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "redis",
+        "rest"
+      ]
+    },
+    "2019/07/openresty-nginx-redis-openresty-lua.html": {
+      "DevOps & Infrastructure": [
+        "nginx",
+        "openresty"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "redis",
+        "rest"
+      ],
+      "Languages & Software Engineering": [
+        "lua"
+      ]
+    },
+    "2019/07/openresty-nginx-redis_7.html": {
+      "DevOps & Infrastructure": [
+        "nginx",
+        "openresty"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "redis",
+        "rest"
+      ]
+    },
+    "2019/07/openresty-nginx-redis.html": {
+      "DevOps & Infrastructure": [
+        "nginx",
+        "openresty"
+      ],
+      "Backend & Cloud": [
+        "spring",
+        "redis",
+        "rest"
+      ]
+    },
+    "2019/07/vue.html": {
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/07/vue-router-lazyloading.html": {
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/06/blog-post.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2019/06/nginx.html": {
+      "DevOps & Infrastructure": [
+        "nginx"
+      ],
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/06/simple-loginmenu.html": {
+      "Backend & Cloud": [
+        "spring"
+      ],
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/06/vue-router.html": {
+      "Backend & Cloud": [
+        "spring"
+      ],
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/06/www.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2019/06/vue-element-admin-table_17.html": {
+      "Backend & Cloud": [
+        "spring"
+      ],
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/06/vue-element-admin-table.html": {
+      "Backend & Cloud": [
+        "spring"
+      ],
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/05/vue-element-admin-mockjs.html": {
+      "Backend & Cloud": [
+        "spring"
+      ],
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/05/vue-element-admin.html": {
+      "Backend & Cloud": [
+        "spring"
+      ],
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/05/ver-00.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2019/05/vuejs.html": {
+      "Web & Frontend": [
+        "vue"
+      ]
+    },
+    "2019/05/search-path.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2019/04/docker-redis_5.html": {
+      "DevOps & Infrastructure": [
+        "docker"
+      ],
+      "Backend & Cloud": [
+        "redis"
+      ]
+    },
+    "2019/04/docker-redis.html": {
+      "DevOps & Infrastructure": [
+        "docker"
+      ],
+      "Backend & Cloud": [
+        "redis"
+      ],
+      "Languages & Software Engineering": [
+        " c "
+      ]
+    },
+    "2019/03/objectdetection-yolov3.html": {
+      "Languages & Software Engineering": [
+        " c "
+      ]
+    },
+    "2019/03/objectdetection-tensorflow.html": {
+      "AI & Data": [
+        "tensorflow",
+        "tesorflow"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2019/02/http-mixed-content.html": {
+      "Games & Multimedia": [
+        "livego",
+        "adobe media"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Web & Frontend": [
+        "html5"
+      ]
+    },
+    "2019/02/https-nodejs-rtmp-publisher-use-openssl.html": {
+      "Games & Multimedia": [
+        "rtmp",
+        "adobe media"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Web & Frontend": [
+        "html5",
+        "nodejs"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2019/02/android-rtmp-server-end.html": {
+      "Games & Multimedia": [
+        "rtmp",
+        "livego",
+        "adobe media"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ]
+    },
+    "2019/01/cxffmpeg.html": {
+      "Games & Multimedia": [
+        "ffmpeg",
+        "adobe media"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Languages & Software Engineering": [
+        "c#"
+      ]
+    },
+    "2019/01/html5-publish-to-adobe-media-server.html": {
+      "Games & Multimedia": [
+        "ffmpeg",
+        "rtmp",
+        "adobe media"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Web & Frontend": [
+        "html5",
+        "nodejs"
+      ]
+    },
+    "2019/01/adobemediaserver-part3.html": {
+      "Games & Multimedia": [
+        "hls",
+        "adobe media",
+        "streaming"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ]
+    },
+    "2019/01/adobemediaserver-part2.html": {
+      "Games & Multimedia": [
+        "adobe media"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ]
+    },
+    "2019/01/adobe-media-server-part1.html": {
+      "Games & Multimedia": [
+        "adobe media"
+      ],
+      "DevOps & Infrastructure": [
+        "server"
+      ]
+    },
+    "2019/01/blog-post_2.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2019/01/blog-post.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/11/google-tends-fixdata.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/11/blog-post_24.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/11/google-tends.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/11/fbprophet.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/11/blog-post.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/10/flex.html": {
+      "Games & Multimedia": [
+        "actionscript"
+      ],
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/10/blog-post.html": {
+      "Languages & Software Engineering": [
+        "python",
+        "algorithm"
+      ]
+    },
+    "2018/10/blog-post_3.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/10/blog-post_2.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ],
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/09/golang-json.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2018/09/golang-mysql.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Backend & Cloud": [
+        "mysql"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2018/09/golang-server.html": {
+      "DevOps & Infrastructure": [
+        "server"
+      ],
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2018/09/golang-install-with-ubutun.html": {
+      "Languages & Software Engineering": [
+        "golang"
+      ]
+    },
+    "2018/09/facebookbot-echo-ngork.html": {
+      "AI & Data": [
+        "chatbot"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/09/linebot-echo-ngork.html": {
+      "AI & Data": [
+        "chatbot"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/09/linebot.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/09/kali-install-legacy.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/09/indows10-ubuntu.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/09/blog-post_23.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/09/ducky.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/09/uefi.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/09/windows-10-iis-setting.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/09/pygameopengl.html": {
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/08/pyopengl-cubecontrol.html": {
+      "Games & Multimedia": [
+        "game maker"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/08/mysql.html": {
+      "Backend & Cloud": [
+        "mysql"
+      ]
+    },
+    "2018/08/java.html": {
+      "Backend & Cloud": [
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2018/08/android-googlemap-key.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/08/google-map.html": {
+      "Life & Misc": [
+        "google map"
+      ]
+    },
+    "2018/08/blog-post_25.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/08/lcd.html": {
+      "Embedded & Hardware": [
+        "embedded"
+      ],
+      "Games & Multimedia": [
+        "game maker"
+      ]
+    },
+    "2018/08/x-ylcd2d-main.html": {
+      "Embedded & Hardware": [
+        "embedded"
+      ],
+      "Games & Multimedia": [
+        "game maker"
+      ]
+    },
+    "2018/08/blog-post.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/07/python-runlstm.html": {
+      "AI & Data": [
+        "lstm"
+      ],
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/07/pyhton-bband.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/07/pyhton-macd_10.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/07/pyhton-macd.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/07/blog-post.html": {
+      "Life & Misc": [
+        "life",
+        "分享"
+      ]
+    },
+    "2018/06/nodejs.html": {
+      "Backend & Cloud": [
+        "java"
+      ],
+      "Web & Frontend": [
+        "nodejs"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2018/06/blog-post_60.html": {
+      "Security & Reverse Engineering": [
+        "cheat"
+      ]
+    },
+    "2018/06/unity2drpg.html": {
+      "Games & Multimedia": [
+        "game maker"
+      ],
+      "Languages & Software Engineering": [
+        "c#"
+      ]
+    },
+    "2018/06/unity.html": {
+      "Games & Multimedia": [
+        "game maker"
+      ],
+      "Languages & Software Engineering": [
+        "c#"
+      ]
+    },
+    "2018/06/blog-post_23.html": {
+      "Games & Multimedia": [
+        "game maker"
+      ],
+      "Languages & Software Engineering": [
+        "c#"
+      ]
+    },
+    "2018/06/c-2d-rpg.html": {
+      "Games & Multimedia": [
+        "game maker"
+      ],
+      "Languages & Software Engineering": [
+        "c#"
+      ]
+    },
+    "2018/06/javabattole-tetris.html": {
+      "Games & Multimedia": [
+        "game maker"
+      ],
+      "Backend & Cloud": [
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2018/06/javamessage.html": {
+      "Backend & Cloud": [
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2018/06/face-detection.html": {
+      "Backend & Cloud": [
+        "java"
+      ],
+      "Languages & Software Engineering": [
+        "java"
+      ]
+    },
+    "2018/06/python.html": {
+      "Finance & Blockchain": [
+        "stock"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/06/binance-apigooglecoin-ip-qq-binance.html": {
+      "Finance & Blockchain": [
+        "bcoin"
+      ]
+    },
+    "2018/06/kucoin.html": {
+      "Finance & Blockchain": [
+        "bcoin"
+      ]
+    },
+    "2018/06/blog-post_99.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/06/google-drive-api-net-c.html": {
+      "Languages & Software Engineering": [
+        "c#",
+        ".net"
+      ]
+    },
+    "2018/06/blog-post.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/05/blog-post_25.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/04/android-soundtouch-jni.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/06/android-include-source-form-github.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/06/android-app.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/06/blog-post_12.html": {
+      "General Technical Notes": [
+        "fallback"
+      ]
+    },
+    "2018/04/c-serial-arduino-or-rs232.html": {
+      "Embedded & Hardware": [
+        "arduino",
+        "embedded"
+      ],
+      "Languages & Software Engineering": [
+        "c#"
+      ]
+    },
+    "2018/06/blog-post_97.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/06/android-update-photo-php.html": {
+      "Languages & Software Engineering": [
+        "php"
+      ]
+    },
+    "2018/03/blog-post.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/06/tensorflow-object-detection.html": {
+      "AI & Data": [
+        "tensorflow",
+        "tesorflow"
+      ]
+    },
+    "2018/06/android-post-json-to-php-mysql.html": {
+      "Backend & Cloud": [
+        "mysql"
+      ],
+      "Languages & Software Engineering": [
+        "php"
+      ]
+    },
+    "2018/03/blog-post_23.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/06/blog-post_70.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/03/android-google-map.html": {
+      "Life & Misc": [
+        "google map"
+      ]
+    },
+    "2018/06/android-google-map.html": {
+      "Life & Misc": [
+        "google map"
+      ]
+    },
+    "2018/03/c-android-bluetooth.html": {
+      "Embedded & Hardware": [
+        "embedded"
+      ],
+      "Languages & Software Engineering": [
+        "c#"
+      ]
+    },
+    "2018/06/blog-post_6.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/03/blog-post_3.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/02/imacros-script-rewrite-python-bypass.html": {
+      "Finance & Blockchain": [
+        "bcoin"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/02/install-tensorflow-gpu-in-windows10.html": {
+      "AI & Data": [
+        "tensorflow"
+      ],
+      "Languages & Software Engineering": [
+        "python"
+      ]
+    },
+    "2018/01/blog-post_19.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/01/blog-post_16.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2019/09/xbox360-arduino.html": {
+      "Embedded & Hardware": [
+        "arduino"
+      ]
+    },
+    "2017/09/blog-post.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2017/06/php-mongodb.html": {
+      "Backend & Cloud": [
+        "mongodb"
+      ],
+      "Languages & Software Engineering": [
+        "php"
+      ]
+    },
+    "2017/05/qq.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2018/11/blog-post_30.html": {
+      "Life & Misc": [
+        "life",
+        "repair"
+      ]
+    },
+    "2017/03/nodemcu.html": {
+      "Embedded & Hardware": [
+        "esp8266",
+        "nodemcu",
+        "embedded"
+      ],
+      "Languages & Software Engineering": [
+        "lua"
+      ]
+    },
+    "2018/12/arduino-nodemcu-i2c.html": {
+      "Embedded & Hardware": [
+        "arduino",
+        "esp8266",
+        "nodemcu",
+        "embedded"
+      ],
+      "Languages & Software Engineering": [
+        "lua"
+      ]
+    },
+    "2017/03/arduino_6.html": {
+      "Embedded & Hardware": [
+        "esp8266",
+        "nodemcu",
+        "ir remote",
+        "embedded"
+      ]
+    },
+    "2017/03/arduino.html": {
+      "Embedded & Hardware": [
+        "esp8266",
+        "nodemcu",
+        "embedded"
+      ],
+      "Languages & Software Engineering": [
+        "lua"
+      ]
+    },
+    "2018/12/arduino-rfid.html": {
+      "Embedded & Hardware": [
+        "esp8266",
+        "nodemcu",
+        "rfid",
+        "embedded"
+      ],
+      "Languages & Software Engineering": [
+        "lua"
+      ]
+    },
+    "2018/12/arduino.html": {
+      "Embedded & Hardware": [
+        "esp8266",
+        "nodemcu",
+        "embedded"
+      ]
+    },
+    "2017/03/ardunino.html": {
+      "Embedded & Hardware": [
+        "arduino",
+        "embedded"
+      ]
+    },
+    "2017/02/repairsamsung.html": {
+      "Life & Misc": [
+        "life",
+        "repair",
+        "note"
+      ]
+    },
+    "2017/01/2017.html": {
+      "Life & Misc": [
+        "life"
+      ]
+    },
+    "2014/09/discuz-xss-script.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ]
+    },
+    "2014/07/blog-post.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ]
+    },
+    "2014/07/eaaaa.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ]
+    },
+    "2013/06/php.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ],
+      "Languages & Software Engineering": [
+        "php"
+      ]
+    },
+    "2018/06/vb_4.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vb_5.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vbmax.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vbftp.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vb_88.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/blog-post_11.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/blog-post_56.html": {
+      "Security & Reverse Engineering": [
+        "cheat"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vb_31.html": {
+      "Security & Reverse Engineering": [
+        "cheat"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vbdll.html": {
+      "Security & Reverse Engineering": [
+        "cheat"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vb_36.html": {
+      "Security & Reverse Engineering": [
+        "cheat"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/winio.html": {
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vbnp.html": {
+      "Security & Reverse Engineering": [
+        "cheat"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vbxuetr.html": {
+      "Security & Reverse Engineering": [
+        "cheat"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vbuce.html": {
+      "Security & Reverse Engineering": [
+        "cheat"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vb_18.html": {
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vb_23.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    },
+    "2018/06/vblockfolder.html": {
+      "Security & Reverse Engineering": [
+        "hacking"
+      ],
+      "Languages & Software Engineering": [
+        "vb6"
+      ]
+    }
+  },
+  "counts": {
+    "Languages & Software Engineering": 125,
+    "Backend & Cloud": 81,
+    "DevOps & Infrastructure": 68,
+    "Systems & Low-Level": 68,
+    "Security & Reverse Engineering": 44,
+    "Embedded & Hardware": 40,
+    "Life & Misc": 40,
+    "General Technical Notes": 37,
+    "Web & Frontend": 35,
+    "Games & Multimedia": 28,
+    "Finance & Blockchain": 27,
+    "AI & Data": 17
+  }
+}

@@ -1,0 +1,35 @@
+__pycache__/
+*.py[cod]
+*.part
+.DS_Store
+site/assets/media/
+
+# The 1.2 GB lossless download cache stays on this machine; only the compressed
+# mirror in site/assets/media-optimized/ is committed and deployed.
+# docs/ is a build artifact: GitHub Actions runs tools/build_site.py on every
+# push, so committing it would double the repository for no benefit.
+docs/
+
+# Plaintext values for tools/scrub_secrets.py. Never committed: the whole point
+# of the scrubber is to keep these out of the repository.
+data/secrets-to-scrub.local.json
+
+# Claude Code's local settings. They record approved shell commands verbatim,
+# which is how the admin token ended up in here - never publish this.
+.claude/
+
+# The self-hosted editor is for this machine only, not part of the published
+# site. Keep your own backup: it is deliberately not in the repository.
+tools/local_admin.py
+Dockerfile.admin
+docker-compose.admin.yml
+.dockerignore
+
+# Pure analysis output. Nothing reads it and it costs 1.5 MB.
+data/media-reconciliation-estimate.json
+
+# The raw Blogger export and the HackMD mirror are provenance, not build inputs:
+# content/posts/*.md carries the same metadata in its front matter, and the site
+# builds byte-identically without them. Kept on this machine only.
+data/posts.json
+source/

@@ -1,0 +1,198 @@
+---
+title: "環島囉"
+date: "2018-08-14T12:18:00.001+08:00"
+updated: "2020-04-29T04:43:13.438+08:00"
+permalink: "/2018/08/blog-post.html"
+original_url: "https://x8795278.blogspot.com/2018/08/blog-post.html"
+blogger_id: "tag:blogger.com,1999:blog-4768376178408509094.post-5546919362225517270"
+tags: ["Life"]
+layout: post
+---
+
+## 教召前臨時起意環島
+
+## ---
+
+前兩天再來規畫路徑，整個超趕  
+
+先整理一波，主要方面還是四極點  
+
+第一天騎15小時阿雙載記得輪流騎，B群口香糖帶著  
+
+前兩天，每天騎快三百公里阿，體力差就延長一些時間比較安全
+## 景點
+
+## ---
+
+最後後篩選景點
+
+[神之旅](https://drive.google.com/open?id=1gjGaYi0JhOwF2FW_MIYniWoOnPGtGG0_)
+## 路線
+
+## ---
+
+[高雄到台東](https://www.google.com.tw/maps/dir/812%E9%AB%98%E9%9B%84%E5%B8%82%E5%B0%8F%E6%B8%AF%E5%8D%80%E5%AD%B8%E6%88%90%E4%BA%8C%E8%A1%9788%E8%99%9F/KUBIC+%E9%9B%86%E7%9B%92/%E6%A3%A7%E8%B2%B3%E5%BA%ABKW2/803%E9%AB%98%E9%9B%84%E5%B8%82%E9%B9%BD%E5%9F%95%E5%8D%80%E5%A4%A7%E5%8B%87%E8%B7%AF1%E8%99%9F/813%E9%AB%98%E9%9B%84%E5%B8%82%E5%B7%A6%E7%87%9F%E5%8D%80%E8%93%AE%E6%BD%AD%E8%B7%AF9-1%E8%99%9F/920%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%BD%AE%E5%B7%9E%E9%8E%AE%E6%BD%AE%E5%B7%9E%E8%B7%AF/%E5%A4%A7%E9%B5%AC%E7%81%A3%E5%9C%8B%E5%AE%B6%E9%A2%A8%E6%99%AF%E5%8D%80/%E9%B5%9D%E9%91%BE%E9%BC%BB%E7%87%88%E5%A1%94/%E5%B1%8F%E6%9D%B1%E7%B8%A3%E6%BB%BF%E6%B4%B2%E9%84%89%E6%B8%AF%E5%8F%A3%E5%90%8A%E6%A9%8B/%E7%AB%BA%E6%8F%90%E6%B0%91%E5%AE%BF/@23.3970158,120.9813178,9z/data=!4m69!4m68!1m5!1m1!1s0x346e1cdbf9700633:0x1449210f6ac9c8e5!2m2!1d120.360531!2d22.566576!1m5!1m1!1s0x346e0379f38a702f:0x8ec0094e5f7e4d1b!2m2!1d120.3029923!2d22.6063611!1m5!1m1!1s0x346e038a50b72429:0xb3dc2fb496ec1787!2m2!1d120.2770972!2d22.6189878!1m5!1m1!1s0x346e0389df937087:0xaf43982f734aaad5!2m2!1d120.2816536!2d22.6199666!1m5!1m1!1s0x346e05a220379513:0x8c2e69a75961a4df!2m2!1d120.291512!2d22.680978!1m5!1m1!1s0x346e21c44ed113c5:0x83219893d280b476!2m2!1d120.5557445!2d22.5528247!1m5!1m1!1s0x3471e1acf1d512bd:0xe66adb888eb14e8f!2m2!1d120.4789281!2d22.4570111!1m5!1m1!1s0x3471b1150ebf5f65:0x5757d23a8bc2a410!2m2!1d120.852626!2d21.9022424!1m10!1m1!1s0x3471b45acb9a0ec7:0x6d173b665efd6681!2m2!1d120.8418343!2d21.9882323!3m4!1m2!1d120.8819704!2d22.1335902!3s0x3471cb4704a03477:0x8c379d2511e6a5b8!1m5!1m1!1s0x346fb9f5d704f651:0xf662ce724a19a678!2m2!1d121.0967769!2d22.788129!2m1!1b1!3e0)
+[台東到花蓮](https://www.google.com.tw/maps/dir/%E7%AB%BA%E6%8F%90%E6%B0%91%E5%AE%BF/%E8%87%BA%E6%9D%B1%E6%B5%B7%E6%BF%B1%E5%85%AC%E5%9C%92/%E5%B0%8F%E9%87%8E%E6%9F%B3/%E6%B1%A0%E4%B8%8A%E4%BC%AF%E6%9C%97%E5%A4%A7%E9%81%93/%E9%AB%98%E5%8F%B0+955%E5%8F%B0%E6%9D%B1%E7%B8%A3%E9%B9%BF%E9%87%8E%E9%84%89/%E8%87%BA%E6%9D%B1%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92/970%E8%8A%B1%E8%93%AE%E7%B8%A3%E8%8A%B1%E8%93%AE%E5%B8%82%E5%AF%8C%E5%9C%8B%E8%B7%AF107%E8%99%9F/@24.0047991,121.5565086,12.63z/data=!4m61!4m60!1m5!1m1!1s0x346fb9f5d704f651:0xf662ce724a19a678!2m2!1d121.0967769!2d22.788129!1m5!1m1!1s0x346fb93a24f0ab17:0x22ea95e5a3a76810!2m2!1d121.157661!2d22.749954!1m5!1m1!1s0x346fb9b1d4d42d81:0x8057635daf53e11a!2m2!1d121.198222!2d22.7947379!1m5!1m1!1s0x346f09ee2a72ab65:0xda93a34a2927bc8!2m2!1d121.2126026!2d23.0987769!1m5!1m1!1s0x346fa44c9597d477:0x5f22f8c1c7f5ae57!2m2!1d121.126734!2d22.926726!1m20!1m1!1s0x346fb95e1f09dac7:0x2acb2f480635d31e!2m2!1d121.1588754!2d22.7634187!3m4!1m2!1d121.2542699!2d23.1849906!3s0x346f12a8502ddc2f:0xdaa048c28eee9ff3!3m4!1m2!1d121.3291457!2d23.289577!3s0x346f6bb6ed9d74d9:0x10a537dee8189d90!3m4!1m2!1d121.3521477!2d23.3809372!3s0x346f417dd659bbff:0x1d931db0d48c0f9a!1m5!1m1!1s0x34689fb011c0fda5:0x83b09834ff46c6f2!2m2!1d121.5950348!2d23.9901507!2m1!1b1!3e0)
+[花蓮到宜蘭](https://www.google.com.tw/maps/dir/970%E8%8A%B1%E8%93%AE%E7%B8%A3%E8%8A%B1%E8%93%AE%E5%B8%82%E5%AF%8C%E5%9C%8B%E8%B7%AF107%E8%99%9F/%E7%BF%A1%E7%BF%A0%E8%B0%B7+972%E8%8A%B1%E8%93%AE%E7%B8%A3%E7%A7%80%E6%9E%97%E9%84%89/%E4%B8%83%E6%98%9F%E6%BD%AD%E6%B5%B7%E5%B2%B8%E9%A2%A8%E6%99%AF%E7%89%B9%E5%AE%9A%E5%8D%80/Ch'ing-shui+Cliff/%E5%A4%AA%E9%AD%AF%E9%96%A3%E5%9C%8B%E5%AE%B6%E5%85%AC%E5%9C%92/%E7%B2%89%E9%B3%A5%E6%9E%97%E9%AD%9A%E6%B8%AF/@24.2286267,121.3855143,10z/data=!3m1!4b1!4m50!4m49!1m5!1m1!1s0x34689fb011c0fda5:0x83b09834ff46c6f2!2m2!1d121.5950348!2d23.9901507!1m10!1m1!1s0x3468a2647770e00f:0xaeef6d43949585b2!2m2!1d121.4972359!2d23.9658656!3m4!1m2!1d121.6356265!2d23.993853!3s0x34662086e8fa46b7:0xfdd50b0b1e1c57b7!1m10!1m1!1s0x34689de8602037a5:0x9b5ce482dc0e7554!2m2!1d121.6273186!2d24.0306124!3m4!1m2!1d121.6147272!2d24.0966174!3s0x34689d6f22273e57:0x4044f10d11e51936!1m5!1m1!1s0x34662bbc59bb7d23:0x418f58180968f4b!2m2!1d121.6930556!2d24.2188889!1m5!1m1!1s0x346882845fc2e7ef:0xddd9fd85e0b0aa31!2m2!1d121.4909628!2d24.1939265!1m5!1m1!1s0x34662ba051639099:0x1ea4e5d3efce80ae!2m2!1d121.8425534!2d24.4976738!2m1!1b1!3e0)
+[宜蘭到台北](https://www.google.com.tw/maps/dir/%E5%AE%9C%E8%98%AD%E7%B8%A3/%E7%8C%B4%E6%B4%9E%E5%9D%91%E7%80%91%E5%B8%83/%E9%A0%AD%E5%9F%8E%E6%BF%B1%E6%B5%B7%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92/%E8%98%AD%E9%99%BD%E5%8D%9A%E7%89%A9%E9%A4%A8/%E4%B8%89%E8%B2%82%E8%A7%92%E7%87%88%E5%A1%94/%E6%9C%9B%E5%B9%BD%E8%B0%B7/%E6%B7%B1%E6%BE%B3%E5%B2%AC%E8%A7%92(%E8%B1%A1%E9%BC%BB%E5%B2%A9%E6%99%AF%E8%A7%80%E5%8D%80)/%E9%BC%BB%E9%A0%AD%E8%A7%92%E5%85%AC%E5%9C%92/%E5%92%8C%E5%B9%B3%E5%B3%B6%E5%85%AC%E5%9C%92/%E5%8F%B0%E5%8C%97/@25.0625411,121.4180626,11z/data=!4m89!4m88!1m5!1m1!1s0x3467e03d6b232f5b:0xcfbb529e13d307ac!2m2!1d121.7377502!2d24.7021073!1m5!1m1!1s0x3467fa214d0af33b:0x4f7dc81f8fadad73!2m2!1d121.7826479!2d24.8414864!1m5!1m1!1s0x3467f746ae6fee0d:0x48fa34dc9056f6ae!2m2!1d121.8289677!2d24.851232!1m5!1m1!1s0x3467f772b9551861:0x22bf46637bc736a4!2m2!1d121.8325081!2d24.8687221!1m5!1m1!1s0x345d6782806a6b99:0xef53259adbc66719!2m2!1d122.0018916!2d25.0075515!1m5!1m1!1s0x345d4f775037593b:0xf81d7f315ef3655!2m2!1d121.7975138!2d25.1459997!1m5!1m1!1s0x345d459d0b0a7a47:0x32cafc916cffb957!2m2!1d121.8244308!2d25.1355953!1m5!1m1!1s0x345d439050e0554b:0x215f832cbcb93fb7!2m2!1d121.915567!2d25.125187!1m30!1m1!1s0x345d4ee2add3d0bf:0xb2a6e84801d59973!2m2!1d121.7638473!2d25.1606293!3m4!1m2!1d121.5379674!2d25.2893161!3s0x3442b5d50af725f9:0x23fe1361656613c0!3m4!1m2!1d121.4582602!2d25.2425288!3s0x3442b0bd5dcf8759:0x1bb5f8fe76f6f5d1!3m4!1m2!1d121.4573313!2d25.2404308!3s0x3442b0978ece1f69:0x16aee20a925a63e0!3m4!1m2!1d121.4559886!2d25.2357915!3s0x3442b09a6ce5cf2d:0xc14ae1eac5fdff0!3m4!1m2!1d121.4518643!2d25.2312623!3s0x3442b084965fbd07:0x2f1ec53661e7d25e!1m5!1m1!1s0x3442ac72bce20a99:0x3f6a35cedd0ac2e0!2m2!1d121.5654177!2d25.0329694!2m1!1b1!3e0)
+[台北到新竹](https://www.google.com.tw/maps/dir/%E5%8F%B0%E5%8C%97/%E8%A5%BF%E6%9C%AC%E9%A1%98%E5%AF%BA/%E8%A5%BF%E9%96%80%E7%B4%85%E6%A8%93/%E5%9C%B0%E7%86%B1%E8%B0%B7/%E6%B3%95%E9%BC%93%E5%B1%B1%E9%BD%8B%E6%98%8E%E5%AF%BA/%E5%A4%A7%E5%B9%B3%E7%B4%85%E6%A9%8B/%E6%9D%B1%E5%AE%89%E5%8F%A4%E6%A9%8B+306%E6%96%B0%E7%AB%B9%E7%B8%A3%E9%97%9C%E8%A5%BF%E9%8E%AE%E4%B8%AD%E5%B1%B1%E6%9D%B1%E8%B7%AF%E8%B7%9D+%E4%B8%AD+%E5%B1%B1%E6%9D%B1+%E8%B7%AF%E5%8F%A3+%E7%B4%84+100+%E5%85%AC+%E5%B0%BA/%E8%B1%86%E8%85%90%E5%B2%A9/@24.9605918,121.0163535,10z/data=!3m1!4b1!4m52!4m51!1m5!1m1!1s0x3442ac72bce20a99:0x3f6a35cedd0ac2e0!2m2!1d121.5654177!2d25.0329694!1m5!1m1!1s0x3442a909e042ef89:0x7f2ccfe38a870507!2m2!1d121.5066577!2d25.0402702!1m5!1m1!1s0x3442a909a4acec8b:0x7c34275cfedcc1c5!2m2!1d121.5068592!2d25.0420139!1m5!1m1!1s0x3442ae4235dd59e3:0x223863496a66dc30!2m2!1d121.5116195!2d25.1377624!1m5!1m1!1s0x3468181b36ae18db:0x668d8e51ac302b95!2m2!1d121.2743105!2d24.8888576!1m5!1m1!1s0x34683d96ae918c61:0xe81d6eb23506a0e9!2m2!1d121.2455487!2d24.8312136!1m5!1m1!1s0x34683ec31c41e8bf:0xd9d04261389fc1a0!2m2!1d121.1798222!2d24.7908404!1m5!1m1!1s0x3468365275ff8d69:0xb9fc9a3f139d61c3!2m2!1d121.0296557!2d24.7998907!2m1!1b1!3e0)
+[新竹到台中](https://www.google.com.tw/maps/dir/%E6%96%B0%E7%AB%B9+%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80/%E5%8D%97%E5%AF%AE%E6%BC%81%E6%B8%AF%E6%97%85%E9%81%8A%E6%9C%8D%E5%8B%99%E4%B8%AD%E5%BF%83/%E9%A6%99%E5%B1%B1%E8%B1%8E%E7%90%B4%E6%A9%8B/%E5%BE%8C%E9%BE%8D%E9%8E%AE%E5%8D%8A%E5%A4%A9%E5%AF%AE%E4%BC%91%E9%96%92%E6%96%87%E5%8C%96%E5%9C%92%E5%8D%80+-+%E5%A5%BD%E6%9C%9B%E8%A7%92/%E7%99%BD%E6%B2%99%E5%B1%AF%E8%BB%8A%E7%AB%99/%E8%B2%93%E8%B2%8D%E5%B1%B1%E5%85%AC%E5%9C%92/%E7%83%8F%E5%98%8E%E5%BD%A5%E7%AB%B9%E6%9E%97/%E5%8D%93%E8%98%AD%E5%A4%A7%E5%B3%BD%E8%B0%B7/%E7%B6%93%E6%BF%9F%E9%83%A8%E6%B0%B4%E5%88%A9%E7%BD%B2%E4%B8%AD%E5%8D%80%E6%B0%B4%E8%B3%87%E6%BA%90%E5%B1%80%E9%AF%89%E9%AD%9A%E6%BD%AD%E6%B0%B4%E5%BA%AB%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/%E5%8F%B0%E4%B8%AD%E5%B8%82/@24.4981062,120.5420274,10z/data=!3m1!4b1!4m64!4m63!1m5!1m1!1s0x346835db1a4b4b11:0xd409dcbcb5d33b0c!2m2!1d120.9674798!2d24.8138287!1m5!1m1!1s0x346834ee7abcaa0d:0x3c24d350a4f69f7b!2m2!1d120.9280609!2d24.8490192!1m5!1m1!1s0x34684b283a4df3cf:0x8c63ea1827679abd!2m2!1d120.9041552!2d24.7488647!1m5!1m1!1s0x3469ae6555555555:0x8ae528c2b5c1ffb1!2m2!1d120.7312316!2d24.6019617!1m5!1m1!1s0x3469a61f13b1b631:0x8606e17ee881087c!2m2!1d120.708197!2d24.564796!1m5!1m1!1s0x3469abf958c90623:0x9d5c692a649f575d!2m2!1d120.8121523!2d24.556645!1m5!1m1!1s0x3468ffb85d5e1395:0x8574972ed50cec6a!2m2!1d120.920236!2d24.421524!1m5!1m1!1s0x346902f000000001:0xfed8d5f67f414985!2m2!1d120.8295665!2d24.2930172!1m5!1m1!1s0x346904e9bf29517d:0xfdf86af7ee73cd12!2m2!1d120.7734508!2d24.3364449!1m5!1m1!1s0x346917dff97922ef:0x87523ee47ea6447f!2m2!1d120.6736482!2d24.1477358!2m1!1b1!3e0)
+[台中到雲林](https://www.google.com.tw/maps/dir/%E4%B9%9D%E5%A4%A9%E9%BB%91%E6%A3%AE%E6%9E%97+433%E5%8F%B0%E4%B8%AD%E5%B8%82%E6%B2%99%E9%B9%BF%E5%8D%80%E7%AB%B9%E6%9E%97%E9%87%8C/%E5%85%AB%E5%8D%A6%E5%B1%B1%E5%A4%A7%E4%BD%9B%E9%A2%A8%E6%99%AF%E5%8D%80/500%E5%BD%B0%E5%8C%96%E7%B8%A3%E5%BD%B0%E5%8C%96%E5%B8%82%E5%BD%B0%E7%BE%8E%E8%B7%AF%E4%B8%80%E6%AE%B51%E8%99%9F%E6%89%87%E5%BD%A2%E8%BB%8A%E5%BA%AB/%E6%91%B8%E4%B9%B3%E5%B7%B7/%E5%AE%87%E5%AE%99%E5%A1%94/%E7%8E%8B%E5%8A%9F%E9%A2%A8%E5%8A%9B%E7%99%BC%E9%9B%BB%E5%8D%80/%E8%8A%B3%E8%8B%91-%E7%8E%8B%E5%8A%9F%E7%87%88%E5%A1%94/%E8%A5%BF%E8%9E%BA%E5%A4%A7%E6%A9%8B/%E9%A6%AC%E9%B3%B4%E5%B1%B1%E9%8E%AE%E5%AE%89%E5%AE%AE%E4%BA%94%E5%B9%B4%E5%8D%83%E6%AD%B2%E7%A5%96%E5%BB%9F/%E8%99%8E%E5%B0%BE%E9%90%B5%E6%A9%8B+Hu+Wei+Bridge/@23.914785,120.2184042,9z/data=!4m64!4m63!1m5!1m1!1s0x3469143605c666b5:0x6b3a5e257b416a29!2m2!1d120.5974234!2d24.2294293!1m5!1m1!1s0x346938936a963bcb:0x7a4ca852c366fb95!2m2!1d120.5488211!2d24.0784879!1m5!1m1!1s0x34693897ed84d7cd:0x4cfe503e63131b9a!2m2!1d120.540171!2d24.0859482!1m5!1m1!1s0x346945e2b0273283:0x6a02d563ff21462e!2m2!1d120.432318!2d24.051748!1m5!1m1!1s0x3469459c7ee142a3:0xa0fe1f1cc08490db!2m2!1d120.3952311!2d24.0683797!1m5!1m1!1s0x346951b94845225b:0xf6417787d2c588e3!2m2!1d120.3365774!2d23.9840365!1m5!1m1!1s0x3469521703395c99:0x3b575e93fb291dd9!2m2!1d120.3241636!2d23.9711299!1m5!1m1!1s0x346eb442dc389bad:0xe6a32da612ec752b!2m2!1d120.4611321!2d23.8136276!1m5!1m1!1s0x346ea5b69c3db149:0xce91fdb6e61289ae!2m2!1d120.2782537!2d23.6996743!1m5!1m1!1s0x346eb9ffdd7631c9:0xadbf3fccf017d416!2m2!1d120.437427!2d23.700196!2m1!1b1!3e0)
+[雲林到高雄](https://www.google.com.tw/maps/dir/%E5%8C%97%E6%B8%AF%E5%A5%B3%E5%85%92%E6%A9%8B/%E6%9D%B1%E7%9F%B3%E6%BC%81%E4%BA%BA%E7%A2%BC%E9%A0%AD/%E9%AB%98%E8%B7%9F%E9%9E%8B%E6%95%99%E5%A0%82/%E5%8C%97%E9%96%80%E6%B0%B4%E6%99%B6%E6%95%99%E5%A0%82/%E4%B8%83%E8%82%A1%E9%B9%BD%E5%B1%B1/%E5%9C%8B%E8%81%96%E7%87%88%E5%A1%94/%E5%8F%B0%E6%B1%9F%E5%9C%8B%E5%AE%B6%E5%85%AC%E5%9C%92%E7%AE%A1%E7%90%86%E8%99%95+70955%E5%8F%B0%E5%8D%97%E5%B8%82%E5%AE%89%E5%8D%97%E5%8D%80%E5%9B%9B%E8%8D%89%E5%A4%A7%E9%81%93681%E5%B7%B7118%E8%99%9F/%E5%A5%87%E7%BE%8E%E5%8D%9A%E7%89%A9%E9%A4%A8+71755%E5%8F%B0%E5%8D%97%E5%B8%82%E4%BB%81%E5%BE%B7%E5%8D%80%E6%96%87%E8%8F%AF%E8%B7%AF%E4%BA%8C%E6%AE%B566%E8%99%9F/@22.9384605,120.221164,14z/data=!4m52!4m51!1m5!1m1!1s0x346ea28f12dcb4af:0x4c5ba6855c520f42!2m2!1d120.3059317!2d23.5715483!1m5!1m1!1s0x346c27984877e6a3:0x2b32771cf58d476e!2m2!1d120.1359702!2d23.4489062!1m5!1m1!1s0x346c29d82bb25f2d:0xf7b148a7eb61556!2m2!1d120.1487411!2d23.3778402!1m5!1m1!1s0x346c2ac540000001:0xbbadf0e6375b3eea!2m2!1d120.122668!2d23.2642811!1m5!1m1!1s0x346dd6bfcce4164d:0xb72207c97dc6b74e!2m2!1d120.0999988!2d23.1541259!1m5!1m1!1s0x346dd09d8e65f0bd:0xb51bdbe344ca228c!2m2!1d120.0358536!2d23.1006873!1m5!1m1!1s0x346dd8ac88ef1ee1:0x2b12171642192c45!2m2!1d120.1362783!2d23.0027917!1m5!1m1!1s0x346e747aaaaaaaab:0xa88c13e665c7f4a6!2m2!1d120.226068!2d22.934783!2m1!1b1!3e0?hl=zh-TW)
+## 住宿
+
+## ---
+
+住宿方面:
+[Booking.com](https://www.booking.com/index.zh-tw.html?aid=1137179)
+挑個名宿，櫃台付現 就ok囉5~600
+不過是大通鋪可以遇到各種不同的人，這次還遇到澳門的
+  
+## 紀錄
+
+## ---
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRWDgkgiGxMHJ7PyEWMtJ8A2lhNNbH-SfXMywGl0zYo64Pg-mD4ieILCF7oUWssSKfLPLaq8UBvCVXVS1aiPs49-sq9-zL1r5pf72D8T4YwNj8FZOGGTxFgoz7uzxMW5Xt1sR3UhVe2N4/s1600/IMAG2365%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRWDgkgiGxMHJ7PyEWMtJ8A2lhNNbH-SfXMywGl0zYo64Pg-mD4ieILCF7oUWssSKfLPLaq8UBvCVXVS1aiPs49-sq9-zL1r5pf72D8T4YwNj8FZOGGTxFgoz7uzxMW5Xt1sR3UhVe2N4/s1600/IMAG2365%257E2.jpg)
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwdqzsLkTuSxdF1285HpnJXkdbN3w5wYmkIDR0fS7Gz-67mEGEuIJAOxaBka5YV8mg9BDu6yVtYKvsgABINZqugvl-VevzMWA8tPwur4p2c0jN0wZmwBDyXZy13qbIV1X3ls4jOkFHipI/s1600/IMAG2395%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwdqzsLkTuSxdF1285HpnJXkdbN3w5wYmkIDR0fS7Gz-67mEGEuIJAOxaBka5YV8mg9BDu6yVtYKvsgABINZqugvl-VevzMWA8tPwur4p2c0jN0wZmwBDyXZy13qbIV1X3ls4jOkFHipI/s1600/IMAG2395%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitfYSgvgS7_rFgRa0dVR20sfGc8TKCEdgyG-yCDUDRTxvm0eIxkzJT1mZSEjCkjiAyrZ15Y-Vk-HjMwX6wVoP7WDoP1Bg8Ho_E_E3TX7sFmHmwpPoGkJ7ajyWPe5d0b8QwQ6lYH3bcpT0/s1600/IMAG2399%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitfYSgvgS7_rFgRa0dVR20sfGc8TKCEdgyG-yCDUDRTxvm0eIxkzJT1mZSEjCkjiAyrZ15Y-Vk-HjMwX6wVoP7WDoP1Bg8Ho_E_E3TX7sFmHmwpPoGkJ7ajyWPe5d0b8QwQ6lYH3bcpT0/s1600/IMAG2399%257E2.jpg)
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcBKe4pDcpHMnclP_Y8WLtY8_5yl2Bj-1mJMWKxJ_74O9p8zgTPowiad9nnJF0RN68e8kp9P2K5kjG2haVtNKpcBJZN9EsDhfTL5bSqtdKd0q-FVOSUHiYcl50Iluoaah00Bdu8PtbTHg/s1600/IMAG2423_2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcBKe4pDcpHMnclP_Y8WLtY8_5yl2Bj-1mJMWKxJ_74O9p8zgTPowiad9nnJF0RN68e8kp9P2K5kjG2haVtNKpcBJZN9EsDhfTL5bSqtdKd0q-FVOSUHiYcl50Iluoaah00Bdu8PtbTHg/s1600/IMAG2423_2.jpg)
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgc3nposZ-kmWiXjain-AES96D84aR1wRZ_bnmsV4IicGUo8C7HQlghp1RiDYj7ZRQuQgUZxCVnu_UdkiUzXBftF0I3QBJ1tqnIUAiFJaWD2C7_wczge0YNV1GqNNaizrw__KB5-KR75Jw/s1600/IMAG2417%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgc3nposZ-kmWiXjain-AES96D84aR1wRZ_bnmsV4IicGUo8C7HQlghp1RiDYj7ZRQuQgUZxCVnu_UdkiUzXBftF0I3QBJ1tqnIUAiFJaWD2C7_wczge0YNV1GqNNaizrw__KB5-KR75Jw/s1600/IMAG2417%257E2.jpg)
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMftywfiId73zhv7-1adE9R_5aDEbkp4iTmcqdk4tEMqIyFRJFNvytjC4nCR4AC4pHjEKsTgyyNgDh5I8vRJ1OTHkdBMO8N5og0YQ2PC_xNzDxpwD0EG6wh4YW8nB3gIneWxmDtIsjCZU/s1600/IMAG2418%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMftywfiId73zhv7-1adE9R_5aDEbkp4iTmcqdk4tEMqIyFRJFNvytjC4nCR4AC4pHjEKsTgyyNgDh5I8vRJ1OTHkdBMO8N5og0YQ2PC_xNzDxpwD0EG6wh4YW8nB3gIneWxmDtIsjCZU/s1600/IMAG2418%257E2.jpg)
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmAem-h9faKoN-MkxzXe5BgyZh-2gtuL7IQLdQLcynNMCwELjmK3UmyFCNkjCSD5ZNB1x7-lVCwf6vOyy5D3eg4KhPEk7CuMin4krU_-w2K9sXb8EgxLjkJl8K1aM8_WY4IiXOJmpQlFY/s1600/IMAG2460%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmAem-h9faKoN-MkxzXe5BgyZh-2gtuL7IQLdQLcynNMCwELjmK3UmyFCNkjCSD5ZNB1x7-lVCwf6vOyy5D3eg4KhPEk7CuMin4krU_-w2K9sXb8EgxLjkJl8K1aM8_WY4IiXOJmpQlFY/s1600/IMAG2460%257E2.jpg)
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0ed9mWZm0vFftNBJ7FYIhhMSMWSSTx9aN5L_xTtlorLyarJIW-tifaMo1rre3_koHv-Wf3rhMlhq-rP5TlRANXrEu4k6OnCKmnqaMtdqaym08mlZXwzSC7f5eld7fK13ElVY0sMitiJc/s1600/IMAG2542%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0ed9mWZm0vFftNBJ7FYIhhMSMWSSTx9aN5L_xTtlorLyarJIW-tifaMo1rre3_koHv-Wf3rhMlhq-rP5TlRANXrEu4k6OnCKmnqaMtdqaym08mlZXwzSC7f5eld7fK13ElVY0sMitiJc/s1600/IMAG2542%257E2.jpg)
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2OLdPkYwjJmQ5rK54FleH2mwetRo7ZRexePjf3wUogEiFJhtd0wxlDmYeeZcwPos87onPf52lYlRWsBbTtB4yHBqILLf4U2H9GEmwsAJ3eU9iD56qfOzYYDxStpQf9pzan0up0h53ABk/s1600/IMAG2560%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2OLdPkYwjJmQ5rK54FleH2mwetRo7ZRexePjf3wUogEiFJhtd0wxlDmYeeZcwPos87onPf52lYlRWsBbTtB4yHBqILLf4U2H9GEmwsAJ3eU9iD56qfOzYYDxStpQf9pzan0up0h53ABk/s1600/IMAG2560%257E2.jpg)
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdNEBIBBteFB1xMb7fBIUd10grXADF_VGp2F-bmI3SRAerOiv-FcSigDtqoIIZU86C39dzp3ksOv7pNs9dRGUCRW4SHl0-HkqccO4MlSGM2dHwPOLMF2avCS75eahd8qJZRGiIc2dlBkA/s1600/IMAG2583%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdNEBIBBteFB1xMb7fBIUd10grXADF_VGp2F-bmI3SRAerOiv-FcSigDtqoIIZU86C39dzp3ksOv7pNs9dRGUCRW4SHl0-HkqccO4MlSGM2dHwPOLMF2avCS75eahd8qJZRGiIc2dlBkA/s1600/IMAG2583%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaAgwupx2Kvt__QEUUtV8CYxyo9Rt9iFf3e1U5El3t6ZsSXJMlzUYVSJL716y5lJ5Hc09G67s7dtZi58TyFkU7DedhzwTz3wVzs7nAU1FnytBkJ4CgZuAjjZpdZ3QuarbacXP4z50KchU/s1600/IMAG2592%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaAgwupx2Kvt__QEUUtV8CYxyo9Rt9iFf3e1U5El3t6ZsSXJMlzUYVSJL716y5lJ5Hc09G67s7dtZi58TyFkU7DedhzwTz3wVzs7nAU1FnytBkJ4CgZuAjjZpdZ3QuarbacXP4z50KchU/s1600/IMAG2592%257E2.jpg)
+  
+
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg50jzspkIJxet2Z6x014Dz0iwbcyV3OMnD5WwMdUgE9Nx3MO7Lisrcy_VyFNkR9ebWrOkWoVvM8MJLflE1_hek7gaQHzo3cfQNATPdg_U4OGLh6dGuh59KxwQtxKgwtl-ccIn4f4tZWDU/s1600/IMAG2613%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg50jzspkIJxet2Z6x014Dz0iwbcyV3OMnD5WwMdUgE9Nx3MO7Lisrcy_VyFNkR9ebWrOkWoVvM8MJLflE1_hek7gaQHzo3cfQNATPdg_U4OGLh6dGuh59KxwQtxKgwtl-ccIn4f4tZWDU/s1600/IMAG2613%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9-fwTAvEFQg0in_SVVy8dYxQba8tuiEpz7oOe_Ffw30f5HIc9fWGL-bmYokiWSZ6AlVT9EgroRxihGhmgN5L-HjQqZnSN-macSUfsoFGjOXOQphW6lBN9fwLkShc-4WKgpJHgpG2rdMw/s1600/IMAG2620%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9-fwTAvEFQg0in_SVVy8dYxQba8tuiEpz7oOe_Ffw30f5HIc9fWGL-bmYokiWSZ6AlVT9EgroRxihGhmgN5L-HjQqZnSN-macSUfsoFGjOXOQphW6lBN9fwLkShc-4WKgpJHgpG2rdMw/s1600/IMAG2620%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGOBJDPQJiWjQ3pecYIzQZrKFi__6P-yq0URLpKLnqENjm4bko8jQUapNDjqhk25kKbhuhZp9ttbnlXpgnYtbRGOfaE3L6qEJwvkq-tT6RI4tr53ff0b4IjSYG41H77O374fUAs48h5QE/s1600/IMAG2633%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGOBJDPQJiWjQ3pecYIzQZrKFi__6P-yq0URLpKLnqENjm4bko8jQUapNDjqhk25kKbhuhZp9ttbnlXpgnYtbRGOfaE3L6qEJwvkq-tT6RI4tr53ff0b4IjSYG41H77O374fUAs48h5QE/s1600/IMAG2633%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTP7qIcs6l09pdJ97IRjQN_4Z3py2DbBHzuWAsM8GKc2K-U0VvEUL66gCeVS2xquN0HDQFj3l8krPAZZ0h7qdLIe-9wTcucO5JmQNUeqFT7cuFWEwUvXSyBC0W1BuzFTefzIk5xcX1hjg/s1600/IMAG2635%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTP7qIcs6l09pdJ97IRjQN_4Z3py2DbBHzuWAsM8GKc2K-U0VvEUL66gCeVS2xquN0HDQFj3l8krPAZZ0h7qdLIe-9wTcucO5JmQNUeqFT7cuFWEwUvXSyBC0W1BuzFTefzIk5xcX1hjg/s1600/IMAG2635%257E2.jpg)
+  
+
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYpz9ZwBRdmLbw44Xkw-ypD8-xYxlhOwSu9_wk6i-kJomZEhl6kjpSCs_FM3F6073YK0mDYs8AVdJL0EKS6dVFqJTXTzVY0rdFx_4j4KekJaR9xmxoKC03fv4mJHqTV5Gz7_OO42undHI/s1600/IMAG2698%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYpz9ZwBRdmLbw44Xkw-ypD8-xYxlhOwSu9_wk6i-kJomZEhl6kjpSCs_FM3F6073YK0mDYs8AVdJL0EKS6dVFqJTXTzVY0rdFx_4j4KekJaR9xmxoKC03fv4mJHqTV5Gz7_OO42undHI/s1600/IMAG2698%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHDBOgU-kmrmLHhm0tVRkjfUwGNZ4TUCWfAQvM1bhJ4cz7h8oQGCOF3S1EJBy3HKfXzscXsHNBEYnGMhpVCAPtH_vDP0gaF53I4QdeqWN6N3Vel0_g_suAeqovpt_-lOeLKR60tUaPJBA/s1600/IMAG2708%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHDBOgU-kmrmLHhm0tVRkjfUwGNZ4TUCWfAQvM1bhJ4cz7h8oQGCOF3S1EJBy3HKfXzscXsHNBEYnGMhpVCAPtH_vDP0gaF53I4QdeqWN6N3Vel0_g_suAeqovpt_-lOeLKR60tUaPJBA/s1600/IMAG2708%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFyZmwrwLbBqO9082FG5yHfzMYQKCOaTUeZsUWOneKL4y_lLWIyCfHvAI8ntzTYBZKXxTlxcHE1jyViKTgBirMbnpD_6pSFX2dCI9kccqK1RNL2dDjv40Ky2sbJ26ViOLFYP3f57OBOZM/s1600/IMAG2740%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFyZmwrwLbBqO9082FG5yHfzMYQKCOaTUeZsUWOneKL4y_lLWIyCfHvAI8ntzTYBZKXxTlxcHE1jyViKTgBirMbnpD_6pSFX2dCI9kccqK1RNL2dDjv40Ky2sbJ26ViOLFYP3f57OBOZM/s1600/IMAG2740%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwHNFS9tL0fl1ZbtfFrz4RMZXNb2c-MT_yXsEHNxl3mtvLc6xDRUTTpdz7a9aIbgRjLhG4wuqjefmXf5k6jIn1_bnnY3Lom9zXGrkX7BEVwCKiQasB4LSFj5Fo7iqcygZUZ61UdNjeyKw/s1600/IMAG2857%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwHNFS9tL0fl1ZbtfFrz4RMZXNb2c-MT_yXsEHNxl3mtvLc6xDRUTTpdz7a9aIbgRjLhG4wuqjefmXf5k6jIn1_bnnY3Lom9zXGrkX7BEVwCKiQasB4LSFj5Fo7iqcygZUZ61UdNjeyKw/s1600/IMAG2857%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqBM6Gu4THgR3bV5SbhcltFuaPc9WkXrWHOP8AflW571c4E_31Yz6shajhCyJp8-cLuJYf6gSD0r0D6X27foZn3n3Fb1NytJeYHaS30C55o1VaoKurUUPg7TcNsc8SAjDKnZYBwxaoHr4/s1600/IMAG2886%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqBM6Gu4THgR3bV5SbhcltFuaPc9WkXrWHOP8AflW571c4E_31Yz6shajhCyJp8-cLuJYf6gSD0r0D6X27foZn3n3Fb1NytJeYHaS30C55o1VaoKurUUPg7TcNsc8SAjDKnZYBwxaoHr4/s1600/IMAG2886%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrzzvWXCi7M0jJF_rBWKFcga1lVDqQNH_DQZFB3hBeKSa8QCXhDNWD3zDpPqQSyIhHmfsN0qcXVlefMT_Db_Sf23apAh9FpyVZSqle5-RkadXIkzA07SzEY5_lJw9kNQJ8EujWh7pdhfE/s1600/IMAG2959%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrzzvWXCi7M0jJF_rBWKFcga1lVDqQNH_DQZFB3hBeKSa8QCXhDNWD3zDpPqQSyIhHmfsN0qcXVlefMT_Db_Sf23apAh9FpyVZSqle5-RkadXIkzA07SzEY5_lJw9kNQJ8EujWh7pdhfE/s1600/IMAG2959%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtSIOT2Y7l5Smc3hlCJYZc1dYo_aD-X1w3fR_PdFVLsJOEc-qujW8QgrrW104Ug6GypAFB5uoIUSb11wKu9mdRB9NpKqfFKBjo-ihByk8CQFX6asF7mOq4PPIvCOm3ZCQkyFD0KpYkg04/s1600/IMAG2968%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtSIOT2Y7l5Smc3hlCJYZc1dYo_aD-X1w3fR_PdFVLsJOEc-qujW8QgrrW104Ug6GypAFB5uoIUSb11wKu9mdRB9NpKqfFKBjo-ihByk8CQFX6asF7mOq4PPIvCOm3ZCQkyFD0KpYkg04/s1600/IMAG2968%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnfjp5Lxr299JDcL_723S2EInwEg5o2JEPXzvSFwBkEzRXnBlaXLGvvHtQ3DoT66hY4p4sEYwtz5Gp1nx1Pd1Eh9mfoH7npffAki9tKaWSd9j5zvLw5TCetOye8Zl0jIy3MeSrT_LldiU/s1600/IMAG2975%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnfjp5Lxr299JDcL_723S2EInwEg5o2JEPXzvSFwBkEzRXnBlaXLGvvHtQ3DoT66hY4p4sEYwtz5Gp1nx1Pd1Eh9mfoH7npffAki9tKaWSd9j5zvLw5TCetOye8Zl0jIy3MeSrT_LldiU/s1600/IMAG2975%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-y1cY511-pc85RE-yTmywcMmunnhszgp3_-1UDjNIiJ4BKrk1jkju9eQTJIV9A4mZZKyf-NVf0aMqy9TzwSm6CWGrPwNiXPUih-D2w2BZcSgZf1Kz3DqdjJWZOBza7DOVTZNDLnUTRd0/s1600/IMAG3008%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-y1cY511-pc85RE-yTmywcMmunnhszgp3_-1UDjNIiJ4BKrk1jkju9eQTJIV9A4mZZKyf-NVf0aMqy9TzwSm6CWGrPwNiXPUih-D2w2BZcSgZf1Kz3DqdjJWZOBza7DOVTZNDLnUTRd0/s1600/IMAG3008%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6fIVryDLUmo_Pwa6rY5aPeni_XTlc_Jm3Z_fQ7bajcr2TavenJLp6OpC7906A65CcqaGkIBj5IL1Q8x0dskYOovu-zHoOc4tH8L79lLVxWBhlLwD-pToJN3JWMtf0R_RAM-8ovEZynSQ/s1600/IMAG3016%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6fIVryDLUmo_Pwa6rY5aPeni_XTlc_Jm3Z_fQ7bajcr2TavenJLp6OpC7906A65CcqaGkIBj5IL1Q8x0dskYOovu-zHoOc4tH8L79lLVxWBhlLwD-pToJN3JWMtf0R_RAM-8ovEZynSQ/s1600/IMAG3016%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9eLVP4uebOXr0A1FCaAZ2CUPIP1hsmZDCK8iLkERzoHvnUItjuM4L1qDiaFfkaGjFozHMOApVyPK6n7HZRAAbEPJ4IWzMlDV32hWoCb14-0FW9cffgdU3DfjLCO4I7yZCFNJQMIRuJqA/s1600/IMAG3031%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9eLVP4uebOXr0A1FCaAZ2CUPIP1hsmZDCK8iLkERzoHvnUItjuM4L1qDiaFfkaGjFozHMOApVyPK6n7HZRAAbEPJ4IWzMlDV32hWoCb14-0FW9cffgdU3DfjLCO4I7yZCFNJQMIRuJqA/s1600/IMAG3031%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSQ6pEZGM4A5MHr85IUGNdT64CHAtCXrn3l56ODROl-KPZmEiLC16sDSnN1Laccj7QzXkQkOQhDyscAD2FO_pgYftWIutN93DTHikZT3FGVUgvhbUdwtjA5hmE99N0EObYar9Ksx09k1k/s1600/IMAG3033%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSQ6pEZGM4A5MHr85IUGNdT64CHAtCXrn3l56ODROl-KPZmEiLC16sDSnN1Laccj7QzXkQkOQhDyscAD2FO_pgYftWIutN93DTHikZT3FGVUgvhbUdwtjA5hmE99N0EObYar9Ksx09k1k/s1600/IMAG3033%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIDwMmzVsgRGL5UUZ2OZa8eSaC2NSgHKhmwo8fZMnTExXkQ9S9RT09kU6ufTccZVilm6nDdEw-pwe12dJiWYBA2N2YBnIi8EfgkEsSp93Eqg_0h8CxD4RJZKGLvVGoGnHhZZj91uSZPak/s1600/IMAG3052%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIDwMmzVsgRGL5UUZ2OZa8eSaC2NSgHKhmwo8fZMnTExXkQ9S9RT09kU6ufTccZVilm6nDdEw-pwe12dJiWYBA2N2YBnIi8EfgkEsSp93Eqg_0h8CxD4RJZKGLvVGoGnHhZZj91uSZPak/s1600/IMAG3052%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5X1WQXbpVOo6ymA9zkFbJhdd7BGksodXLXrEZtw-92IgcZCboCc-wFMzSiGUzWBa4Pcr4vVyqmbd-we1hnLqCB-4OrKyl1tSEZMgH-dyFXC4o2PdlhJjBb4dToLxhZWic6jAl2lVVdsY/s1600/IMAG3059%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5X1WQXbpVOo6ymA9zkFbJhdd7BGksodXLXrEZtw-92IgcZCboCc-wFMzSiGUzWBa4Pcr4vVyqmbd-we1hnLqCB-4OrKyl1tSEZMgH-dyFXC4o2PdlhJjBb4dToLxhZWic6jAl2lVVdsY/s1600/IMAG3059%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLQj89b7mhBpaIjlfw0JGNBGzZZUJgakgqYkkUQRFE7rQ6slBRt8LJuhKEFELrgbnP42wP9rCeXDSLhAGLhWOYOm_JGLvUs7M5rVp9ulbZowKLeL7t04kCJsVqRsVqY4XGDzwgtlMndwE/s1600/IMAG3085%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLQj89b7mhBpaIjlfw0JGNBGzZZUJgakgqYkkUQRFE7rQ6slBRt8LJuhKEFELrgbnP42wP9rCeXDSLhAGLhWOYOm_JGLvUs7M5rVp9ulbZowKLeL7t04kCJsVqRsVqY4XGDzwgtlMndwE/s1600/IMAG3085%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrGYkYr-aFjnzzlaEN2lNxPnpbX6rEVeO9flXCleY6YPXrTJqFlU1o_tZ_76Wkp3uJMyKXcP1fjdxY3jGZ5gpGSENX5JA8gnBglx2UU4DM5VFTRUoN5ABeVK7xDUOokJjLts7ehjzZ6Us/s1600/IMAG3093%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrGYkYr-aFjnzzlaEN2lNxPnpbX6rEVeO9flXCleY6YPXrTJqFlU1o_tZ_76Wkp3uJMyKXcP1fjdxY3jGZ5gpGSENX5JA8gnBglx2UU4DM5VFTRUoN5ABeVK7xDUOokJjLts7ehjzZ6Us/s1600/IMAG3093%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEUq_Ai1744WMYiQkN9MyHwzytZiKRMLz7zvoWnX7w_XzoVri9wgR6dauVEoW6tyMAdDkVbdDUXccSDtmEYPE_JQxxiqHkF1f3V5Uf8T5ujF3h83giwIJzG3QIzfHtAr0ZBpedg25LMAc/s1600/IMAG3112%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEUq_Ai1744WMYiQkN9MyHwzytZiKRMLz7zvoWnX7w_XzoVri9wgR6dauVEoW6tyMAdDkVbdDUXccSDtmEYPE_JQxxiqHkF1f3V5Uf8T5ujF3h83giwIJzG3QIzfHtAr0ZBpedg25LMAc/s1600/IMAG3112%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgc6oXicoaYdqJnGNVuNlMElZ2rxEqrCAVfNxPX-nVbOzxNKAnQ9WCrsREE5lq1UphXEJeFBJJo9BtELFaN2uLUnHpAEIuycxBzcZFKC0ilYUzuBE8Ewouux-Rmi3s-M8YFlvi6-W7_GEE/s1600/IMAG3119%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgc6oXicoaYdqJnGNVuNlMElZ2rxEqrCAVfNxPX-nVbOzxNKAnQ9WCrsREE5lq1UphXEJeFBJJo9BtELFaN2uLUnHpAEIuycxBzcZFKC0ilYUzuBE8Ewouux-Rmi3s-M8YFlvi6-W7_GEE/s1600/IMAG3119%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRTYvySBd0YcrpbOdQSEVrYQBcEAcLp__dqW1Oc6sOd5wM8vUSmUqH_9T5EFVVdu2ymepw0ASqGLsbDDova5LCKfrJhlFfMiMThJpIDvWfkLiQ8tRjlQ0xmfUXeYPqJPSA1PhQT0kSgto/s1600/IMAG3186%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRTYvySBd0YcrpbOdQSEVrYQBcEAcLp__dqW1Oc6sOd5wM8vUSmUqH_9T5EFVVdu2ymepw0ASqGLsbDDova5LCKfrJhlFfMiMThJpIDvWfkLiQ8tRjlQ0xmfUXeYPqJPSA1PhQT0kSgto/s1600/IMAG3186%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQM7TULHu3XVjpCQuovygMev_dZrlsOzS-r0bjoGvXiaL43SHgkHH1F80hTeZ14D1yjAPVR9QpdJvTWfKp26hM1FkzxjGM2LZ5rtqeVpzheSEMpY52ZIT3Nnu7tVWzwu_-oamBZk_B6Ws/s1600/IMAG3290%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQM7TULHu3XVjpCQuovygMev_dZrlsOzS-r0bjoGvXiaL43SHgkHH1F80hTeZ14D1yjAPVR9QpdJvTWfKp26hM1FkzxjGM2LZ5rtqeVpzheSEMpY52ZIT3Nnu7tVWzwu_-oamBZk_B6Ws/s1600/IMAG3290%257E2.jpg)
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjhcrWtNYJD8nzMsVTv6BQ6xfY23kQdt2m-V7IJ4TicrRIsHHiN_KPy9h_tdxX70pgZEdzFRqnOhKHe64PmQmgpsK88kFD0HyQW4OIPATEy84HLtETUhEHVLOPpv9TKNojapkVFTUt_Mo/s1600/IMAG3056%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjhcrWtNYJD8nzMsVTv6BQ6xfY23kQdt2m-V7IJ4TicrRIsHHiN_KPy9h_tdxX70pgZEdzFRqnOhKHe64PmQmgpsK88kFD0HyQW4OIPATEy84HLtETUhEHVLOPpv9TKNojapkVFTUt_Mo/s1600/IMAG3056%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTpioAQ3oZSWFs-obLoa_vutYHmmNnaBOM0AjmIcUgq_0rNi0belBPTU-J2IQd69DtamUnksfzmJtL47D5WB6eFRbNnvd_KkvGPQQoVRB6LlguwI2Pe1w3DNU8tXlyAuXy-YJcKOmd4eM/s1600/IMAG3308%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTpioAQ3oZSWFs-obLoa_vutYHmmNnaBOM0AjmIcUgq_0rNi0belBPTU-J2IQd69DtamUnksfzmJtL47D5WB6eFRbNnvd_KkvGPQQoVRB6LlguwI2Pe1w3DNU8tXlyAuXy-YJcKOmd4eM/s1600/IMAG3308%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjizpgd29mf1X3lUS8MqZVbDf8gkvQmnn4WuWIlQgp-K0aidDEy-qo1bWclphZiMNswecXKCInmWGJkUXV06fmPMt1Dzq-N8LxSM7RujCZmw3IcKDDbzMPDY-MN3T3V_DJK0YM8ZFJnQVY/s1600/IMAG3427.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjizpgd29mf1X3lUS8MqZVbDf8gkvQmnn4WuWIlQgp-K0aidDEy-qo1bWclphZiMNswecXKCInmWGJkUXV06fmPMt1Dzq-N8LxSM7RujCZmw3IcKDDbzMPDY-MN3T3V_DJK0YM8ZFJnQVY/s1600/IMAG3427.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia1_zuviqH0KrY7JzPI3JOlHohsFZCLAh13LXRdorAoxWfDXV__wuZqTkQyV8ND8hvweJf1yKNaBKLOh_J88wwQ3vvRG2oA_BqBxn2m_vvui2X3Bv8dbw9GaRoCcMxfsggVXyoIg0mKYk/s1600/IMAG3445.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia1_zuviqH0KrY7JzPI3JOlHohsFZCLAh13LXRdorAoxWfDXV__wuZqTkQyV8ND8hvweJf1yKNaBKLOh_J88wwQ3vvRG2oA_BqBxn2m_vvui2X3Bv8dbw9GaRoCcMxfsggVXyoIg0mKYk/s1600/IMAG3445.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIMdLjPpdeMF-_0kbHP9nmBRkrkSkOEtIxIbD5OnOO16gKVfBRaBd0nF03RdwacJ0ixTtWXF_-DXdDZUIOEhNSG6upbrmwiondDzXvAZwyXmzf0cvdhhWeffjaLzojvA7ziScgyXEtIvg/s1600/IMAG3379%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIMdLjPpdeMF-_0kbHP9nmBRkrkSkOEtIxIbD5OnOO16gKVfBRaBd0nF03RdwacJ0ixTtWXF_-DXdDZUIOEhNSG6upbrmwiondDzXvAZwyXmzf0cvdhhWeffjaLzojvA7ziScgyXEtIvg/s1600/IMAG3379%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnorUeU5hJeT05ryBxicW-UrJFZUO6u85AgQ2X2Fjdax62zIgVjkhfmPyGPMP4sGx8aTqwcknBm_hfXp64c8xGd2V18WyD7O-sQpr4QhQ4dzZIP7VHxUO-Zhex53MVPuL0B3g4kkCnJ_0/s1600/IMAG3407%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnorUeU5hJeT05ryBxicW-UrJFZUO6u85AgQ2X2Fjdax62zIgVjkhfmPyGPMP4sGx8aTqwcknBm_hfXp64c8xGd2V18WyD7O-sQpr4QhQ4dzZIP7VHxUO-Zhex53MVPuL0B3g4kkCnJ_0/s1600/IMAG3407%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghBOkGYye0rWpNzbnCkOQtaUNOFeXuPRAZpclApjmTmNAkFIoKTLVEKhK6rsaybhpinKC_75Ho3FG0a9Sq5k5Miu4j-lPn8rLRpSEeWQoRjVjfVoAR4kcnZRk-hrjRG1cZs1dz3OsIUpo/s1600/IMAG3510%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghBOkGYye0rWpNzbnCkOQtaUNOFeXuPRAZpclApjmTmNAkFIoKTLVEKhK6rsaybhpinKC_75Ho3FG0a9Sq5k5Miu4j-lPn8rLRpSEeWQoRjVjfVoAR4kcnZRk-hrjRG1cZs1dz3OsIUpo/s1600/IMAG3510%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpLmEX8p_km1SPxKDdG7Kj9h6_T8g-LaBYY16lJomksKCsAz8oyYX2K5bxTN-IiEvuOBRGf7gcgEoFE4Q_9JExDIqLcgsPpyFO2Wzc02SWOfJKuuw-MAvqn2jO3GfKD4vLKTD8iXzMU9g/s1600/IMAG3520%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpLmEX8p_km1SPxKDdG7Kj9h6_T8g-LaBYY16lJomksKCsAz8oyYX2K5bxTN-IiEvuOBRGf7gcgEoFE4Q_9JExDIqLcgsPpyFO2Wzc02SWOfJKuuw-MAvqn2jO3GfKD4vLKTD8iXzMU9g/s1600/IMAG3520%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhn_oqghEhS5IfaHsXhnMs0owWKsfX35DAULWACZ9z2KfdxMurhcDTf6aqjks-dl2vzoOJv7i6qIB3HRYe2jnY7bz7An53_-oq2zAvJcLISDCBa9ZbVMCmXQmlEz_n0DzUF6yBrLkL_P0w/s1600/IMAG3527%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhn_oqghEhS5IfaHsXhnMs0owWKsfX35DAULWACZ9z2KfdxMurhcDTf6aqjks-dl2vzoOJv7i6qIB3HRYe2jnY7bz7An53_-oq2zAvJcLISDCBa9ZbVMCmXQmlEz_n0DzUF6yBrLkL_P0w/s1600/IMAG3527%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvvyuLBpztIaJivrVWEww-1iV64seguA1vhRkhbSjg-XcRMk42iopPkNzQz4CmESLqjX7lGSV7wwQ4FMf3ZNMQ5nol7IqZHwQUjaGC-1BFxoD3n52PO5_kHblp_q-WaOMBmQSmjZh6YxU/s1600/IMAG3582%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvvyuLBpztIaJivrVWEww-1iV64seguA1vhRkhbSjg-XcRMk42iopPkNzQz4CmESLqjX7lGSV7wwQ4FMf3ZNMQ5nol7IqZHwQUjaGC-1BFxoD3n52PO5_kHblp_q-WaOMBmQSmjZh6YxU/s1600/IMAG3582%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgn-VN18gzw6qzIs5pEik5LdZ4bY-b7pXrWNgwAo-yiT4KfTQu07b6JLMRfGT9s2KRIqNvKF-7sxHxiWQ1fcORRJ-aOjPbBnh0gTe6MJhHFqQVS1_uPxNT0Zd3BBwfVjFyTHRUTKUimxB4/s1600/IMAG3642%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgn-VN18gzw6qzIs5pEik5LdZ4bY-b7pXrWNgwAo-yiT4KfTQu07b6JLMRfGT9s2KRIqNvKF-7sxHxiWQ1fcORRJ-aOjPbBnh0gTe6MJhHFqQVS1_uPxNT0Zd3BBwfVjFyTHRUTKUimxB4/s1600/IMAG3642%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpCnxoNgl3EKgYIyr8GXJxgso5ohQjc31mn814KH-KmutOtyJOHK4q3jZxfMH_5CylS7UfSb5vHMfxyoSHDf338KDRaqPbudRI4fct1ITiMmSXjxpDIn-zuIHIA34HDKhf_RMkVLZqE70/s1600/IMAG3736%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpCnxoNgl3EKgYIyr8GXJxgso5ohQjc31mn814KH-KmutOtyJOHK4q3jZxfMH_5CylS7UfSb5vHMfxyoSHDf338KDRaqPbudRI4fct1ITiMmSXjxpDIn-zuIHIA34HDKhf_RMkVLZqE70/s1600/IMAG3736%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgufnyB7SUfqnJI75Taq1dWCVye0aeKD-dK_xu3Z2RG_0ygkfh2b1vxWkNxEDZKv_LJ04Qb2q0Ziez4aEHmM1vtNkR4q5xj_k2NzuE7-nZZ9pD96FIdCZWEbiuq4zoUOgO9mBRhyphenhyphenzkQqXM/s1600/IMAG3745%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgufnyB7SUfqnJI75Taq1dWCVye0aeKD-dK_xu3Z2RG_0ygkfh2b1vxWkNxEDZKv_LJ04Qb2q0Ziez4aEHmM1vtNkR4q5xj_k2NzuE7-nZZ9pD96FIdCZWEbiuq4zoUOgO9mBRhyphenhyphenzkQqXM/s1600/IMAG3745%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLUqbjgGrQUdgxAUDSkDG1JDP87JG4uX-4ZjED5UdPFb2jE1KzYKXofCW1-61vGf2mxPYRgUMien4h99PqDY0ulorPIxFnLoB3aMh8Md7XKXAGjHxGI1HFYUN-An15OBgYJ-oqBB-58nA/s1600/IMAG3751%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLUqbjgGrQUdgxAUDSkDG1JDP87JG4uX-4ZjED5UdPFb2jE1KzYKXofCW1-61vGf2mxPYRgUMien4h99PqDY0ulorPIxFnLoB3aMh8Md7XKXAGjHxGI1HFYUN-An15OBgYJ-oqBB-58nA/s1600/IMAG3751%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrs8nANSXhlm1_FbfdE-PczN6RY1DjCUGE5FtO6bMJVtPtHuBWAZAf5xjuSAnokN6L-lxxHU_dc3BM05MGBckAaaLsQZvk0VB-jr2j0XFN0IJ-PGCGlA5QnCGkK6GU6okDK2MmPALNYc8/s1600/IMAG3785%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrs8nANSXhlm1_FbfdE-PczN6RY1DjCUGE5FtO6bMJVtPtHuBWAZAf5xjuSAnokN6L-lxxHU_dc3BM05MGBckAaaLsQZvk0VB-jr2j0XFN0IJ-PGCGlA5QnCGkK6GU6okDK2MmPALNYc8/s1600/IMAG3785%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhc8DuQ0MgkQ7nNoJb4DkVn77ZI-v2BCPWrvhtY-zcQpK7mtoy_LAI7iQsFX1CLufu7f6N3JsewDz6GAb4E1vDvJ5BYGR-qgxcAh_-hXMiHdeuGkVouik_OqTysZGl60v8ajzvgjsX8t6c/s1600/IMAG3787%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhc8DuQ0MgkQ7nNoJb4DkVn77ZI-v2BCPWrvhtY-zcQpK7mtoy_LAI7iQsFX1CLufu7f6N3JsewDz6GAb4E1vDvJ5BYGR-qgxcAh_-hXMiHdeuGkVouik_OqTysZGl60v8ajzvgjsX8t6c/s1600/IMAG3787%257E2.jpg)
+  
+
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioPqwwkZ66eZD5dx5FvU0AVQ7o-P0dgm7jfjWu0i13_02c8ZNCQVngNeuJJeGA6xQI1se_XWzNYlaE7emAtGgNP2N-_BkwFSWAklZIR5I2FsnngxWkEE9AJlKqJvBldoRcOMHzEetLtvA/s1600/IMAG3792%257E2.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioPqwwkZ66eZD5dx5FvU0AVQ7o-P0dgm7jfjWu0i13_02c8ZNCQVngNeuJJeGA6xQI1se_XWzNYlaE7emAtGgNP2N-_BkwFSWAklZIR5I2FsnngxWkEE9AJlKqJvBldoRcOMHzEetLtvA/s1600/IMAG3792%257E2.jpg)
+  
+
+[更多圖影 ....太多我懶得條圖片效果，少放大魯閣(?](https://mega.nz/#F!90tHRDTI!bsu-_-G-8F6DqH-zQSIIOA)
+[bloggerz](https://mega.nz/#F!IgtDVZ6I!feUlWArNZ-UKmXiMZXTOew)

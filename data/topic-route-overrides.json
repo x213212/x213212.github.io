@@ -1,0 +1,75 @@
+{
+  "description": "Route-level topic refinements for posts that have no original Blogger tag, or only a format tag such as Tutorial. This does not change Markdown or raw Blogger labels.",
+  "overrides": {
+    "2026/05/3d-scanner.html": [
+      "embedded-iot-hardware"
+    ],
+    "2022/10/mini-riscv-os.html": [
+      "systems-os-compilers"
+    ],
+    "2022/10/run-gbemulator-in-webassembly-reload.html": [
+      "games-multimedia"
+    ],
+    "2022/10/antlr4ts-visitor-listener-example.html": [
+      "programming-software-engineering"
+    ],
+    "2022/09/run-gbemulator-in-webassembly-fix.html": [
+      "games-multimedia",
+      "systems-os-compilers"
+    ],
+    "2022/03/megaminx.html": [
+      "personal-life"
+    ],
+    "2022/01/linux-namespace-container.html": [
+      "systems-os-compilers"
+    ],
+    "2021/01/blog-post.html": [
+      "systems-os-compilers"
+    ],
+    "2020/06/spring-mvc-mybatis.html": [
+      "backend-distributed-systems"
+    ],
+    "2020/06/spring-mvc-boot-application-by.html": [
+      "backend-distributed-systems"
+    ],
+    "2020/05/spring-mvc.html": [
+      "backend-distributed-systems"
+    ],
+    "2020/05/spring-aop.html": [
+      "backend-distributed-systems"
+    ],
+    "2020/05/spring-ioc.html": [
+      "backend-distributed-systems"
+    ],
+    "2019/12/mvcmvpmvvm.html": [
+      "web-frontend-mobile"
+    ],
+    "2018/09/linebot.html": [
+      "systems-os-compilers"
+    ],
+    "2018/09/kali-install-legacy.html": [
+      "security-reverse-engineering"
+    ],
+    "2018/09/indows10-ubuntu.html": [
+      "systems-os-compilers"
+    ],
+    "2018/09/blog-post_23.html": [
+      "embedded-iot-hardware"
+    ],
+    "2018/09/uefi.html": [
+      "systems-os-compilers"
+    ],
+    "2018/09/windows-10-iis-setting.html": [
+      "web-frontend-mobile"
+    ],
+    "2018/08/mysql.html": [
+      "backend-distributed-systems"
+    ],
+    "2018/08/blog-post_25.html": [
+      "systems-os-compilers"
+    ],
+    "2018/06/blog-post_12.html": [
+      "systems-os-compilers"
+    ]
+  }
+}

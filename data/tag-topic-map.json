@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "description": "Display-only English topic merge for original Blogger labels. This source map never edits article Markdown or original tags.",
+  "topics": [
+    {
+      "id": "programming-software-engineering",
+      "label": "Programming & Software Engineering",
+      "description": "Languages, language tooling, and core programming concepts.",
+      "show_in_word_cloud": true,
+      "tags": [
+        ".Jave", ".net", "antlr4ts", "bfs", "c", "C#", "dfs", "erlang", "golang", "Java", "java`", "Jave", "lua", "n ary", "nuitka", "nutika", "PHP", "Python", "rust", "rust.orm", "Vb6", "vscode Extension"
+      ]
+    },
+    {
+      "id": "backend-distributed-systems",
+      "label": "Backend & Distributed Systems",
+      "description": "APIs, data stores, messaging, and service architectures.",
+      "show_in_word_cloud": true,
+      "tags": [
+        "distributed system", "elasticsearch", "feign", "flask", "HighLevelRESTClient", "Hystrix", "id generator", "kafka", "microservice", "Mini-BitTorrent", "mongodb", "Mybatis", "mysql", "nsq", "oauth2.0", "rabbitmq", "Redis", "ribbon", "rpc", "server", "spring boot", "Spring Cloud", "spring cloud bus", "spring mvc", "spring security", "webserver", "websocket", "zookeeper", "Zuul"
+      ]
+    },
+    {
+      "id": "systems-os-compilers",
+      "label": "Systems, OS & Compilers",
+      "description": "Operating systems, toolchains, debugging, and low-level runtime work.",
+      "show_in_word_cloud": true,
+      "tags": [
+        "arm", "asli", "asm", "asm viewer", "asm2cfg", "assembly", "bpf.ebpf", "callgraph", "cbc", "cfg", "compare", "complier", "contorl flow graph", "crc", "deadlock", "dtrace", "ebpf", "elf diff", "gcc", "gcc 12", "gcc plugin", "gdb", "gdbserver", "gimple", "inline", "ipc", "lab-net", "libclang", "link", "linux", "linux hook", "linux kernel", "llvm", "memleak", "mtrace", "net", "OpenMp", "os", "osdev", "pass", "plugin", "pthread", "qemu", "riscv", "riscv pmp", "risv", "rtl", "sharedmemory", "trace gdb", "unroll loop", "vector", "vga", "virtio", "vm", "xv6"
+      ]
+    },
+    {
+      "id": "security-reverse-engineering",
+      "label": "Security & Reverse Engineering",
+      "description": "Security research, program analysis, fuzzing, and reverse engineering.",
+      "show_in_word_cloud": true,
+      "tags": [
+        "AddressSanitizer", "afl++", "angr", "cheat", "double free", "eset", "frida", "hacking", "ida", "ollvm", "pyvexir", "static analyzer", "symbolic execution", "taintgrind", "use after free", "Valgrind", "z3"
+      ]
+    },
+    {
+      "id": "devops-cloud",
+      "label": "DevOps & Cloud",
+      "description": "Deployment, CI/CD, containers, observability, and cloud operations.",
+      "show_in_word_cloud": true,
+      "tags": [
+        "auto scaling", "autodevops", "centos7", "CircleCI", "devops", "docker", "docker hub", "drone", "eagleeye", "elk", "GCP", "git", "gitlab", "jenkins", "Jmater", "kibana", "Kubernetes", "loadblance", "Logstash", "nginx", "ngork", "nix", "openresty", "ssh", "track", "watchman", "zipkin"
+      ]
+    },
+    {
+      "id": "web-frontend-mobile",
+      "label": "Web, Frontend & Mobile",
+      "description": "Frontend frameworks, browser technologies, and mobile applications.",
+      "show_in_word_cloud": true,
+      "tags": [
+        "actionscript", "Android", "e2e", "facebook", "Flex", "google", "html5", "node.js", "Nodejs", "reactjs", "vue", "vue.js", "wasm", "WebAssembly"
+      ]
+    },
+    {
+      "id": "embedded-iot-hardware",
+      "label": "Embedded, IoT & Hardware",
+      "description": "Microcontrollers, devices, electronics, and physical computing.",
+      "show_in_word_cloud": true,
+      "tags": [
+        "3d printer", "arduino", "Embedded", "esp8266", "IR_remote", "jetson", "nas", "nodemcu", "opensbi", "oscilloscope art", "port tp-link wifi driver", "porting", "radio rtl sdr", "RFID", "ups", "xbox", "zynq7020"
+      ]
+    },
+    {
+      "id": "ai-data",
+      "label": "AI & Data",
+      "description": "Machine learning, LLMs, data workflows, and intelligent systems.",
+      "show_in_word_cloud": true,
+      "tags": [
+        "Activeloop", "Algorithm", "chatbot", "chatgpt", "cube", "dify", "graphrag", "llama3.2", "llm", "lstm", "mlps", "mstc", "openai", "openmanus", "pytorch", "q learning", "tensorflow", "tesorflow"
+      ]
+    },
+    {
+      "id": "finance-blockchain",
+      "label": "Finance & Blockchain",
+      "description": "Markets, automated trading, cryptocurrencies, and smart contracts.",
+      "show_in_word_cloud": true,
+      "tags": [
+        "Bcoin", "bitcoin", "bond", "eth", "ganache", "geth", "ntf", "solidity", "Stock", "web3"
+      ]
+    },
+    {
+      "id": "games-multimedia",
+      "label": "Games & Multimedia",
+      "description": "Game development, emulation, streaming, video, and interactive media.",
+      "show_in_word_cloud": true,
+      "tags": [
+        "adobe media server", "Conway’s Game of Life", "ffmpeg", "Game_maker", "gameboy", "gb_emu", "ghost cube", "hls", "live", "livego", "rtmp"
+      ]
+    },
+    {
+      "id": "personal-life",
+      "label": "Personal & Life",
+      "description": "Personal notes, repairs, and non-technical life posts.",
+      "show_in_word_cloud": true,
+      "tags": [
+        "Life", "Repair", "note4"
+      ]
+    },
+    {
+      "id": "tutorials-guides",
+      "label": "Tutorials & Guides",
+      "description": "Original format label retained separately so it does not dominate the topic cloud.",
+      "show_in_word_cloud": false,
+      "tags": [
+        "Tutorial"
+      ]
+    },
+    {
+      "id": "projects-experiments",
+      "label": "Projects & Experiments",
+      "description": "Original format label for small implementation and experiment posts.",
+      "show_in_word_cloud": false,
+      "tags": [
+        "小實作"
+      ]
+    }
+  ]
+}

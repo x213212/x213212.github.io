@@ -1,0 +1,1384 @@
+{
+  "schema_version": 1,
+  "description": "Curated English topic merge for display and word-cloud navigation. Original Blogger labels and article Markdown are unchanged.",
+  "source": {
+    "map": "data/tag-topic-map.json",
+    "overrides": "data/tag-topic-overrides.json"
+  },
+  "original_tag_count": 225,
+  "original_tag_assignments": 894,
+  "topic_order": [
+    "programming-software-engineering",
+    "backend-distributed-systems",
+    "systems-os-compilers",
+    "security-reverse-engineering",
+    "devops-cloud",
+    "web-frontend-mobile",
+    "embedded-iot-hardware",
+    "ai-data",
+    "finance-blockchain",
+    "games-multimedia",
+    "personal-life",
+    "tutorials-guides",
+    "projects-experiments"
+  ],
+  "topics": [
+    {
+      "id": "programming-software-engineering",
+      "label": "Programming & Software Engineering",
+      "description": "Languages, language tooling, and core programming concepts.",
+      "show_in_word_cloud": true,
+      "post_count": 118,
+      "raw_tag_count": 22,
+      "raw_tag_uses": 125,
+      "weight": 118,
+      "tags": [
+        {
+          "name": "Python",
+          "post_count": 29
+        },
+        {
+          "name": "golang",
+          "post_count": 20
+        },
+        {
+          "name": "Vb6",
+          "post_count": 17
+        },
+        {
+          "name": "Java",
+          "post_count": 13
+        },
+        {
+          "name": "C#",
+          "post_count": 11
+        },
+        {
+          "name": "rust",
+          "post_count": 7
+        },
+        {
+          "name": "lua",
+          "post_count": 4
+        },
+        {
+          "name": "nuitka",
+          "post_count": 4
+        },
+        {
+          "name": ".net",
+          "post_count": 3
+        },
+        {
+          "name": "c",
+          "post_count": 2
+        },
+        {
+          "name": "nutika",
+          "post_count": 2
+        },
+        {
+          "name": "PHP",
+          "post_count": 2
+        },
+        {
+          "name": "vscode Extension",
+          "post_count": 2
+        },
+        {
+          "name": ".Jave",
+          "post_count": 1
+        },
+        {
+          "name": "antlr4ts",
+          "post_count": 1
+        },
+        {
+          "name": "bfs",
+          "post_count": 1
+        },
+        {
+          "name": "dfs",
+          "post_count": 1
+        },
+        {
+          "name": "erlang",
+          "post_count": 1
+        },
+        {
+          "name": "java`",
+          "post_count": 1
+        },
+        {
+          "name": "Jave",
+          "post_count": 1
+        },
+        {
+          "name": "n ary",
+          "post_count": 1
+        },
+        {
+          "name": "rust.orm",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "backend-distributed-systems",
+      "label": "Backend & Distributed Systems",
+      "description": "APIs, data stores, messaging, and service architectures.",
+      "show_in_word_cloud": true,
+      "post_count": 67,
+      "raw_tag_count": 29,
+      "raw_tag_uses": 109,
+      "weight": 67,
+      "tags": [
+        {
+          "name": "spring boot",
+          "post_count": 25
+        },
+        {
+          "name": "Spring Cloud",
+          "post_count": 18
+        },
+        {
+          "name": "Redis",
+          "post_count": 11
+        },
+        {
+          "name": "elasticsearch",
+          "post_count": 6
+        },
+        {
+          "name": "rabbitmq",
+          "post_count": 5
+        },
+        {
+          "name": "server",
+          "post_count": 4
+        },
+        {
+          "name": "flask",
+          "post_count": 3
+        },
+        {
+          "name": "HighLevelRESTClient",
+          "post_count": 3
+        },
+        {
+          "name": "mysql",
+          "post_count": 3
+        },
+        {
+          "name": "spring security",
+          "post_count": 3
+        },
+        {
+          "name": "websocket",
+          "post_count": 3
+        },
+        {
+          "name": "Zuul",
+          "post_count": 3
+        },
+        {
+          "name": "distributed system",
+          "post_count": 2
+        },
+        {
+          "name": "feign",
+          "post_count": 2
+        },
+        {
+          "name": "mongodb",
+          "post_count": 2
+        },
+        {
+          "name": "oauth2.0",
+          "post_count": 2
+        },
+        {
+          "name": "spring mvc",
+          "post_count": 2
+        },
+        {
+          "name": "Hystrix",
+          "post_count": 1
+        },
+        {
+          "name": "id generator",
+          "post_count": 1
+        },
+        {
+          "name": "kafka",
+          "post_count": 1
+        },
+        {
+          "name": "microservice",
+          "post_count": 1
+        },
+        {
+          "name": "Mini-BitTorrent",
+          "post_count": 1
+        },
+        {
+          "name": "Mybatis",
+          "post_count": 1
+        },
+        {
+          "name": "nsq",
+          "post_count": 1
+        },
+        {
+          "name": "ribbon",
+          "post_count": 1
+        },
+        {
+          "name": "rpc",
+          "post_count": 1
+        },
+        {
+          "name": "spring cloud bus",
+          "post_count": 1
+        },
+        {
+          "name": "webserver",
+          "post_count": 1
+        },
+        {
+          "name": "zookeeper",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "systems-os-compilers",
+      "label": "Systems, OS & Compilers",
+      "description": "Operating systems, toolchains, debugging, and low-level runtime work.",
+      "show_in_word_cloud": true,
+      "post_count": 64,
+      "raw_tag_count": 55,
+      "raw_tag_uses": 100,
+      "weight": 64,
+      "tags": [
+        {
+          "name": "complier",
+          "post_count": 6
+        },
+        {
+          "name": "riscv",
+          "post_count": 6
+        },
+        {
+          "name": "osdev",
+          "post_count": 5
+        },
+        {
+          "name": "gcc plugin",
+          "post_count": 4
+        },
+        {
+          "name": "llvm",
+          "post_count": 4
+        },
+        {
+          "name": "asm",
+          "post_count": 3
+        },
+        {
+          "name": "ebpf",
+          "post_count": 3
+        },
+        {
+          "name": "gcc",
+          "post_count": 3
+        },
+        {
+          "name": "inline",
+          "post_count": 3
+        },
+        {
+          "name": "qemu",
+          "post_count": 3
+        },
+        {
+          "name": "xv6",
+          "post_count": 3
+        },
+        {
+          "name": "asm2cfg",
+          "post_count": 2
+        },
+        {
+          "name": "assembly",
+          "post_count": 2
+        },
+        {
+          "name": "dtrace",
+          "post_count": 2
+        },
+        {
+          "name": "gdb",
+          "post_count": 2
+        },
+        {
+          "name": "lab-net",
+          "post_count": 2
+        },
+        {
+          "name": "linux kernel",
+          "post_count": 2
+        },
+        {
+          "name": "memleak",
+          "post_count": 2
+        },
+        {
+          "name": "mtrace",
+          "post_count": 2
+        },
+        {
+          "name": "os",
+          "post_count": 2
+        },
+        {
+          "name": "pass",
+          "post_count": 2
+        },
+        {
+          "name": "pthread",
+          "post_count": 2
+        },
+        {
+          "name": "unroll loop",
+          "post_count": 2
+        },
+        {
+          "name": "virtio",
+          "post_count": 2
+        },
+        {
+          "name": "arm",
+          "post_count": 1
+        },
+        {
+          "name": "asli",
+          "post_count": 1
+        },
+        {
+          "name": "asm viewer",
+          "post_count": 1
+        },
+        {
+          "name": "bpf.ebpf",
+          "post_count": 1
+        },
+        {
+          "name": "callgraph",
+          "post_count": 1
+        },
+        {
+          "name": "cbc",
+          "post_count": 1
+        },
+        {
+          "name": "cfg",
+          "post_count": 1
+        },
+        {
+          "name": "compare",
+          "post_count": 1
+        },
+        {
+          "name": "contorl flow graph",
+          "post_count": 1
+        },
+        {
+          "name": "crc",
+          "post_count": 1
+        },
+        {
+          "name": "deadlock",
+          "post_count": 1
+        },
+        {
+          "name": "elf diff",
+          "post_count": 1
+        },
+        {
+          "name": "gcc 12",
+          "post_count": 1
+        },
+        {
+          "name": "gdbserver",
+          "post_count": 1
+        },
+        {
+          "name": "gimple",
+          "post_count": 1
+        },
+        {
+          "name": "ipc",
+          "post_count": 1
+        },
+        {
+          "name": "libclang",
+          "post_count": 1
+        },
+        {
+          "name": "link",
+          "post_count": 1
+        },
+        {
+          "name": "linux",
+          "post_count": 1
+        },
+        {
+          "name": "linux hook",
+          "post_count": 1
+        },
+        {
+          "name": "net",
+          "post_count": 1
+        },
+        {
+          "name": "OpenMp",
+          "post_count": 1
+        },
+        {
+          "name": "plugin",
+          "post_count": 1
+        },
+        {
+          "name": "riscv pmp",
+          "post_count": 1
+        },
+        {
+          "name": "risv",
+          "post_count": 1
+        },
+        {
+          "name": "rtl",
+          "post_count": 1
+        },
+        {
+          "name": "sharedmemory",
+          "post_count": 1
+        },
+        {
+          "name": "trace gdb",
+          "post_count": 1
+        },
+        {
+          "name": "vector",
+          "post_count": 1
+        },
+        {
+          "name": "vga",
+          "post_count": 1
+        },
+        {
+          "name": "vm",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "security-reverse-engineering",
+      "label": "Security & Reverse Engineering",
+      "description": "Security research, program analysis, fuzzing, and reverse engineering.",
+      "show_in_word_cloud": true,
+      "post_count": 43,
+      "raw_tag_count": 17,
+      "raw_tag_uses": 47,
+      "weight": 43,
+      "tags": [
+        {
+          "name": "hacking",
+          "post_count": 13
+        },
+        {
+          "name": "cheat",
+          "post_count": 8
+        },
+        {
+          "name": "frida",
+          "post_count": 4
+        },
+        {
+          "name": "ida",
+          "post_count": 4
+        },
+        {
+          "name": "static analyzer",
+          "post_count": 4
+        },
+        {
+          "name": "angr",
+          "post_count": 3
+        },
+        {
+          "name": "AddressSanitizer",
+          "post_count": 1
+        },
+        {
+          "name": "afl++",
+          "post_count": 1
+        },
+        {
+          "name": "double free",
+          "post_count": 1
+        },
+        {
+          "name": "eset",
+          "post_count": 1
+        },
+        {
+          "name": "ollvm",
+          "post_count": 1
+        },
+        {
+          "name": "pyvexir",
+          "post_count": 1
+        },
+        {
+          "name": "symbolic execution",
+          "post_count": 1
+        },
+        {
+          "name": "taintgrind",
+          "post_count": 1
+        },
+        {
+          "name": "use after free",
+          "post_count": 1
+        },
+        {
+          "name": "Valgrind",
+          "post_count": 1
+        },
+        {
+          "name": "z3",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "devops-cloud",
+      "label": "DevOps & Cloud",
+      "description": "Deployment, CI/CD, containers, observability, and cloud operations.",
+      "show_in_word_cloud": true,
+      "post_count": 43,
+      "raw_tag_count": 27,
+      "raw_tag_uses": 63,
+      "weight": 43,
+      "tags": [
+        {
+          "name": "docker",
+          "post_count": 13
+        },
+        {
+          "name": "nginx",
+          "post_count": 7
+        },
+        {
+          "name": "openresty",
+          "post_count": 5
+        },
+        {
+          "name": "GCP",
+          "post_count": 4
+        },
+        {
+          "name": "zipkin",
+          "post_count": 4
+        },
+        {
+          "name": "Kubernetes",
+          "post_count": 3
+        },
+        {
+          "name": "CircleCI",
+          "post_count": 2
+        },
+        {
+          "name": "docker hub",
+          "post_count": 2
+        },
+        {
+          "name": "gitlab",
+          "post_count": 2
+        },
+        {
+          "name": "jenkins",
+          "post_count": 2
+        },
+        {
+          "name": "Logstash",
+          "post_count": 2
+        },
+        {
+          "name": "ngork",
+          "post_count": 2
+        },
+        {
+          "name": "auto scaling",
+          "post_count": 1
+        },
+        {
+          "name": "autodevops",
+          "post_count": 1
+        },
+        {
+          "name": "centos7",
+          "post_count": 1
+        },
+        {
+          "name": "devops",
+          "post_count": 1
+        },
+        {
+          "name": "drone",
+          "post_count": 1
+        },
+        {
+          "name": "eagleeye",
+          "post_count": 1
+        },
+        {
+          "name": "elk",
+          "post_count": 1
+        },
+        {
+          "name": "git",
+          "post_count": 1
+        },
+        {
+          "name": "Jmater",
+          "post_count": 1
+        },
+        {
+          "name": "kibana",
+          "post_count": 1
+        },
+        {
+          "name": "loadblance",
+          "post_count": 1
+        },
+        {
+          "name": "nix",
+          "post_count": 1
+        },
+        {
+          "name": "ssh",
+          "post_count": 1
+        },
+        {
+          "name": "track",
+          "post_count": 1
+        },
+        {
+          "name": "watchman",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "web-frontend-mobile",
+      "label": "Web, Frontend & Mobile",
+      "description": "Frontend frameworks, browser technologies, and mobile applications.",
+      "show_in_word_cloud": true,
+      "post_count": 44,
+      "raw_tag_count": 14,
+      "raw_tag_uses": 49,
+      "weight": 44,
+      "tags": [
+        {
+          "name": "vue",
+          "post_count": 14
+        },
+        {
+          "name": "Android",
+          "post_count": 13
+        },
+        {
+          "name": "WebAssembly",
+          "post_count": 6
+        },
+        {
+          "name": "html5",
+          "post_count": 3
+        },
+        {
+          "name": "Nodejs",
+          "post_count": 3
+        },
+        {
+          "name": "Flex",
+          "post_count": 2
+        },
+        {
+          "name": "actionscript",
+          "post_count": 1
+        },
+        {
+          "name": "e2e",
+          "post_count": 1
+        },
+        {
+          "name": "facebook",
+          "post_count": 1
+        },
+        {
+          "name": "google",
+          "post_count": 1
+        },
+        {
+          "name": "node.js",
+          "post_count": 1
+        },
+        {
+          "name": "reactjs",
+          "post_count": 1
+        },
+        {
+          "name": "vue.js",
+          "post_count": 1
+        },
+        {
+          "name": "wasm",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "embedded-iot-hardware",
+      "label": "Embedded, IoT & Hardware",
+      "description": "Microcontrollers, devices, electronics, and physical computing.",
+      "show_in_word_cloud": true,
+      "post_count": 24,
+      "raw_tag_count": 17,
+      "raw_tag_uses": 46,
+      "weight": 24,
+      "tags": [
+        {
+          "name": "Embedded",
+          "post_count": 12
+        },
+        {
+          "name": "esp8266",
+          "post_count": 6
+        },
+        {
+          "name": "nodemcu",
+          "post_count": 6
+        },
+        {
+          "name": "nas",
+          "post_count": 4
+        },
+        {
+          "name": "ups",
+          "post_count": 4
+        },
+        {
+          "name": "arduino",
+          "post_count": 3
+        },
+        {
+          "name": "3d printer",
+          "post_count": 1
+        },
+        {
+          "name": "IR_remote",
+          "post_count": 1
+        },
+        {
+          "name": "jetson",
+          "post_count": 1
+        },
+        {
+          "name": "opensbi",
+          "post_count": 1
+        },
+        {
+          "name": "oscilloscope art",
+          "post_count": 1
+        },
+        {
+          "name": "port tp-link wifi driver",
+          "post_count": 1
+        },
+        {
+          "name": "porting",
+          "post_count": 1
+        },
+        {
+          "name": "radio rtl sdr",
+          "post_count": 1
+        },
+        {
+          "name": "RFID",
+          "post_count": 1
+        },
+        {
+          "name": "xbox",
+          "post_count": 1
+        },
+        {
+          "name": "zynq7020",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "ai-data",
+      "label": "AI & Data",
+      "description": "Machine learning, LLMs, data workflows, and intelligent systems.",
+      "show_in_word_cloud": true,
+      "post_count": 17,
+      "raw_tag_count": 18,
+      "raw_tag_uses": 22,
+      "weight": 17,
+      "tags": [
+        {
+          "name": "tesorflow",
+          "post_count": 3
+        },
+        {
+          "name": "chatbot",
+          "post_count": 2
+        },
+        {
+          "name": "pytorch",
+          "post_count": 2
+        },
+        {
+          "name": "Activeloop",
+          "post_count": 1
+        },
+        {
+          "name": "Algorithm",
+          "post_count": 1
+        },
+        {
+          "name": "chatgpt",
+          "post_count": 1
+        },
+        {
+          "name": "cube",
+          "post_count": 1
+        },
+        {
+          "name": "dify",
+          "post_count": 1
+        },
+        {
+          "name": "graphrag",
+          "post_count": 1
+        },
+        {
+          "name": "llama3.2",
+          "post_count": 1
+        },
+        {
+          "name": "llm",
+          "post_count": 1
+        },
+        {
+          "name": "lstm",
+          "post_count": 1
+        },
+        {
+          "name": "mlps",
+          "post_count": 1
+        },
+        {
+          "name": "mstc",
+          "post_count": 1
+        },
+        {
+          "name": "openai",
+          "post_count": 1
+        },
+        {
+          "name": "openmanus",
+          "post_count": 1
+        },
+        {
+          "name": "q learning",
+          "post_count": 1
+        },
+        {
+          "name": "tensorflow",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "finance-blockchain",
+      "label": "Finance & Blockchain",
+      "description": "Markets, automated trading, cryptocurrencies, and smart contracts.",
+      "show_in_word_cloud": true,
+      "post_count": 27,
+      "raw_tag_count": 10,
+      "raw_tag_uses": 30,
+      "weight": 27,
+      "tags": [
+        {
+          "name": "Stock",
+          "post_count": 15
+        },
+        {
+          "name": "geth",
+          "post_count": 5
+        },
+        {
+          "name": "Bcoin",
+          "post_count": 3
+        },
+        {
+          "name": "bitcoin",
+          "post_count": 1
+        },
+        {
+          "name": "bond",
+          "post_count": 1
+        },
+        {
+          "name": "eth",
+          "post_count": 1
+        },
+        {
+          "name": "ganache",
+          "post_count": 1
+        },
+        {
+          "name": "ntf",
+          "post_count": 1
+        },
+        {
+          "name": "solidity",
+          "post_count": 1
+        },
+        {
+          "name": "web3",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "games-multimedia",
+      "label": "Games & Multimedia",
+      "description": "Game development, emulation, streaming, video, and interactive media.",
+      "show_in_word_cloud": true,
+      "post_count": 23,
+      "raw_tag_count": 11,
+      "raw_tag_uses": 31,
+      "weight": 23,
+      "tags": [
+        {
+          "name": "adobe media server",
+          "post_count": 8
+        },
+        {
+          "name": "Game_maker",
+          "post_count": 8
+        },
+        {
+          "name": "ffmpeg",
+          "post_count": 3
+        },
+        {
+          "name": "gb_emu",
+          "post_count": 2
+        },
+        {
+          "name": "live",
+          "post_count": 2
+        },
+        {
+          "name": "livego",
+          "post_count": 2
+        },
+        {
+          "name": "rtmp",
+          "post_count": 2
+        },
+        {
+          "name": "Conway’s Game of Life",
+          "post_count": 1
+        },
+        {
+          "name": "gameboy",
+          "post_count": 1
+        },
+        {
+          "name": "ghost cube",
+          "post_count": 1
+        },
+        {
+          "name": "hls",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "personal-life",
+      "label": "Personal & Life",
+      "description": "Personal notes, repairs, and non-technical life posts.",
+      "show_in_word_cloud": true,
+      "post_count": 35,
+      "raw_tag_count": 3,
+      "raw_tag_uses": 38,
+      "weight": 35,
+      "tags": [
+        {
+          "name": "Life",
+          "post_count": 35
+        },
+        {
+          "name": "Repair",
+          "post_count": 2
+        },
+        {
+          "name": "note4",
+          "post_count": 1
+        }
+      ]
+    },
+    {
+      "id": "tutorials-guides",
+      "label": "Tutorials & Guides",
+      "description": "Original format label retained separately so it does not dominate the topic cloud.",
+      "show_in_word_cloud": false,
+      "post_count": 198,
+      "raw_tag_count": 1,
+      "raw_tag_uses": 198,
+      "weight": 198,
+      "tags": [
+        {
+          "name": "Tutorial",
+          "post_count": 198
+        }
+      ]
+    },
+    {
+      "id": "projects-experiments",
+      "label": "Projects & Experiments",
+      "description": "Original format label for small implementation and experiment posts.",
+      "show_in_word_cloud": false,
+      "post_count": 36,
+      "raw_tag_count": 1,
+      "raw_tag_uses": 36,
+      "weight": 36,
+      "tags": [
+        {
+          "name": "小實作",
+          "post_count": 36
+        }
+      ]
+    }
+  ],
+  "word_cloud": {
+    "weight_field": "post_count",
+    "description": "Topic weight is the number of unique posts carrying one or more original tags mapped to that topic. Format labels are intentionally excluded.",
+    "topics": [
+      {
+        "id": "programming-software-engineering",
+        "label": "Programming & Software Engineering",
+        "weight": 118,
+        "post_count": 118
+      },
+      {
+        "id": "backend-distributed-systems",
+        "label": "Backend & Distributed Systems",
+        "weight": 67,
+        "post_count": 67
+      },
+      {
+        "id": "systems-os-compilers",
+        "label": "Systems, OS & Compilers",
+        "weight": 64,
+        "post_count": 64
+      },
+      {
+        "id": "security-reverse-engineering",
+        "label": "Security & Reverse Engineering",
+        "weight": 43,
+        "post_count": 43
+      },
+      {
+        "id": "devops-cloud",
+        "label": "DevOps & Cloud",
+        "weight": 43,
+        "post_count": 43
+      },
+      {
+        "id": "web-frontend-mobile",
+        "label": "Web, Frontend & Mobile",
+        "weight": 44,
+        "post_count": 44
+      },
+      {
+        "id": "embedded-iot-hardware",
+        "label": "Embedded, IoT & Hardware",
+        "weight": 24,
+        "post_count": 24
+      },
+      {
+        "id": "ai-data",
+        "label": "AI & Data",
+        "weight": 17,
+        "post_count": 17
+      },
+      {
+        "id": "finance-blockchain",
+        "label": "Finance & Blockchain",
+        "weight": 27,
+        "post_count": 27
+      },
+      {
+        "id": "games-multimedia",
+        "label": "Games & Multimedia",
+        "weight": 23,
+        "post_count": 23
+      },
+      {
+        "id": "personal-life",
+        "label": "Personal & Life",
+        "weight": 35,
+        "post_count": 35
+      }
+    ]
+  },
+  "tag_to_topic": {
+    ".Jave": "programming-software-engineering",
+    ".net": "programming-software-engineering",
+    "3d printer": "embedded-iot-hardware",
+    "actionscript": "web-frontend-mobile",
+    "Activeloop": "ai-data",
+    "AddressSanitizer": "security-reverse-engineering",
+    "adobe media server": "games-multimedia",
+    "afl++": "security-reverse-engineering",
+    "Algorithm": "ai-data",
+    "Android": "web-frontend-mobile",
+    "angr": "security-reverse-engineering",
+    "antlr4ts": "programming-software-engineering",
+    "arduino": "embedded-iot-hardware",
+    "arm": "systems-os-compilers",
+    "asli": "systems-os-compilers",
+    "asm": "systems-os-compilers",
+    "asm viewer": "systems-os-compilers",
+    "asm2cfg": "systems-os-compilers",
+    "assembly": "systems-os-compilers",
+    "auto scaling": "devops-cloud",
+    "autodevops": "devops-cloud",
+    "Bcoin": "finance-blockchain",
+    "bfs": "programming-software-engineering",
+    "bitcoin": "finance-blockchain",
+    "bond": "finance-blockchain",
+    "bpf.ebpf": "systems-os-compilers",
+    "c": "programming-software-engineering",
+    "C#": "programming-software-engineering",
+    "callgraph": "systems-os-compilers",
+    "cbc": "systems-os-compilers",
+    "centos7": "devops-cloud",
+    "cfg": "systems-os-compilers",
+    "chatbot": "ai-data",
+    "chatgpt": "ai-data",
+    "cheat": "security-reverse-engineering",
+    "CircleCI": "devops-cloud",
+    "compare": "systems-os-compilers",
+    "complier": "systems-os-compilers",
+    "contorl flow graph": "systems-os-compilers",
+    "Conway’s Game of Life": "games-multimedia",
+    "crc": "systems-os-compilers",
+    "cube": "ai-data",
+    "deadlock": "systems-os-compilers",
+    "devops": "devops-cloud",
+    "dfs": "programming-software-engineering",
+    "dify": "ai-data",
+    "distributed system": "backend-distributed-systems",
+    "docker": "devops-cloud",
+    "docker hub": "devops-cloud",
+    "double free": "security-reverse-engineering",
+    "drone": "devops-cloud",
+    "dtrace": "systems-os-compilers",
+    "e2e": "web-frontend-mobile",
+    "eagleeye": "devops-cloud",
+    "ebpf": "systems-os-compilers",
+    "elasticsearch": "backend-distributed-systems",
+    "elf diff": "systems-os-compilers",
+    "elk": "devops-cloud",
+    "Embedded": "embedded-iot-hardware",
+    "erlang": "programming-software-engineering",
+    "eset": "security-reverse-engineering",
+    "esp8266": "embedded-iot-hardware",
+    "eth": "finance-blockchain",
+    "facebook": "web-frontend-mobile",
+    "feign": "backend-distributed-systems",
+    "ffmpeg": "games-multimedia",
+    "flask": "backend-distributed-systems",
+    "Flex": "web-frontend-mobile",
+    "frida": "security-reverse-engineering",
+    "Game_maker": "games-multimedia",
+    "gameboy": "games-multimedia",
+    "ganache": "finance-blockchain",
+    "gb_emu": "games-multimedia",
+    "gcc": "systems-os-compilers",
+    "gcc 12": "systems-os-compilers",
+    "gcc plugin": "systems-os-compilers",
+    "GCP": "devops-cloud",
+    "gdb": "systems-os-compilers",
+    "gdbserver": "systems-os-compilers",
+    "geth": "finance-blockchain",
+    "ghost cube": "games-multimedia",
+    "gimple": "systems-os-compilers",
+    "git": "devops-cloud",
+    "gitlab": "devops-cloud",
+    "golang": "programming-software-engineering",
+    "google": "web-frontend-mobile",
+    "graphrag": "ai-data",
+    "hacking": "security-reverse-engineering",
+    "HighLevelRESTClient": "backend-distributed-systems",
+    "hls": "games-multimedia",
+    "html5": "web-frontend-mobile",
+    "Hystrix": "backend-distributed-systems",
+    "id generator": "backend-distributed-systems",
+    "ida": "security-reverse-engineering",
+    "inline": "systems-os-compilers",
+    "ipc": "systems-os-compilers",
+    "IR_remote": "embedded-iot-hardware",
+    "Java": "programming-software-engineering",
+    "java`": "programming-software-engineering",
+    "Jave": "programming-software-engineering",
+    "jenkins": "devops-cloud",
+    "jetson": "embedded-iot-hardware",
+    "Jmater": "devops-cloud",
+    "kafka": "backend-distributed-systems",
+    "kibana": "devops-cloud",
+    "Kubernetes": "devops-cloud",
+    "lab-net": "systems-os-compilers",
+    "libclang": "systems-os-compilers",
+    "Life": "personal-life",
+    "link": "systems-os-compilers",
+    "linux": "systems-os-compilers",
+    "linux hook": "systems-os-compilers",
+    "linux kernel": "systems-os-compilers",
+    "live": "games-multimedia",
+    "livego": "games-multimedia",
+    "llama3.2": "ai-data",
+    "llm": "ai-data",
+    "llvm": "systems-os-compilers",
+    "loadblance": "devops-cloud",
+    "Logstash": "devops-cloud",
+    "lstm": "ai-data",
+    "lua": "programming-software-engineering",
+    "memleak": "systems-os-compilers",
+    "microservice": "backend-distributed-systems",
+    "Mini-BitTorrent": "backend-distributed-systems",
+    "mlps": "ai-data",
+    "mongodb": "backend-distributed-systems",
+    "mstc": "ai-data",
+    "mtrace": "systems-os-compilers",
+    "Mybatis": "backend-distributed-systems",
+    "mysql": "backend-distributed-systems",
+    "n ary": "programming-software-engineering",
+    "nas": "embedded-iot-hardware",
+    "net": "systems-os-compilers",
+    "nginx": "devops-cloud",
+    "ngork": "devops-cloud",
+    "nix": "devops-cloud",
+    "node.js": "web-frontend-mobile",
+    "Nodejs": "web-frontend-mobile",
+    "nodemcu": "embedded-iot-hardware",
+    "note4": "personal-life",
+    "nsq": "backend-distributed-systems",
+    "ntf": "finance-blockchain",
+    "nuitka": "programming-software-engineering",
+    "nutika": "programming-software-engineering",
+    "oauth2.0": "backend-distributed-systems",
+    "ollvm": "security-reverse-engineering",
+    "openai": "ai-data",
+    "openmanus": "ai-data",
+    "OpenMp": "systems-os-compilers",
+    "openresty": "devops-cloud",
+    "opensbi": "embedded-iot-hardware",
+    "os": "systems-os-compilers",
+    "oscilloscope art": "embedded-iot-hardware",
+    "osdev": "systems-os-compilers",
+    "pass": "systems-os-compilers",
+    "PHP": "programming-software-engineering",
+    "plugin": "systems-os-compilers",
+    "port tp-link wifi driver": "embedded-iot-hardware",
+    "porting": "embedded-iot-hardware",
+    "pthread": "systems-os-compilers",
+    "Python": "programming-software-engineering",
+    "pytorch": "ai-data",
+    "pyvexir": "security-reverse-engineering",
+    "q learning": "ai-data",
+    "qemu": "systems-os-compilers",
+    "rabbitmq": "backend-distributed-systems",
+    "radio rtl sdr": "embedded-iot-hardware",
+    "reactjs": "web-frontend-mobile",
+    "Redis": "backend-distributed-systems",
+    "Repair": "personal-life",
+    "RFID": "embedded-iot-hardware",
+    "ribbon": "backend-distributed-systems",
+    "riscv": "systems-os-compilers",
+    "riscv pmp": "systems-os-compilers",
+    "risv": "systems-os-compilers",
+    "rpc": "backend-distributed-systems",
+    "rtl": "systems-os-compilers",
+    "rtmp": "games-multimedia",
+    "rust": "programming-software-engineering",
+    "rust.orm": "programming-software-engineering",
+    "server": "backend-distributed-systems",
+    "sharedmemory": "systems-os-compilers",
+    "solidity": "finance-blockchain",
+    "spring boot": "backend-distributed-systems",
+    "Spring Cloud": "backend-distributed-systems",
+    "spring cloud bus": "backend-distributed-systems",
+    "spring mvc": "backend-distributed-systems",
+    "spring security": "backend-distributed-systems",
+    "ssh": "devops-cloud",
+    "static analyzer": "security-reverse-engineering",
+    "Stock": "finance-blockchain",
+    "symbolic execution": "security-reverse-engineering",
+    "taintgrind": "security-reverse-engineering",
+    "tensorflow": "ai-data",
+    "tesorflow": "ai-data",
+    "trace gdb": "systems-os-compilers",
+    "track": "devops-cloud",
+    "Tutorial": "tutorials-guides",
+    "unroll loop": "systems-os-compilers",
+    "ups": "embedded-iot-hardware",
+    "use after free": "security-reverse-engineering",
+    "Valgrind": "security-reverse-engineering",
+    "Vb6": "programming-software-engineering",
+    "vector": "systems-os-compilers",
+    "vga": "systems-os-compilers",
+    "virtio": "systems-os-compilers",
+    "vm": "systems-os-compilers",
+    "vscode Extension": "programming-software-engineering",
+    "vue": "web-frontend-mobile",
+    "vue.js": "web-frontend-mobile",
+    "wasm": "web-frontend-mobile",
+    "watchman": "devops-cloud",
+    "web3": "finance-blockchain",
+    "WebAssembly": "web-frontend-mobile",
+    "webserver": "backend-distributed-systems",
+    "websocket": "backend-distributed-systems",
+    "xbox": "embedded-iot-hardware",
+    "xv6": "systems-os-compilers",
+    "z3": "security-reverse-engineering",
+    "zipkin": "devops-cloud",
+    "zookeeper": "backend-distributed-systems",
+    "Zuul": "backend-distributed-systems",
+    "zynq7020": "embedded-iot-hardware",
+    "小實作": "projects-experiments"
+  },
+  "unmapped_tags": [],
+  "override_count": 0
+}

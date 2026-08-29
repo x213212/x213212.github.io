@@ -1,0 +1,5 @@
+beautifulsoup4>=4.12,<5
+Markdown>=3.7,<4
+markdownify>=0.14,<1
+Pillow>=10,<12
+Pygments>=2.18,<3

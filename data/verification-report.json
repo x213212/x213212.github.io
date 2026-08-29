@@ -1,0 +1,18 @@
+{
+  "post_count": 379,
+  "markdown_source_count": 379,
+  "output_post_count": 379,
+  "published_original_post_count": 379,
+  "original_img_tag_count": 1945,
+  "markdown_image_count_including_hackmd": 3061,
+  "failures": {
+    "missing_source_files": [],
+    "missing_output_files": [],
+    "missing_original_images": [],
+    "image_order_mismatch": [],
+    "unclassified_posts": [],
+    "hackmd_iframes_remaining": [],
+    "hackmd_fences_remaining": []
+  },
+  "passed": true
+}

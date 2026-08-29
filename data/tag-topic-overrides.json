@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "description": "Optional exact-tag overrides for the display-only topic merge. Add {\"raw Blogger tag\": \"topic-id\"} entries here; article Markdown and original tags remain untouched.",
+  "tag_overrides": {}
+}

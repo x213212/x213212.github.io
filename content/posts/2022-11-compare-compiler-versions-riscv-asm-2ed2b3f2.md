@@ -1,0 +1,1788 @@
+---
+title: "Compare compiler versions riscv asm"
+date: "2022-11-14T23:53:00.005+08:00"
+updated: "2022-11-14T23:53:59.917+08:00"
+permalink: "/2022/11/compare-compiler-versions-riscv-asm.html"
+original_url: "https://x8795278.blogspot.com/2022/11/compare-compiler-versions-riscv-asm.html"
+blogger_id: "tag:blogger.com,1999:blog-4768376178408509094.post-4242101200559657559"
+tags: ["compare", "RISC-V"]
+layout: post
+---
+
+![](https://i.imgur.com/K9pBPMY.png)
+
+# Compare compiler versions
+```python
+"""
+Module containing main building blocks to parse assembly and draw CFGs.
+"""
+# from goto import with_goto
+import itertools
+from goto import with_goto
+from pickle import NONE
+from colour import Color
+import re
+import sys
+import tempfile
+from xml.sax import xmlreader
+# from goto import goto, label
+from graphviz import Digraph
+
+# TODO: make this a command-line flag
+VERBOSE = 0
+
+def escape(instruction):
+    """
+    Escape used dot graph characters in given instruction so they will be
+    displayed correctly.
+    """
+    instruction = instruction.replace('<', r'\<')
+    instruction = instruction.replace('>', r'\>')
+    instruction = instruction.replace('|', r'\|')
+    instruction = instruction.replace('{', r'\{')
+    instruction = instruction.replace('}', r'\}')
+    instruction = instruction.replace('	', ' ')
+    return instruction
+
+class BasicBlock:
+    """
+    Class to represent a node in CFG with straight lines of code without jump
+    or calls instructions.
+    """
+
+    def __init__(self, key):
+        self.key = key
+        self.instructions = []
+        self.jump_edge = None
+        self.no_jump_edge = None
+        self.form_fucntion = ""
+    def set_form_function(self,function):
+        self.form_fucntion = function
+
+    def add_instruction(self, instruction):
+        """
+        Add instruction to this block.
+        """
+        self.instructions.append(instruction)
+
+    def add_jump_edge(self, basic_block_key):
+        """
+        Add jump target block to this block.
+        """
+        if isinstance(basic_block_key, BasicBlock):
+            self.jump_edge = basic_block_key.key
+        else:
+            self.jump_edge = basic_block_key
+
+    def add_no_jump_edge(self, basic_block_key):
+        """
+        Add no jump target block to this block.
+        """
+        if isinstance(basic_block_key, BasicBlock):
+            self.no_jump_edge = basic_block_key.key
+        else:
+            self.no_jump_edge = basic_block_key
+
+    def get_label(self):
+        """
+        Return content of the block for dot graph.
+        """
+        # Left align in dot.
+        label = r'\l'.join([escape(i.text) for i in self.instructions])
+        # Left justify the last line too.
+        label += r'\l'
+        if self.jump_edge:
+            if self.no_jump_edge:
+                label += '|{<s0>No Jump|<s1>Jump}'
+            else:
+                label += '|{<s1>Jump}'
+        return '{' + label + '}'
+
+    def __str__(self):
+        return '\n'.join([i.text for i in self.instructions])
+
+    def __repr__(self):
+        return '\n'.join([i.text for i in self.instructions])
+
+def print_assembly(basic_blocks):
+    """
+    Debug function to print the assembly.
+    """
+    for basic_block in basic_blocks.values():
+        print(basic_block)
+
+def read_lines(file_path):
+    """ Read lines from the file and return then as a list. """
+    lines = []
+    with open(file_path, 'r', encoding='utf8') as asm_file:
+        lines = asm_file.readlines()
+    return lines
+
+# Common regexes
+HEX_PATTERN = r'[0-9a-fA-F]+'
+HEX_LONG_PATTERN = r'(?:0x0*)?' + HEX_PATTERN
+
+class InputFormat:  # pylint: disable=too-few-public-methods
+    """
+    An enum which represents various supported input formats
+    """
+    GDB = 'GDB'
+    OBJDUMP = 'OBJDUMP'
+
+def parse_function_header(line):
+    """
+    Return function name of memory range from the given string line.
+
+    Match lines for non-stripped binaries:
+    'Dump of assembler code for function test_function:'
+    lines for stripped binaries:
+    'Dump of assembler code from 0x555555555faf to 0x555555557008:'
+    and lines for obdjdump disassembly:
+    '0000000000016bb0 <_obstack_allocated_p@@Base>:'
+    """
+
+    objdump_name_pattern = re.compile(fr'{HEX_PATTERN} <([a-zA-Z_0-9@.]+)>:')
+    function_name = objdump_name_pattern.search(line)
+    if function_name is not None:
+        return InputFormat.OBJDUMP, function_name[1]
+
+    function_name_pattern = re.compile(r'function (\w+):$')
+    function_name = function_name_pattern.search(line)
+    if function_name is not None:
+        return InputFormat.GDB, function_name[1]
+
+    memory_range_pattern = re.compile(fr'(?:Address range|from) ({HEX_LONG_PATTERN}) to ({HEX_LONG_PATTERN}):$')
+    memory_range = memory_range_pattern.search(line)
+    if memory_range is not None:
+        return InputFormat.GDB, f'{memory_range[1]}-{memory_range[2]}'
+
+    return None, None
+
+class Address:
+    """
+    Represents location in program which may be absolute or relative
+    """
+    def __init__(self, abs_addr, base=None, offset=None):
+        self.abs = abs_addr
+        self.base = base
+        self.offset = offset
+
+    def is_absolute(self):
+        return self.base is None
+
+    def is_relative(self):
+        return not self.is_absolute()
+
+    def __str__(self):
+        if self.offset is not None:
+            return f'0x{self.abs:x} ({self.base}+{self.offset})'
+        return f'0x{self.abs}'
+
+    def merge(self, other):
+        if self.abs is not None:
+            assert self.abs is None or self.abs == other.abs
+            self.abs = other.abs
+        if self.base is not None:
+            assert self.base is None or self.base == other.base
+            self.base = other.base
+        if self.offset is not None:
+            assert self.offset is None or self.offset == other.offset
+            self.offset = other.offset
+
+class Encoding:
+    """
+    Represents a sequence of bytes used for instruction encoding
+    e.g. the '31 c0' in
+    '16bd3:	31 c0                	xor    %eax,%eax'
+    """
+    def __init__(self, bites):
+        self.bites = bites
+
+    def size(self):
+        return len(self.bites)
+
+    def __str__(self):
+        return ' '.join(map(lambda b: f'{b:#x}', self.bites))
+
+class X86TargetInfo:
+    """
+    Contains instruction info for X86-compatible targets.
+    """
+
+    def __init__(self):
+        pass
+
+    def comment(self):
+        return '#'
+
+    def is_call(self, instruction):
+        # Various flavors of call:
+        #   call   *0x26a16(%rip)
+        #   call   0x555555555542
+        #   addr32 call 0x55555558add0
+        return 'call' in instruction.opcode
+
+    def is_jump(self, instruction):
+        # print(instruction)
+        return instruction.opcode[0] == 'j'
+    # def is_jump2(self, instruction):
+    #     return instruction.opcode[0] == 'jal'
+
+    def is_unconditional_jump(self, instruction):
+        return instruction.opcode.startswith('jmp')
+
+    def is_sink(self, instruction):
+        """
+        Is this an instruction which terminates function execution e.g. return?
+        """
+        return instruction.opcode.startswith('ret')
+
+class riscvTargetInfo:
+    """
+    Contains instruction info for riscv-compatible targets.
+    """
+
+    def __init__(self):
+        pass
+
+    def comment(self):
+        return '#'
+
+    def is_call(self, instruction):
+        # print(instruction)
+        # Various flavors of call:
+        #   call   *0x26a16(%rip)
+        #   call   0x555555555542
+        #   addr32 call 0x55555558add0
+        return str(instruction.opcode) in ('call')\
+            and instruction.opcode not in ('beq', 'bne', 'blt', 'bge', 'bltu', 'bgeu','blez','bnez','beqz','bnec','bgtz','bgez','bltz','beqc')
+
+    def is_jump(self, instruction):
+        
+        # print(instruction)
+        return instruction.opcode in ('c.j','j', 'jle', 'jl', 'je', 'jne', 'jge','je','jal') and not self.is_call(instruction)
+        # return instruction.opcode[0] == 'j'
+        # def is_jump2(self, instruction):
+        # return instruction.opcode[0] == 'jal'
+    def is_branch(self, instruction):
+        # print(instruction)
+        # Various flavors of call:
+        #   call   *0x26a16(%rip)
+        #   call   0x555555555542
+        #   addr32 call 0x55555558add0
+        return instruction.opcode in ('beq', 'bne', 'blt', 'bge', 'bltu', 'bgeu','blez','bnez','beqz','bnec','bgtz','bgez','bltz','beqc')
+    
+    def is_compressbranch(self, instruction):
+        # print(instruction)
+        # Various flavors of call:
+        #   call   *0x26a16(%rip)
+        #   call   0x555555555542
+        #   addr32 call 0x55555558add0
+        return instruction.opcode in ('c.beq', 'c.bne', 'c.blt', 'c.bge', 'c.bltu', 'c.bgeu','c.blez','c.bnez','c.beqz','c.bnec')
+
+    def is_unconditional_jump(self, instruction):
+        
+        return str(instruction.opcode) in ('jmp') 
+        
+
+    def is_sink(self, instruction):
+        """
+        Is this an instruction which terminates function execution e.g. return?
+        """
+        return  str(instruction.opcode) in ('ret') 
+
+class ARMTargetInfo:
+    """
+    Contains instruction info for ARM-compatible targets.
+    """
+
+    def __init__(self):
+        pass
+
+    def comment(self):
+        return ';'
+
+    def is_call(self, instruction):
+        # Various flavors of call:
+        #   bl 0x19d90 <_IO_vtable_check>
+        # Note that we should be careful to not mix it with conditional
+        # branches like 'ble'.
+        return instruction.opcode.startswith('bl') \
+            and instruction.opcode not in ('blt', 'ble', 'bls')
+
+    def is_jump(self, instruction):
+        return instruction.opcode[0] == 'b' and not self.is_call(instruction)
+
+    def is_unconditional_jump(self, instruction):
+        return instruction.opcode == 'b'
+
+    def is_sink(self, instruction):
+        """
+        Is this an instruction which terminates function execution e.g. return?
+        Detect various flavors of return like
+          bx lr
+          pop {r2-r6,pc}
+        Note that we do not consider conditional branches (e.g. 'bxle') to sink.
+        """
+        return re.search(r'\bpop\b.*\bpc\b', instruction.body) \
+            or (instruction.opcode == 'bx' and instruction.ops[0] == 'lr') \
+            or instruction.opcode == 'udf'
+
+class Instruction:
+    """
+    Represents a single assembly instruction with it operands, location and
+    optional branch target
+    """
+    def __init__(self, body, text, lineno, address, opcode, ops, target, imm, target_info):  # noqa
+        self.body = body
+        self.text = text
+        self.lineno = lineno
+        self.address = address
+        self.opcode = opcode
+        self.ops = ops
+        self.target = target
+        self.info = target_info
+        self.form_fucntion =""
+    
+        if imm is not None and (self.is_jump() or self.is_call()):
+            # print("test")
+            # print(imm)
+            if self.target is None:
+                self.target = imm
+            else:
+                self.target.merge(imm)
+    
+    def set_form_function(self,form_fucntion):
+        self.form_fucntion=form_fucntion
+
+    def is_call(self):
+        return self.info.is_call(self)
+
+    def is_jump(self):
+        return self.info.is_jump(self)
+
+    def is_branch(self):
+        return self.info.is_branch(self)
+
+    def is_direct_jump(self):
+        return self.is_jump() and re.match(fr'{HEX_LONG_PATTERN}', self.ops[0])
+
+    def is_inst_jump(self):
+        return self.is_jump() 
+
+    def is_inst_branch(self):
+        return self.is_branch() 
+        
+    def is_compressbranch(self):
+        return self.info.is_compressbranch(self)
+
+    def is_sink(self):
+        return self.info.is_sink(self)
+
+    def is_unconditional_jump(self):
+        return self.info.is_unconditional_jump(self)
+
+    def __str__(self):
+        result = f'{self.address}: {self.opcode}'
+        if self.ops:
+            result += f' {self.ops}'
+        return result
+
+def parse_address(line):
+    """
+    Parses leading address of instruction
+    """
+    address_match = re.match(fr'^\s*(?:0x)?({HEX_PATTERN})\s*(?:<([+-][0-9]+)>)?:(.*)', line)
+    if address_match is None:
+        return None, line,None
+    address = Address(int(address_match[1], 16), None, int(address_match[2]) if address_match[2] else None)
+    return address, address_match[3],int(address_match[1], 16)
+
+def split_nth(string, count):
+    """
+    Splits string to equally-sized chunks
+    """
+    return [string[i:i+count] for i in range(0, len(string), count)]
+
+def parse_encoding(line):
+    """
+    Parses byte encoding of instruction for objdump disassemblies
+    e.g. the '31 c0' in
+    '16bd3:	31 c0                	xor    %eax,%eax'
+    In addition to X86 supports ARM encoding styles:
+    '4:	e1a01000 	mov	r1, r0'
+    '50:	f7ff fffe 	bl	0 <__aeabi_dadd>'
+    '54:	0002      	movs	r2, r0'
+    """
+    # Encoding is separated from assembly mnemonic via tab
+    # so we allow whitespace separators between bytes
+    # to avoid accidentally matching the mnemonic.
+    enc_match = re.match(r'^\s*((?:[0-9a-f]{2,8} +)+)(.*)', line)
+    if enc_match is None:
+        return None, line
+    bites = []
+    for chunk in enc_match[1].strip().split(' '):
+        bites.extend(int(byte, 16) for byte in split_nth(chunk, 2))
+    return Encoding(bites), enc_match[2]
+
+def parse_body(line, target_info):
+    """
+    Parses instruction body (opcode and operands)
+    """
+    comment_symbol = target_info.comment()
+    body_match = re.match(fr'^\s*([^{comment_symbol}<]+)(.*)', line)
+    if body_match is None:
+        return None, None, None, line
+    body = body_match[1].strip()
+    line = body_match[2]
+    opcode_match = re.match(r'^(\S*)\s*(.*)', body)
+    if opcode_match is None:
+        return None, None, None, line
+    opcode = opcode_match[1]
+    ops = opcode_match[2].split(',') if opcode_match[2] else []
+    return body, opcode, ops, line
+
+def parse_target(line):
+    """
+    Parses optional instruction branch target hint
+    """
+    target_match = re.match(r'\s*<([a-zA-Z_@0-9.*$_]+)([+-]0x[0-9a-f]+|[+-][0-9]+)?>(.*)', line)
+    if target_match is None:
+        return None, line
+    offset = target_match[2] or '+0'
+    address = Address(None, target_match[1], int(offset, 0))
+    return address, target_match[3]
+
+def parse_comment(line, target_info):
+    """
+    Parses optional instruction comment
+    """
+    comment_symbol = target_info.comment()
+    comment_match = re.match(fr'^\s*{comment_symbol}\s*(.*)', line)
+    if comment_match is None:
+        return None, line
+    comment = comment_match[1]
+    imm_match = re.match(fr'^(?:0x)?({HEX_PATTERN})\s*(<.*>)?(.*)', comment)
+    if imm_match is None:
+        # If no imm was found, ignore the comment.
+        # In particular this takes care of useless ARM comments like
+        # '82:	46c0      	nop			; (mov r8, r8)'
+        return None, ''
+    abs_addr = int(imm_match[1], 16)
+    if imm_match[2]:
+        target, _ = parse_target(imm_match[2])
+        target.abs = abs_addr
+    else:
+        target = Address(abs_addr)
+    return target, imm_match[3]
+
+source_code_index=1000000
+def parse_line(line, lineno, function_name, fmt, target_info):
+    """
+    Parses a single line of assembly to create Instruction instance
+    """
+    
+    line_back = line
+    is_source_code = 0
+    
+    # Strip GDB prefix and leading whites
+    if line.startswith('=> '):
+        # Strip GDB marker
+        line = line[3:]
+    line = line.lstrip()
+    line = line.rstrip()
+    # org_address = re.match(fr'^\s*(?:0x)?({HEX_PATTERN})\s*(?:<([+-][0-9]+)>)?:(.*)', line)
+    address, line,org_address = parse_address(line)
+    if address is None:
+        line = line_back
+        is_source_code=1
+        global source_code_index
+        address = Address(source_code_index, None, None)
+        source_code_index+=1
+        # return None
+
+    if fmt == InputFormat.OBJDUMP:
+        encoding, line = parse_encoding(line)
+        if not line:
+            print(line)
+            return encoding
+    # print(str(org_address))
+   
+    if(org_address == None ):
+        org_address=""
+    if is_source_code == 1 :
+        line = str((org_address))+"#"+str(line_back)
+    if is_source_code == 1 :
+        original_line = "debug"+line
+    else:
+        original_line = str(hex(org_address))+""+line
+    body, opcode, ops, line = parse_body(line, target_info)
+    if opcode is None:
+        if(is_source_code!=1):
+            return None
+    
+    target, line = parse_target(line)
+    print(parse_target(line))
+    
+    imm, line = parse_comment(line, target_info)
+    # if is_source_code == 1 :
+    #     line = line_back
+    # print(line)
+    if(is_source_code!=1):
+        if line:
+            # Expecting complete parse
+            return None
+    # Set base symbol for relative addresses
+    if address.base is None:
+        address.base = function_name
+    if target is not None and target.base is None:
+        target.base = function_name
+
+    return Instruction(body, original_line.strip(), lineno, address, opcode, ops, target, imm, target_info)
+
+class JumpTable:
+    """
+    Holds info about branch sources and destinations in asm function.
+    """
+
+    def __init__(self, instructions):
+        # Address where the jump begins and value which address
+        # to jump to. This also includes calls.
+        
+        self.abs_sources = {}
+        self.rel_sources = {}
+
+        # Addresses where jumps end inside the current function.
+        self.abs_destinations = set()
+        self.rel_destinations = set()
+
+        # Iterate over the lines and collect jump targets and branching points.
+        for inst in instructions:
+            if inst is None or not inst.is_direct_jump() and  not inst.is_inst_jump() \
+                and  not inst.is_inst_branch() and not inst.is_compressbranch():
+                continue
+
+            # print(inst)
+            # print("=====================")
+            self.abs_sources[inst.address.abs] = inst.target
+            self.abs_destinations.add(inst.target.abs)
+
+            self.rel_sources[inst.address.offset] = inst.target
+            self.rel_destinations.add(inst.target.offset)
+
+    def is_destination(self, address):
+        if address.abs is not None:
+            return address.abs in self.abs_destinations
+        if address.offset is not None:
+            return address.offset in self.rel_destinations
+        return False
+
+    def get_target(self, address):
+        if address.abs is not None:
+            return self.abs_sources.get(address.abs)
+        if address.offset is not None:
+            return self.rel_sources.get(address.offset)
+        return None
+
+def parse_lines(lines, skip_calls, target_name):  # noqa pylint: disable=unused-argument
+    print("arch : "+target_name)
+    if target_name == 'x86':
+        target_info = X86TargetInfo()
+    elif target_name == 'riscv':
+        target_info = riscvTargetInfo()
+    elif target_name == 'arm':
+        target_info = ARMTargetInfo()
+    else:
+        print(f'Unsupported platform {target_name}')
+        sys.exit(1)
+
+    instructions = []
+    current_function_name = current_format = None
+    for num, line in enumerate(lines, 1):
+        fmt, function_name = parse_function_header(line)
+        if function_name is not None:
+            # assert current_function_name is None, 'we handle only one function for now'
+            print(function_name)
+            if VERBOSE:
+                print(f'New function {function_name} (format {fmt})')
+            current_function_name = function_name
+            current_format = fmt
+            continue
+        instruction_or_encoding = parse_line(line, num, current_function_name, current_format, target_info)
+     
+        print(instruction_or_encoding)
+        # instruction_or_encoding.set_form_function(current_function_name)
+        if isinstance(instruction_or_encoding, Encoding):
+            # Partial encoding for previous instruction, skip it
+            continue
+        if instruction_or_encoding is not None:
+            instructions.append(instruction_or_encoding)
+            continue
+
+        if line.startswith('End of assembler dump') or not line:
+            continue
+
+        if line.strip() == '':
+            continue
+        
+        # if(line == None):
+        #     continue
+        print(f'Unexpected assembly at line {num}:\n  {line}')
+        sys.exit(1)
+
+    # Infer target address for jump instructions
+    for instruction in instructions:
+        print(instruction)
+        print(instruction.is_inst_jump())
+        print(instruction.is_inst_branch())
+
+        if (instruction.target is None or instruction.target.abs is None) \
+                and instruction.is_direct_jump():
+            if instruction.target is None:
+                instruction.target = Address(0)
+            instruction.target.abs = int(instruction.ops[0], 16)
+        if (instruction.target is None or instruction.target.abs is None) \
+                and instruction.is_inst_jump():
+            if instruction.target is None:
+                instruction.target = Address(0)
+            instruction.target.abs = int(instruction.ops[1], 16)
+        if (instruction.target is None or instruction.target.abs is None) \
+                and instruction.is_inst_branch():
+            if instruction.target is None:
+                instruction.target = Address(0)
+            if(instruction.opcode in ('beqz','bnez','blez','bgez','bltz','bgtz')):
+                instruction.target.abs = int(instruction.ops[1], 16)
+            elif(instruction.opcode in('beq', 'bne', 'blt', 'bge','bgeu','bltu','beqc','bnec')):
+                instruction.target.abs = int(instruction.ops[2], 16)
+            # print( "wqeeee")
+        if (instruction.target is None or instruction.target.abs is None) \
+                and instruction.is_compressbranch():
+            if instruction.target is None:
+                instruction.target = Address(0)
+            if(instruction.opcode in ('c.blez','c.bnez','c.beqz')):
+                instruction.target.abs = int(instruction.ops[1], 16)
+            else:
+                instruction.target.abs = int(instruction.ops[2], 16)
+            # print(instruction_or_encoding)
+    # elif
+
+    # Infer relative addresses (for objdump or stripped gdb)
+    start_address = instructions[0].address.abs
+    end_address = instructions[-1].address.abs
+    for instruction in instructions:
+        for address in (instruction.address, instruction.target):
+            if address is not None \
+                    and address.offset is None \
+                    and start_address <= address.abs <= end_address:
+                address.offset = address.abs - start_address
+                # print(address.offset)
+
+    if VERBOSE:
+        print('Instructions:')
+        for instruction in instructions:
+            if instruction is not None:
+                print(f'  {instruction}')
+
+    jump_table = JumpTable(instructions)
+    
+    if VERBOSE:
+        print('Absolute destinations:')
+        for dst in jump_table.abs_destinations:
+            print(f'  {dst:#x}')
+        print('Relative destinations:')
+        for dst in jump_table.rel_destinations:
+            print(f'  {dst}')
+        print('Absolute branches:')
+        for src, dst in jump_table.abs_sources.items():
+            print(f'  {src:#x} -> {dst}')
+        print('Relative branches:')
+        for src, dst in jump_table.rel_sources.items():
+            print(f'  {src} -> {dst}')
+
+    # Now iterate over the assembly again and split it to basic blocks using
+    # the branching information from earlier.
+    basic_blocks = {}
+    current_basic_block = None
+    previous_jump_block = None
+    for line, instruction in zip(lines, instructions):
+        if instruction is None:
+            continue
+
+        # Current offset/address inside the function.
+        program_point = instruction.address
+        jump_point = jump_table.get_target(program_point)
+        is_unconditional = instruction.is_unconditional_jump()
+
+        if current_basic_block is None:
+            current_basic_block = BasicBlock(program_point.abs)
+            basic_blocks[current_basic_block.key] = current_basic_block
+            # Previous basic block ended in jump instruction. Add the basic
+            # block what follows if the jump was not taken.
+            if previous_jump_block is not None:
+                previous_jump_block.add_no_jump_edge(current_basic_block)
+                previous_jump_block = None
+        elif jump_table.is_destination(program_point):
+            temp_block = current_basic_block
+            current_basic_block = BasicBlock(program_point.abs)
+            basic_blocks[current_basic_block.key] = current_basic_block
+            temp_block.add_no_jump_edge(current_basic_block)
+
+        current_basic_block.add_instruction(instruction)
+
+        if jump_point is not None:
+            current_basic_block.add_jump_edge(jump_point.abs)
+            previous_jump_block = None if is_unconditional else current_basic_block
+            current_basic_block = None
+        elif instruction.is_sink():
+            previous_jump_block = current_basic_block = None
+
+    if previous_jump_block is not None:
+        # If last instruction of the function is jump/call, then add dummy
+        # block to designate end of the function.
+        end_block = BasicBlock('end_of_function')
+        dummy_instruction = Instruction('', 'end of function', 0, None, None, [], None, None, target_info)
+        dummy_instruction.set_form_function(current_function_name)
+        end_block.add_instruction(dummy_instruction)
+        previous_jump_block.add_no_jump_edge(end_block.key)
+        basic_blocks[end_block.key] = end_block
+
+    return current_function_name, basic_blocks
+
+# def draw_cfg(function_name, basic_blocks,function_name2, basic_blocks2, view):
+#     dot = Digraph(name=function_name, comment=function_name, engine='dot')
+#     dot.attr('graph', label=function_name)
+#     for address, basic_block in basic_blocks.items():
+#         key = str(address)
+#         dot.node(key, shape='record', label=basic_block.get_label())
+#     for basic_block in basic_blocks.values():
+#         if basic_block.jump_edge:
+#             if basic_block.no_jump_edge is not None:
+#                 dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+#             dot.edge(f'{basic_block.key}:s1', str(basic_block.jump_edge))
+#         elif basic_block.no_jump_edge:
+#             dot.edge(str(basic_block.key), str(basic_block.no_jump_edge))
+
+# Serach
+
+# Driver Code
+print("Following is the Depth-First Search")
+# graph['a'] =[]
+# print(graph)
+# graph['a'] =['q']
+# print(graph)
+# graph['a'].append('w')
+# print(graph)
+# dfs(visited, graph, 'a')
+# Using a Python dictionary to act as an adjacency list
+graph = {
+    # key:[value,value2],...
+}
+visited = set() # Set to keep track of visited nodes of graph.
+v=[]
+t=[]
+find_block=0
+def dfs(visited, graph, node,search,avoid):  #function for dfs 
+    if node not in visited and node:
+        print (node)
+        # v.append(node)
+        if(search == node): 
+            print("find")
+            find_block = int(node)
+            for x in v:
+                t.append(x)
+            return
+        v.append(node)
+        visited.add(node)
+        if node in graph and node not in avoid:
+            for neighbour in graph[node]:
+                v.append(neighbour)
+                dfs(visited, graph, neighbour,search,avoid)
+                
+colors = ['#33FFA8','blue','red','purple']
+
+def replaceline(infile, outfile):
+    infopen = open(infile, 'r', encoding="utf-8")
+    outfopen = open(outfile, 'w', encoding="utf-8")
+
+    lines = infopen.readlines()
+    for line in lines:
+        if line.split():
+            outfopen.writelines(str(line).replace(">debug", " fill='"'red'"'>"))
+        else:
+            outfopen.writelines("")
+
+    infopen.close()
+    outfopen.close()
+
+def replaceline_0(infile, outfile):
+    infopen = open(infile, 'r', encoding="utf-8")
+    outfopen = open(outfile, 'w', encoding="utf-8")
+
+    lines = infopen.readlines()
+    for line in lines:
+        if line.split():
+            outfopen.writelines(str(line).replace("fill="+'"'+"#000000"+'"', ""))
+        else:
+            outfopen.writelines("")
+
+    infopen.close()
+    outfopen.close()
+
+def redundant(infile, outfile):
+    infopen = open(infile, 'r', encoding="utf-8")
+    outfopen = open(outfile, 'w', encoding="utf-8")
+
+    lines = infopen.readlines()
+    for line in lines:
+        if line.split():
+            outfopen.writelines(str(line).replace(">diff", " fill='"'red'"'>"))
+        else:
+            outfopen.writelines("")
+
+    infopen.close()
+    outfopen.close()
+source_record={
+
+}
+source_color={
+
+}
+nowcolor= 0
+precolor=0
+# color = list(np.random.choice(range(256), size=3))
+def draw_cfg(function_name,get_print_list, view):
+    dot=None
+    green = Color("green")
+    colors = list(green.range_to(Color("red"),1000))
+    dot = Digraph(name=function_name, comment=function_name, engine='dot')
+    # dot.graph_attr['rankdir'] = 'LR'
+    dot.attr('graph', label=function_name)
+    find = []
+    for get_child in get_print_list:
+        for address, basic_block in get_child[1].items():
+            key = str(address)
+            graph[key] =[]
+        for basic_block in  get_child[1].values():
+            if basic_block.jump_edge:
+                if basic_block.no_jump_edge is not None:
+                    graph[str(basic_block.key)].append(str(basic_block.no_jump_edge))
+                graph[str(basic_block.key)].append(str(basic_block.jump_edge))
+            elif basic_block.no_jump_edge:
+                graph[str(basic_block.key)].append(str(basic_block.no_jump_edge))
+            # disable for Serach
+            # for i in basic_block.instructions:
+            #     basic_block.set_form_function(i.form_fucntion)
+            for i in basic_block.instructions:
+                # (i.text.replace("debug#", "")).replace(" ", "")
+                # print(str(i.text))
+                if(str(i.text).find("debug")) >=0:
+                    filter_str = (i.text.replace("debug#", "")).replace(" ", "")
+                    if(  filter_str in source_record) : 
+                        source_record[filter_str].append(str(basic_block.key))
+                    else :
+                        source_record[filter_str]=[]
+                        source_record[filter_str].append(str(basic_block.key))
+                    if(filter_str not in source_color):
+                        global nowcolor
+                        nowcolor+=1
+                        source_color[basic_block.key]= colors[nowcolor]
+                    else:
+                        source_color[basic_block.key]= colors[nowcolor]
+
+                    # if( basic_block.key in source_record2 ):
+                    #     source_record2[basic_block.key].append()
+                # else:
+                #     print(str(i.text))
+            print("==============")
+            tmp =[i.text for i in basic_block.instructions]
+            print(tmp)
+            for x in tmp:
+                if "dwq" in x:
+                        print([i.text for i in basic_block.instructions])
+                        find.append(str(basic_block.key))
+    # for x in source_record:
+    #     print(x)
+    #     print (source_record[x])
+    # return 
+    # for x in source_color:
+    #     print(x)
+    #     print (source_color[x])
+    # return 
+    print("Following is the Depth-First Search")
+    print(find)
+    print(graph)
+    # visited.add('722')
+    for y in find:
+        dfs(visited, graph,'1000000', str(y),graph[find[0]])
+    print("path")
+    print(t)
+    print(find)
+    # print(graph[find[0]])
+
+    # print(colors[1])
+    newt=['1000000']
+    find_off =0
+    find_close=0
+    # print(get_print_list)
+    index = 0
+    # for get_child in get_print_list:
+    #     for address, basic_block in get_child[1].items():
+    #         key = str(address)
+    #         # dot.node(key, shape='record', label=basic_block.get_label())
+    #         newkey =""
+    #         for x in source_color:
+    #             if(key.find(str(x))):
+    #                 newkey =key
+
+    #         if(int (newkey) in source_color):
+    #             dot.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor=str(source_color[int (newkey)]))
+    #             precolor= int (newkey)
+    #         else:
+    #             dot.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor=str(source_color[precolor]))
+            
+    #     for basic_block in get_child[1].values():
+    #         if basic_block.jump_edge:
+    #             if basic_block.no_jump_edge is not None:
+    #                 dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+    #             dot.edge(f'{basic_block.key}:s1', str(basic_block.jump_edge))
+    #         elif basic_block.no_jump_edge:
+    #             dot.edge(str(basic_block.key), str(basic_block.no_jump_edge))
+
+            
+    for get_child in get_print_list:
+        for basic_block in  get_child[1].values():
+            if basic_block.jump_edge:
+                if basic_block.no_jump_edge is not None:
+                    
+                    if str(basic_block.no_jump_edge) in t and find_off==0:
+                        # print(basic_block.no_jump_edge)
+                        if( str(basic_block.no_jump_edge) in find):
+                            find_off= 1
+                        if(basic_block.no_jump_edge != "end_of_function"):
+                            if( find_block < int(basic_block.no_jump_edge)):
+                                dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge),color=colors[1])
+                            else:
+                                dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))    
+                        newt.append(str(basic_block.no_jump_edge))
+                    else :
+                        dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+   
+                if str(basic_block.jump_edge) in t  and find_off==0:     
+                       
+                    if(basic_block.jump_edge != "end_of_function"):
+                        if( find_block < int(basic_block.jump_edge)):
+                            if( int(basic_block.key) == int(basic_block.jump_edge) ):
+                                dot.edge(f'{basic_block.key}:s1', str(basic_block.jump_edge),color=colors[3])
+                            else:
+                                if ( find_off==0):
+                                    dot.edge(f'{basic_block.key}:s1', str(basic_block.jump_edge),color=colors[2])
+                                else:
+                                    dot.edge(f'{basic_block.key}:s1', str(basic_block.jump_edge))
+                            if( str(basic_block.jump_edge) in find):
+                                find_off= 1
+                        newt.append(str(basic_block.jump_edge))
+                    else:
+                        dot.edge(f'{basic_block.key}:s1', str(basic_block.jump_edge))
+           
+                else:
+                    dot.edge(f'{basic_block.key}:s1', str(basic_block.jump_edge))
+               
+            elif basic_block.no_jump_edge:
+                   
+                if str(basic_block.no_jump_edge) in t  and find_off==0:
+                    if(basic_block.no_jump_edge != "end_of_function"):
+                        if( str(basic_block.no_jump_edge) in find):
+                            find_off= 1
+                        if( find_block < int(basic_block.no_jump_edge)):
+                            dot.edge(str(basic_block.key), str(basic_block.no_jump_edge),color=colors[1])
+                        else:
+                            dot.edge(str(basic_block.key), str(basic_block.no_jump_edge))
+                        newt.append(str(basic_block.no_jump_edge))
+                else:
+                    dot.edge(str(basic_block.key), str(basic_block.no_jump_edge))
+                    
+            if(basic_block.jump_edge != "end_of_function" or basic_block.no_jump_edge != "end_of_function"):
+                if( str(basic_block.jump_edge) == find or str(basic_block.no_jump_edge) == find):
+                    find_off= 1
+
+        for address, basic_block in get_child[1].items():
+            key = str(address)
+            graph[key] =[]
+            
+            # if key in newt and find_close==0 :
+            #     dot.node(key, shape='record', label=basic_block.get_label(),  style="filled",fillcolor=colors[0])
+            # else:
+            # global nowcolor
+            # nowcolor+=4
+            # print(nowcolor)
+            newkey =""
+            for x in source_color:
+                if(key.find(str(x))):
+                    newkey =key
+                    # print (newkey)
+            # print(source_color[(newkey)])
+            # return 
+            # dot.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor="white")
+            # if(int (newkey) in source_color):
+            #     dot.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor=str(source_color[int (newkey)]))
+            #     precolor= int (newkey)
+            # else:
+            #     dot.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor=str(source_color[precolor]))
+            
+            if key in newt and find_close==0 :
+                dot.node(key, shape='record', label=basic_block.get_label(),  style="filled",fillcolor=colors[0])
+            else:
+                dot.node(key, shape='record', label=basic_block.get_label())
+            if(len(find)> 0):
+                if( key == find[0]):
+                    find_close= 1
+                    
+            # else:
+            #     print(basic_block.form_fucntion)
+        index +=1
+
+    # if(find_off== 0):
+    #     print ("no find")
+    # print(nowcolor)
+    if view:
+        dot.format = 'gv'
+        with tempfile.NamedTemporaryFile(mode='w+b', prefix=function_name) as filename:
+            # dot.view(filename.name)
+            print(f'Opening a file {filename.name}.{dot.format} with default viewer. Don\'t forget to delete it later.')
+    else:
+        dot.format = 'svg'
+        dot.render(filename=function_name, cleanup=True)
+        print(f'Saved CFG to a file {function_name}.{dot.format}')
+        # print(f'{function_name}.{dot.format}')
+        replaceline_0(f'{function_name}.{dot.format}', f'back{function_name}.{dot.format}')
+        replaceline(f'back{function_name}.{dot.format}', f'new{function_name}.{dot.format}')
+        print(f'Saved new CFG to a file new{function_name}.{dot.format}')
+
+source_record={
+
+}
+source_color={
+
+}
+nowcolor= 0
+precolor=0
+# color = list(np.random.choice(range(256), size=3))
+def draw_cfg2(function_name,get_print_list, view):
+    dot=None
+    dot2=None
+    index =0
+    green = Color("green")
+    colors = list(green.range_to(Color("blue"),170))
+    dot = Digraph(name=function_name, comment=function_name, engine='dot')
+    dot2 = Digraph(name=function_name, comment=function_name, engine='dot')
+    # dot.graph_attr['rankdir'] = 'LR'
+    dot.attr('graph', label=function_name)
+    dot2.attr('graph', label=function_name)
+    find = []
+    for get_child in get_print_list:
+        
+        for address, basic_block in get_child[1].items():
+            key = str(address)
+            graph[key] =[]
+        for basic_block in  get_child[1].values():
+            if basic_block.jump_edge:
+                if basic_block.no_jump_edge is not None:
+                    graph[str(basic_block.key)].append(str(basic_block.no_jump_edge))
+                graph[str(basic_block.key)].append(str(basic_block.jump_edge))
+            elif basic_block.no_jump_edge:
+                graph[str(basic_block.key)].append(str(basic_block.no_jump_edge))
+            # disable for Serach
+            # for i in basic_block.instructions:
+            #     basic_block.set_form_function(i.form_fucntion)
+            for i in basic_block.instructions:
+                # (i.text.replace("debug#", "")).replace(" ", "")
+                # print(str(i.text))
+                
+                if(str(i.text).find("debug")) >=0:
+                    filter_str = (i.text.replace("debug#", "")).replace(" ", "")
+                    if(  filter_str in source_record) : 
+                        source_record[filter_str].append(str(basic_block.key))
+                        # source_color[filter_str]= source_color[filter_str]
+                    else :
+                       
+                        global nowcolor
+                        nowcolor+=1
+                        source_record[filter_str]=[]
+                        source_record[filter_str].append(str(basic_block.key))
+                        source_color[filter_str]= colors[nowcolor]
+                    # if(filter_str not in source_color):
+                    #     global nowcolor
+                    #     nowcolor+=2
+                    #     source_color[basic_block.key]= colors[nowcolor]
+                
+                        
+                    # else:
+                    #     source_color[basic_block.key]= colors[nowcolor]
+
+                    # if( basic_block.key in source_record2 ):
+                    #     source_record2[basic_block.key].append()
+                # else:
+                #     print(str(i.text))
+        # index+=1       
+    # for x in source_record:
+    #     print(x)
+    #     print (source_record[x])
+    # return 
+    # for x in source_color:
+    #     print(x)
+    #     print (source_color[x])
+    # return 
+    index =0
+    for get_child in get_print_list:
+        
+        for address, basic_block in get_child[1].items():
+            key = str(address)
+            # dot.node(key, shape='record', label=basic_block.get_label())
+            newkey =""
+            # for x in source_color:
+            #     if(key.find(str(x))):
+            #         newkey =key
+            global precolor
+            for x in source_record:
+                if key  in source_record[x] :
+                    newkey =x
+                    print(newkey)
+                    print(source_record[x] )
+                    # if key.find(str(y)):
+                    #     newkey =y
+                    #     print(source_record[x] )
+                        # break
+            # print(str (newkey) in source_color)
+            if(index == 0):
+                if(newkey != "end_of_function"):
+                    if(str (newkey) in source_color):
+                        dot.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor=str(source_color[str (newkey)]))
+                        precolor= str (newkey)
+                    else:
+                        # print(precolor)
+                        # if(precolor):
+                        #     
+                        dot.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor="white")
+                # else:
+                #     dot.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor=str(source_color[precolor]))
+            else:
+                
+                if(newkey != "end_of_function"):
+                    if(str (newkey) in source_color):
+                        dot2.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor=str(source_color[str (newkey)]))
+                        precolor= str (newkey)
+                    else:
+                        # if(precolor):
+                        dot2.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor="white")
+            
+        for basic_block in get_child[1].values():
+            if basic_block.jump_edge:
+                if basic_block.no_jump_edge is not None:
+                    if(index==0):
+                        dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+                    else:
+                        dot2.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+                if(index==0):
+                    dot.edge(f'{basic_block.key}:s0', str(basic_block.jump_edge))
+                else:
+                    dot2.edge(f'{basic_block.key}:s0', str(basic_block.jump_edge))
+            elif basic_block.no_jump_edge:
+                if(index==0):
+                    dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+                else:
+                    dot2.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+        index+=1
+        precolor=0
+    for x in source_record:
+        print(x)
+        print (source_record[x])
+    if view:
+        dot.format = 'gv'
+        with tempfile.NamedTemporaryFile(mode='w+b', prefix=function_name) as filename:
+            # dot.view(filename.name)
+            print(f'Opening a file {filename.name}.{dot.format} with default viewer. Don\'t forget to delete it later.')
+    else:
+        dot.format = 'svg'
+        dot.render(filename=function_name, cleanup=True)
+        print(f'Saved CFG to a file {function_name}.{dot.format}')
+        # print(f'{function_name}.{dot.format}')
+        replaceline_0(f'{function_name}.{dot.format}', f'back{function_name}.{dot.format}')
+        replaceline(f'back{function_name}.{dot.format}', f'new{function_name}.{dot.format}')
+        print(f'Saved new CFG to a file new{function_name}.{dot.format}')
+
+        dot2.format = 'svg'
+        dot2.render(filename=function_name+'2', cleanup=True)
+        print(f'Saved CFG to a file {function_name}2.{dot2.format}')
+        # print(f'{function_name}.{dot.format}')
+        replaceline_0(f'{function_name}2.{dot2.format}', f'back{function_name}2.{dot2.format}')
+        replaceline(f'back{function_name}2.{dot2.format}', f'new2{function_name}.{dot2.format}')
+        print(f'Saved new CFG to a file new2{function_name}.{dot2.format}')
+
+# basicblock recod
+basicblock_mapping={
+
+}
+# find basicblock 
+diff_basicblock =[
+
+]
+# same compiler differ
+
+def draw_cfg3(function_name,get_print_list, view):
+    dot=None
+    dot2=None
+    index =0
+    green = Color("green")
+    colors = list(green.range_to(Color("blue"),170))
+    dot = Digraph(name=function_name, comment=function_name, engine='dot')
+    dot2 = Digraph(name=function_name, comment=function_name, engine='dot')
+    # dot.graph_attr['rankdir'] = 'LR'
+    dot.attr('graph', label=function_name)
+    dot2.attr('graph', label=function_name)
+    find = []
+    #candidates
+    candidates=[]
+
+    # secand input count
+    index =0
+    # secand input basicblock count
+    bb_index=0
+    best_basic_block=0
+    for get_child in get_print_list:
+        
+        for address, basic_block in get_child[1].items():
+            key = str(address)
+            graph[key] =[]
+        for basic_block in  get_child[1].values():
+            
+            basic_block_bakeup=bb_index
+            basic_block_error = 0
+            same_block=0
+            if basic_block.jump_edge:
+                if basic_block.no_jump_edge is not None:
+                    graph[str(basic_block.key)].append(str(basic_block.no_jump_edge))
+                graph[str(basic_block.key)].append(str(basic_block.jump_edge))
+            elif basic_block.no_jump_edge:
+                graph[str(basic_block.key)].append(str(basic_block.no_jump_edge))
+          
+            if index == 0:
+                for i in basic_block.instructions:
+                    if(  str(bb_index) in basicblock_mapping) : 
+                        basicblock_mapping[str(bb_index)].append(i)
+                    else :
+                        basicblock_mapping[str(bb_index)]=[]
+                        basicblock_mapping[str(bb_index)].append(i)
+            else:
+                # for i in basic_block.instructions:
+                #     if(str(i.text).find("debug")) <0:
+                #         print(i.text)
+                # print(bb_index)
+                while(1):
+                    oor=0
+                    ins_count_per = 0
+                    inst_count=0
+                    process_inst=[]
+                    for i in basic_block.instructions:
+                        inst_count+=1
+                        if(str(bb_index) in basicblock_mapping):
+                            find =0
+                            for x in basicblock_mapping[str(bb_index)]:
+                                if(str(i.text).find("debug")) >=0:
+                                    if(str(x.text).find("debug")) >=0 :
+                                        if str(i.text).find(str(x.text)) >=0:
+                                            find=1
+                                            process_inst.append(x)
+                                            break       
+                                else:
+                                    if(x not in process_inst):
+                                        if i.opcode == x.opcode and len(x.ops) == len(i.ops):
+                                            xlen = len(x.ops)
+                                            ylen =  len(i.ops)
+                                            if (ylen == xlen ):
+                                                find=1
+                                                process_inst.append(x)
+                                                break
+
+                            if(find ==1) :
+                                ins_count_per+=1
+                        else:
+                            print("out of range")
+                            print(bb_index)
+                            oor=1
+       
+                    if(oor== 0):
+                        if(inst_count == 0 )  :      
+                            break
+        
+                    if(inst_count >0 and float(ins_count_per/inst_count) >=0.5) : 
+                        if([bb_index,float(ins_count_per/inst_count)] not in candidates ):
+                            candidates.append([bb_index,float(ins_count_per/inst_count)])
+                        print("======== new")
+                        print("same block")
+                        print(inst_count)
+                        print(ins_count_per)
+                        print("======== new")
+                        same_block+=1
+                        bb_index-=1
+                        if(same_block>=20):
+                            break
+                 
+                        # break
+                    else:
+                        print("maybe not same block")
+
+                        print("========")
+                        print(bb_index)
+                        print(inst_count)
+                        print(ins_count_per)
+                        print(basic_block_error)
+                        print("========")
+
+                
+                        if(basic_block_error<=5 ):
+                            bb_index+=1
+                            basic_block_error+=1
+                     
+                        elif (basic_block_error>5 and basic_block_error<=10 ):
+                            bb_index-=1
+                            basic_block_error+=1
+                      
+                        if(basic_block_error ==5 or basic_block_error ==10):
+                            bb_index=basic_block_bakeup
+                        if(basic_block_error >=10):
+                            print("no find same bb")
+                            # diff_basicblock.append(str(basic_block.key))
+                            break
+            if index == 1:
+                max = 0
+                max_bb =0
+                for x in candidates:
+                    if(x[1] >= max ):
+                        max = x[1]
+                        max_bb= x[0]
+                        print(max_bb)
+                print (candidates)
+                candidates=[]
+                print (max_bb)
+                # for x in basicblock_mapping[str(max_bb)]:
+                #     print(x)
+                print("hello")
+                # if(str(max_bb) in diff_basicblock):
+                #     diff_basicblock.remove(str(max_bb))
+                inst_count =0
+                process_inst=[]
+                prev_x=""
+                for i in basic_block.instructions:
+                    print("t"+i.text)
+                    if(str(max_bb) in basicblock_mapping):
+                        inst2_count=0
+                        find =0
+
+                        for x in basicblock_mapping[str(max_bb)]:
+                            checked=1        
+                            if(str(i.text).find("debug")) >=0:
+                                if(str(x.text).find("debug")) >=0 :
+                                        if str(i.text).find(str(x.text)) >=0:
+                                            find=1
+                                            inst2_count+=1
+                                            # prev_x= x.text
+                                            process_inst.append(x)
+                                            break
+                                        print("d"+x.text)
+                            else:
+                                if(str(x.text).find("debug")) <0:
+                                    if(x not in process_inst):
+                                        print("c"+x.text)
+                                        if (i.opcode == x.opcode and len(x.ops) ==len(i.ops)  ):
+                                            xlen = len(x.ops)
+                                            ylen = len(i.ops)        
+                                            if (ylen == xlen ):
+                                                find=1
+                                                print("ok")
+                                                process_inst.append(x)
+                                                prev_x= x.text
+                                                inst2_count+=1
+                                                break
+
+                                        print("c"+x.text)
+                                                    
+                        
+                        if(find==0):
+                            if(str(i.text).find("debug")) <0:
+                                if(str(i.text).find("diff")<0 ):
+                                    print(i.text)
+                                    print("no ok")
+                                    i.text="diff(diff):"+i.text+"<=========" + str(prev_x) +" order error."            
+                                    diff_basicblock.append(str(basic_block.key))
+                    inst_count +=1
+            print("========")        
+
+            bb_index=basic_block_bakeup
+            bb_index+=1
+        if index == 0:
+            for x in range(len(basicblock_mapping)+20) :
+                # print(x)
+                if(  str(x) not  in basicblock_mapping) : 
+                    basicblock_mapping[str(x)]=[]
+
+          
+        index+=1   
+        bb_index=0
+    # for x in diff_basicblock:
+    #     print(x)
+    # return 
+    # for x in range(len(basicblock_mapping)) :
+    #     print(x)
+    #     for y in basicblock_mapping[str(x)]:
+    #         print(y)
+    # return 
+    # secand input count
+    index =0
+    for get_child in get_print_list:
+        
+        for address, basic_block in get_child[1].items():
+            key = str(address)            
+            newkey =""
+            
+            if(index == 0):
+                dot.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor="white")
+            else:    
+                if(key in diff_basicblock):
+                    dot2.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor=str("#28fca0"))
+                    precolor= str (newkey)
+                else:
+                    dot2.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor="white")
+            
+        for basic_block in get_child[1].values():
+            if basic_block.jump_edge:
+                if basic_block.no_jump_edge is not None:
+                    if(index==0):
+                        dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+                    else:
+                        dot2.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+                if(index==0):
+                    dot.edge(f'{basic_block.key}:s0', str(basic_block.jump_edge))
+                else:
+                    dot2.edge(f'{basic_block.key}:s0', str(basic_block.jump_edge))
+            elif basic_block.no_jump_edge:
+                if(index==0):
+                    dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+                else:
+                    dot2.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+        index+=1
+        precolor=0
+
+    if view:
+        dot.format = 'gv'
+        with tempfile.NamedTemporaryFile(mode='w+b', prefix=function_name) as filename:
+            # dot.view(filename.name)
+            print(f'Opening a file {filename.name}.{dot.format} with default viewer. Don\'t forget to delete it later.')
+    else:
+        dot.format = 'svg'
+        dot.render(filename=function_name, cleanup=True)
+        print(f'Saved CFG to a file {function_name}.{dot.format}')
+        replaceline_0(f'{function_name}.{dot.format}', f'back{function_name}.{dot.format}')
+        redundant(f'back{function_name}.{dot.format}', f'new{function_name}.{dot.format}')
+        # replaceline(f'back{function_name}.{dot.format}', f'new{function_name}.{dot.format}')
+        print(f'Saved new CFG to a file new{function_name}.{dot.format}')
+
+        dot2.format = 'svg'
+        dot2.render(filename=function_name+'2', cleanup=True)
+        print(f'Saved CFG to a file {function_name}2.{dot2.format}')
+        replaceline_0(f'{function_name}2.{dot2.format}', f'back{function_name}2.{dot2.format}')
+        redundant(f'back{function_name}2.{dot2.format}', f'new2{function_name}.{dot2.format}')
+        # replaceline(f'back{function_name}2.{dot2.format}', f'new2{function_name}.{dot2.format}')
+        print(f'Saved new CFG to a file new2{function_name}.{dot2.format}')
+```
+
+核心
+```python
+
+# basicblock recod
+basicblock_mapping={
+
+}
+# find basicblock 
+diff_basicblock =[
+
+]
+# same compiler differ
+
+def draw_cfg3(function_name,get_print_list, view):
+    dot=None
+    dot2=None
+    index =0
+    green = Color("green")
+    colors = list(green.range_to(Color("blue"),170))
+    dot = Digraph(name=function_name, comment=function_name, engine='dot')
+    dot2 = Digraph(name=function_name, comment=function_name, engine='dot')
+    # dot.graph_attr['rankdir'] = 'LR'
+    dot.attr('graph', label=function_name)
+    dot2.attr('graph', label=function_name)
+    find = []
+    #candidates
+    candidates=[]
+
+    # secand input count
+    index =0
+    # secand input basicblock count
+    bb_index=0
+    best_basic_block=0
+    for get_child in get_print_list:
+        
+        for address, basic_block in get_child[1].items():
+            key = str(address)
+            graph[key] =[]
+        for basic_block in  get_child[1].values():
+            
+            basic_block_bakeup=bb_index
+            basic_block_error = 0
+            same_block=0
+            if basic_block.jump_edge:
+                if basic_block.no_jump_edge is not None:
+                    graph[str(basic_block.key)].append(str(basic_block.no_jump_edge))
+                graph[str(basic_block.key)].append(str(basic_block.jump_edge))
+            elif basic_block.no_jump_edge:
+                graph[str(basic_block.key)].append(str(basic_block.no_jump_edge))
+          
+            if index == 0:
+                for i in basic_block.instructions:
+                    if(  str(bb_index) in basicblock_mapping) : 
+                        basicblock_mapping[str(bb_index)].append(i)
+                    else :
+                        basicblock_mapping[str(bb_index)]=[]
+                        basicblock_mapping[str(bb_index)].append(i)
+            else:
+                # for i in basic_block.instructions:
+                #     if(str(i.text).find("debug")) <0:
+                #         print(i.text)
+                # print(bb_index)
+                while(1):
+                    oor=0
+                    ins_count_per = 0
+                    inst_count=0
+                    process_inst=[]
+                    for i in basic_block.instructions:
+                        inst_count+=1
+                        if(str(bb_index) in basicblock_mapping):
+                            find =0
+                            for x in basicblock_mapping[str(bb_index)]:
+                                if(str(i.text).find("debug")) >=0:
+                                    if(str(x.text).find("debug")) >=0 :
+                                        if str(i.text).find(str(x.text)) >=0:
+                                            find=1
+                                            process_inst.append(x)
+                                            break       
+                                else:
+                                    if(x not in process_inst):
+                                        if i.opcode == x.opcode and len(x.ops) == len(i.ops):
+                                            xlen = len(x.ops)
+                                            ylen =  len(i.ops)
+                                            if (ylen == xlen ):
+                                                find=1
+                                                process_inst.append(x)
+                                                break
+
+                            if(find ==1) :
+                                ins_count_per+=1
+                        else:
+                            print("out of range")
+                            print(bb_index)
+                            oor=1
+       
+                    if(oor== 0):
+                        if(inst_count == 0 )  :      
+                            break
+        
+                    if(inst_count >0 and float(ins_count_per/inst_count) >=0.5) : 
+                        if([bb_index,float(ins_count_per/inst_count)] not in candidates ):
+                            candidates.append([bb_index,float(ins_count_per/inst_count)])
+                        print("======== new")
+                        print("same block")
+                        print(inst_count)
+                        print(ins_count_per)
+                        print("======== new")
+                        same_block+=1
+                        bb_index-=1
+                        if(same_block>=20):
+                            break
+                 
+                        # break
+                    else:
+                        print("maybe not same block")
+
+                        print("========")
+                        print(bb_index)
+                        print(inst_count)
+                        print(ins_count_per)
+                        print(basic_block_error)
+                        print("========")
+
+                
+                        if(basic_block_error<=5 ):
+                            bb_index+=1
+                            basic_block_error+=1
+                     
+                        elif (basic_block_error>5 and basic_block_error<=10 ):
+                            bb_index-=1
+                            basic_block_error+=1
+                      
+                        if(basic_block_error ==5 or basic_block_error ==10):
+                            bb_index=basic_block_bakeup
+                        if(basic_block_error >=10):
+                            print("no find same bb")
+                            # diff_basicblock.append(str(basic_block.key))
+                            break
+            if index == 1:
+                max = 0
+                max_bb =0
+                for x in candidates:
+                    if(x[1] >= max ):
+                        max = x[1]
+                        max_bb= x[0]
+                        print(max_bb)
+                print (candidates)
+                candidates=[]
+                print (max_bb)
+                # for x in basicblock_mapping[str(max_bb)]:
+                #     print(x)
+                print("hello")
+                # if(str(max_bb) in diff_basicblock):
+                #     diff_basicblock.remove(str(max_bb))
+                inst_count =0
+                process_inst=[]
+                prev_x=""
+                for i in basic_block.instructions:
+                    print("t"+i.text)
+                    if(str(max_bb) in basicblock_mapping):
+                        inst2_count=0
+                        find =0
+
+                        for x in basicblock_mapping[str(max_bb)]:
+                            checked=1        
+                            if(str(i.text).find("debug")) >=0:
+                                if(str(x.text).find("debug")) >=0 :
+                                        if str(i.text).find(str(x.text)) >=0:
+                                            find=1
+                                            inst2_count+=1
+                                            # prev_x= x.text
+                                            process_inst.append(x)
+                                            break
+                                        print("d"+x.text)
+                            else:
+                                if(str(x.text).find("debug")) <0:
+                                    if(x not in process_inst):
+                                        print("c"+x.text)
+                                        if (i.opcode == x.opcode and len(x.ops) ==len(i.ops)  ):
+                                            xlen = len(x.ops)
+                                            ylen = len(i.ops)        
+                                            if (ylen == xlen ):
+                                                find=1
+                                                print("ok")
+                                                process_inst.append(x)
+                                                prev_x= x.text
+                                                inst2_count+=1
+                                                break
+
+                                        print("c"+x.text)
+                                                    
+                        
+                        if(find==0):
+                            if(str(i.text).find("debug")) <0:
+                                if(str(i.text).find("diff")<0 ):
+                                    print(i.text)
+                                    print("no ok")
+                                    i.text="diff(diff):"+i.text+"<=========" + str(prev_x) +" order error."            
+                                    diff_basicblock.append(str(basic_block.key))
+                    inst_count +=1
+            print("========")        
+
+            bb_index=basic_block_bakeup
+            bb_index+=1
+        if index == 0:
+            for x in range(len(basicblock_mapping)+20) :
+                # print(x)
+                if(  str(x) not  in basicblock_mapping) : 
+                    basicblock_mapping[str(x)]=[]
+
+          
+        index+=1   
+        bb_index=0
+    # for x in diff_basicblock:
+    #     print(x)
+    # return 
+    # for x in range(len(basicblock_mapping)) :
+    #     print(x)
+    #     for y in basicblock_mapping[str(x)]:
+    #         print(y)
+    # return 
+    # secand input count
+    index =0
+    for get_child in get_print_list:
+        
+        for address, basic_block in get_child[1].items():
+            key = str(address)            
+            newkey =""
+            
+            if(index == 0):
+                dot.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor="white")
+            else:    
+                if(key in diff_basicblock):
+                    dot2.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor=str("#28fca0"))
+                    precolor= str (newkey)
+                else:
+                    dot2.node(key, shape='record', label=basic_block.get_label(),style="filled",fillcolor="white")
+            
+        for basic_block in get_child[1].values():
+            if basic_block.jump_edge:
+                if basic_block.no_jump_edge is not None:
+                    if(index==0):
+                        dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+                    else:
+                        dot2.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+                if(index==0):
+                    dot.edge(f'{basic_block.key}:s0', str(basic_block.jump_edge))
+                else:
+                    dot2.edge(f'{basic_block.key}:s0', str(basic_block.jump_edge))
+            elif basic_block.no_jump_edge:
+                if(index==0):
+                    dot.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+                else:
+                    dot2.edge(f'{basic_block.key}:s0', str(basic_block.no_jump_edge))
+        index+=1
+        precolor=0
+
+    if view:
+        dot.format = 'gv'
+        with tempfile.NamedTemporaryFile(mode='w+b', prefix=function_name) as filename:
+            # dot.view(filename.name)
+            print(f'Opening a file {filename.name}.{dot.format} with default viewer. Don\'t forget to delete it later.')
+    else:
+        dot.format = 'svg'
+        dot.render(filename=function_name, cleanup=True)
+        print(f'Saved CFG to a file {function_name}.{dot.format}')
+        replaceline_0(f'{function_name}.{dot.format}', f'back{function_name}.{dot.format}')
+        redundant(f'back{function_name}.{dot.format}', f'new{function_name}.{dot.format}')
+        # replaceline(f'back{function_name}.{dot.format}', f'new{function_name}.{dot.format}')
+        print(f'Saved new CFG to a file new{function_name}.{dot.format}')
+
+        dot2.format = 'svg'
+        dot2.render(filename=function_name+'2', cleanup=True)
+        print(f'Saved CFG to a file {function_name}2.{dot2.format}')
+        replaceline_0(f'{function_name}2.{dot2.format}', f'back{function_name}2.{dot2.format}')
+        redundant(f'back{function_name}2.{dot2.format}', f'new2{function_name}.{dot2.format}')
+        # replaceline(f'back{function_name}2.{dot2.format}', f'new2{function_name}.{dot2.format}')
+        print(f'Saved new CFG to a file new2{function_name}.{dot2.format}')
+```
+
+a.asm
+a2.asm
+https://gist.github.com/x213212/96bd63ef5df0ee3caebc3ee127dd0299
+給定兩個asm 尋找相同模糊區間，假日稍微改了一下，遇到一些相同compiler 版本，有+option 而導致code gen 不同，要找出，asm不同的地方，對我來說實在非常的麻煩，cfg3可以大致的對區間進行模糊搜尋以找出不同的basic block 或者特殊inst
+
+![](https://i.imgur.com/6abghfb.png)
+![](https://i.imgur.com/K9pBPMY.png)
+
+搜尋模糊區間匹配改用 匹配的inst/總basic inst算出比值，也新增了候選人basic block 名單找出 候選人中最相似的basic block 進行判斷，
+至於檢測Unrooling loop區間，給予某個basic block 倒是可以用key value 累積inst 然後mod2取餘數，一樣inst過半的情況下進行Unrooling loop 檢測，大概把當前inst 取餘數由上到下統計到剩餘的inst就可以為這個basic block register進行再分組，有空再來實驗.
+
