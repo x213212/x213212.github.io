@@ -30,7 +30,7 @@
   --field: rgba(255, 255, 255, .07);
   --text: #eef1f4;
   --muted: #b4bdc8;
-  --faint: #a2acb8;
+  --faint: #bcc5d0;
   --accent: #9ec2cc;
   --accent-soft: #dbe4e8;
   --link: #b3cae0;
@@ -163,7 +163,8 @@ button, input { font: inherit; }
   color: var(--muted); font: 650 .79rem/1 var(--sans); letter-spacing: .025em; text-decoration: none;
 }
 .site-nav a:hover, .github-link:hover { color: var(--accent); }
-.github-link { color: var(--accent-soft); white-space: nowrap; }
+.github-link { display: inline-flex; gap: .4rem; align-items: center; color: var(--accent-soft); white-space: nowrap; }
+.github-link__mark { display: none; }
 .theme-toggle {
   display: inline-flex; gap: .36rem; align-items: center; padding: .42rem 0;
   border: 0; border-radius: 0; color: var(--text); background: transparent;
@@ -518,7 +519,10 @@ button, input { font: inherit; }
   .site-header__inner { position: relative; }
   .site-nav { display: none; }
   .menu-toggle { display: inline-flex; }
-  .github-link { display: none; }
+  /* Keep the link reachable on tablets: show the mark, drop the label. */
+  .github-link__mark { display: block; }
+  .github-link__text { display: none; }
+  .github-link { padding: .4rem .2rem; }
 }
 @media (max-width: 760px) {
   .site-sidebar { top: 4rem; width: min(22rem, calc(100vw - .7rem)); }
@@ -526,7 +530,9 @@ button, input { font: inherit; }
   .site-header__inner { position: relative; gap: .72rem; width: min(1240px, calc(100% - 1.35rem)); min-height: 4rem; padding-block: .68rem; }
   .site-nav { display: none; }
   .menu-toggle { display: inline-flex; }
-  .github-link { display: none; }
+  .github-link__mark { display: block; }
+  .github-link__text { display: none; }
+  .github-link { flex: 0 0 auto; padding: .4rem .2rem; }
   .theme-toggle { padding: .4rem .52rem; }
   .theme-toggle [data-theme-label] { display: none; }
   .brand { flex: 1 1 auto; min-width: 0; max-width: none; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
@@ -686,7 +692,8 @@ button, input { font: inherit; }
   .post-filter__field--grow { flex-basis: 100%; }
   .post-filter__field { flex: 1 1 8rem; }
 }
-.visitor-count { margin-top: .35rem; color: var(--faint); font: .76rem/1.65 var(--mono); }
+.visitor-count { margin-top: .6rem; color: var(--faint); font: .68rem/1.6 var(--mono); }
+.visitor-count span { display: block; }
 .visitor-count[hidden] { display: none; }
 .maintenance { text-align: left; }
 .maintenance__meta { margin-top: 2rem; color: var(--faint); font: .8rem/1.6 var(--mono); }
