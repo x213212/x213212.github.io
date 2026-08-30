@@ -346,30 +346,31 @@
 
 /* Keep giscus in step with the site's own light/dark toggle. The comment box is
    a cross-origin iframe, so its theme can only be changed by postMessage - left
-   alone it would stay on whatever it loaded with while the page around it flips. */
+   alone it would stay on whatever it loaded with while the page around it flips.
+
+   The frame has to announce itself first. giscus inserts a same-origin blank
+   iframe and only then navigates it, so posting as soon as the element appears
+   targets the wrong origin and throws. Its own ready message is the signal. */
 (() => {
-  const frameSelector = 'iframe.giscus-frame';
+  const GISCUS_ORIGIN = 'https://giscus.app';
+  if (!document.querySelector(`script[src^="${GISCUS_ORIGIN}"]`)) return;
+
   const themeFor = () => (document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+  let ready = false;
 
   const send = () => {
-    const frame = document.querySelector(frameSelector);
-    if (!frame?.contentWindow) return;
-    frame.contentWindow.postMessage(
-      { giscus: { setConfig: { theme: themeFor() } } },
-      'https://giscus.app'
-    );
+    if (!ready) return;
+    const frame = document.querySelector('iframe.giscus-frame');
+    if (frame?.contentWindow?.postMessage) {
+      frame.contentWindow.postMessage({ giscus: { setConfig: { theme: themeFor() } } }, GISCUS_ORIGIN);
+    }
   };
 
-  if (!document.querySelector('script[src^="https://giscus.app"]')) return;
-
-  // The iframe is injected asynchronously, so set the theme once it appears.
-  const observer = new MutationObserver(() => {
-    if (document.querySelector(frameSelector)) {
-      send();
-      observer.disconnect();
-    }
+  window.addEventListener('message', (event) => {
+    if (event.origin !== GISCUS_ORIGIN || !event.data?.giscus) return;
+    ready = true;
+    send();
   });
-  observer.observe(document.body, { childList: true, subtree: true });
 
   new MutationObserver(send).observe(document.documentElement, {
     attributes: true,

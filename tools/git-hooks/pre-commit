@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+# Refuse a commit that would publish something this site should not.
+#
+# GitHub's push protection catches provider tokens, but only after the push has
+# already left the machine and only for the patterns it knows. This runs first,
+# on the staged content, and also covers the things specific to this repository:
+# the self-hosted editor, the local secret list, the raw import record, camera
+# metadata in photographs, and the build output CI regenerates anyway.
+#
+# Install once per clone:
+#     git config core.hooksPath tools/git-hooks
+#
+# Bypass for a deliberate exception:
+#     git commit --no-verify
+
+set -uo pipefail
+
+fail=0
+note() { printf 'pre-commit: %s\n' "$1" >&2; fail=1; }
+
+staged() { git diff --cached --name-only --diff-filter=ACM; }
+
+# Paths that must never be committed, whatever .gitignore currently says.
+while IFS= read -r path; do
+  case "$path" in
+    tools/local_admin.py|Dockerfile.admin|docker-compose.admin.yml|.dockerignore)
+      note "the self-hosted editor is not part of the published site: $path" ;;
+    .claude/*)
+      note "Claude Code settings record approved commands verbatim: $path" ;;
+    data/secrets-to-scrub.local.json)
+      note "this file holds the plaintext values the scrubber removes: $path" ;;
+    data/posts.json)
+      note "the raw import record is not needed to build the site: $path" ;;
+    docs/*)
+      note "docs/ is a build artifact; CI regenerates it on push: $path" ;;
+    site/assets/media/*)
+      note "the lossless media cache stays on this machine: $path" ;;
+  esac
+done < <(staged)
+
+# Credentials, in the staged blob rather than the working tree.
+token_pattern='(AKIA|ASIA)[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{35}|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{22,}|gl(pat|rt|dt|soat|ptt)-[A-Za-z0-9_-]{16,}|xox[abposr]-[A-Za-z0-9-]{10,}|sk-(proj-|ant-)?[A-Za-z0-9_-]{20,}|SG\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}|npm_[A-Za-z0-9]{36}|hf_[A-Za-z0-9]{30,}|dapi[0-9a-f]{32}'
+
+while IFS= read -r path; do
+  case "$path" in
+    tools/git-hooks/*) continue ;;                 # this file lists the patterns
+  esac
+  # Stream the blob into grep. Reading it into a variable would truncate at the
+  # first null byte, which is exactly what a binary file starts with.
+  if git show ":$path" 2>/dev/null | grep -qaE -- "$token_pattern"; then
+    note "refusing an access token in: $path"
+  fi
+  if git show ":$path" 2>/dev/null | grep -qaE 'BEGIN (RSA |DSA |EC |OPENSSH |PGP |ENCRYPTED )?PRIVATE KEY|PuTTY-User-Key-File-[0-9]'; then
+    note "refusing private key material in: $path"
+  fi
+  if git show ":$path" 2>/dev/null | grep -qaE '[a-z][a-z0-9+.-]*://[^[:space:]/:@]{2,}:[^[:space:]/@]{4,}@'; then
+    note "refusing a credential embedded in a URL in: $path"
+  fi
+done < <(staged)
+
+# Photographs carry the place they were taken. The optimiser strips EXIF, but a
+# file added by hand has not been through it.
+images=$(staged | grep -iE '\.(jpe?g|png|tiff?|heic)$' || true)
+if [ -n "$images" ] && command -v python3 >/dev/null 2>&1; then
+  while IFS= read -r path; do
+    [ -n "$path" ] || continue
+    git show ":$path" > "${TMPDIR:-/tmp}/pre-commit-image" 2>/dev/null || continue
+    verdict=$(python3 - "${TMPDIR:-/tmp}/pre-commit-image" <<'PY' 2>/dev/null
+import sys
+try:
+    from PIL import Image, ExifTags
+except ImportError:
+    sys.exit(0)
+try:
+    with Image.open(sys.argv[1]) as im:
+        exif = im.getexif()
+except Exception:
+    sys.exit(0)
+tags = {ExifTags.TAGS.get(t, str(t)) for t in exif}
+if 34853 in exif:
+    print("GPS coordinates")
+elif tags & {"Make", "Model", "SerialNumber", "BodySerialNumber", "Artist"}:
+    print("camera or author metadata")
+PY
+)
+    [ -n "$verdict" ] && note "image carries $verdict: $path  (re-save it, or run tools/optimize_media.py)"
+  done <<< "$images"
+  rm -f "${TMPDIR:-/tmp}/pre-commit-image"
+fi
+
+# A file large enough that GitHub warns about it is nearly always a mistake here.
+while IFS= read -r path; do
+  size=$(git cat-file -s "$(git rev-parse ":$path" 2>/dev/null)" 2>/dev/null) || continue
+  if [ "${size:-0}" -gt 20971520 ]; then
+    note "$(( size / 1048576 )) MB is too large for this repository: $path"
+  fi
+done < <(staged)
+
+if [ "$fail" -ne 0 ]; then
+  printf 'pre-commit: commit aborted. Nothing here should carry a key, a private file, or build output.\n' >&2
+  exit 1
+fi
+exit 0
