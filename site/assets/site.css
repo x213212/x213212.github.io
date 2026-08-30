@@ -5,7 +5,7 @@
   color-scheme: dark;
   --canvas: #070d14;
   --image-opacity: .58;
-  --image-filter: blur(3px) saturate(.95) brightness(.82) contrast(.88);
+  --backdrop-image: url("backdrop-dark.jpg");
   --text-shadow: 0 1px 2px rgba(0, 0, 0, .55);
   --canvas-glow-a: rgba(207, 230, 245, .065);
   --canvas-glow-b: rgba(93, 120, 143, .12);
@@ -13,15 +13,15 @@
   --image-wash-bottom: rgba(3, 9, 15, .62);
   --surface: rgba(12, 19, 27, .76);
   --surface-raised: rgba(21, 30, 40, .52);
-  --panel: rgba(10, 17, 25, .58);
-  --card: rgba(13, 21, 30, .52);
+  --panel: rgba(10, 17, 25, .72);
+  --card: rgba(13, 21, 30, .70);
   --glass-highlight: rgba(255, 255, 255, .05);
   --glass-shadow-edge: rgba(255, 255, 255, .025);
   --hero-start: rgba(49, 57, 65, .83);
   --hero-end: rgba(28, 32, 38, .86);
-  --header: rgba(7, 13, 20, .58);
-  --glass-filter: blur(20px) saturate(1.3);
-  --drawer: rgba(7, 13, 20, .62);
+  --header: rgba(7, 13, 20, .82);
+  --glass-filter: none;
+  --drawer: rgba(7, 13, 20, .88);
   --line: rgba(225, 231, 237, .13);
   --line-bright: rgba(225, 231, 237, .24);
   --chip: rgba(255, 255, 255, .06);
@@ -55,7 +55,7 @@ html[data-theme="light"] {
   color-scheme: light;
   --canvas: #e9eff3;
   --image-opacity: .52;
-  --image-filter: blur(3px) saturate(.95) brightness(1.06) contrast(.82);
+  --backdrop-image: url("backdrop-light.jpg");
   --text-shadow: 0 1px 2px rgba(255, 255, 255, .6);
   --canvas-glow-a: rgba(255, 255, 255, .28);
   --canvas-glow-b: rgba(102, 132, 149, .16);
@@ -63,15 +63,15 @@ html[data-theme="light"] {
   --image-wash-bottom: rgba(232, 241, 246, .68);
   --surface: rgba(252, 254, 255, .82);
   --surface-raised: rgba(255, 255, 255, .60);
-  --panel: rgba(250, 253, 255, .62);
-  --card: rgba(255, 255, 255, .58);
+  --panel: rgba(250, 253, 255, .78);
+  --card: rgba(255, 255, 255, .76);
   --glass-highlight: rgba(255, 255, 255, .58);
   --glass-shadow-edge: rgba(76, 90, 105, .10);
   --hero-start: rgba(238, 242, 245, .9);
   --hero-end: rgba(218, 225, 230, .86);
-  --header: rgba(244, 249, 252, .64);
-  --glass-filter: blur(20px) saturate(1.15);
-  --drawer: rgba(244, 249, 252, .70);
+  --header: rgba(244, 249, 252, .86);
+  --glass-filter: none;
+  --drawer: rgba(244, 249, 252, .92);
   --line: rgba(38, 50, 66, .16);
   --line-bright: rgba(38, 50, 66, .28);
   --chip: rgba(23, 32, 51, .05);
@@ -110,12 +110,13 @@ body {
   transition: color .25s ease, background-color .25s ease;
 }
 /* The photo is a backdrop, not a competing layer: blurred, desaturated and dimmed
-   so every text tier keeps a WCAG AA ratio over the brightest part of the image. */
+   so every text tier keeps a WCAG AA ratio over the brightest part of the image.
+   The blur is baked into the file rather than applied here - a fixed, full-screen
+   filter is recomposited on every frame, and the result never changes. */
 body::before {
   position: fixed; z-index: -2; inset: -3vmax; content: "";
-  background: url("andrzejstajer-background.jpg") center / cover no-repeat;
+  background: var(--backdrop-image) center / cover no-repeat;
   opacity: var(--image-opacity);
-  filter: var(--image-filter);
   pointer-events: none;
 }
 body::after {
@@ -199,7 +200,6 @@ button, input { font: inherit; }
   padding: 1.05rem 1.35rem; margin-bottom: 1rem;
   border: 1px solid var(--line); border-radius: 1.2rem;
   background: var(--panel); box-shadow: inset 0 1px 0 var(--glass-highlight), 0 .7rem 2rem rgba(0, 0, 0, .10);
-  backdrop-filter: blur(18px) saturate(1.12);
 }
 .hero h1, .page-heading h1, .post-page h1, .not-found h1 {
   margin: 0; color: var(--text); font-weight: 790; line-height: 1.08; letter-spacing: -.065em;
@@ -342,14 +342,16 @@ button, input { font: inherit; }
   position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 9.25rem; gap: 1.35rem;
   overflow: hidden; padding: 1.3rem 1.45rem; border: 1px solid var(--line);
   border-radius: 1.15rem; background: var(--card);
-  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 .8rem 2.4rem rgba(0, 0, 0, .10); backdrop-filter: blur(13px);
-  transition: border-color .22s ease, transform .22s ease, box-shadow .22s ease;
+  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 .8rem 2.4rem rgba(0, 0, 0, .10);
+  /* Off-screen cards cost nothing to lay out until they scroll into view. */
+  content-visibility: auto; contain-intrinsic-size: auto 12rem;
+  transition: border-color .22s ease;
 }
 .post-card::before {
   position: absolute; top: 1.1rem; bottom: 1.1rem; left: 0; width: 3px; border-radius: 99px;
   background: var(--accent); content: ""; opacity: .42; transition: opacity .22s ease;
 }
-.post-card:hover { border-color: var(--line-bright); box-shadow: var(--shadow); transform: translateY(-3px); }
+.post-card:hover { border-color: var(--line-bright); }
 .post-card:hover::before { opacity: 1; }
 .post-card__meta { color: var(--faint); font: .72rem/1 var(--mono); }
 .post-card h2 { margin: .72rem 0 .55rem; font-size: clamp(1.15rem, 2vw, 1.52rem); line-height: 1.32; letter-spacing: -.03em; }
@@ -361,11 +363,8 @@ button, input { font: inherit; }
   display: block; align-self: center; width: 9.25rem; height: 9.25rem; overflow: hidden;
   border: 1px solid var(--line); border-radius: 1rem; background: var(--surface);
 }
-.post-card__thumbnail img {
-  display: block; width: 100%; height: 100%; object-fit: cover;
-  transition: transform .45s cubic-bezier(.2, .75, .25, 1);
-}
-.post-card:hover .post-card__thumbnail img { transform: scale(1.045); }
+.post-card__thumbnail img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
 .post-tags, .post-categories { display: flex; flex-wrap: wrap; gap: .42rem; margin-top: 1rem; }
 .category {
   display: inline; padding: 0; color: var(--accent); background: none;
@@ -484,8 +483,9 @@ button, input { font: inherit; }
 .about-profile__contact a { font: .84rem/1.45 var(--mono); }
 .button { display: inline-block; padding: .65rem .95rem; border: 1px solid var(--accent); border-radius: .75rem; color: var(--accent); text-decoration: none; }
 .button:hover { color: var(--on-accent); background: var(--accent); }
-.js [data-reveal] { opacity: 0; transform: translateY(1.2rem); }
-.js [data-reveal].is-visible { opacity: 1; transform: translateY(0); transition: opacity .56s ease, transform .56s cubic-bezier(.2, .75, .25, 1); }
+/* The reveal animation ran on every card on every page. It carried no
+   information and cost a composite pass per card. */
+.js [data-reveal], .js [data-reveal].is-visible { opacity: 1; transform: none; transition: none; }
 
 @media (max-width: 1050px) {
   body.sidebar-open { overflow: hidden; }
@@ -571,10 +571,6 @@ button, input { font: inherit; }
   .post-content { color: #111; }
 }
 
-@supports not ((backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))) {
-  :root { --panel: rgba(10, 17, 25, .88); --card: rgba(13, 21, 30, .82); --header: rgba(7, 13, 20, .93); --code: rgba(5, 10, 15, .92); }
-  html[data-theme="light"] { --panel: rgba(250, 253, 255, .93); --card: rgba(255, 255, 255, .88); --header: rgba(244, 249, 252, .95); --code: rgba(234, 240, 245, .95); }
-}
 
 /* Code blocks: server-rendered Pygments classes mapped onto the site palette,
    so highlighting works in both themes without shipping a JS highlighter. */
