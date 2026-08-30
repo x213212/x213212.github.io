@@ -20,7 +20,6 @@
   --hero-start: rgba(49, 57, 65, .83);
   --hero-end: rgba(28, 32, 38, .86);
   --header: rgba(7, 13, 20, .82);
-  --glass-filter: none;
   --drawer: rgba(7, 13, 20, .88);
   --line: rgba(225, 231, 237, .13);
   --line-bright: rgba(225, 231, 237, .24);
@@ -70,7 +69,6 @@ html[data-theme="light"] {
   --hero-start: rgba(238, 242, 245, .9);
   --hero-end: rgba(218, 225, 230, .86);
   --header: rgba(244, 249, 252, .86);
-  --glass-filter: none;
   --drawer: rgba(244, 249, 252, .92);
   --line: rgba(38, 50, 66, .16);
   --line-bright: rgba(38, 50, 66, .28);
@@ -114,7 +112,7 @@ body {
    The blur is baked into the file rather than applied here - a fixed, full-screen
    filter is recomposited on every frame, and the result never changes. */
 body::before {
-  position: fixed; z-index: -2; inset: -3vmax; content: "";
+  position: fixed; z-index: -2; inset: 0; content: "";
   background: var(--backdrop-image) center / cover no-repeat;
   opacity: var(--image-opacity);
   pointer-events: none;
@@ -144,7 +142,7 @@ button, input { font: inherit; }
 
 .site-header {
   position: sticky; z-index: 10; top: 0; border-bottom: 1px solid var(--line);
-  background: var(--header); backdrop-filter: var(--glass-filter);
+  background: var(--header);
 }
 .site-header__inner, .site-main, .site-footer {
   width: min(1240px, calc(100% - 3rem)); margin-inline: auto;
@@ -483,9 +481,6 @@ button, input { font: inherit; }
 .about-profile__contact a { font: .84rem/1.45 var(--mono); }
 .button { display: inline-block; padding: .65rem .95rem; border: 1px solid var(--accent); border-radius: .75rem; color: var(--accent); text-decoration: none; }
 .button:hover { color: var(--on-accent); background: var(--accent); }
-/* The reveal animation ran on every card on every page. It carried no
-   information and cost a composite pass per card. */
-.js [data-reveal], .js [data-reveal].is-visible { opacity: 1; transform: none; transition: none; }
 
 @media (max-width: 1050px) {
   body.sidebar-open { overflow: hidden; }
@@ -495,7 +490,7 @@ button, input { font: inherit; }
     display: block; position: fixed; z-index: 40; top: 4.6rem; right: 0; bottom: 0; width: min(23rem, calc(100vw - 1rem));
     max-height: none; margin: 0; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none;
     border-width: 0 0 0 1px; border-style: solid; border-color: var(--line-bright); border-radius: 0;
-    background: var(--drawer); box-shadow: none; backdrop-filter: var(--glass-filter);
+    background: var(--drawer); box-shadow: none;
     opacity: 0; pointer-events: none;
     transform: translateX(calc(100% + 1rem)); transition: transform .32s cubic-bezier(.2, .75, .25, 1), opacity .2s ease;
   }
@@ -651,7 +646,7 @@ button, input { font: inherit; }
   display: flex; flex-wrap: wrap; gap: .6rem; align-items: center;
   margin: 0 0 1rem; padding: .7rem .85rem;
   border: 1px solid var(--line); border-radius: .9rem;
-  background: var(--panel); backdrop-filter: var(--glass-filter);
+  background: var(--panel);
 }
 /* display:flex above outranks the UA's [hidden] rule, so restate it. */
 .post-filter[hidden] { display: none; }

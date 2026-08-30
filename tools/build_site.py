@@ -986,7 +986,7 @@ def post_card(
 ) -> str:
     href = output_relative_link(current, post["route"])
     thumbnail = post_thumbnail(post, current, media, thumbnails)
-    return f'''<article class="post-card" data-reveal>
+    return f'''<article class="post-card">
   <div class="post-card__body">
     <div class="post-card__meta"><time datetime="{html.escape(post['published'], quote=True)}">{display_date(post['published'])}</time></div>
     <h2><a href="{html.escape(href, quote=True)}">{html.escape(post['title'])}</a></h2>

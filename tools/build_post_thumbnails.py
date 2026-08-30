@@ -94,6 +94,29 @@ def optimization_sources(root: Path) -> dict[str, dict[str, Any]]:
     return result
 
 
+def upload_sources(root: Path) -> dict[str, dict[str, Any]]:
+    """Return source URL -> record for images added through the local editor.
+
+    Uploads never pass through the media optimizer - they are already local -
+    so without this they would have no thumbnail, and a post card would show a
+    full-size article image scaled down to a 148 px box by the browser.
+    """
+    directory = root / "site" / "assets" / "uploads"
+    if not directory.is_dir():
+        return {}
+    result: dict[str, dict[str, Any]] = {}
+    for path in sorted(directory.iterdir()):
+        if not path.is_file() or path.suffix.lower() not in {".png", ".jpg", ".jpeg", ".gif", ".webp"}:
+            continue
+        url = f"/assets/uploads/{path.name}"
+        result[url] = {
+            "source_id": path.stem,
+            "optimized_local_path": f"assets/uploads/{path.name}",
+            "_source_path": path,
+        }
+    return result
+
+
 def signed_hackmd_preview(source: str) -> bool:
     """Match the site builder's treatment of expired HackMD preview URLs."""
     parsed = urlsplit(source)
@@ -121,7 +144,10 @@ def rendered_images(markdown_source: str) -> list[tuple[str, str]]:
     soup = BeautifulSoup(rendered, "html.parser")
     result: list[tuple[str, str]] = []
     for image in soup.find_all("img", src=True):
-        source = normalize_asset_url(str(image.get("src", "")))
+        raw = str(image.get("src", "")).strip()
+        # normalize_asset_url is the importer's rule - remote media only, because
+        # that is what it downloads. A thumbnail can come from a local upload too.
+        source = raw if raw.startswith("/assets/") else normalize_asset_url(raw)
         if source:
             result.append((source, str(image.get("alt") or "")))
     return result
@@ -219,7 +245,8 @@ def main() -> int:
     except ValueError:
         parser.error("--output-dir must be inside site/ so the static builder can deploy it safely")
 
-    sources = optimization_sources(root)
+    # Optimizer output first; a local upload only fills a gap it leaves.
+    sources = {**upload_sources(root), **optimization_sources(root)}
     posts = [post for post in load_editable_posts(root) if not post.get("draft")]
     items: list[dict[str, Any]] = []
     emitted: set[str] = set()
