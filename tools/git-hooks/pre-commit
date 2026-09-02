@@ -29,6 +29,8 @@ while IFS= read -r path; do
       note "Claude Code settings record approved commands verbatim: $path" ;;
     data/secrets-to-scrub.local.json)
       note "this file holds the plaintext values the scrubber removes: $path" ;;
+    data/admin-token.local)
+      note "this token grants write access to every post: $path" ;;
     data/posts.json)
       note "the raw import record is not needed to build the site: $path" ;;
     docs/*)
@@ -39,7 +41,7 @@ while IFS= read -r path; do
 done < <(staged)
 
 # Credentials, in the staged blob rather than the working tree.
-token_pattern='(AKIA|ASIA)[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{35}|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{22,}|gl(pat|rt|dt|soat|ptt)-[A-Za-z0-9_-]{16,}|xox[abposr]-[A-Za-z0-9-]{10,}|sk-(proj-|ant-)?[A-Za-z0-9_-]{20,}|SG\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}|npm_[A-Za-z0-9]{36}|hf_[A-Za-z0-9]{30,}|dapi[0-9a-f]{32}'
+token_pattern='(AKIA|ASIA)[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{35}|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{22,}|gl(pat|rt|dt|soat|ptt)-[A-Za-z0-9_-]{16,}|xox[abposr]-[A-Za-z0-9-]{10,}|(^|[^A-Za-z0-9])sk-(proj-|ant-)?[A-Za-z0-9_-]{20,}|SG\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}|npm_[A-Za-z0-9]{36}|hf_[A-Za-z0-9]{30,}|dapi[0-9a-f]{32}'
 
 while IFS= read -r path; do
   case "$path" in

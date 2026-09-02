@@ -14,6 +14,10 @@ docs/
 # of the scrubber is to keep these out of the repository.
 data/secrets-to-scrub.local.json
 
+# The admin session token for a non-loopback bind. It grants write access to
+# every post, so it lives on this machine and nowhere else.
+data/admin-token.local
+
 # Claude Code's local settings. They record approved shell commands verbatim,
 # which is how the admin token ended up in here - never publish this.
 .claude/
