@@ -62,8 +62,17 @@ layout: post
 
 ##
 
-```html
-<script src="https://gist.github.com/x213212/13d5cc425952421ded8278f34d9b7674.js"></script>
+```python
+
+from pytrends.request import TrendReq
+
+
+# Login to Google. Only need to run this once, the rest of requests will use the same session.
+pytrend = TrendReq()
+
+
+tk = pytrend.get_historical_interest(['stock'], year_start=2014, month_start=1, day_start=1, year_end=2014, month_end=10, day_end=1, cat=0, geo='', gprop='', sleep=0)
+print (tk.head())
 ```
 
   

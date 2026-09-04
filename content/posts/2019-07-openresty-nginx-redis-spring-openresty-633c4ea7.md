@@ -107,8 +107,243 @@ WebSocket是HTML5開始提供的一種瀏覽器與伺服器間進行全雙工通
 
 ![](https://i.imgur.com/QyCLglC.png)
 
+**`lua.conf`**
+
+```
+server {
+    listen  6699;
+    location /lua {
+        default_type text/html;
+        lua_code_cache off;
+        content_by_lua_file /home/x213212/openresty-test/conf/lua/test.lua;
+    }
+    location = /sredis {
+        content_by_lua_file /home/x213212/openresty-test/conf/lua/ws_redis.lua;
+    }
+
+    location ~ /ws/(.*) {
+        alias /home/x213212/openresty-test/conf/html/$1.html;
+    }
+}
+```
+
+**`nginx.conf`**
+
+```nginx
+user root;
+worker_processes  1;        #nginx worker 数量
+error_log logs/error.log;   #指定错误日志文件路径
+events {
+    worker_connections 1024;
+}
+
+http {
+        default_type  text/html;
+        lua_package_path "/home/x213212/openresty/lualib/?.lua;;";
+        lua_package_cpath "/home/x213212/openresty/lualib/?.so;;";
+        include lua.conf;
+
+}
+```
+
+**`test.lua`**
+
+```lua
+ngx.say("hello world");
+ngx.say("test2");
+ 
+```
+
+**`web.html`**
+
 ```html
-<script src="https://gist.github.com/x213212/d28ad7d5ecd85ea98dcdc50702bad5ed.js"></script>
+<!DOCTYPE HTML>
+<html>
+
+        <head>
+                    <meta charset="utf-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+                            <script type="text/javascript">
+                                        var ws = null;
+
+    function WebSocketConn() {
+                    if (ws != null && ws.readyState == 1) {
+                                        log("已经在线");
+                                        return
+                                    }
+
+                    if ("WebSocket" in window) {
+                                        // Let us open a web socket
+                                        ws = new WebSocket("ws://localhost:6699/sredis");
+
+                                        ws.onopen = function() {
+                                                                log('成功进入聊天室');
+                                                            };
+
+                                        ws.onmessage = function(event) {
+                                                                log(event.data)
+                                                            };
+
+                                        ws.onclose = function() {
+                                                                // websocket is closed.
+                                                                log("已经和服务器断开");
+                                                            };
+
+                                        ws.onerror = function(event) {
+                                                                console.log("error " + event.data);
+                                                            };
+                                    } else {
+                                                        // The browser doesn't support WebSocket
+                                                        alert("WebSocket NOT supported by your Browser!");
+                                                    }
+                }
+
+    function SendMsg() {
+                    if (ws != null && ws.readyState == 1) {
+                                        var msg = document.getElementById('msgtext').value;
+                                        ws.send(msg);
+                                    } else {
+                                                        log('请先进入聊天室');
+                                                    }
+                }
+
+    function WebSocketClose() {
+                    if (ws != null && ws.readyState == 1) {
+                                        ws.close();
+                                        log("发送断开服务器请求");
+                                    } else {
+                                                        log("当前没有连接服务器")
+                                                    }
+                }
+
+    function log(text) {
+                    var li = document.createElement('li');
+                    li.appendChild(document.createTextNode(text));
+                   document.getElementById('log').appendChild(li);
+                    return false;
+                }
+    </script>
+        </head>
+
+        <body>
+                   <div id="sse">
+                   <a href="javascript:WebSocketConn()">进入聊天室</a> &nbsp;
+                   <a href="javascript:WebSocketClose()">离开聊天室</a>
+                   <br>
+                   <br>
+                   <input id="msgtext" type="text">
+                   <br>
+                   <a href="javascript:SendMsg()">发送信息</a>
+                   <br>
+                   <ol id="log"></ol>
+                   </div>
+        </body>
+
+</html>
+```
+
+**`ws_redis.lua`**
+
+```lua
+local server = require "resty.websocket.server"
+local redis = require "resty.redis"
+
+local channel_name = "chat"
+local msg_id = 0
+
+local wb, err = server:new{
+  timeout = 10000,
+  max_payload_len = 65535
+}
+
+--create success
+if not wb then
+  ngx.log(ngx.ERR, "failed to new websocket: ", err)
+  return ngx.exit(444)
+end
+
+
+local push = function()
+    -- --create redis
+    local red = redis:new()
+    red:set_timeout(5000) -- 1 sec
+    local ok, err = red:connect("127.0.0.1", 6379)
+    if not ok then
+        ngx.log(ngx.ERR, "failed to connect redis: ", err)
+        wb:send_close()
+        return
+    end
+
+    --sub
+    local res, err = red:subscribe(channel_name)
+    if not res then
+        ngx.log(ngx.ERR, "failed to sub redis: ", err)
+        wb:send_close()
+        return
+    end
+
+    -- loop : read from redis
+    while true do
+        local res, err = red:read_reply()
+        if res then
+            local item = res[3]
+            local bytes, err = wb:send_text(tostring("server:").." "..item)
+            if not bytes then
+                -- better error handling
+                ngx.log(ngx.ERR, "failed to send text: ", err)
+                return ngx.exit(444)
+            end
+            msg_id = msg_id + 1
+        end
+    end
+end
+
+
+local co = ngx.thread.spawn(push)
+
+--main loop
+while true do
+    -- 获取数据
+    local data, typ, err = wb:recv_frame()
+
+    -- 如果连接损坏 退出
+        if wb.fatal then
+        ngx.log(ngx.ERR, "failed to receive frame: ", err)
+        return ngx.exit(444)
+    end
+
+    if not data then
+        local bytes, err = wb:send_ping()
+        if not bytes then
+          ngx.log(ngx.ERR, "failed to send ping: ", err)
+          return ngx.exit(444)
+        end
+        ngx.log(ngx.ERR, "send ping: ", data)
+    elseif typ == "close" then
+        break
+    elseif typ == "ping" then
+        local bytes, err = wb:send_pong()
+        if not bytes then
+            ngx.log(ngx.ERR, "failed to send pong: ", err)
+            return ngx.exit(444)
+        end
+    elseif typ == "pong" then
+        ngx.log(ngx.ERR, "client ponged")
+    elseif typ == "text" then
+        --send to redis
+        local red2 = redis:new()
+        red2:set_timeout(1000) -- 1 sec
+        local ok, err = red2:connect("127.0.0.1", 6379)
+        if not ok then
+            ngx.log(ngx.ERR, "failed to connect redis: ", err)
+            break
+        end
+        local res, err = red2:publish(channel_name, data)
+        if not res then
+            ngx.log(ngx.ERR, "failed to publish redis: ", err)
+        end
+    end
+end
 ```
 
 參考:<https://kknews.cc/zh-tw/other/qvormg.html>  

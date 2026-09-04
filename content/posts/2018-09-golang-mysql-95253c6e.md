@@ -30,8 +30,36 @@ layout: post
 
 這邊代碼我們把檔案讀進去了接下來看要怎樣對上傳CSV檔案到SQL資料庫吧  
 
-```html
-<script src="https://gist.github.com/x213212/df30e37e13493728b6bdbc7e0ba3262b.js"></script>
+```go
+package main
+
+import (
+    "encoding/csv"
+    "fmt"
+    "io"
+    "os"
+)
+
+func main() {
+    file, err := os.Open("names.txt")
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    defer file.Close()
+    reader := csv.NewReader(file)
+    for {
+        record, err := reader.Read()
+        if err == io.EOF {
+            break
+        } else if err != nil {
+            fmt.Println("Error:", err)
+            return
+        }
+
+        fmt.Println(record) // record has the type []string
+    }
+}
 ```
 
   
@@ -39,8 +67,154 @@ layout: post
 
 ## ---
 
-```html
-<script src="https://gist.github.com/x213212/c2f74b41dab01fe75d5b4dfc6c159b14.js"></script>
+**`createtable.go`**
+
+```go
+func create(name string) {
+
+   db, err := sql.Open("mysql", "admin:admin@tcp(127.0.0.1:3306)/")
+   if err != nil {
+       panic(err)
+   }
+   defer db.Close()
+
+   _,err = db.Exec("CREATE DATABASE "+name)
+   if err != nil {
+       panic(err)
+   }
+
+   _,err = db.Exec("USE "+name)
+   if err != nil {
+       panic(err)
+   }
+
+   _,err = db.Exec("CREATE TABLE example ( id integer, data varchar(32) )")
+   if err != nil {
+       panic(err)
+   }
+}
+```
+
+**`insert.go`**
+
+```go
+func insert() {
+    db, err := sql.Open("mysql", "root:1234@tcp(localhost:3306)/mysql?charset=utf8")
+
+    stmt, err := db.Prepare(`INSERT user (Host,user,password) values (?,?,?)`)
+	if err != nil {
+		panic(err)
+	}
+    res, err := stmt.Exec("tony", 20, 1)
+	if err != nil {
+		panic(err)
+	}
+    id, err := res.LastInsertId()
+	if err != nil {
+		panic(err)
+	}
+    fmt.Println(id)
+}
+```
+
+**`remove.go`**
+
+```go
+func remove() {
+    db, err := sql.Open("mysql", "root:1234@tcp(localhost:3306)/mysql?charset=utf8")
+	if err != nil {
+		panic(err)
+	}
+    stmt, err := db.Prepare(`DELETE FROM user WHERE user_id=?`)
+	if err != nil {
+		panic(err)
+	}
+    res, err := stmt.Exec(1)
+	if err != nil {
+		panic(err)
+	}
+    num, err := res.RowsAffected()
+	if err != nil {
+		panic(err)
+	}
+    fmt.Println(num)
+}
+```
+
+**`select.go`**
+
+```go
+func getFromdatabase() {
+
+	db, e := sql.Open("mysql", "root:1234@tcp(localhost:3306)/mysql?charset=utf8")
+    if e != nil { 
+        print("ERROR?")
+        return
+    }
+   
+    _, e2 := db.Query("select 1")
+    if e2 == nil {
+        println("DB OK")
+        rows, e := db.Query("select user,password,host from mysql.user")
+        if e != nil {
+            fmt.Print("query error!!%v\n", e)
+            return
+        }
+        if rows == nil {
+            print("Rows is nil")   
+            return
+        }
+        for rows.Next() { 
+            user := new(User)
+         
+            row_err := rows.Scan(&user.User,&user.Password, &user.Host)
+            if row_err != nil {
+                print("Row error!!")
+                return
+            }
+            b, _ := json.Marshal(user)
+            fmt.Println(string(b)) 
+        }
+
+    }
+
+}
+```
+
+**`update.go`**
+
+```go
+func update() {
+    db, err := sql.Open("mysql", "root:1234@tcp(localhost:3306)/mysql?charset=utf8")
+	if err != nil {
+		panic(err)
+	}
+    stmt, err := db.Prepare(`UPDATE user SET user_age=?,user_sex=? WHERE user_id=?`)
+	if err != nil {
+		panic(err)
+	}
+    res, err := stmt.Exec(21, 2, 1)
+	if err != nil {
+		panic(err)
+	}
+    num, err := res.RowsAffected()
+	if err != nil {
+		panic(err)
+	}
+    fmt.Println(num)
+}
+```
+
+**`解構體.go`**
+
+```go
+// 定义一个结构体, 需要大写开头哦, 字段名也需要大写开头哦, 否则json模块会识别不了
+// 结构体成员仅大写开头外界才能访问
+type User struct {
+    User      string    `json:"user"`
+    Password string `json:"password"`
+    Host   string `json:"host"`
+}
 ```
 
   
@@ -60,8 +234,102 @@ layout: post
 [![](https://i.imgur.com/C2bxSJd.png)](https://i.imgur.com/C2bxSJd.png)
   
 
-```html
-<script src="https://gist.github.com/x213212/9769a08aa2adae06d7f24c9e1ecd4754.js"></script>
+```go
+package main
+
+import (
+    "encoding/csv"
+    "fmt"
+    "io"
+	"os"	
+	"database/sql"
+)
+import _ "github.com/go-sql-driver/mysql"
+func typeof(v interface{}) string {
+    return fmt.Sprintf("%T", v)
+}
+func create(name string) {
+
+	db, err := sql.Open("mysql", "root:1234@tcp(localhost:3306)/mysql?charset=utf8")
+	if err != nil {
+		panic(err)
+	}
+	defer db.Close()
+ 
+
+ 
+	_,err = db.Exec("USE stock")
+	if err != nil {
+		panic(err)
+	}
+	var  query string
+	
+	query="CREATE TABLE "+name+"  (date date ,open float, high float, low float ,close float , volume float)"
+
+	fmt.Println(query)
+
+	_,err = db.Exec(query)
+	if err != nil {
+		//panic(err)
+		print (err)
+	}
+ }
+ 
+
+//插入demo
+func insert(name string,date string,open string,high string,low string,close string,volume string) {
+    db, err := sql.Open("mysql", "root:1234@tcp(localhost:3306)/mysql?charset=utf8")
+	if err != nil {
+		panic(err)
+	}
+	_,err = db.Exec("USE stock")
+	if err != nil {
+		panic(err)
+	}
+    stmt, err := db.Prepare("INSERT "+name+" (date,open,high,low,close,volume) values (?,?,?,?,?,?)")
+	if err != nil {
+		panic(err)
+	}
+    res, err := stmt.Exec(date,open,high,low,close,volume)
+	if err != nil {
+		panic(err)
+	}
+	
+    id, err := res.LastInsertId()
+	if err != nil {
+		fmt.Println(id)
+	}
+	
+	db.Close()
+}
+func main() {
+    file, err := os.Open("2015正新.csv")
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+	}
+	create("2015tw")
+	
+    defer file.Close()
+    reader := csv.NewReader(file)
+    for {
+        record, err := reader.Read()
+        if err == io.EOF {
+            break
+        } else if err != nil {
+			fmt.Println("Error:", err)
+			
+            return
+        }
+		insert("2015tw",record[0],record[1],record[2],record[3],record[4],record[5])
+		//fmt.Println(record) // record has the type []string
+		//fmt.Println("get:", record[0])
+		//fmt.Println(strings.Replace(string(record), " ", ",", 2))
+	}
+	//insert("2015tw","1","1","1","1","1","1")
+	fmt.Println("ok")
+	
+}
 ```
 
 綜合下

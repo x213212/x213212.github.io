@@ -83,8 +83,23 @@ nice解決環境好利器，搜尋了快一小時還以為當機，惱人的環�
 
 小改  
 
-```html
-<script src="https://gist.github.com/x213212/9a564c7c962498c7c401c5aac6465598.js"></script>
+```python
+import pandas as pd
+
+# 去除煩人的 warrning
+import warnings
+from stocker import Stocker
+
+warnings.filterwarnings('ignore')
+
+# 讀入series
+df = pd.read_csv('price.csv', index_col='date', parse_dates=['date'])
+price = df.squeeze()
+price.head()
+tsmc = Stocker(price)
+tsmc.evaluate_prediction()
+tsmc.changepoint_prior_analysis(changepoint_priors=[0.001, 0.05, 0.1, 0.2])
+tsmc.predict_future(days=100)
 ```
 
   

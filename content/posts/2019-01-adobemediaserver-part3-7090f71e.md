@@ -104,7 +104,17 @@ Stream里面输入：livestream?adbe-live-event=liveevent 如果左边的Preset�
 
 ## 新建crossdomain.xml跨網域權限文件
 
-## --- 目前設為最寬鬆 位置 C:\Program Files\Adobe\Adobe Media Server 5\webroot\crossdomain.xml ```html <script src="https://gist.github.com/x213212/874560d6412eed30e7089ad1e28e17d5.js"></script> ```
+目前設為最寬鬆 位置 C:\Program Files\Adobe\Adobe Media Server 5\webroot\crossdomain.xml
+
+```xml
+<?xml version="1.0"?>
+<!-- http://www.osmf.org/crossdomain.xml -->
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy> 
+<allow-access-from domain="*" /> 
+<site-control permitted-cross-domain-policies="all"/>
+</cross-domain-policy>
+```
 
 ## 推送頻道範例
 
@@ -155,4 +165,34 @@ http://172.16.2.111:8134/hds-live/livepkgr/_definst_/liveevent/livestream.f4m
 
 ## Html5使用hls.js 撥放器，撥放m3u8串流
 
-## --- [![](https://i.imgur.com/gOyN796.png)](https://i.imgur.com/gOyN796.png) [![](https://i.imgur.com/2wPcS9T.png)](https://i.imgur.com/2wPcS9T.png) adobe  media server  to hls ! ```html <script src="https://gist.github.com/x213212/1fb5af253396fab284026e74778e522c.js"></script> ```
+[![](https://i.imgur.com/gOyN796.png)](https://i.imgur.com/gOyN796.png) [![](https://i.imgur.com/2wPcS9T.png)](https://i.imgur.com/2wPcS9T.png) adobe  media server  to hls !
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<!-- Or if you want a more recent canary version -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+
+<video id="video"   muted="muted"></video>
+<script>
+  var video = document.getElementById('video');
+  if(Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource('/hls-live/livepkgr/_definst_/liveevent/livestream.m3u8');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+ // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+ // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+ // This is using the built-in support of the plain video element, without using hls.js.
+ // Note: it would be more normal to wait on the 'canplay' event below however on Safari (where you are most likely to find built-in HLS support) the video.src URL must be on the user-driven
+ // white-list before a 'canplay' event will be emitted; the last video event that can be reliably listened-for when the URL is not on the white-list is 'loadedmetadata'.
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = '/hls-live/livepkgr/_definst_/liveevent/livestream.m3u8';
+    video.addEventListener('loadedmetadata',function() {
+      video.play();
+    });
+  }
+</script>
+```

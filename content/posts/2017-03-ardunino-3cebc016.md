@@ -34,6 +34,46 @@ layout: post
 
 ## ---
 
-```html
-<script src="https://gist.github.com/x213212/33282933e4fac5a58d685e676a3ddaad.js"></script>
+```cpp
+const int trig = 5;
+const int echo = 4;
+int buzzerPin = 3;//蜂鳴器
+const int inter_time = 100;
+int time = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode (trig, OUTPUT);
+  pinMode (echo, INPUT);
+    pinMode (buzzerPin, OUTPUT); 
+}
+
+void loop() {
+  float duration, distance;
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(100);
+  digitalWrite(trig, LOW);
+  duration = pulseIn (echo, HIGH);
+  distance = (duration/2)/29;
+  Serial.print("Data:");
+  Serial.print (time/100);
+  Serial.print(", d = ");
+  Serial.print(distance);
+  if(distance<10){
+     digitalWrite (buzzerPin, HIGH);
+  delay (5);
+  digitalWrite (buzzerPin, LOW);
+  delay (5);
+  }
+  else
+{   
+  digitalWrite (buzzerPin, HIGH);
+  delay (100);
+  digitalWrite (buzzerPin, LOW);
+  delay (100);
+}
+  Serial.println(" cm");
+  time = time + inter_time;
+  delay(inter_time);
+}
 ```

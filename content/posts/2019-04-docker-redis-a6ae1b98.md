@@ -82,8 +82,86 @@ Docker 安裝 和搭建Redis編寫環境
 這邊我們直接指定了
   
 
-```html
-<script src="https://gist.github.com/x213212/319354a301f14835a9f55d1d232a2872.js"></script>
+**`ConsoleApplication1.cpp`**
+
+```cpp
+// ConsoleApplication1.cpp : 此檔案包含 'main' 函式。程式會於該處開始執行及結束執行。
+
+//
+
+
+
+#include "pch.h"
+
+#include <iostream>
+
+
+
+#include <stdio.h>  
+
+#include <stdlib.h>  
+
+#include <string.h>  
+
+
+
+int main()
+
+{
+
+	unsigned int j;
+
+	redisContext *c;
+
+	redisReply *reply;
+
+
+
+	struct timeval timeout = { 1, 500000 };
+
+
+
+	c = redisConnectWithTimeout((char *)"192.168.99.100", 56379, timeout);
+
+	if (c->err)
+
+	{
+
+		printf("Connection error:%s\n", c->errstr);
+
+		exit(1);
+
+	}
+
+
+
+	//ping
+
+	reply = (redisReply *)redisCommand(c, "PING");
+
+	printf("PING: %s\n", reply->str);
+
+	freeReplyObject(reply);
+
+
+
+
+
+	return 0;
+
+
+
+}
+```
+
+**`pch.cpp`**
+
+```cpp
+#include "hiredis\hiredis.h"
+
+#define NO_QFORKIMPL //这一行必须加才能正常使用  
+
+#include "Win32_Interop\win32fixes.h"
 ```
 
   

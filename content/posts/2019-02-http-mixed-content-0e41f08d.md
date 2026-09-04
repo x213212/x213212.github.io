@@ -33,6 +33,26 @@ http mixed content 混和內容警告!!!!
 [![](https://i.imgur.com/h6oqNan.png)](https://i.imgur.com/h6oqNan.png)
   
 
-```html
-<script src="https://gist.github.com/x213212/1003f8a42915eb5debeafabf59cefdce.js"></script>
+```javascript
+var https = require('https'),
+    httpProxy = require('http-proxy');
+var fs = require('fs');
+//
+// Create a proxy server with latency
+//
+var proxy = httpProxy.createProxyServer();
+
+//
+// Create your server that makes an operation that waits a while
+// and then proxies the request
+//
+httpProxy.createServer( {
+ ssl: {
+ key: fs.readFileSync('abels-key.pem'),
+  cert: fs.readFileSync('abels-cert.pem')
+  },
+  target: 'http://localhost:7001',
+  secure: false
+  
+}).listen(444);
 ```

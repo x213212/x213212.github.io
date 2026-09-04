@@ -52,8 +52,14 @@ sudo tar -C /usr/local -xzf go1.x.x.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 ```
 [![](https://i.imgur.com/SRFRhtl.png)](https://i.imgur.com/SRFRhtl.png)
-```html
-<script src="https://gist.github.com/x213212/fc6c3ed8221aee258c006c1bad527d4d.js"></script>
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Printf("hello, world\n")
+}
 ```
 存成hello.go，之後執行看看吧!  
 

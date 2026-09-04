@@ -41,7 +41,22 @@ layout: post
 
 ## --- Path: C:\Users\x2132\Desktop\nodejs\getusermedia-to-rtmp-master\server.js [![](https://i.imgur.com/qISFsCH.png)](https://i.imgur.com/qISFsCH.png)
 
-## ```html <script src="https://gist.github.com/x213212/2ae7adbd6170163b70ffb05b689c4183.js"></script> ``` run nodejs server!
+```javascript
+
+ffmpeg 參數設定
+		var ops=[
+			'-i','-',
+			'-c:v', 'libx264', '-preset', 'veryfast', '-tune', 'zerolatency',
+			'-an', //TODO: give up audio for now...
+			//'-async', '1', 
+			'-filter_complex', 'aresample=44100', //necessary for trunked streaming?
+			//'-strict', 'experimental', '-c:a', 'aac', '-b:a', '128k',
+			'-bufsize', '1000',
+			'-f', 'flv', socket._rtmpDestination
+		];
+```
+
+run nodejs server!
 
 ##
 

@@ -29,8 +29,190 @@ Module[“postRun”]
 
   
 
-```html
-<script src="https://gist.github.com/x213212/48fd9c141192910ede2e085acd0b1343.js"></script>
+```javascript
+var TTY = {
+        ttys: [],
+        init: function() {},
+        shutdown: function() {},
+		showbuff : function () {},
+        register: function(dev, ops) {
+            TTY.ttys[dev] = {
+                input: [],
+                output: [],
+                ops: ops
+            };
+            FS.registerDevice(dev, TTY.stream_ops)
+        },
+        stream_ops: {
+            open: function(stream) {
+                var tty = TTY.ttys[stream.node.rdev];
+                if (!tty) {
+                    throw new FS.ErrnoError(19)
+                }
+                stream.tty = tty;
+                stream.seekable = false
+            },
+            close: function(stream) {
+                stream.tty.ops.flush(stream.tty)
+            },
+            flush: function(stream) {
+                stream.tty.ops.flush(stream.tty)
+            },
+            read: function(stream, buffer, offset, length, pos) {
+                if (!stream.tty || !stream.tty.ops.get_char) {
+                    throw new FS.ErrnoError(6)
+                }
+                var bytesRead = 0;
+                for (var i = 0; i < length; i++) {
+                    var result;
+                    try {
+                        result = stream.tty.ops.get_char(stream.tty)
+                    } catch (e) {
+                        throw new FS.ErrnoError(5)
+                    }
+                    if (result === undefined && bytesRead === 0) {
+                        throw new FS.ErrnoError(11)
+                    }
+                    if (result === null || result === undefined)
+                        break;
+                    bytesRead++;
+                    buffer[offset + i] = result
+                }
+                if (bytesRead) {
+                    stream.node.timestamp = Date.now()
+                }
+                return bytesRead
+            },
+            write: function(stream, buffer, offset, length, pos) {
+                if (!stream.tty || !stream.tty.ops.put_char) {
+                    throw new FS.ErrnoError(6)
+                }
+                try {
+                    for (var i = 0; i < length; i++) {
+                        stream.tty.ops.put_char(stream.tty, buffer[offset + i])
+                    }
+					var handle = FS.analyzePath(Module["outputDirectory"]);
+					console.log(handle)
+					stream.tty.ops.getAllBuffers(handle)
+					Module["return2"] = getAllBuffers(handle);
+					cb(	Module["return2"])
+                } catch (e) {
+                    throw new FS.ErrnoError(5)
+                }
+                if (length) {
+                    stream.node.timestamp = Date.now()
+                }
+                return i
+            }
+        },
+        default_tty_ops: {
+            get_char: function(tty) {
+                if (!tty.input.length) {
+                    var result = null;
+                    if (ENVIRONMENT_IS_NODE) {
+                        var BUFSIZE = 256;
+                        var buf = new Buffer(BUFSIZE);
+                        var bytesRead = 0;
+                        var isPosixPlatform = process.platform != "win32";
+                        var fd = process.stdin.fd;
+                        if (isPosixPlatform) {
+                            var usingDevice = false;
+                            try {
+                                fd = fs.openSync("/dev/stdin", "r");
+                                usingDevice = true
+                            } catch (e) {}
+                        }
+                        try {
+                            bytesRead = fs.readSync(fd, buf, 0, BUFSIZE, null)
+                        } catch (e) {
+                            if (e.toString().indexOf("EOF") != -1)
+                                bytesRead = 0;
+                            else
+                                throw e
+                        }
+                        if (usingDevice) {
+                            fs.closeSync(fd)
+                        }
+                        if (bytesRead > 0) {
+                            result = buf.slice(0, bytesRead).toString("utf-8")
+                        } else {
+                            result = null
+                        }
+                    } else if (typeof window != "undefined" && typeof window.prompt == "function") {
+                        result = window.prompt("Input: ");
+                        if (result !== null) {
+                            result += "\n"
+                        }
+                    } else if (typeof readline == "function") {
+                        result = readline();
+                        if (result !== null) {
+                            result += "\n"
+                        }
+                    }
+                    if (!result) {
+                        return null
+                    }
+                    tty.input = intArrayFromString(result, true)
+                }
+                return tty.input.shift()
+            },
+            put_char: function(tty, val) {
+                if (val === null || val === 10) {
+                    out(UTF8ArrayToString(tty.output, 0));
+                    tty.output = []
+					
+                } else {
+                    if (val != 0)
+                        tty.output.push(val)
+					
+                }
+            },
+            flush: function(tty) {
+                if (tty.output && tty.output.length > 0) {
+                    out(UTF8ArrayToString(tty.output, 0));
+                    tty.output = []
+                }
+            }
+        },
+        default_tty1_ops: {
+            put_char: function(tty, val) {
+                if (val === null || val === 10) {
+                    err(UTF8ArrayToString(tty.output, 0) + "eeee");
+					    
+                    tty.output = []
+                } else {
+                    if (val != 0)
+                        tty.output.push(val)
+                }
+            },
+            flush: function(tty) {
+                if (tty.output && tty.output.length > 0) {
+                    err(UTF8ArrayToString(tty.output, 0));
+                    tty.output = []
+                }
+            },
+			getAllBuffers : function (result) {
+            var buffers = [];
+			
+            if (result && result.object && result.object.contents) {
+                for (var i in result.object.contents) {
+                    if (result.object.contents.hasOwnProperty(i)) {
+                        buffers.push({
+                            name: i,
+                            data: new Uint8Array(result.object.contents[i].contents).buffer
+                        })
+						
+                    }
+
+                }
+            }
+			err (buffers[0].data)
+
+			
+        }
+			
+        }
+    };
 ```
 
 也就是大大們卡很久的檔案映射問題?  

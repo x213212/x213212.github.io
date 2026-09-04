@@ -28,6 +28,62 @@ layout: post
 
 ## ---
 
-```html
-<script src="https://gist.github.com/x213212/e576c026007d811576d5d06c61a0fdd7.js"></script>
+```cpp
+/*
+ * IRremoteESP8266: IRrecvDemo - demonstrates receiving IR codes with IRrecv
+ * An IR detector/demodulator must be connected to the input RECV_PIN.
+ * Version 0.1 Sept, 2015
+ * Based on Ken Shirriff's IrsendDemo Version 0.1 July, 2009, Copyright 2009 Ken Shirriff, http://arcfn.com
+ */
+
+#include <IRremoteESP8266.h>
+
+int RECV_PIN = 2; //an IR detector/demodulatord is connected to GPIO pin 2
+int tmp=255;
+
+IRrecv irrecv(RECV_PIN);
+
+decode_results results;
+int counter=0;
+void setup()
+{
+  Serial.begin(9600);
+  irrecv.enableIRIn(); // Start the receiver
+ pinMode(16, OUTPUT);
+  pinMode(5, OUTPUT);
+    pinMode(4, OUTPUT);
+
+}
+
+void loop() {
+  if (irrecv.decode(&results)) {
+      counter++;
+
+if(counter==1)
+{
+      Serial.println(results.value, HEX);
+
+
+if(results.value==2780520712){
+   digitalWrite(16, tmp);
+  digitalWrite(5, 0);
+    digitalWrite(4, 0);}
+if(results.value==1275988228){
+     digitalWrite(16,0);
+  digitalWrite(5, tmp);
+    digitalWrite(4, 0);}
+if(results.value==1440861668){
+     digitalWrite(16, 0);
+  digitalWrite(5, 0);
+    digitalWrite(4, tmp);}
+        Serial.println("44444");
+  }
+      else  if(counter==3)
+  {counter=0;}
+
+
+    irrecv.resume(); // Receive the next value
+  }
+
+}
 ```

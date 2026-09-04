@@ -27,8 +27,82 @@ com.google.android.exoplayer:exoplayer-ui:r2.7.4
 
   
 
-```html
-<script src="https://gist.github.com/x213212/d34ec9efa4a4bc5d9d830316df7171bb.js"></script>
+```java
+反射調用可以訪問並且修改其private的變數與方法
+public class Private 
+{ 
+private String name = "张三"; 
+
+private String getName() 
+{ 
+return name; 
+} 
+} 
+package com.wangzhuo.reflect; 
+
+import java.lang.reflect.Constructor; 
+import java.lang.reflect.Field; 
+import java.lang.reflect.Method; 
+
+public class PrivateTest 
+{ 
+public static void main(String[] args)throws Exception 
+{ 
+//获取Private类的Class对象 
+Class<?> classType = Class.forName("com.wangzhuo.reflect.Private"); 　＜－－目標如果是ｊａｒ等等之類的 
+
+//获取其构造方法对应的Constructor对象 
+Constructor con = classType.getDeclaredConstructor(new Class[]{}); 
+
+//创建Private的对象 
+Object object =con.newInstance(new Object[]{}); 
+
+//获取Private类中name属性对应的Field对象 
+Field field = classType.getDeclaredField("name"); ＜－－field是變數
+
+//设置避开java访问控制检测 
+field.setAccessible(true); 
+
+//获取修改前的值 
+Object str = field.get(object); 
+
+System.out.println("修改之前name的值："+(String)str); 
+
+//给name属性赋值 
+field.set(object, "李四"); 
+
+//获取getName方法对应的Method对象 
+Method getNameMethod = classType.getDeclaredMethod("getName", new Class[]{}); ＜－－Method是方法 
+
+//设置避开java访问控制检测 
+getNameMethod.setAccessible(true); 
+
+//调用方法，返回值 
+Object o = getNameMethod.invoke(object, new Object[]{}); 
+System.out.println("修改之后name的值："+(String)o); 
+} 
+} 
+----------------------------------------
+mAudioTrack =null;
+
+try
+{
+
+Class<?> bookClass = Class.forName("com.google.android.exoplayer2.audio.DefaultAudioSink");//完整类名
+Log.i("qsss",bookClass.getSimpleName());
+Object book = bookClass.newInstance();//获得实例
+Field getAuthor = bookClass.getDeclaredField("audioTrack");//获得私有方法
+getAuthor.setAccessible(true);//调用方法前，设置访问标志
+
+mAudioTrack = (AudioTrack) getAuthor.get(book);//使用方法
+}
+catch (Exception e)
+{
+e.printStackTrace();
+}
+
+
+mAudioTrack.setStereoVolume(0f,1f);
 ```
 
 失敗＝　＝　可能要用下面方法引用在進行調用，才會成功改天再測試  

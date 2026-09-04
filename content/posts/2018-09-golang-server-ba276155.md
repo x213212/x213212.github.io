@@ -33,8 +33,153 @@ layout: post
 
 ##
 
+**`details.html`**
+
 ```html
-<script src="https://gist.github.com/x213212/d974750fc6f8c614c888f6954d57d4bd.js"></script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" language="javascript">
+		    $(document).ready(function () {
+		    	var id = getParameterByName('id');
+		        $.getJSON("http://localhost:9000/people/"+id, function (data) {
+		            console.debug(data);
+		            $('#city').html(data["address"].city);
+		            $('#country').html(data["address"].country);
+		            $('#id').html(data.id);
+		            $('#name').html(data.name);
+		        });
+		    });
+		    function getParameterByName(name) {
+			    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+			    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+			}
+		</script>
+	</head>
+	<body>
+		Id : <span id="id"></span><br><br>
+		Name : <span id="name"></span><br><br>
+		Address : <span id="city"> , </span> <span id="country"></span>		
+	</body>
+</html>
+```
+
+**`index.html`**
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" language="javascript">
+		    $(document).ready(function () {
+		    	var success = false;
+		        $.getJSON('http://localhost:9000/people', function (schoolData) {
+		            var tr;
+		            success = true;
+		            for (var i = 0; i < schoolData.length; i++) {
+		                tr = $('<tr/>');
+		                tr.append("<td>" + schoolData[i].id + "</td>");
+		                tr.append("<td>" + schoolData[i].name + "</td>");
+		                tr.append("<td><a href='details?id="+ schoolData[i].id +"'>Details</a></td>");
+            			tr.append('<td><button type="button" class="btn btn-success">Edit</button></td>');
+            			tr.append('<td><button type="button" class="btn btn-success">Delete</button></td>');
+		                $('table').append(tr);
+		            }
+		        });
+		        setTimeout(function() {
+			    if (!success)
+			    {
+				// Handle error accordingly
+				alert("Server Not Found"); // string was "Houston, we have a problem."
+			    }
+			}, 1000);
+		    });
+		</script>
+	</head>
+	<body>
+		<button>Add</button>
+		<table class="table">
+		</table>
+	</body>
+</html>
+```
+
+**`main.go`**
+
+```go
+package main
+
+import (
+    "fmt"
+    "log"
+    "net/http"
+    "github.com/gorilla/mux"
+    "encoding/json"
+)
+
+var people []Person
+
+type Person struct {
+    ID string `json:"id,omitempty"`
+    Name string `json:"name,omitempty"`
+    Address *Address `json:"address,omitempty"`
+}
+
+type Address struct {
+    Country string `json:"country,omitempty"`
+    City string `json:"city,omitempty"`
+}
+
+func DefaultHandler(w http.ResponseWriter, r *http.Request)  {
+    fmt.Fprint(w, "Home")
+    fmt.Fprint(w, "Home")
+    fmt.Fprint(w, "Home")
+    
+}
+
+
+func PeopleHandler(w http.ResponseWriter, r *http.Request){
+
+    w.Header().Set("Access-Control-Allow-Origin", "*")
+    json.NewEncoder(w).Encode(people)
+   
+}
+
+func PersonHandler(w http.ResponseWriter, r *http.Request)  {
+    w.Header().Set("Access-Control-Allow-Origin", "*")
+     params := mux.Vars(r)
+     for _,item := range people{
+         if item.ID == params["id"]{
+            json.NewEncoder(w).Encode(item)
+         }
+     }
+
+}
+func HttpFileHandler(response http.ResponseWriter, request *http.Request) {
+	//fmt.Fprintf(w, "Hi from e %s!", r.URL.Path[1:])
+	http.ServeFile(response, request, "index.html")
+}
+func HttpFileHandler2(response http.ResponseWriter, request *http.Request) {
+	//fmt.Fprintf(w, "Hi from e %s!", r.URL.Path[1:])
+	http.ServeFile(response, request, "details.html")
+}
+
+func main()  {
+    route := mux.NewRouter()
+    people = append(people, Person{ID : "1", Name : "sojib", Address : &Address{Country : "bangladesh", City : "Dhaka"}})
+    people = append(people, Person{ID : "2", Name : "hasan", Address : &Address{Country : "china", City : "C"}})
+    people = append(people, Person{ID : "3", Name : "kamal", Address : &Address{Country : "japan", City : "J"}})
+    route.HandleFunc("/", DefaultHandler).Methods("Get")
+    route.HandleFunc("/people", PeopleHandler).Methods("Get")
+    route.HandleFunc("/people/{id}", PersonHandler).Methods("Get")
+    route.HandleFunc("/index", HttpFileHandler)
+    route.HandleFunc("/details", HttpFileHandler2)
+    //route.Handle("/details", http.FileServer(http.Dir("/mnt/c/golangtmp")))
+    log.Fatal(http.ListenAndServe(":9000", route))
+}
 ```
 
   

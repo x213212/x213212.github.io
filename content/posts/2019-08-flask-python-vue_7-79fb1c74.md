@@ -33,6 +33,67 @@ layout: post
 
   
 
-```html
-<script src="https://gist.github.com/x213212/576694efec20b1860005d8cd4e7f09a5.js"></script>
+```python
+    sma_5 = talib.SMA(np.array(close), 5)
+    sma_10 = talib.SMA(np.array(close), 10)
+    sma_20 = talib.SMA(np.array(close), 20)
+    sma_60 = talib.SMA(np.array(close), 60)
+    
+    macd = get_MACD(np.array(close))
+#    
+    data_list4 = []
+
+    for x in range (len (randomforest_list)-1 , 33 ,-1 ):
+#         今天大於 昨天 等於 漲跌
+        tmp =0
+        if(x+1 <len (randomforest_list)):
+            if((randomforest_list[x][4] > randomforest_list[x+1][4]) ):
+                tmp=1
+            else:
+                tmp=0
+#  datas2 = (t, ope[x], high[x], low[x],close[x],vol[x])
+#
+#        data_list4.append({'account': str(data_list2[x][0]),data_list2[x][1],data_list2[x][2],data_list2[x][3],data_list2[x][4],data_list2[x][5],sma_5[x]
+#        ,sma_10[x],sma_20[x],sma_20[x], macd[x] ,tmp})
+
+        data_list4.append({ 'date': str(randomforest_list[x][0]).split()[0],'open': str(randomforest_list[x][1]) ,
+        'high': str(randomforest_list[x][2]),'low': str(randomforest_list[x][3]) ,'close': str(randomforest_list[x][4]),'vol': str(randomforest_list[x][5]) 
+        ,'ma5': sma_5[x] ,'ma10':sma_10[x] ,'ma20': sma_20[x],'macd': macd[x],'label': tmp})
+    
+    df = pd.DataFrame(    data_list4)
+    df = df[['date','open','high','low','close','vol','ma5','ma10','ma20','macd','label']]
+#    
+#    df.set_index("date" , inplace=True)
+#    
+#    df.to_csv("./sss.csv", index=True)
+    df = df.dropna() #剔除缺失值
+
+    df['ts'] =pd.to_datetime(df['date'])
+
+    
+    df = df.drop('date', axis=1)
+#    df = df.set_index(['ts'])
+    df.to_csv("./sss.csv", index=True)
+#
+    train_data = df[df['ts']<"2017-01-04"]
+    
+    test_data = df[df['ts']>="2017-01-04"]
+    train_X = train_data.ix[:,'open':"ma20"].values
+    train_y = train_data['label'].values
+    test_X = test_data.ix[:,'open':"ma20"].values
+    test_y = test_data['label'].values
+    clf = RandomForestClassifier(max_depth=10,n_estimators=100  )
+    clf.fit(train_X,train_y)
+    print(accuracy_score(train_y,clf.predict(train_X)))
+    print(accuracy_score(test_y,clf.predict(test_X)))
+    importance = clf.feature_importances_
+    indices = np.argsort(importance)[::-1]
+    feat_labels = df.columns[1:]
+
+#    features = train_X.columns
+    test =[]
+    for f in range(train_X.shape[1]):
+        test.append([feat_labels[indices[f]],   importance[indices[f]]])
+#    data_list4=str(accuracy_score(train_y,clf.predict(train_X)))+"next :"+str(accuracy_score(test_y,clf.predict(test_X)))
+    data_list4=test
 ```

@@ -74,8 +74,11 @@ C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0
 
 ---
 
-```html
-<script src="https://gist.github.com/x213212/6f38448eb1191dafef424c9a095eca88.js"></script>
+```python
+import tensorflow as tf
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello))
 ```
 
   
