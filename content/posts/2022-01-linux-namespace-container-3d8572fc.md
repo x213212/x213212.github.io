@@ -9,8 +9,6 @@ tags: []
 layout: post
 ---
 
-![](https://modugo.com/wp-content/uploads/2021/05/Container-10-foot_side-Measure.png)
-
 # mini-docker
 最近看到docker 又看到了podman
 突然想了解一下容器底層到底如何實現，整體步驟參考

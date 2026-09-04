@@ -9,8 +9,6 @@ tags: ["os", "RISC-V"]
 layout: post
 ---
 
-![](https://hackmd-prod-images.s3.ap-northeast-1.amazonaws.com/uploads/upload_a0ec65cdbf7e323361739e9826591f71.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1776518149&Signature=mgFw25N771MdalCi0TF7pxvyync%3D)
-
 # build self os in riscv
 很久沒更新，最近看到TempleOS，
 今天早上無聊來將之前的專案進行合併，新增了lwip wget 下載檔案，預計想要再將這個os再多一個vga的瀏覽器，感覺用NetSurf 渲染都Ok，應該可以在目前的os進行上網，新增了檔案系統，和鍵盤滑鼠硬碟vga驅動

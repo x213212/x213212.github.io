@@ -1067,10 +1067,10 @@
     "posts": [
       "2022/01/linux-namespace-container.html"
     ],
-    "local_path": "assets/media/9638b79ee1df2a52d954.png",
-    "status": "downloaded",
+    "status": "failed",
     "bytes": 302426,
-    "content_type": "text/html"
+    "content_type": "text/html",
+    "error": "HTTP 403: the server returned an HTML error page, not an image"
   },
   {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/GNU_Compiler_Collection_logo.svg/640px-GNU_Compiler_Collection_logo.svg.png?1606591693910\"",
@@ -33191,6 +33191,126 @@
     "status": "downloaded",
     "discovered_from": "rendered_markdown",
     "bytes": 1499880,
+    "content_type": "image/png"
+  },
+  {
+    "url": "https://i.imgur.com/6mb9D5V.png",
+    "kind": "external",
+    "posts": [
+      "2021/07/30-day-os-memory-memory-manager.html"
+    ],
+    "local_path": "assets/media/136bf5b2866d0a506468.png",
+    "status": "downloaded",
+    "discovered_from": "rendered_markdown",
+    "bytes": 48591,
+    "content_type": "image/png"
+  },
+  {
+    "url": "https://i.imgur.com/7FwXmHt.png",
+    "kind": "external",
+    "posts": [
+      "2022/09/run-gbemulator-in-webassembly.html"
+    ],
+    "local_path": "assets/media/cc40bc19bb19eb9f576a.png",
+    "status": "downloaded",
+    "discovered_from": "rendered_markdown",
+    "bytes": 69556,
+    "content_type": "image/png"
+  },
+  {
+    "url": "https://i.imgur.com/DhTBJ.png",
+    "kind": "external",
+    "posts": [
+      "2019/07/vue-router-lazyloading.html"
+    ],
+    "local_path": "assets/media/cc3bdf6b2e12020102e6.png",
+    "status": "downloaded",
+    "discovered_from": "rendered_markdown",
+    "bytes": 319897,
+    "content_type": "image/gif"
+  },
+  {
+    "url": "https://i.imgur.com/IulQojE.png",
+    "kind": "external",
+    "posts": [
+      "2021/07/30-day-os-day2.html"
+    ],
+    "local_path": "assets/media/5ef7de312b48834d6126.png",
+    "status": "downloaded",
+    "discovered_from": "rendered_markdown",
+    "bytes": 152965,
+    "content_type": "image/png"
+  },
+  {
+    "url": "https://i.imgur.com/K6IV7yK.png",
+    "kind": "external",
+    "posts": [
+      "2022/09/run-gbemulator-in-webassembly.html"
+    ],
+    "local_path": "assets/media/202cc61da24daa6dc6e2.png",
+    "status": "downloaded",
+    "discovered_from": "rendered_markdown",
+    "bytes": 115366,
+    "content_type": "image/png"
+  },
+  {
+    "url": "https://i.imgur.com/QiHcjM0.png",
+    "kind": "external",
+    "posts": [
+      "2021/07/30-day-os-day2.html"
+    ],
+    "local_path": "assets/media/337300423bfce219640b.png",
+    "status": "downloaded",
+    "discovered_from": "rendered_markdown",
+    "bytes": 198038,
+    "content_type": "image/png"
+  },
+  {
+    "url": "https://i.imgur.com/TJ7Y4VJ.png",
+    "kind": "external",
+    "posts": [
+      "2021/07/30-day-os-day1.html"
+    ],
+    "local_path": "assets/media/158d22e682db8d062737.png",
+    "status": "downloaded",
+    "discovered_from": "rendered_markdown",
+    "bytes": 248051,
+    "content_type": "image/png"
+  },
+  {
+    "url": "https://i.imgur.com/jgcmhbk.png",
+    "kind": "external",
+    "posts": [
+      "2021/07/30-day-os-day1.html"
+    ],
+    "local_path": "assets/media/949ccce16f36adf08c76.png",
+    "status": "downloaded",
+    "discovered_from": "rendered_markdown",
+    "bytes": 18199,
+    "content_type": "image/png"
+  },
+  {
+    "url": "https://user-images.githubusercontent.com/9297254/157389984-00e30a00-4699-4892-b6f9-cadfd3def81a.png",
+    "kind": "external",
+    "posts": [
+      "2022/08/gcc-plugin.html"
+    ],
+    "local_path": "assets/media/f7b9af43daa509305724.png",
+    "status": "downloaded",
+    "discovered_from": "rendered_markdown",
+    "bytes": 166263,
+    "content_type": "image/png"
+  },
+  {
+    "url": "https://user-images.githubusercontent.com/9297254/157390318-cb4827cf-4e2b-49a2-8058-0e822e69287b.png",
+    "kind": "external",
+    "posts": [
+      "2022/08/gcc-plugin.html"
+    ],
+    "local_path": "assets/media/4133aca47d64fe5e670e.png",
+    "status": "downloaded",
+    "discovered_from": "rendered_markdown",
+    "bytes": 180981,
     "content_type": "image/png"
   }
 ]

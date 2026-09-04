@@ -1,7 +1,7 @@
 {
   "version": 1,
   "mode": "write",
-  "created_at": "2026-08-30T06:26:55.657337+00:00",
+  "created_at": "2026-09-04T16:16:55.310085+00:00",
   "source_report": "data/media-optimization-report.json",
   "output_directory": "site/assets/media-thumbnails",
   "settings": {
@@ -11,14 +11,14 @@
     "selection": "first locally optimized article image; signed HackMD previews skipped"
   },
   "summary": {
-    "published_posts": 383,
-    "ready_post_thumbnails": 376,
+    "published_posts": 384,
+    "ready_post_thumbnails": 377,
     "missing_post_thumbnails": 7,
-    "unique_thumbnail_files": 334,
-    "thumbnail_bytes": 5184380,
+    "unique_thumbnail_files": 335,
+    "thumbnail_bytes": 5208362,
     "status_counts": {
       "missing": 7,
-      "ready": 376
+      "ready": 377
     }
   },
   "items": [
@@ -5281,7 +5281,7 @@
       "thumbnail_local_path": "assets/media-thumbnails/recode-workspace.webp",
       "thumbnail_alt": "RECODE 工作區：左側題目與筆記，右側編輯器、歷史提交與測資結果",
       "status": "ready",
-      "generation": "generated",
+      "generation": "reused",
       "thumbnail_bytes": 8106,
       "thumbnail_width": 480,
       "thumbnail_height": 300
@@ -5295,7 +5295,7 @@
       "thumbnail_local_path": "assets/media-thumbnails/rg40xxv-shell.webp",
       "thumbnail_alt": "啟動器在裝置上執行：由 mainline 顯示堆疊算圖的遊戲清單畫面",
       "status": "ready",
-      "generation": "generated",
+      "generation": "reused",
       "thumbnail_bytes": 8440,
       "thumbnail_width": 480,
       "thumbnail_height": 360
@@ -5309,7 +5309,7 @@
       "thumbnail_local_path": "assets/media-thumbnails/monitor-dashboard.webp",
       "thumbnail_alt": "監控面板：左欄是引擎與主機狀態，右側是事件與每服務資源計量",
       "status": "ready",
-      "generation": "generated",
+      "generation": "reused",
       "thumbnail_bytes": 11984,
       "thumbnail_width": 480,
       "thumbnail_height": 285
@@ -5323,10 +5323,24 @@
       "thumbnail_local_path": "assets/media-thumbnails/uap-globe.webp",
       "thumbnail_alt": "全球 UAP 資料圖譜",
       "status": "ready",
-      "generation": "generated",
+      "generation": "reused",
       "thumbnail_bytes": 20054,
       "thumbnail_width": 480,
       "thumbnail_height": 300
+    },
+    {
+      "route": "2026/09/rg40xxv-youtube.html",
+      "title": "掌機上的原生 YouTube",
+      "source_url": "/assets/uploads/rg40xxv-apps-tab.jpg",
+      "source_id": "rg40xxv-apps-tab",
+      "source_optimized_local_path": "assets/uploads/rg40xxv-apps-tab.jpg",
+      "thumbnail_local_path": "assets/media-thumbnails/rg40xxv-apps-tab.webp",
+      "thumbnail_alt": "啟動器的應用程式分頁，YouTube 磚塊在選取狀態；上排是最近遊玩、遊戲庫、RPG、串流、網路等分頁",
+      "status": "ready",
+      "generation": "generated",
+      "thumbnail_bytes": 23982,
+      "thumbnail_width": 480,
+      "thumbnail_height": 360
     }
   ]
 }

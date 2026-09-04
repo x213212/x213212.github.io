@@ -183,8 +183,6 @@ Intent intent = new Intent();intent.setClass(LoginActivity.this, MainActivity.cl
 
 算初始化之類的吧  
 
-[![](https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/28660624_1557904594307735_260149330214649856_n.png?_nc_eui2=v1%3AAeGbB_RTtQlMV9tCwWDXM427aR2qPLVITQDfVVpLFDBktviCz-_2VcJnmBugC87gmGaCgQG1ORWNMCtKuFpDbixgcu91NRCDv9jWLWn2E7YkpA&oh=bc58c6dbf37f41a5fa770c6ee68aed3c&oe=5B3F135C)](https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/28660624_1557904594307735_260149330214649856_n.png?_nc_eui2=v1%3AAeGbB_RTtQlMV9tCwWDXM427aR2qPLVITQDfVVpLFDBktviCz-_2VcJnmBugC87gmGaCgQG1ORWNMCtKuFpDbixgcu91NRCDv9jWLWn2E7YkpA&oh=bc58c6dbf37f41a5fa770c6ee68aed3c&oe=5B3F135C)  
-
 好像可以喔  
 
 [![](https://i.imgur.com/w1YMexI.png)](https://i.imgur.com/w1YMexI.png)  

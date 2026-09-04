@@ -1,13 +1,13 @@
 {
-  "built_at": "2026-09-02T09:52:18.003469+00:00",
+  "built_at": "2026-09-04T16:48:24.386321+00:00",
   "posts": 384,
   "published_posts": 384,
   "draft_posts": 1,
   "includes_drafts": false,
   "tags": 221,
   "categories": 12,
-  "localized_media": 2914,
-  "localized_thumbnails": 376,
+  "localized_media": 2924,
+  "localized_thumbnails": 377,
   "using_local_media_mirror": true,
   "media_variant": "optimized",
   "output": "docs"
