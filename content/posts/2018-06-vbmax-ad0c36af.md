@@ -12,4 +12,10 @@ layout: post
 [![](https://i.imgur.com/xYlq6AI.png)](https://i.imgur.com/xYlq6AI.png)
 ## 病毒
 
-## --- 綜合所有的技能於一身呢我最終想到一個就是，病毒就是要小型 我們把她稱作為載具，然後呢我們把功能模組化再將功能用上傳的方式 傳到該感染的電腦，所以呢，再用DLL注入自己到系統的白名單內躲避防毒軟體 再來呢怎樣防止被反追蹤呢我們可以把芷伶透過網頁程式碼，去做呼叫，也就是是網頁去下指令非本人下所以也查不到IP，以前到底在狂什麼我也不知道 Server [![](https://i.imgur.com/5iFPjz0.png)](https://i.imgur.com/5iFPjz0.png) Client [![](https://i.imgur.com/AqpTWoT.png)](https://i.imgur.com/AqpTWoT.png)
+綜合所有的技能於一身呢我最終想到一個就是，病毒就是要小型 我們把她稱作為載具，然後呢我們把功能模組化再將功能用上傳的方式 傳到該感染的電腦，所以呢，再用DLL注入自己到系統的白名單內躲避防毒軟體 再來呢怎樣防止被反追蹤呢我們可以把芷伶透過網頁程式碼，去做呼叫，也就是是網頁去下指令非本人下所以也查不到IP，以前到底在狂什麼我也不知道 Server
+
+[![](https://i.imgur.com/5iFPjz0.png)](https://i.imgur.com/5iFPjz0.png)
+
+Client
+
+[![](https://i.imgur.com/AqpTWoT.png)](https://i.imgur.com/AqpTWoT.png)

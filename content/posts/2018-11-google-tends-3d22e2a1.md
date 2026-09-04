@@ -42,7 +42,9 @@ layout: post
 
 [![](https://i.imgur.com/GTSIUq3.png)](https://i.imgur.com/GTSIUq3.png)
 觀察一下網址  
-## ``` https://trends.google.com/trends/explore?date=2004-01-01%202004-01-02&q=stock ```
+```
+https://trends.google.com/trends/explore?date=2004-01-01%202004-01-02&q=stock
+```
 
 [![](https://i.imgur.com/gtCKjFQ.png)](https://i.imgur.com/gtCKjFQ.png)
 得到結論，在2015年前，都只有儲存當日資料，到2015開始可能才有每小時搜尋資料紀錄。  

@@ -11,7 +11,11 @@ layout: post
 
 ## 介紹
 
-## --- 如果java client 端如果有偵測到人臉的話會儲存一張圖片到c:\\peoples.png 然後偵測到的人臉大於1的話則會將嫌疑人的照片儲存下來並發送一張圖片到 指定ip並告知可能有人在你家 Server 端如果有將會一直開著持續監聽 [![](https://i.imgur.com/FwW1OjL.png)](https://i.imgur.com/FwW1OjL.png)[![](https://i.imgur.com/C2Aeb2t.png)](https://i.imgur.com/C2Aeb2t.png)
+如果java client 端如果有偵測到人臉的話會儲存一張圖片到c:\\peoples.png 然後偵測到的人臉大於1的話則會將嫌疑人的照片儲存下來並發送一張圖片到 指定ip並告知可能有人在你家 Server 端如果有將會一直開著持續監聽
+
+[![](https://i.imgur.com/FwW1OjL.png)](https://i.imgur.com/FwW1OjL.png)
+
+[![](https://i.imgur.com/C2Aeb2t.png)](https://i.imgur.com/C2Aeb2t.png)
 
 ## 環境設定
 

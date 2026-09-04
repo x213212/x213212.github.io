@@ -19,7 +19,7 @@ layout: post
 
 # Ribbon 核心
 
-# 比較常見的有 - ServerList 用於獲取地址列表。它既可以是靜態的(提供一組固定的地址)，也可以是動態的(從註冊中心中定期查詢地址列表)。 - ServerListFilter 僅當使用動態ServerList時使用，用於在原始的服務列表中使用一定策略過慮掉一部分地址。 - IRule 選擇一個最終的服務地址作為LB結果。選擇策略有輪詢、根據響應時間加權、斷路器(當Hystrix可用時)等。 Ribbon在工作時首選會通過ServerList來獲取所有可用的服務列表，然後通過ServerListFilter過慮掉一部分地址，最後在剩下的地址中通過IRule選擇出一台服務器作為最終結果。
+比較常見的有 - ServerList 用於獲取地址列表。它既可以是靜態的(提供一組固定的地址)，也可以是動態的(從註冊中心中定期查詢地址列表)。 - ServerListFilter 僅當使用動態ServerList時使用，用於在原始的服務列表中使用一定策略過慮掉一部分地址。 - IRule 選擇一個最終的服務地址作為LB結果。選擇策略有輪詢、根據響應時間加權、斷路器(當Hystrix可用時)等。 Ribbon在工作時首選會通過ServerList來獲取所有可用的服務列表，然後通過ServerListFilter過慮掉一部分地址，最後在剩下的地址中通過IRule選擇出一台服務器作為最終結果。
 
 # Ribbon 負載均衡策略介紹
 
@@ -30,23 +30,43 @@ layout: post
 
 # 改造 Service Provider
 
-# 這邊我們要產生兩個 Service 兩個 Service 配置檔只有 port 不同如下 application.yml; ``` eureka: client: serviceUrl: defaultZone: http://localhost:8761/eureka/ spring: application: name: eureka-provider server: port: 8081 // 另一個 設為8082 ```
+這邊我們要產生兩個 Service 兩個 Service 配置檔只有 port 不同如下 application.yml;
+
+```
+eureka: client: serviceUrl: defaultZone: http://localhost:8761/eureka/ spring: application: name: eureka-provider server: port: 8081 // 另一個 設為8082
+```
 
 # Provider main
 
-# EurekaServiceProviderApplication.java ``` @SpringBootApplication @EnableEurekaClient @RestController public class EurekaServiceProviderApplication { @Value("${server.port}") String port; @RequestMapping("/") public String home() { return "Hello world" + port; } public static void main(String[] args) { SpringApplication.run(EurekaServiceProviderApplication.class, args); } } ```
+EurekaServiceProviderApplication.java
+
+```
+@SpringBootApplication @EnableEurekaClient @RestController public class EurekaServiceProviderApplication { @Value("${server.port}") String port; @RequestMapping("/") public String home() { return "Hello world" + port; } public static void main(String[] args) { SpringApplication.run(EurekaServiceProviderApplication.class, args); } }
+```
 
 # Ribbon Consumer 依賴配置
 
-# pom.xml ``` <--eureka 客戶端--> <dependency> <groupId> org.springframework.cloud </groupId> <artifactId> spring-cloud-starter-netflix-eureka-server </artifactId> </dependency> <--Ribbon 客戶端--> <dependency> <groupId> org.springframework.cloud </groupId> <artifactId> spring-cloud-starter-netflix-ribbon </artifactId> </dependency> ```
+pom.xml
+
+```
+<--eureka 客戶端--> <dependency> <groupId> org.springframework.cloud </groupId> <artifactId> spring-cloud-starter-netflix-eureka-server </artifactId> </dependency> <--Ribbon 客戶端--> <dependency> <groupId> org.springframework.cloud </groupId> <artifactId> spring-cloud-starter-netflix-ribbon </artifactId> </dependency>
+```
 
 # Consumer Main
 
-# EurekaServiceRibbonConsumer.java ``` @SpringBootApplication @EnableDiscoveryClient public class EurekaServiceRibbonConsumer { @LoadBalanced @Bean RestTemplate restTemplate() { return new RestTemplate(); } public static void main(String[] args) { SpringApplication.run(EurekaServiceRibbonConsumer.class, args); } } ```
+EurekaServiceRibbonConsumer.java
+
+```
+@SpringBootApplication @EnableDiscoveryClient public class EurekaServiceRibbonConsumer { @LoadBalanced @Bean RestTemplate restTemplate() { return new RestTemplate(); } public static void main(String[] args) { SpringApplication.run(EurekaServiceRibbonConsumer.class, args); } }
+```
 
 # RibbonConsumerCotroller
 
-# 這邊 Ribbon 會去跟 Eureka 取得目前註冊列表目前可用的清單 ``` @RestController public class ConsumerController { @Autowired private RestTemplate restTemplate; @GetMapping(value = "/hello") public String hello() { return restTemplate.getForEntity("http://eureka-provider/", String.class).getBody(); } } ```
+這邊 Ribbon 會去跟 Eureka 取得目前註冊列表目前可用的清單
+
+```
+@RestController public class ConsumerController { @Autowired private RestTemplate restTemplate; @GetMapping(value = "/hello") public String hello() { return restTemplate.getForEntity("http://eureka-provider/", String.class).getBody(); } }
+```
 
 # 啟動順序
 

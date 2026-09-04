@@ -47,10 +47,14 @@ layout: post
 
 ## ---
 
-## ``` # bash $ pip install fbprophet ```
+```
+# bash $ pip install fbprophet
+```
 
 慘慘慘 轉用anaconda裝[![](https://i.imgur.com/1SuA6x2.png)](https://i.imgur.com/1SuA6x2.png)
-## ``` conda update -c conda-forge conda conda update -n base conda conda config --add pinned_packages defaults::conda conda install  -c conda-forge fbprophet -y conda install -c masdeseiscaracteres ta-lib ```
+```
+conda update -c conda-forge conda conda update -n base conda conda config --add pinned_packages defaults::conda conda install  -c conda-forge fbprophet -y conda install -c masdeseiscaracteres ta-lib
+```
 
 [![](https://i.imgur.com/VXn9REc.png)](https://i.imgur.com/VXn9REc.png)
   

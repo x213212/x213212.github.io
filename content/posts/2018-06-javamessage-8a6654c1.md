@@ -11,7 +11,15 @@ layout: post
 
 ## 即時通
 
-## --- 相信大家都有用過Yahoo即時通，那時候還有一個漏洞呢，輸入超過很多字元會讓對方斷線，那麼我們來土炮一個來看看吧! [![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_vDkBw7qGbac_p.517873_1481408899524_%E5%9C%96%E7%89%87.png)](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_vDkBw7qGbac_p.517873_1481408899524_%E5%9C%96%E7%89%87.png) ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_vDkBw7qGbac_p.517873_1481408938448_%E5%9C%96%E7%89%87.png) ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_vDkBw7qGbac_p.517873_1481408976557_%E5%9C%96%E7%89%87.png) message.code
+相信大家都有用過Yahoo即時通，那時候還有一個漏洞呢，輸入超過很多字元會讓對方斷線，那麼我們來土炮一個來看看吧!
+
+[![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_vDkBw7qGbac_p.517873_1481408899524_%E5%9C%96%E7%89%87.png)](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_vDkBw7qGbac_p.517873_1481408899524_%E5%9C%96%E7%89%87.png)
+
+![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_vDkBw7qGbac_p.517873_1481408938448_%E5%9C%96%E7%89%87.png)
+
+![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_vDkBw7qGbac_p.517873_1481408976557_%E5%9C%96%E7%89%87.png)
+
+message.code
 
 ##
 

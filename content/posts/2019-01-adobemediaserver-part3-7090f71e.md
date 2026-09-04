@@ -161,7 +161,9 @@ http://172.16.2.111:8134/hds-live/livepkgr/_definst_/liveevent/livestream.f4m
   
 ## 多路推送 品質修改 (尚未研究)
 
-## --- (好像是自動適應，依網路速度自行切換吧? C:\Program Files\Adobe\Adobe Media Server 5\applications\livepkgr\events\_definst_\liveevent\ Manifest.xml [![](https://i.imgur.com/zy9kKqa.png)](https://i.imgur.com/zy9kKqa.png)
+(好像是自動適應，依網路速度自行切換吧? C:\Program Files\Adobe\Adobe Media Server 5\applications\livepkgr\events\_definst_\liveevent\ Manifest.xml
+
+[![](https://i.imgur.com/zy9kKqa.png)](https://i.imgur.com/zy9kKqa.png)
 
 ## Html5使用hls.js 撥放器，撥放m3u8串流
 

@@ -13,7 +13,7 @@ layout: post
 
 # Zuul gateway入門
 
-# 部分參考 <https://www.ymq.io/2017/12/10/spring-cloud-zuul/> 前面如果比較重要的概念目前還太淺不能做總結，交給大神做整理觀念比較重要 服務網關是微服務架構中一個不可或缺的部分。通過服務網關統一向外系統提供REST API的過程中，除了具備服務路由、均衡負載功能之外，它還具備了權限控制等功能。 Spring Cloud Netflix中的Zuul就擔任了這樣的一個角色，為微服務架構提供了前門保護的作用，同時將權限控制這些較重的非業務邏輯內容遷移到服務路由層面，使得服務集群主體能夠具備更高的可複用性和可測試性。 路由在微服務體系結構的一個組成部分。例如，/可以映射到您的Web應用程序，/api/users映射到用戶服務，並將/api/shop映射到商店服務。 Zuul是Netflix的基於JVM的路由器和服務器端負載均衡器。 Netflix使用Zuul進行以下操作： - 認證 - 洞察 - 壓力測試 - 金絲雀測試 - 動態路由 - 服務遷移 - 負載脫落 - 安全 - 靜態響應處理 - 主動/主動流量管理 Zuul的規則引擎允許基本上寫任何JVM語言編寫規則和過濾器，內置Java和Groovy。 什麼是服務網關 服務網關 = 路由轉發 + 過濾器 1. 路由轉發：接收一切外界請求，轉發到後端的微服務上去； 2. 過濾器：在服務網關中可以完成一系列的橫切功能，例如權限校驗、限流以及監控等，這些都可以通過過濾器完成（其實路由轉發也是通過過濾器實現的）。 為什麼需要服務網關 上述所說的橫切功能（以權限校驗為例）可以寫在三個位置： 每個服務自己實現一遍 寫到一個公共的服務中，然後其他所有服務都依賴這個服務 寫到服務網關的前置過濾器中，所有請求過來進行權限校驗 第一種，缺點太明顯，基本不用；第二種，相較於第一點好很多，代碼開發不會冗餘，但是有兩個缺點： 由於每個服務引入了這個公共服務，那麼相當於在每個服務中都引入了相同的權限校驗的代碼，使得每個服務的jar包大小無故增加了一些，尤其是對於使用docker鏡像進行部署的場景，jar越小越好； 由於每個服務都引入了這個公共服務，那麼我們後續升級這個服務可能就比較困難，而且公共服務的功能越多，升級就越難，而且假設我們改變了公共服務中的權限校驗的方式，想讓所有的服務都去使用新的權限校驗方式，我們就需要將之前所有的服務都重新引包，編譯部署。 - 而服務網關恰好可以解決這樣的問題： 將權限校驗的邏輯寫在網關的過濾器中，後端服務不需要關注權限校驗的代碼，所以服務的jar包中也不會引入權限校驗的邏輯，不會增加jar包大小； 如果想修改權限校驗的邏輯，只需要修改網關中的權限校驗過濾器即可，而不需要升級所有已存在的微服務。 - 所以，需要服務網關！！！
+部分參考 <https://www.ymq.io/2017/12/10/spring-cloud-zuul/> 前面如果比較重要的概念目前還太淺不能做總結，交給大神做整理觀念比較重要 服務網關是微服務架構中一個不可或缺的部分。通過服務網關統一向外系統提供REST API的過程中，除了具備服務路由、均衡負載功能之外，它還具備了權限控制等功能。 Spring Cloud Netflix中的Zuul就擔任了這樣的一個角色，為微服務架構提供了前門保護的作用，同時將權限控制這些較重的非業務邏輯內容遷移到服務路由層面，使得服務集群主體能夠具備更高的可複用性和可測試性。 路由在微服務體系結構的一個組成部分。例如，/可以映射到您的Web應用程序，/api/users映射到用戶服務，並將/api/shop映射到商店服務。 Zuul是Netflix的基於JVM的路由器和服務器端負載均衡器。 Netflix使用Zuul進行以下操作： - 認證 - 洞察 - 壓力測試 - 金絲雀測試 - 動態路由 - 服務遷移 - 負載脫落 - 安全 - 靜態響應處理 - 主動/主動流量管理 Zuul的規則引擎允許基本上寫任何JVM語言編寫規則和過濾器，內置Java和Groovy。 什麼是服務網關 服務網關 = 路由轉發 + 過濾器 1. 路由轉發：接收一切外界請求，轉發到後端的微服務上去； 2. 過濾器：在服務網關中可以完成一系列的橫切功能，例如權限校驗、限流以及監控等，這些都可以通過過濾器完成（其實路由轉發也是通過過濾器實現的）。 為什麼需要服務網關 上述所說的橫切功能（以權限校驗為例）可以寫在三個位置： 每個服務自己實現一遍 寫到一個公共的服務中，然後其他所有服務都依賴這個服務 寫到服務網關的前置過濾器中，所有請求過來進行權限校驗 第一種，缺點太明顯，基本不用；第二種，相較於第一點好很多，代碼開發不會冗餘，但是有兩個缺點： 由於每個服務引入了這個公共服務，那麼相當於在每個服務中都引入了相同的權限校驗的代碼，使得每個服務的jar包大小無故增加了一些，尤其是對於使用docker鏡像進行部署的場景，jar越小越好； 由於每個服務都引入了這個公共服務，那麼我們後續升級這個服務可能就比較困難，而且公共服務的功能越多，升級就越難，而且假設我們改變了公共服務中的權限校驗的方式，想讓所有的服務都去使用新的權限校驗方式，我們就需要將之前所有的服務都重新引包，編譯部署。 - 而服務網關恰好可以解決這樣的問題： 將權限校驗的邏輯寫在網關的過濾器中，後端服務不需要關注權限校驗的代碼，所以服務的jar包中也不會引入權限校驗的邏輯，不會增加jar包大小； 如果想修改權限校驗的邏輯，只需要修改網關中的權限校驗過濾器即可，而不需要升級所有已存在的微服務。 - 所以，需要服務網關！！！
 
 # 服務網關技術選型
 
@@ -21,11 +21,17 @@ layout: post
 
 # Zuul
 
-# ``` @EnableZuulProxy @SpringBootApplication public class EurekaServiceZuulApplication { public static void main(String[] args) { SpringApplication.run(EurekaServiceZuulApplication.class, args); } } ```
+```
+@EnableZuulProxy @SpringBootApplication public class EurekaServiceZuulApplication { public static void main(String[] args) { SpringApplication.run(EurekaServiceZuulApplication.class, args); } }
+```
 
 # 配置文件
 
-# application.yml ``` spring: application: name: zuul-service server: port: 9000 #zuul: # routes: # blog: # path: /ymq/**# url: https://www.ymq.io/about eureka: client: serviceUrl: defaultZone: http://localhost:8761/eureka/ zuul: routes: api: path: /** serviceId: eureka-provider ```
+application.yml
+
+```
+spring: application: name: zuul-service server: port: 9000 #zuul: # routes: # blog: # path: /ymq/**# url: https://www.ymq.io/about eureka: client: serviceUrl: defaultZone: http://localhost:8761/eureka/ zuul: routes: api: path: /** serviceId: eureka-provider
+```
 
 # 服務啟動
 

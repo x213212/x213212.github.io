@@ -11,7 +11,17 @@ layout: post
 
 ## 又是一次課堂專題
 
-## --- 在看到了fb小遊戲，因為課堂專題需要所以來做個小練習 可以單人和雙人對打喔!為什麼沒計分系統? 自己寫拉 [![](https://i.imgur.com/flqaKvh.png)](https://i.imgur.com/flqaKvh.png) [![](https://i.imgur.com/XsuRUSd.png)](https://i.imgur.com/XsuRUSd.png) 單人 [![](https://i.imgur.com/yrjcb81.png)](https://i.imgur.com/yrjcb81.png) 雙人
+在看到了fb小遊戲，因為課堂專題需要所以來做個小練習 可以單人和雙人對打喔!為什麼沒計分系統? 自己寫拉
+
+[![](https://i.imgur.com/flqaKvh.png)](https://i.imgur.com/flqaKvh.png)
+
+[![](https://i.imgur.com/XsuRUSd.png)](https://i.imgur.com/XsuRUSd.png)
+
+單人
+
+[![](https://i.imgur.com/yrjcb81.png)](https://i.imgur.com/yrjcb81.png)
+
+雙人
 
 ## battole tetris.code
 
