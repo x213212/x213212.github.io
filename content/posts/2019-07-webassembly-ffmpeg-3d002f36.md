@@ -223,7 +223,7 @@ emcc -s ASSERTIONS=1 -s VERBOSE=1 -s TOTAL_MEMORY=33554432 \
 
 沒空間我來想想要去哪裡生  
 
-[https://webcache.googleusercontent.com/search?q=cache:0uf3Xfr5a1AJ:https://www.novicepq.com/2018/06/07/%E6%B8%85%E7%90%86centos6%E6%88%96centos7%E5%9E%83%E5%9C%BE%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C/+&cd=2&hl=zh-TW&ct=clnk&gl=tw](https://webcache.googleusercontent.com/search?q=cache:0uf3Xfr5a1AJ:https://www.novicepq.com/2018/06/07/%25E6%25B8%2585%25E7%2590%2586centos6%25E6%2588%2596centos7%25E5%259E%2583%25E5%259C%25BE%25E6%2596%2587%25E4%25BB%25B6%25E7%259A%2584%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258C/+&cd=2&hl=zh-TW&ct=clnk&gl=tw)  
+[https://www.novicepq.com/2018/06/07/清理centos6或centos7垃圾文件的命令行/](https://www.novicepq.com/2018/06/07/清理centos6或centos7垃圾文件的命令行/)  
 
 ![](https://i.imgur.com/sxZo0SQ.png)
 

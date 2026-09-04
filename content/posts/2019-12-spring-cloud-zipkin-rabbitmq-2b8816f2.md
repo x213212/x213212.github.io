@@ -58,7 +58,7 @@ server:
 ```
 # rabbitmq
 
-<https://x8795278.blogspot.com/2019/08/websocket-rabbitmq.html>  
+</2019/08/websocket-rabbitmq.html>  
 
 上次玩到一半，這邊是安裝還要加上
 ```

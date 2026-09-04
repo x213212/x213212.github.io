@@ -45,7 +45,7 @@ layout: post
 
 在之前前幾次有做了幾個教學就是golang架設伺服器篇  
 
-<https://x8795278.blogspot.com/2018/09/golang-json.html>
+</2018/09/golang-json.html>
   
 
 新的版面  

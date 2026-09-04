@@ -15,7 +15,7 @@ layout: post
 
 聊天機器人  
 
-想說[Linebot](https://x8795278.blogspot.com/2018/09/linebot-echo-ngork.html)弄完後順便連Facebookbot一併弄一下好了  
+想說[Linebot](/2018/09/linebot-echo-ngork.html)弄完後順便連Facebookbot一併弄一下好了  
 
 bot也算是兩年前的東西了，以前寫沒留下近期內用到再來寫一下作教學文  
 
@@ -23,7 +23,7 @@ bot也算是兩年前的東西了，以前寫沒留下近期內用到再來寫�
 
 不過Facebookbot比較麻煩一點就是了  
 
-那在我們上一回的[Linebot](https://x8795278.blogspot.com/2018/09/linebot-echo-ngork.html)都裝的差不多了，  
+那在我們上一回的[Linebot](/2018/09/linebot-echo-ngork.html)都裝的差不多了，  
 
 為什麼技術文章寫來寫去還是很像在寫心情雜記xd  
 

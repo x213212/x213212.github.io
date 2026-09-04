@@ -107,7 +107,7 @@ int main () {
 }
 ```
 一開始本來想從攔截malloc function 的地方下手
-https://webcache.googleusercontent.com/search?q=cache:cACnJ40Ng00J:https://blog.csdn.net/qq_41453285/article/details/97135257+&cd=3&hl=zh-TW&ct=clnk&gl=tw
+https://blog.csdn.net/qq_41453285/article/details/97135257
 
 https://www.itread01.com/content/1546763613.html
 

@@ -43,7 +43,7 @@ layout: post
 
 # Provider 1 or 2
 
-這邊就要稍微用到前面的技巧了 我們知道有 resttemplete 有可以去跟我們 Eureka 去要我們已經註冊的節點的伺服器名字 整體呼叫在最下面 <https://openhome.cc/Gossip/Spring/RestTemplate.html> <https://www.jianshu.com/p/462790156554> 我們用到比較關鍵的是 預設的 restemplete 是沒有辦法呼叫負載平衡的，有印象的話在前幾天用過 [SPRING CLOUD 微服務入門 (三) EUREKA + CONSUMER (FEIGN) 呼叫 SERVICE](https://x8795278.blogspot.com/2019/12/spring-cloud-eureka-consumer-feign.html) 在這邊的話我們把 restemplete 注入一個有 loadblance 特性 <https://blog.csdn.net/qq_18416057/article/details/79432504> 這邊說的蠻清楚的 不過少了一些東西
+這邊就要稍微用到前面的技巧了 我們知道有 resttemplete 有可以去跟我們 Eureka 去要我們已經註冊的節點的伺服器名字 整體呼叫在最下面 <https://openhome.cc/Gossip/Spring/RestTemplate.html> <https://www.jianshu.com/p/462790156554> 我們用到比較關鍵的是 預設的 restemplete 是沒有辦法呼叫負載平衡的，有印象的話在前幾天用過 [SPRING CLOUD 微服務入門 (三) EUREKA + CONSUMER (FEIGN) 呼叫 SERVICE](/2019/12/spring-cloud-eureka-consumer-feign.html) 在這邊的話我們把 restemplete 注入一個有 loadblance 特性 <https://blog.csdn.net/qq_18416057/article/details/79432504> 這邊說的蠻清楚的 不過少了一些東西
 
 ```
 @LoadBalanced @Bean RestTemplate restTemplate() { return new RestTemplate(); } @Autowired private RestTemplate restTemplate;

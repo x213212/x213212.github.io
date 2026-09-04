@@ -65,7 +65,7 @@ IPADDR=192.168.37.11 NETMASK=255.255.255.0 NM_CONTROLLED=no [root@localhost netw
 
 ![](https://i.imgur.com/Cux9dkz.png)
 
-那我的nginx 設置額外端口 怎麼 ping 的通呢，我們只需要添加這行， 不過這是暫時的指令 [root@localhost network-scripts]# iptables -I INPUT -p tcp --dport 6699 -j ACCEPT or 防火牆開啟 方法一：使用firewall 1、运行命令： firewall-cmd --get-active-zones 运行完成之后，可以看到zone名称，如下： 2、执行如下命令命令： firewall-cmd --zone=public --add-port=6379/tcp --permanent 3、重启防火墙，运行命令： firewall-cmd --reload <https://webcache.googleusercontent.com/search?q=cache:qa96uVpp8b0J:https://blog.csdn.net/zx110503/article/details/78787483+&cd=1&hl=zh-TW&ct=clnk&gl=tw> 那麼我們就成功 ping 到我們的 openrestry囉?
+那我的nginx 設置額外端口 怎麼 ping 的通呢，我們只需要添加這行， 不過這是暫時的指令 [root@localhost network-scripts]# iptables -I INPUT -p tcp --dport 6699 -j ACCEPT or 防火牆開啟 方法一：使用firewall 1、运行命令： firewall-cmd --get-active-zones 运行完成之后，可以看到zone名称，如下： 2、执行如下命令命令： firewall-cmd --zone=public --add-port=6379/tcp --permanent 3、重启防火墙，运行命令： firewall-cmd --reload <https://blog.csdn.net/zx110503/article/details/78787483 那麼我們就成功 ping 到我們的 openrestry囉?
 
 ![](https://i.imgur.com/FHBUdOF.png)
 

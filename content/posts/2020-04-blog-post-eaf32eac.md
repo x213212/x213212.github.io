@@ -31,7 +31,7 @@ layout: post
 
 之前有透過我們  
 
-<https://x8795278.blogspot.com/2019/12/spring-boot-spring-security-rest-api.html>  
+</2019/12/spring-boot-spring-security-rest-api.html>  
 
 最後發現其實在分析整個流程的時候發現只有在login 的時候 有實現二級快取，在戳api的時候 沒有呼叫springboot 預設的 cache 也就是Ehcache，後面 我有額外 去 仿造一個 UserCache 也就是 springzzz  
 
