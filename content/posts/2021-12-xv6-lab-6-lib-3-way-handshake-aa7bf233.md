@@ -355,7 +355,7 @@ fail:
 ![](https://i.imgur.com/WTtyChi.png)
 ![](https://i.imgur.com/mtDdeFO.png)
 
-增加http 協議和 arp 緩存，要看有沒有時間去弄了，最近整理一下再放github
+增加http 協議和 arp 快取，要看有沒有時間去弄了，最近整理一下再放github
 
 ## References
 

@@ -42,7 +42,7 @@ https://gbdev.io/pandocs/Memory_Map.html
 這邊有詳細介紹memory bank
 一般使用遊戲存檔都會存在這些bank裡面。
 #  int emu_run(int argc, char **argv)
-這邊開始啟動會看到main 負責call sdl lib 進行刷新畫面
+這邊開始啟動會看到main 負責call sdl lib 進行重新整理畫面
 ![](https://i.imgur.com/on0eD3q.png)
 
 可以看到也開了一個thread 進行 cpu 讀取指令和解碼，也就是cpu_run
@@ -123,7 +123,7 @@ ctx.cur_inst 對應的 function 執行
 繪圖的部分沒有看得很仔細，這部分就先不介紹，大概是根據當前指令去跟rom 要資料存到 ppu_context
 ![](https://i.imgur.com/eRdcCqZ.png)
 
-sdl 再根據vram 就是當前畫面的資料，orm應該是各個貼圖的位置刷新到sdl lib
+sdl 再根據vram 就是當前畫面的資料，orm應該是各個貼圖的位置重新整理到sdl lib
 # hram & wram
 hram 和 wram 儲存遊戲的狀態
 ![](https://i.imgur.com/ibi8bB9.png)

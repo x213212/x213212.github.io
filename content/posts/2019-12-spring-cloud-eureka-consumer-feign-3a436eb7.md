@@ -12,7 +12,7 @@ layout: post
 ![](https://i.imgur.com/PrtpDca.png) Feign簡介
 
 Feign是一個聲明式的偽Http客戶端，它使得寫Http客戶端變得更簡單。
-使用Feign，只需要創建一個接口並註解，它具有可插拔的註解特性，可使用Feign 註解和JAX-RS註解，Feign支持可插拔的編碼器和解碼器，Feign默認集成了Ribbon，並和Eureka結合，默認實現了負載均衡的效果。
+使用Feign，只需要創建一個介面並註解，它具有可插拔的註解特性，可使用Feign 註解和JAX-RS註解，Feign支持可插拔的編碼器和解碼器，Feign預設整合了Ribbon，並和Eureka結合，預設實現了負載均衡的效果。
 Feign 具有如下特性：
 可插拔的註解支持，包括Feign註解和JAX-RS註解  
 
@@ -22,7 +22,7 @@ Feign 具有如下特性：
 
 支持Ribbon的負載均衡  
 
-支持HTTP請求和響應的壓縮Feign是一個聲明式的Web Service客戶端，它的目的就是讓Web Service調用更加簡單。它整合了Ribbon和Hystrix，從而不再需要顯式地使用這兩個組件。 Feign還提供了HTTP請求的模板，通過編寫簡單的接口和註解，就可以定義好HTTP請求的參數、格式、地址等信息。接下來，Feign會完全代理HTTP的請求，我們只需要像調用方法一樣調用它就可以完成服務請求。  
+支持HTTP請求和回應的壓縮Feign是一個聲明式的Web Service客戶端，它的目的就是讓Web Service呼叫更加簡單。它整合了Ribbon和Hystrix，從而不再需要顯式地使用這兩個組件。 Feign還提供了HTTP請求的模板，通過編寫簡單的介面和註解，就可以定義好HTTP請求的參數、格式、地址等資訊。接下來，Feign會完全代理HTTP的請求，我們只需要像呼叫方法一樣呼叫它就可以完成服務請求。  
 
 簡而言之：Feign能幹Ribbon和Hystrix的事情，但是要用Ribbon和Hystrix自帶的註解必須要引入相應的jar包才可以。
 # 環境準備
@@ -33,7 +33,7 @@ Feign 具有如下特性：
 - Eureka Provider *2
 - Ribbon Consumer
 
-等等我們會來用 Feign 完成一次服務調用範例
+等等我們會來用 Feign 完成一次服務呼叫範例
 # 配置設定
 
 application.yml
@@ -65,11 +65,11 @@ public class EurekaServiceFeignConsumer {
 
 }
 ```
-# 定義接口
+# 定義介面
 
 HomeClient.class  
 
-這邊就是調用 eureka-provider 裡的 /,  
+這邊就是呼叫 eureka-provider 裡的 /,  
 
 也就是從我們的Eureka 裡面已經註冊過的service  
 
@@ -83,7 +83,7 @@ public interface HomeClient {
 ```
 # Controller
 
-讓訪問 Fegin “/home” ,能導向我們剛剛寫的接口homeClient裡面的 consumer 方法
+讓訪問 Fegin “/home” ,能導向我們剛剛寫的介面homeClient裡面的 consumer 方法
 ```
 @RestController
 public class ConsumerController {
@@ -108,4 +108,4 @@ public class ConsumerController {
 
 下面一章就會寫  
 
-如何調用service 傳參數，本來打算在這一章解決的，後來發現也算是一個坑，我把這一篇獨立出來。
+如何呼叫service 傳參數，本來打算在這一章解決的，後來發現也算是一個坑，我把這一篇獨立出來。

@@ -180,7 +180,7 @@ while 1:
 ![](https://i.imgur.com/gWCaEO5.png)
 
 這邊可以看到add 假設我要偏移到5f2則在偏移加上28偏移
-必須要異動__init__.py 去攔截裡面的加載 sym function 對應obj的偏移量
+必須要異動__init__.py 去攔截裡面的載入 sym function 對應obj的偏移量
 ![](https://i.imgur.com/YVOxSuo.png)
 
 > real address = base address + offset
@@ -188,7 +188,7 @@ while 1:
 
 ![](https://i.imgur.com/tFsVLyi.png)
 ![](https://i.imgur.com/Fa0998w.png)
-這個腳本可以讓我在runtime的時候取得任意process 執行程式的加載process的虛擬記憶體位置，有這個後，我就可以根據這些去反推obj偏移和虛擬記憶體位置
+這個腳本可以讓我在runtime的時候取得任意process 執行程式的載入process的虛擬記憶體位置，有這個後，我就可以根據這些去反推obj偏移和虛擬記憶體位置
 
 ```stp
 

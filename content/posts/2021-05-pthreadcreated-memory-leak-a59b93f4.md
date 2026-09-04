@@ -196,8 +196,8 @@ https://blog.xuite.net/ian11832/blogg/23967641
 
 | function  | characteristic | supplement |
 | -------- | -------- | -------- |
-| fork(無參數)     | 完全複製父行程的資源，子行程獨立於父行程， 但是二者之間的通訊需要通過專門的通訊機制如：pipe，popen&pclose、協同進程、fifo，System V IPC（消息隊列、信號量和共享內存）機制等。     |Linux中採取了copy-on-write技術減少無用複製。fork的父子行程運行順序是不定的，它取決於排程演算法。    |
-| vfork(無參數) | 父子行程共享位址空間，也就是說子行程完全運行在父行程的位址空間上，子行程對虛擬位址空間任何數據的修改同樣為父行程所見。但是用 vfork創建子行程後，父行程會被block住直到子行程調用exec或exit。 | vfork主要是用在創建出來的子行程馬上又呼叫execve的情況下 vfork保證子行程先運行，在它調用exec或exit後父行程才可能排程運行。當子行程exec另一新程式時，即會給予新空間而不再佔用父行程空間 |
+| fork(無參數)     | 完全複製父行程的資源，子行程獨立於父行程， 但是二者之間的通訊需要通過專門的通訊機制如：pipe，popen&pclose、協同行程、fifo，System V IPC（消息佇列、信號量和共享記憶體）機制等。     |Linux中採取了copy-on-write技術減少無用複製。fork的父子行程運行順序是不定的，它取決於排程演算法。    |
+| vfork(無參數) | 父子行程共享位址空間，也就是說子行程完全運行在父行程的位址空間上，子行程對虛擬位址空間任何數據的修改同樣為父行程所見。但是用 vfork創建子行程後，父行程會被block住直到子行程呼叫exec或exit。 | vfork主要是用在創建出來的子行程馬上又呼叫execve的情況下 vfork保證子行程先運行，在它呼叫exec或exit後父行程才可能排程運行。當子行程exec另一新程式時，即會給予新空間而不再佔用父行程空間 |
 | clone(有參數) | 	按指定條件創建子行程，可決定哪些父子資源要共享，哪些要額外複製一份。 |  由POSIX支援的C函式pthread_create()函式呼叫？？ |
 
 ![](https://i.imgur.com/4xKlDHB.png)

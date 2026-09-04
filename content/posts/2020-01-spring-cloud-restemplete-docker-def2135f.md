@@ -11,7 +11,7 @@ layout: post
 
 # 目前架構
 
-![](https://i.imgur.com/RKIxarj.png) 可以看到我們下面 服務好像有固定的數據庫可能是集群或是什麼 在前面的學習好像沒看到更複雜的調用，分布式很多問題，像是數據不同步，光是鎖就有一大堆，就以認證中心設計成微服務的話， 資料庫就會變成多個，這樣就不能判斷你到底是到底在哪一台調用，而出現你有雙重的登入資料緩存在分散的資料庫解決方式可能有 一 分布式鎖 二共用同一個資料庫 這部分先以後有空再弄，目前就是先拓展為多層調用，今天是來實現多層的話服務溝通使用 restemplate 去溝通。
+![](https://i.imgur.com/RKIxarj.png) 可以看到我們下面 服務好像有固定的資料庫可能是集群或是什麼 在前面的學習好像沒看到更複雜的呼叫，分布式很多問題，像是數據不同步，光是鎖就有一大堆，就以認證中心設計成微服務的話， 資料庫就會變成多個，這樣就不能判斷你到底是到底在哪一台呼叫，而出現你有雙重的登入資料快取在分散的資料庫解決方式可能有 一 分布式鎖 二共用同一個資料庫 這部分先以後有空再弄，目前就是先拓展為多層呼叫，今天是來實現多層的話服務溝通使用 restemplate 去溝通。
 
 # 分析
 
@@ -19,11 +19,11 @@ layout: post
 
 ![](https://i.imgur.com/MQSS36D.png)
 
-好吧開始 目前我們的 service 已經有 5個 我們要來 新增了 2 個 也就是模擬第四層 一個是 EurekaServiceFeignConsumer2 EurekaServiceFeignProvider3 其中兩個各別都是從 也就是模擬第三層 EurekaServiceFeignProvider EurekaServiceFeignConsumer 複製出來 來看一下代碼 那麼我們原本的服務會變怎樣呢 EurekaServiceFeignProvider1 EurekaServiceFeignProvider2 要調用我們的 EurekaServiceFeignProvider3 所以調用順序就是 Zuul - > Consumer1 - > Provider1 or Provider2 -> Consumer2 > Provider3 所以先針對我們的 Consumer1 來修改
+好吧開始 目前我們的 service 已經有 5個 我們要來 新增了 2 個 也就是模擬第四層 一個是 EurekaServiceFeignConsumer2 EurekaServiceFeignProvider3 其中兩個各別都是從 也就是模擬第三層 EurekaServiceFeignProvider EurekaServiceFeignConsumer 複製出來 來看一下程式碼 那麼我們原本的服務會變怎樣呢 EurekaServiceFeignProvider1 EurekaServiceFeignProvider2 要呼叫我們的 EurekaServiceFeignProvider3 所以呼叫順序就是 Zuul - > Consumer1 - > Provider1 or Provider2 -> Consumer2 > Provider3 所以先針對我們的 Consumer1 來修改
 
 # 多層服務的呼叫方式
 
-調用服務三 但是要取得服務四 的 response 才算調用完成 那就變成 要完成server3 呼叫就要 server3 -> server 4 多經過一層 server 4 這樣的話 可能會覺得我那就用我們上次 doget doposs 這兩種方法就好了那有沒有更優雅的方式呢有的歐， spring 幫我們把這些東西再往上封裝了一層也就是 restemplate (如果你想用到更複雜的調用你就自己從底層慢慢研究了)
+呼叫服務三 但是要取得服務四 的 response 才算呼叫完成 那就變成 要完成server3 呼叫就要 server3 -> server 4 多經過一層 server 4 這樣的話 可能會覺得我那就用我們上次 doget doposs 這兩種方法就好了那有沒有更優雅的方式呢有的歐， spring 幫我們把這些東西再往上封裝了一層也就是 restemplate (如果你想用到更複雜的呼叫你就自己從底層慢慢研究了)
 
 # Consumer1 Controller
 
@@ -33,7 +33,7 @@ layout: post
 @GetMapping("/helloEX/{id}/{id2}") public String helloEX(@PathVariable(name="id") Integer employeeId,@PathVariable(name="id2") Integer employeeId2) { System.out.print(employeeId2); String message = homeClient.home2(employeeId,employeeId2); logger.info("[eureka-fegin][ConsumerController][hello], message={}", message); // log.info("[eureka-ribbon][EurekaRibbonConntroller][syaHello], message={}", message); return message ;
 ```
 
-好了之後 我們要看要調用哪一層就是我們的
+好了之後 我們要看要呼叫哪一層就是我們的
 
 # Consumer1 homeClient
 
@@ -43,7 +43,7 @@ layout: post
 
 # Provider 1 or 2
 
-這邊就要稍微用到前面的技巧了 我們知道有 resttemplete 有可以去跟我們 Eureka 去要我們已經註冊的節點的伺服器名字 整體調用在最下面 <https://openhome.cc/Gossip/Spring/RestTemplate.html> <https://www.jianshu.com/p/462790156554> 我們用到比較關鍵的是 預設的 restemplete 是沒有辦法呼叫負載平衡的，有印象的話在前幾天用過 [SPRING CLOUD 微服務入門 (三) EUREKA + CONSUMER (FEIGN) 調用 SERVICE](https://x8795278.blogspot.com/2019/12/spring-cloud-eureka-consumer-feign.html) 在這邊的話我們把 restemplete 注入一個有 loadblance 特性 <https://blog.csdn.net/qq_18416057/article/details/79432504> 這邊說的蠻清楚的 不過少了一些東西
+這邊就要稍微用到前面的技巧了 我們知道有 resttemplete 有可以去跟我們 Eureka 去要我們已經註冊的節點的伺服器名字 整體呼叫在最下面 <https://openhome.cc/Gossip/Spring/RestTemplate.html> <https://www.jianshu.com/p/462790156554> 我們用到比較關鍵的是 預設的 restemplete 是沒有辦法呼叫負載平衡的，有印象的話在前幾天用過 [SPRING CLOUD 微服務入門 (三) EUREKA + CONSUMER (FEIGN) 呼叫 SERVICE](https://x8795278.blogspot.com/2019/12/spring-cloud-eureka-consumer-feign.html) 在這邊的話我們把 restemplete 注入一個有 loadblance 特性 <https://blog.csdn.net/qq_18416057/article/details/79432504> 這邊說的蠻清楚的 不過少了一些東西
 
 ```
 @LoadBalanced @Bean RestTemplate restTemplate() { return new RestTemplate(); } @Autowired private RestTemplate restTemplate;
@@ -73,15 +73,15 @@ eureka: client: serviceUrl: defaultZone: http://localhost:8761/eureka/ register-
 
 # Provider3 Controller
 
-反正 他是複製 Provider 我們直接看源碼 這邊很簡單沒做什麼我們看 Consumer2
+反正 他是複製 Provider 我們直接看原始碼 這邊很簡單沒做什麼我們看 Consumer2
 
 ```
 @GetMapping("/ep2") public String home(@RequestParam (value="id", required = false) Integer employeeId,@RequestParam (value="id2", required = false) Integer employeeId2) { String message = "Hello world" + port+ employeeId+employeeId2; logger.info("[eureka-provide2][EurekaServiceProviderApplication][home], message={}", message); return message; }
 ```
 
-# Provider 3 配置文件
+# Provider 3 設定檔
 
-記得換為 eureka-provider2，以便讓我們的 Consumer2 可以調用到
+記得換為 eureka-provider2，以便讓我們的 Consumer2 可以呼叫到
 
 ```
 name: eureka-provider2
@@ -89,7 +89,7 @@ name: eureka-provider2
 
 # Consumer2 Controller
 
-注意看 Url這邊可以看到 我們沒有再讓往Zuul 去訪問我們的 consumer2 了 因為我們是讓 Provider 去直接 調用 我們的 consumer2 , 可以注意 url 的調用 address 裡面的 hello2
+注意看 Url這邊可以看到 我們沒有再讓往Zuul 去訪問我們的 consumer2 了 因為我們是讓 Provider 去直接 呼叫 我們的 consumer2 , 可以注意 url 的呼叫 address 裡面的 hello2
 
 ```
 @RestController public class ConsumerController { private final Logger logger = LoggerFactory.getLogger(ConsumerController.class); @Autowired private HomeClient homeClient; @GetMapping("/hello2/{id}/{id2}") public String hello(@PathVariable(name="id") Integer employeeId,@PathVariable(name="id2") Integer employeeId2) { System.out.print(employeeId2); String message = homeClient.home(employeeId,employeeId2); logger.info("[eureka-fegin2][ConsumerController][hello], message={}", message); // log.info("[eureka-ribbon][EurekaRibbonConntroller][syaHello], message={}", message); return message ; } }

@@ -80,7 +80,7 @@ print(f"Change {cos_symbol.name}!{cos_symbol.value:x} -> {cos_symbol.name}!{new_
 cos_symbol.value = new_addr
 libm.write("libm.so.6")
 ```
-到這邊do_math 所加載的 數學函式庫 cos 已經被替換成hook function
+到這邊do_math 所載入的 數學函式庫 cos 已經被替換成hook function
 
 # 05_elf_infect_plt_got.html
 這一個範例來說

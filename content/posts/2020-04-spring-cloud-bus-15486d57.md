@@ -202,7 +202,7 @@ spring.cloud.config.label=master
 
 # 結合Eureka Provider
 
-透過 post 刷新微服務節點配置檔
+透過 post 重新整理微服務節點配置檔
 # Config Client
 
 - EurekaServiceProvider
@@ -262,9 +262,9 @@ spring.cloud.config.label=master
 
 下面我們來分兩種方法  
 
-一種是透過 post 去刷新  
+一種是透過 post 去重新整理  
 
-一種是透過我們的 Spring cloud bus 去刷新我們的配置檔案
+一種是透過我們的 Spring cloud bus 去重新整理我們的配置檔案
 # 手動觸發更新配置檔案
 
 ## 安全認證
@@ -310,7 +310,7 @@ spring.cloud.config.label=master
 ```
 http://localhost:8081/refresh，http://localhost:8083/refresh
 ```
-# 手動刷新
+# 手動重新整理
 
 ![](https://i.imgur.com/0njklZg.png)
 
@@ -344,15 +344,15 @@ Spring Cloud Bus 將分佈式系統的節點通過輕量級消息代理連接起
 
 Spring cloud bus 通過輕量消息代理連接各個分佈的節點。管理和傳播所有分佈式項目中的消息，本質是利用了MQ的廣播機制在分佈式的系統中傳播消息，目前常用的有Kafka和RabbitMQ。  
 
-下面是一個配置中心刷新配置的例子
+下面是一個配置中心重新整理配置的例子
 
 ![](https://i.imgur.com/yHSomM0.png)
 
   
 
 架構圖
-[圖片來源於網絡如有侵權請私信刪除]
-1、提交代碼觸發post請求給bus/refresh  
+[圖片來源於網路如有侵權請私信刪除]
+1、提交程式碼觸發post請求給bus/refresh  
 
 2、server端接收到請求並發送給Spring Cloud Bus  
 
@@ -645,20 +645,20 @@ public class RefreshController {
 
   
 
-成功完成刷新!
-# 局部刷新
+成功完成重新整理!
+# 局部重新整理
 
-某些場景下（例如灰度發布），我們可能只想刷新部分微服務的配置，此時可通過http://localhost:9112/actuator/bus-refresh 端點的destination參數來定位要刷新的應用程序。  
+某些場景下（例如灰度發布），我們可能只想重新整理部分微服務的配置，此時可通過http://localhost:9112/actuator/bus-refresh 端點的destination參數來定位要重新整理的應用程序。  
 
 ![](https://i.imgur.com/rsNwZTK.png)
 
 > <http://localhost:9112/actuator/bus-refresh?destination=eureka-provider:8071>
 
-例如：/actuator/bus-refresh?destination=customers:8000，這樣消息總線上的微服務實例就會根據destination參數的值來判斷是否需要要刷新。其中，customers:8000指的是各個微服務的ApplicationContext ID。  
+例如：/actuator/bus-refresh?destination=customers:8000，這樣消息總線上的微服務實例就會根據destination參數的值來判斷是否需要要重新整理。其中，customers:8000指的是各個微服務的ApplicationContext ID。  
 
 ![](https://i.imgur.com/i6ekPTD.png)
 
 > <http://localhost:9112/actuator/bus-refresh?destination=eureka-provider:**>
 
-destination參數也可以用來定位特定的微服務。例如：/actuator/bus-refresh?destination=eureka-provider:**，這樣就可以觸發eureka-provider微服務所有實例的配置刷新。
+destination參數也可以用來定位特定的微服務。例如：/actuator/bus-refresh?destination=eureka-provider:**，這樣就可以觸發eureka-provider微服務所有實例的配置重新整理。
 我們的 微服務就暫時告一段落了，先來研究一下論文

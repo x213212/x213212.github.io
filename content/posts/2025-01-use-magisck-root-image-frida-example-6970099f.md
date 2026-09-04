@@ -280,7 +280,7 @@ Java.perform(() => {
 });
 
 ```
-frida 加載 hook.js
+frida 載入 hook.js
 ```
 % load hook.js
 ```

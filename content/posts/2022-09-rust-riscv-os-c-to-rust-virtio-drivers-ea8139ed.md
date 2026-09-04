@@ -34,7 +34,7 @@ https://github.com/plctlab/riscv-operating-system-mooc
 
 參考一下原版的virtio-drivers
 ![](https://i.imgur.com/lMgOukk.png)
-可以看到一些步驟我就省略，virtio透過加載opensbi 可以抓到驅動，算是一層interface
+可以看到一些步驟我就省略，virtio透過載入opensbi 可以抓到驅動，算是一層interface
 這個專案已經寫了一些test driver.
 
 | Device   | Status              |
@@ -66,7 +66,7 @@ git clone https://github.com/riscv/opensbi.git
 
 FW_JUMP_ADDR是我們開機完第一個要跳轉的address我們這邊寫死，因為要順應LD的起始位置0x80200000
 
-這兩個有預設opensbi寫好的加載範例
+這兩個有預設opensbi寫好的載入範例
 ```
 /home/x213212/opensbi/firmware/
 ```
@@ -119,7 +119,7 @@ make run 進行啟動qemu
 把剛剛編譯出來的test.elf ,test.bin,fw_jump.elf 都copy到其中一個riscv-operating-system-mooc 的章節我們選選01-helloRVOS 章節
 ![](https://i.imgur.com/XX48siI.png)
 
-到這邊我們就可以讓課程riscv-operating-system-mooc 加載 opensbi進行啟動。
+到這邊我們就可以讓課程riscv-operating-system-mooc 載入 opensbi進行啟動。
 
 第二個部分就是c在沒有std環境到底能不能去呼叫rust的東西，這邊我直接把
 https://github.com/rcore-os/virtio-drivers
@@ -343,7 +343,7 @@ riscv32-unknown-elf-objcopy -O binary os.elf os.bin
 
 ```
 這邊比較注意的是我目前吧extern crate opensbi_rt;
-移除，不然會出現重複 _start，這是位於這個opensbi_rt應該是寫驅動的作者應該也是開機加載跟程式綁再一起，目前前面階段是ok的，那麼我們在rust應該可以直接呼叫相對應的lib應該Ok(吧，這個問題以後再探討，當前主要任務是觸發用kernel.c再去呼叫rust寫的fucntion
+移除，不然會出現重複 _start，這是位於這個opensbi_rt應該是寫驅動的作者應該也是開機載入跟程式綁再一起，目前前面階段是ok的，那麼我們在rust應該可以直接呼叫相對應的lib應該Ok(吧，這個問題以後再探討，當前主要任務是觸發用kernel.c再去呼叫rust寫的fucntion
 ![](https://i.imgur.com/lnkx43L.png)
 
 這邊要注意又再改回然後預設起始位置是0x80000000

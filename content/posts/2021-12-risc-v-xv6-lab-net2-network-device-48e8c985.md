@@ -30,7 +30,7 @@ multi-process ping 改裝成 server bind listen 到底會經過那些步驟.
 ```makefile
 user,id=net0,hostfwd=udp::$(FWDPORT)-:2000,hostfwd=tcp::12346-:7 
 ```
-仔細看 tcp 那邊 我們如果要透過 pyhton client 連接 必須要下 port 為12346端口
+仔細看 tcp 那邊 我們如果要透過 pyhton client 連接 必須要下 port 為12346連接埠
 # python  client
 ```python
 
@@ -504,7 +504,7 @@ ping(uint16 sport, uint16 dport, int attempts)
 
 回歸到 Makefile，可以看到最初的版本 udp 是綁定到 port  2000 但是外部 可以透過 5000 和 25999 進行呼叫
 那我們可以看到 tcp
-port 綁定到 7 內部端口對應到的是 12346
+port 綁定到 7 內部連接埠對應到的是 12346
 # min thread pool udp socket
 
 ```c

@@ -24,8 +24,8 @@ layout: post
 
 # Hystrix 介紹
 
-在微服務架構中，根據業務來拆分成一個個的服務，服務與服務之間可以相互調用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign來調用。為了保證其高可用，單個服務通常會集群部署。由於網絡原因或者自身的原因，服務並不能保證100%可用，如果單個服務出現問題，調用這個服務就會出現線程阻塞，此時若有大量的請求湧入，Servlet容器的線程資源會被消耗完畢，導致服務癱瘓。服務與服務之間的依賴性，故障會傳播，會對整個微服務系統造成災難性的嚴重後果，這就是服務故障的“雪崩”效應。
-針對上述問題，在Spring Cloud Hystrix中實現了線程隔離、斷路器等一系列的服務保護功能。它也是基於Netflix的開源框架 Hystrix實現的，該框架目標在於通過控制那些訪問遠程系統、服務和第三方庫的節點，從而對延遲和故障提供更強大的容錯能力。 Hystrix具備了服務降級、服務熔斷、線程隔離、請求緩存、請求合併以及服務監控等強大功能。
+在微服務架構中，根據業務來拆分成一個個的服務，服務與服務之間可以相互呼叫（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign來呼叫。為了保證其高可用，單個服務通常會集群部署。由於網路原因或者自身的原因，服務並不能保證100%可用，如果單個服務出現問題，呼叫這個服務就會出現執行緒阻塞，此時若有大量的請求湧入，Servlet容器的執行緒資源會被消耗完畢，導致服務癱瘓。服務與服務之間的依賴性，故障會傳播，會對整個微服務系統造成災難性的嚴重後果，這就是服務故障的“雪崩”效應。
+針對上述問題，在Spring Cloud Hystrix中實現了執行緒隔離、斷路器等一系列的服務保護功能。它也是基於Netflix的開源框架 Hystrix實現的，該框架目標在於通過控制那些訪問遠程系統、服務和第三方庫的節點，從而對延遲和故障提供更強大的容錯能力。 Hystrix具備了服務降級、服務熔斷、執行緒隔離、請求快取、請求合併以及服務監控等強大功能。
 # 什麼是斷路器
 
 斷路器模式源於Martin Fowler的Circuit Breaker一文。 “斷路器”本身是一種開關裝置，用於在電路上保護線路過載，當線路中有電器發生短路時，“斷路器”能夠及時的切斷故障電路，防止發生過載、發熱、甚至起火等嚴重後果。
@@ -85,10 +85,10 @@ public class EurekaServiceRibbonConsumer {
 該註解屬性較多，下面講解其中幾個
 
 - fallbackMethod 降級方法
-- commandProperties 普通配置屬性，可以配置HystrixCommand對應屬性，例如採用線程池還是信號量隔離、熔斷器熔斷規則等等
-- ignoreExceptions 忽略的異常，默認HystrixBadRequestException不計入失敗
-- groupKey() 組名稱，默認使用類名稱
-- commandKey 命令名稱，默認使用方法名
+- commandProperties 普通配置屬性，可以配置HystrixCommand對應屬性，例如採用執行緒池還是信號量隔離、熔斷器熔斷規則等等
+- ignoreExceptions 忽略的異常，預設HystrixBadRequestException不計入失敗
+- groupKey() 組名稱，預設使用類名稱
+- commandKey 命令名稱，預設使用方法名
 
 ```
 @RestController
@@ -193,7 +193,7 @@ public class EurekaServiceFeignConsumer {
 
 }
 ```
-# 修改接口
+# 修改介面
 
 主要是在@FeignClient後面補上 fallbackFactory
 ```

@@ -168,7 +168,7 @@ python D:\Programming\python\model\research\object_detection\builders\model_buil
 [![](https://i.imgur.com/VBdwL5t.png)](https://i.imgur.com/VBdwL5t.png)
   
 
-可以發現運行得非常順利我們來上代碼。
+可以發現運行得非常順利我們來上程式碼。
 
 ## test.py
 

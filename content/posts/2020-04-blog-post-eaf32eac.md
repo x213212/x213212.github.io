@@ -33,7 +33,7 @@ layout: post
 
 <https://x8795278.blogspot.com/2019/12/spring-boot-spring-security-rest-api.html>  
 
-最後發現其實在分析整個流程的時候發現只有在login 的時候 有實現二級緩存，在戳api的時候 沒有調用springboot 預設的 cache 也就是Ehcache，後面 我有額外 去 仿造一個 UserCache 也就是 springzzz  
+最後發現其實在分析整個流程的時候發現只有在login 的時候 有實現二級快取，在戳api的時候 沒有呼叫springboot 預設的 cache 也就是Ehcache，後面 我有額外 去 仿造一個 UserCache 也就是 springzzz  
 
 ![](https://i.imgur.com/AAu8gLX.png)
 
@@ -43,7 +43,7 @@ layout: post
 
   
 
-可以發現UserCache 裡面 其實就是去調用我們的 預設的 Ehcache， 在 單點登入得時候 我在想是否可以直接把這個地方抽出來 用 redis 去做集群呢?  
+可以發現UserCache 裡面 其實就是去呼叫我們的 預設的 Ehcache， 在 單點登入得時候 我在想是否可以直接把這個地方抽出來 用 redis 去做集群呢?  
 
 <https://zhuanlan.zhihu.com/p/64366902> 這是 對比
 # Ehcache
@@ -116,11 +116,11 @@ redis是通过socket访问到缓存服务，效率比ecache低，比数据库要
 預設前後端分離：
 登入  
 
-前端請求 => 後端生成 token => 響應前端 => 前端多頁面則存到 localStorage  
+前端請求 => 後端生成 token => 回應前端 => 前端多頁面則存到 localStorage  
 
 退出登入  
 
-前端請求 => 後端把 token 加入黑名單 => 響應前端 => 前端清楚 localStorage
+前端請求 => 後端把 token 加入黑名單 => 回應前端 => 前端清楚 localStorage
 沒有 token->進入登入失效流程  
 
 有 token->訪問介面->介面返回 token 已失效->進入登入失效流程.

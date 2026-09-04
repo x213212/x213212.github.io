@@ -26,9 +26,9 @@ Spring MVC屬於SpringFrameWork的後續產品，已經融合在Spring Web Flow�
 
 - MyBatis
 
-MyBatis 本是apache的一個開源項目iBatis, 2010年這個項目由apache software foundation 遷移到了google code，並且改名為MyBatis。MyBatis是一個基於Java的持久層框架。iBATIS提供的持久層框架包括SQL Maps和Data Access Objects（DAO）MyBatis 消除了幾乎所有的JDBC代碼和參數的手工設置以及結果集的檢索。MyBatis 使用簡單的 XML或註解用於配置和原始映射，將接口和 Java 的POJOs（Plain Old Java Objects，普通的 Java對象）映射成資料庫中的記錄。
+MyBatis 本是apache的一個開源項目iBatis, 2010年這個項目由apache software foundation 遷移到了google code，並且改名為MyBatis。MyBatis是一個基於Java的持久層框架。iBATIS提供的持久層框架包括SQL Maps和Data Access Objects（DAO）MyBatis 消除了幾乎所有的JDBC程式碼和參數的手工設置以及結果集的檢索。MyBatis 使用簡單的 XML或註解用於配置和原始映射，將介面和 Java 的POJOs（Plain Old Java Objects，普通的 Java對象）映射成資料庫中的記錄。
 那麼我就開始搭建一個乾淨的 SSM專案吧!
-# 集成 MyBatis 數據層篇
+# 整合 MyBatis 數據層篇
 
 # 目錄結構
 
@@ -71,7 +71,7 @@ INSERT INTO users(NAME , age) VALUES ('JACK',12);
 
 ![](https://i.imgur.com/qUfDBhN.png)
 
-# 新增 Mybatis 配置文件 conf.xml
+# 新增 Mybatis 設定檔 conf.xml
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -148,7 +148,7 @@ userMaaper.xml
   這邊要注意對應的位置要跟 自己的目錄相互對應
 
 - id  
-  對應函數動作
+  對應函式動作
 
 - select  
   內部sql 可以自行定義為更複雜結構  

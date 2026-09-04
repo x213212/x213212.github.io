@@ -23,9 +23,9 @@ layout: post
 
 # Ribbon 負載均衡策略介紹
 
-- 簡單輪詢負載均衡（RoundRobin） 以輪詢的方式依次將請求調度不同的服務器，即每次調度執行i = (i + 1) mod n，並選出第i台服務器。
+- 簡單輪詢負載均衡（RoundRobin） 以輪詢的方式依次將請求調度不同的伺服器，即每次調度執行i = (i + 1) mod n，並選出第i台伺服器。
 - 隨機負載均衡 （Random） 隨機選擇狀態為UP的Server
-- 加權響應時間負載均衡 （WeightedResponseTime） 根據相應時間分配一個weight，相應時間越長，weight越小，被選中的可能性越低。
+- 加權回應時間負載均衡 （WeightedResponseTime） 根據相應時間分配一個weight，相應時間越長，weight越小，被選中的可能性越低。
 - 區域感知輪詢負載均衡（ZoneAvoidanceRule） 複合判斷server所在區域的性能和server的可用性選擇server
 
 # 改造 Service Provider
@@ -74,4 +74,4 @@ EurekaServiceRibbonConsumer.java
 
 # 運行畫面
 
-![](https://i.imgur.com/DEZqpl7.png) 依序啟動後 Ribbon 預設策略為輪巡 ![](https://i.imgur.com/cOIk9j2.png) ![](https://i.imgur.com/VROYXAT.png) 大家可以試試看兩個 Provider 全關 是不是會出現轉圈圈，這個地方可以用Hystrix 斷路器下面幾章再做詳細講解，下一張先講Fegin 如何更好的調用我們的service。
+![](https://i.imgur.com/DEZqpl7.png) 依序啟動後 Ribbon 預設策略為輪巡 ![](https://i.imgur.com/cOIk9j2.png) ![](https://i.imgur.com/VROYXAT.png) 大家可以試試看兩個 Provider 全關 是不是會出現轉圈圈，這個地方可以用Hystrix 斷路器下面幾章再做詳細講解，下一張先講Fegin 如何更好的呼叫我們的service。

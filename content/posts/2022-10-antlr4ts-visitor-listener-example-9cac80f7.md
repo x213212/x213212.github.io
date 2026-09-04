@@ -157,7 +157,7 @@ console.log(tree.toStringTree(parser));
 ```
 toStringTree 是在antlr4權威指南看到，不知道typescript有沒有支援可以在github搜尋一下
 ![](https://i.imgur.com/pxTbRR6.png)
-有些函數可以直接call也ok
+有些函式可以直接call也ok
 這樣這個範例run 起來就可以看到我們的語法分析樹
 ![](https://i.imgur.com/dyyNWqM.png)
 

@@ -48,7 +48,7 @@ spring:
 ```
 # Zuul gateway 配置檔案設定
 
-可以看到 我們的配置文件 Zuul 不再訪問 provider 是訪問 fegin fegin 再去調用 provider，請注意本章調用順序
+可以看到 我們的設定檔 Zuul 不再訪問 provider 是訪問 fegin fegin 再去呼叫 provider，請注意本章呼叫順序
 ```
 spring:
   application:

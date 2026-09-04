@@ -9,6 +9,6 @@ tags: ["cheat", "Tutorial", "VB6", "Projects"]
 layout: post
 ---
 
-## 模仿xuetr恢復函數
+## 模仿xuetr恢復函式
 
-## --- [![](https://i.imgur.com/TvQa2BK.png)](https://i.imgur.com/TvQa2BK.png) 這邊跟上一則一樣不過是簡化用來做BOT不錯，或是反編譯調試
+## --- [![](https://i.imgur.com/TvQa2BK.png)](https://i.imgur.com/TvQa2BK.png) 這邊跟上一則一樣不過是簡化用來做BOT不錯，或是反編譯除錯

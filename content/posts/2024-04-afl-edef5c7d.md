@@ -508,7 +508,7 @@ static void add_instrumentation(void) {
 https://zhuanlan.zhihu.com/p/583178410
 
 * 插樁的模式:
-    1. ^main - 函數入口點
+    1. ^main - 函式入口點
     2. ^\..L0 - GCC跳轉標籤
     3. ^\..LBB0_0 - clang跳轉標籤
     4. ^\tjnz foo - 條件跳轉標籤

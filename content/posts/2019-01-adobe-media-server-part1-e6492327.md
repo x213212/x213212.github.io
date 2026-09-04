@@ -246,7 +246,7 @@ addchild這個算比較舊的，所以改用
   
 
 nc.client ={ onBWDone: function():void{} };
-回調
+回呼
 再來就是最重要的
 NetStream的buffertime=0.1;
 這關係到畫面上的抖動，在開刀的時候很重要呢，不過痾，缺點就是會延遲
@@ -275,7 +275,7 @@ NetStream的buffertime=0.1;
 能編譯還不算還要伺服器，這邊呢因為考慮到測試，目前用xampp來架設伺服器  
 
 [![](https://i.imgur.com/ipFcTy9.png)](https://i.imgur.com/ipFcTy9.png)
-端口會跟flash media server 的後台互衝，所以我們的伺服器換個端口8080  
+連接埠會跟flash media server 的後台互衝，所以我們的伺服器換個連接埠8080  
 
 [![](https://i.imgur.com/22sIC6U.png)](https://i.imgur.com/22sIC6U.png)
 有可能要離線設置或著flash player 權限問題

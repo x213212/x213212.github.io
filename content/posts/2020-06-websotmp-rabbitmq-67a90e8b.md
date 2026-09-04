@@ -29,7 +29,7 @@ Add support for receiving fragmented STOMP frames. These can orginate…
 ```
 ![](https://i.imgur.com/p87VGvx.png)
 
-# docker 記得把 端口 暴露
+# docker 記得把 連接埠 暴露
 > port 15672
 
 ![](https://i.imgur.com/6nloqhM.png)
@@ -81,7 +81,7 @@ client.subscribe('/exchange/交換機名字/路由鍵', function(frame){}, {});
 ```
 
 其他參數:
-除了這裡用到的參數外，還支持下面的隊列參數：
+除了這裡用到的參數外，還支持下面的佇列參數：
 
 durable (aliased as persistent)：持久化
 auto-delete：自动删除

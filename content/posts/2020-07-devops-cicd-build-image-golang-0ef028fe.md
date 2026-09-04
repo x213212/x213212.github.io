@@ -84,6 +84,6 @@ func main() {
 # docker run
 > docker run  -p 9999:3000 172.24.229.236/library/haha
 >
-暴露端口，正常應該是要共用 package 不然每次部屬就慘囉!
+暴露連接埠，正常應該是要共用 package 不然每次部屬就慘囉!
 ![](https://i.imgur.com/Nvic1dV.png)
 

@@ -12,7 +12,7 @@ layout: post
 ![](https://i.imgur.com/LGwddB3.png)
 
 # riscv asm compare viewer
-既然能輸出svg向量檔，那麼對比當中的html是否有更方便的方式呢，來寫個html,主要對照vscode可以實現拖拉加載svg圖檔，以及卷軸同步功能，以便找出asm的不同.
+既然能輸出svg向量檔，那麼對比當中的html是否有更方便的方式呢，來寫個html,主要對照vscode可以實現拖拉載入svg圖檔，以及卷軸同步功能，以便找出asm的不同.
 ![](https://i.imgur.com/LGwddB3.png)
 
 ```html

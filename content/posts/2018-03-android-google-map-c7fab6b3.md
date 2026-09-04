@@ -16,7 +16,7 @@ layout: post
 早上起來，昨天的MAP搜尋不動了，在一陣的搜尋下發現Android 的google map api key 的問題不開放給andorid ,因為程式碼是透過json所以算是一種web的應用程式呼叫，不過不用怕  
   
 [![](https://i.imgur.com/OKuiGM3.png)](https://i.imgur.com/OKuiGM3.png)  
-可以發現我試了很多種方法，包括自己的dns，ip等等，試到後面去申請了一個free php網站，然後接下來我透過ping把服務器的ip的網站給掛入，然後再更改。  
+可以發現我試了很多種方法，包括自己的dns，ip等等，試到後面去申請了一個free php網站，然後接下來我透過ping把伺服器的ip的網站給掛入，然後再更改。  
 [![](https://i.imgur.com/ipHo3hj.png)](https://i.imgur.com/ipHo3hj.png)  
 這樣的話，以前的code就都能動了。
 ## Google搜尋範圍內的指定目標

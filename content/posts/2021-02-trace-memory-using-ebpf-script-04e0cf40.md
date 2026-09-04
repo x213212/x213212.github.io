@@ -25,7 +25,7 @@ https://hackmd.io/@sysprog/linux-ebpf?type=view#%E5%AF%A6%E9%9A%9B%E6%93%8D%E4%B
 https://www.youtube.com/watch?v=UmCnh6mELwA&t=1345s
 大大都解釋的很清楚了，主要就是能在 uprobe 地方，去做攔截，而不是去 malloc 的地方去直接更改 code上述兩篇文章有寫的是總不可能再大量的 malloc 地方加上鎖這樣對這些程式的效率或者可能會變動原本程式的流程也說不定，使用 bcc這樣好處是在系統的 cost 開銷會比較小，也可在非侵入的方式去撈取可用訊息...
 https://github.com/iovisor/bcc/blob/master/INSTALL.md#ubuntu---source
-在安裝的時候，遇到一些問題，我是透過重新編譯 bcc 才可以調用
+在安裝的時候，遇到一些問題，我是透過重新編譯 bcc 才可以呼叫
 ```
 # Trusty (14.04 LTS) and older
 VER=trusty

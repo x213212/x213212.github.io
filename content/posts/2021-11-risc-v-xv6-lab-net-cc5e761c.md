@@ -24,7 +24,7 @@ layout: post
 ![](https://i.imgur.com/vLAd3g7.png)
 
 # pci_init
-可以看到 pci 透過 qemu 可能會在記憶體初始化的時候加載於一個記憶體區段，於vm.c 可以進一步得知register 會放在這裡，下面就是在尋找有關於網卡的id
+可以看到 pci 透過 qemu 可能會在記憶體初始化的時候載入於一個記憶體區段，於vm.c 可以進一步得知register 會放在這裡，下面就是在尋找有關於網卡的id
 >   // 100e:8086 is an e1000
 >     if(id == 0x100e8086){
 ```c
@@ -414,7 +414,7 @@ bad:
 ## file write/read
 仔細看system call 可以看到他的設計概念連到
 fileread ,filewrite
-其實後面底層決定讀寫要怎麼處理在前面我們有提過 FD_SOCK我們統一對 fd 去做讀寫將會判斷這個flag 來進行socket 的調用
+其實後面底層決定讀寫要怎麼處理在前面我們有提過 FD_SOCK我們統一對 fd 去做讀寫將會判斷這個flag 來進行socket 的呼叫
 ```c
 uint64
 sys_read(void)

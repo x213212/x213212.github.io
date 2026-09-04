@@ -28,7 +28,7 @@ layout: post
 
 ![](https://i.imgur.com/SIwSJxN.png)
 
-# 配置文件
+# 設定檔
 
 provider,consumer,zuul 這些地方有想用 zipkin 的地方都要加上
 ```

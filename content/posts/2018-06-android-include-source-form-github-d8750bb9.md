@@ -13,15 +13,15 @@ layout: post
 
 ---
 
-當一個專案只能透過，但又想改裡面的函數怎麼辦？  
+當一個專案只能透過，但又想改裡面的函式怎麼辦？  
 
-下面會來用一個例子從引用到，修改其函數與新增  
+下面會來用一個例子從引用到，修改其函式與新增  
 com.google.android.exoplayer:exoplayer-ui:r2.7.4  
 
 [![](https://i.imgur.com/2LtlJFI.png)](https://i.imgur.com/2LtlJFI.png)  
 
-但是當你要修改裡面的源碼要怎麼辦呢?
-## Java 反射調用(x)
+但是當你要修改裡面的原始碼要怎麼辦呢?
+## Java 反射呼叫(x)
 
 ---
 
@@ -105,7 +105,7 @@ e.printStackTrace();
 mAudioTrack.setStereoVolume(0f,1f);
 ```
 
-失敗＝　＝　可能要用下面方法引用在進行調用，才會成功改天再測試  
+失敗＝　＝　可能要用下面方法引用在進行呼叫，才會成功改天再測試  
 
   
 
@@ -144,7 +144,7 @@ compile 'com.google.android.exoplayer:exoplayer:r2.5.1　　＜－－卡頓
 
 找來找去還是一樣同一個source code，但是為什麼，後者執行沒問題，最新版執行卻是卡頓呢？  
 
-大家第一個反應可能是函數有問題，會先降等級所以我就先降等級  
+大家第一個反應可能是函式有問題，會先降等級所以我就先降等級  
 
 [![](https://i.imgur.com/gfXD6QB.png)](https://i.imgur.com/gfXD6QB.png)  
 
@@ -174,13 +174,13 @@ r2.5.1編譯的時候　build Tools version預設為25 條至27　也沒問題�
 
   
 
-反射調用沒用的話怎麼辦?  
+反射呼叫沒用的話怎麼辦?  
 
-這時候就要把源碼弄到本地端進行程式碼修改了  
+這時候就要把原始碼弄到本地端進行程式碼修改了  
 
 [![](https://i.imgur.com/TpsXJTb.png)](https://i.imgur.com/TpsXJTb.png)  
 
-大家等級都很高我就不說怎樣調用了  
+大家等級都很高我就不說怎樣呼叫了  
 
 [![](https://i.imgur.com/Xk1aR5p.png)](https://i.imgur.com/Xk1aR5p.png)  
 
@@ -218,7 +218,7 @@ import com.google.android.exoplayer2.source　xxx有一個hls的包遺失，我�
 
 深入解析  
 
-當要修改別人的源碼呢，挖個link，上看千行怎麼辦?  
+當要修改別人的原始碼呢，挖個link，上看千行怎麼辦?  
 
 [![](https://i.imgur.com/N8eaKPh.png)](https://i.imgur.com/N8eaKPh.png)  
 
@@ -240,13 +240,13 @@ import com.google.android.exoplayer2.source　xxx有一個hls的包遺失，我�
 
 挖，要改到死诶，還不一定對，所以呢我們要盡量避開這種大改，我們小改就好  
 
-在不破壞原先結構的函數，我們盡量找小的地方改就好所以呢？  
+在不破壞原先結構的函式，我們盡量找小的地方改就好所以呢？  
 
 ![](https://i.imgur.com/N8eaKPh.png)
 
   
 
-setVolume 我們就單弄這幾個函數就好  
+setVolume 我們就單弄這幾個函式就好  
 
 我們嘗試把它弄成  
 
@@ -264,9 +264,9 @@ setVolume2
 
 [![](https://i.imgur.com/nEWjFdc.png)](https://i.imgur.com/nEWjFdc.png)  
 
-動這六個檔案，我們就可以產生一個函數了，為什麼要用這樣呢，因為我要改裡面  
+動這六個檔案，我們就可以產生一個函式了，為什麼要用這樣呢，因為我要改裡面  
 
-AudioTrack裡面有一個函數  
+AudioTrack裡面有一個函式  
 
 原本是  
 
@@ -308,7 +308,7 @@ setVolume(volume);
 
 this.volume=volume  
 
-的時候將會調用  
+的時候將會呼叫  
 
 setStereoVolume(volume, volume2);  
 
@@ -316,7 +316,7 @@ setStereoVolume(volume, volume2);
 
 [![](https://i.imgur.com/831VBwI.png)](https://i.imgur.com/831VBwI.png)  
 
-源碼就不提供囉，保密(o  
+原始碼就不提供囉，保密(o  
 ## 為什麼不引用原先的r2.53的?
 
 ---

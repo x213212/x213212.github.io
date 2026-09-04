@@ -17,7 +17,7 @@ layout: post
 
   
 
-參考 :[SpringBoot集成Spring Security（1）](https://blog.csdn.net/yuanlaijike/article/details/80249235)   
+參考 :[SpringBoot整合Spring Security（1）](https://blog.csdn.net/yuanlaijike/article/details/80249235)   
 
   
 
@@ -176,7 +176,7 @@ menu.html
 </body>
 </html>
 ```
-仔細看，路徑 /login，和 username,password 都是 Spring Security 默認定義的，亂取會無效
+仔細看，路徑 /login，和 username,password 都是 Spring Security 預設定義的，亂取會無效
 # 設定 application.properties
 
 這部分照舊吧沒什麼改動的
@@ -431,7 +431,7 @@ public class LoginController {
 ```
 # 配置 SpringSecurity
 
-這邊我們要把 UserDetailsService 重寫裡面的函數，其中的 loadUserByUsername 函數  
+這邊我們要把 UserDetailsService 重寫裡面的函式，其中的 loadUserByUsername 函式  
 
 参数是用户输入的用户名。返回值是UserDetails，这是一个接口，一般使用它的子类org.springframework.security.core.userdetails.User，它有三个参数，分别是用户名、密码和权限集。
 這邊我重寫的大概意思就是先去查有沒有這個ID 有這個 ID 就把他加到權限清單裡大概就是這個意思

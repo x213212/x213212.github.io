@@ -15,10 +15,10 @@ layout: post
 
 # 摘要
 我們之前用 Elasticsearch 來去匯集 我們微服務之間的LOG 現在的話我們直接用搜尋再資料庫的某項商品資料
-意味者賦予你的數據、搜索、分析等功能
+意味者賦予你的數據、搜尋、分析等功能
 
 # Elasticsearch 6.2.2
-Elasticsearch 是一個分佈式、可擴展、實時的搜索與數據分析引擎。它能從項目一開始就賦予你的數據以搜索、分析和探索的能力，可用於實現全文搜索和實時數據統計。
+Elasticsearch 是一個分佈式、可擴展、實時的搜尋與數據分析引擎。它能從項目一開始就賦予你的數據以搜尋、分析和探索的能力，可用於實現全文搜尋和實時數據統計。
 https://www.elastic.co/cn/downloads/past-releases/elasticsearch-6-2-2
 
 # 安裝 中文分詞 elasticsearch-plugin 6.2.2

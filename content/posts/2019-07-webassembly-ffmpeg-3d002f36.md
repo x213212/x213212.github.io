@@ -166,7 +166,7 @@ nice
 
 後面大致架構應該是， 從 其他分支下手 service worker 加掛一個  
 
-[socket.io](http://socket.io/) 再透過 io 進行 畫面傳輸，再配合 hmtl5 的函數  
+[socket.io](http://socket.io/) 再透過 io 進行 畫面傳輸，再配合 hmtl5 的函式  
 
 MediaRecorder，恩恩(構思很好，希望可以編譯成功，交叉編譯真的會吐血。
 隔天了，恩不錯  

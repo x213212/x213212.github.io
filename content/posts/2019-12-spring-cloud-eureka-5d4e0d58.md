@@ -28,7 +28,7 @@ layout: post
          </artifactId>
     </dependency>
 ```
-# 配置文件properties 改成 yml 格式
+# 設定檔properties 改成 yml 格式
 
 example  
 
@@ -60,7 +60,7 @@ spring:
 
 ![](https://i.imgur.com/x9bzWLz.png)
 
-# 設置 Eureka 配置文件
+# 設置 Eureka 設定檔
 
 application.yml  
 
@@ -115,7 +115,7 @@ public class WebApplication {
 # Service Provider
 
 負責把我們的 Service 註冊到 Eureka 讓他能被消費端找到
-# 設置 Eureka 配置文件
+# 設置 Eureka 設定檔
 
 ```
 eureka:

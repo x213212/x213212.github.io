@@ -41,7 +41,7 @@ python -m src.asm2cfg -c examples/huge.asm
 改動的地方為
 
 #  add riscv info
-可以選擇架構兼容不同指令及架構我們抄arm 魔改一下
+可以選擇架構相容不同指令及架構我們抄arm 魔改一下
 ```python
     elif target_name == 'riscv':
         target_info = riscvTargetInfo()

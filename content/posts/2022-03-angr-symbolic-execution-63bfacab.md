@@ -33,7 +33,7 @@ sudo docker run -it angr/angr
 sudo docker run  -it    -v /root/angr_ctf/00_angr_find/:/home/angr/angr-dev/test/   angr/angr
 ```
 # Symbolic Execution
-符號執行技術是一種白盒的靜態分析技術。即，分析程序可能的輸入需要能夠獲取到目標源代碼的支持。同時，它是靜態的，因為並沒有實際的執行程序本身，而是分析程序的執行路徑。
+符號執行技術是一種白盒的靜態分析技術。即，分析程序可能的輸入需要能夠獲取到目標原始碼的支持。同時，它是靜態的，因為並沒有實際的執行程序本身，而是分析程序的執行路徑。
 詳細原理請參考
 https://bbs.pediy.com/thread-264878.htm
 
@@ -89,7 +89,7 @@ angr_ctf/dist/
 -fno-pie -no-pie -fcf-protection=none 
 ```
 https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html#Instrumentation-Options
-可以看到使用gcc -fcf-protectionflag有對我們的執行檔做額外處理看敘述應該是關掉ROP攻擊等其他判斷，應該不是aslr那些，在後續文章，也會看到其他處理讓程式每次加載memory每次啟動都一樣。
+可以看到使用gcc -fcf-protectionflag有對我們的執行檔做額外處理看敘述應該是關掉ROP攻擊等其他判斷，應該不是aslr那些，在後續文章，也會看到其他處理讓程式每次載入memory每次啟動都一樣。
 # security
 ```
 32位程序
@@ -321,7 +321,7 @@ if __name__ == '__main__':
 
 ## z3
 上述是使用angr自動探索，我們使用z3來看看實際上是如何產生那些邏輯讓他們自己去跑解答出來。
-使用ida加載dist/00_angr_find的檔案，按f5進行分析
+使用ida載入dist/00_angr_find的檔案，按f5進行分析
 ### main
 ```
 int __cdecl main(int argc, const char **argv, const char **envp)
@@ -388,7 +388,7 @@ print("".join(ans))
 
 # 01_angr_avoid
 ![](https://i.imgur.com/XWzNPxl.png)
-第一次加載執行檔案，ida轉到再繞圈圈
+第一次載入執行檔案，ida轉到再繞圈圈
 ![](https://i.imgur.com/Zvf7dRG.png)
 ![](https://i.imgur.com/cQLGslx.png)
 

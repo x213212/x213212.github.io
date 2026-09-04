@@ -74,7 +74,7 @@ contract Token {
 # spring cloud
 
 這邊又是承接我們上次的教學，順便順一次坑
-# 配置文件
+# 設定檔
 
 可以看到重試機制那邊，當我們進行呼叫 method的時候，我們的fegin內建的負載平衡裡面有重試機制，這邊是因為我在交易的時候發生重複扣款，最後在這邊設置參數就ok了
 ```
@@ -245,7 +245,7 @@ public interface HomeClient {
 
 正確呼叫方法應該是這樣，  
 
-我這邊作弊先在 一開始就完成 帳號的登入。也就是在 main 函數那邊
+我這邊作弊先在 一開始就完成 帳號的登入。也就是在 main 函式那邊
 ```
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -411,14 +411,14 @@ https://kheresy.wordpress.com/2012/03/03/c11_smartpointer_p1/
 https://kheresy.wordpress.com/2012/03/05/c11_smartpointer_p2/
 
 Box
-是一種獨享智能指針，類似C++的unique_ptr
+是一種獨享智能指標，類似C++的unique_ptr
 ```rust
 Box<T>
 let x = Box::new(42);
 ```
   
 Rc
-是一種常見的共享指針，類似C++的shared_ptr
+是一種常見的共享指標，類似C++的shared_ptr
 ```rust
 Rc<T>
 use std::rc::Rc;

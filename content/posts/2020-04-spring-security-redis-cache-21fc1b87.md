@@ -27,7 +27,7 @@ layout: post
 
 ![](https://i.imgur.com/pKWlm3E.png)
 
-1、用戶請求登錄  
+1、用戶請求登入  
 
 2、Zuul將請求轉發到授權中心，請求授權  
 
@@ -39,7 +39,7 @@ layout: post
 
 6、用戶請求到達微服務  
 
-7、微服務將JWT交給鑑權中心，鑑權同時解析用戶信息  
+7、微服務將JWT交給鑑權中心，鑑權同時解析用戶資訊  
 
 8、鑑權中心返回用戶數據給微服務  
 
@@ -77,7 +77,7 @@ layout: post
 
   
 
-也就是說你偽造jwt也沒用，假設你沒登入過，你就不會緩存在 redis，你的token 又是透過你的 password 去簽的  
+也就是說你偽造jwt也沒用，假設你沒登入過，你就不會快取在 redis，你的token 又是透過你的 password 去簽的  
 
 所以 偽造jwt 要先猜對你的 password 然後又要在你猜對帳號然後又已經登入帳號的時候 也就是 redis seession時間存活時，這樣才能剛好進去。
 # SecurityConfiguration 新增 bean
@@ -85,7 +85,7 @@ layout: post
 - 新增 RedisTemplate
 - 重寫我們的 SpringCacheBasedUserCache 為 springzzz
 - 重寫 UserDetails 為 CustomUserDetails
-- 傳入 RedisTemplate 去調用我們的 redis
+- 傳入 RedisTemplate 去呼叫我們的 redis
 
 ```
 // 开启 Security
@@ -529,5 +529,5 @@ No Creators, like default construct, exist): cannot deserialize from Object valu
 
 到此我們的 改動 ehcache 就改為 redis 接下來就是看 RedisTemplate 如何去讀 redis集群 (應該蠻簡單?  
 
-也就是說我們把 db 的 二級緩存 ehcache 換成我們的 redis
+也就是說我們把 db 的 二級快取 ehcache 換成我們的 redis
 新的問題來，我們的認證中心，是否可以換成集群，只要確保我們的 redis session 共享就可以了吧! 過幾天再來重構成 集群版。

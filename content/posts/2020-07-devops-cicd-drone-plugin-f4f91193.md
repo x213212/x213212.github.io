@@ -18,7 +18,7 @@ layout: post
 * 重複使用。
 
 # add ./update.sh
-## 輸入參數作為環境變量傳遞至 Drone Plugin 內部，需要加上 PLUGIN_ 前綴詞。
+## 輸入參數作為環境變數傳遞至 Drone Plugin 內部，需要加上 PLUGIN_ 前綴詞。
 ```sh
 if [ -z ${PLUGIN_HELLO} ]; then
   PLUGIN_HELLO="default"

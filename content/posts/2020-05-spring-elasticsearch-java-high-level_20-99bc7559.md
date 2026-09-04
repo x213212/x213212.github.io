@@ -11,7 +11,7 @@ layout: post
 
 ![](https://i.imgur.com/wffZ6bK.png)
 
-# 基於 Elasticsearch 搜尋商品 搜索篇
+# 基於 Elasticsearch 搜尋商品 搜尋篇
 踩坑中ing , 修改為 Java high-level REST client 連接 Elasticsearch
 
 https://blog.csdn.net/u014646662/article/details/94718834

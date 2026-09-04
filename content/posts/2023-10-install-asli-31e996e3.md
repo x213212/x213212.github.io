@@ -671,7 +671,7 @@ __decode A64
     
 # 研究xml 與 ocaml 關聯
 ## instrs2asl.py
-前面已經將大致流程致流程致流程走過一次，大概就是將 arm 將isa xml 進行 parsing 然後在模擬器decode完成時候查詢這些asl code 在來根據這些ocaml variable 來模擬操作register.     
+前面已經將大致流程致流程致流程走過一次，大概就是將 arm 將isa xml 進行 parsing 然後在模擬器decode完成時候查詢這些asl code 再來根據這些ocaml variable 來模擬操作register.     
 ```
 bin/instrs2asl.py --altslicesyntax --demangle --verbose -oarch/arch v8.6/ISA_AArch32_xml_v86A-2019-12 v8.6/ISA_A64_xml_v86A-2019-12 
 Selecting entire architecture

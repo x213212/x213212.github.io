@@ -14,7 +14,7 @@ layout: post
 ## 特性
 
 - 使用 JWT 進行鑑權，支持 token 過期
-- 使用 Ehcache 進行緩存，減少每次鑑權對數據庫的壓力
+- 使用 Ehcache 進行快取，減少每次鑑權對資料庫的壓力
 - 盡可能貼合 Spring Security 的設計
 - 實現註解權限控制
 - 未來可能再加一個 redis Cluster 有空再加了

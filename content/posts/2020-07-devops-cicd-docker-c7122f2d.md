@@ -38,7 +38,7 @@ layout: post
 > docker run -d --name=nginx nginx
 >
 
-暴露端口到本地 因為我們適用 wsl 所以 這樣的意思就是直接讓畚箕 8081 指向容器內 80 端口
+暴露連接埠到本地 因為我們適用 wsl 所以 這樣的意思就是直接讓畚箕 8081 指向容器內 80 連接埠
 >docker run -d --name=nginx -p 8081:80 nginx
 
 容器外檔案指向外部

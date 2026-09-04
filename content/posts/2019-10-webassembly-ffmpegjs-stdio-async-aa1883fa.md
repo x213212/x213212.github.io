@@ -37,7 +37,7 @@ layout: post
 提到這個部分大概就可以解決我所說的問題，再來就是猜猜看怎麼處理了
   
 
-**在ffmpeg 轉成 ffmpeg.js 他在把 ffmpeg 裡面的 file 和 tcp 的函數裡面的意外中斷的片段程式碼**  
+**在ffmpeg 轉成 ffmpeg.js 他再把 ffmpeg 裡面的 file 和 tcp 的函式裡面的意外中斷的片段程式碼**  
 
 都給 remark掉 這樣在 運行 async stdio就不會意外中止 ( 或許就可以 向他說的 透過 getUserMedia 去 讀取資料這樣我們只要把 那些blob 轉成 file 跟原先一樣不用動，在結合上一個文章就可以 達到 用網路傳遞數據給後端 推送給 其他串流伺服器了前端編碼就完成囉!
 再來就是 要再編譯的參數 EMTERPRETIFY_ASYNC=1 給打開

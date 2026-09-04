@@ -107,12 +107,12 @@ sudo vi /etc/rabbitmq/rabbitmq.config
 ```
 sudo systemctl restart rabbitmq-server
 ```
-# 新增防火牆開放端口
+# 新增防火牆開放連接埠
 
 ```
 sudo firewall-cmd --add-port=5672/tcp --permanent
 ```
-# 重新加載防火牆設定
+# 重新載入防火牆設定
 
 ```
 sudo firewall-cmd --reload

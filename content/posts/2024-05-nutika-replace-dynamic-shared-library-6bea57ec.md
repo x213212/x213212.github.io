@@ -15,7 +15,7 @@ layout: post
 看了幾篇文章只有找到這個
 https://www.fournoas.com/posts/nuitka-inject-custom-c-code-at-compile-time/
 像這篇文章有透過暫停的方式去介入 nuitka 編譯過程，但是這方法是改不動我們要做的事情，不過也大概知道 nuitka 的過程是什麼
-然後嘗試用ld preload方式去替換shardlib ,但發現在編譯完的binary 的 shardlib 引用太少了，大部分還是透過 dlopen 去加載 shardlib，那麼在實際要變成一個產品的話又有需要要嘗試改動 nuitka 加載 dynamic shared library 的路徑怎麼辦呢，來研究一下
+然後嘗試用ld preload方式去替換shardlib ,但發現在編譯完的binary 的 shardlib 引用太少了，大部分還是透過 dlopen 去載入 shardlib，那麼在實際要變成一個產品的話又有需要要嘗試改動 nuitka 載入 dynamic shared library 的路徑怎麼辦呢，來研究一下
 先假設你要編譯的source code為
 # source code
 ## test.py
@@ -48,7 +48,7 @@ nuitka編譯後目錄下會產生out/test.build , out/test.dist
         libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fbf6beb3000)
         /lib64/ld-linux-x86-64.so.2 (0x00007fbf6c23f000)
 ```
-那大概可以得知就是他們加載 shard lib 是透過動態加載 dlopen
+那大概可以得知就是他們載入 shard lib 是透過動態載入 dlopen
 這邊先處理編譯時期的shardlib
 那麼已經知道都是會有一個起始點 scons 去編譯，找到了Backend.scons
 ```
@@ -75,7 +75,7 @@ if env.gcc_mode and not isMacOS() and not os.name == "nt" and not module_mode:
 
 ```
 這邊僅限於一些需要編譯時期已經加入的shard lib，
-然後解決完編譯時期的shard lib 在找看看從動態的呼叫 dlopen 加載 shard lib 的程式碼在哪。
+然後解決完編譯時期的shard lib 在找看看從動態的呼叫 dlopen 載入 shard lib 的程式碼在哪。
 那麼去到source code
  grep -r "dlopen" /usr/local/lib/python3.9/site-packages/nuitka
 
@@ -97,7 +97,7 @@ vim  /usr/local/lib/python3.9/site-packages/nuitka/build/static_src/MetaPathBase
 ```
 定位到這邊可以看到說，估計也是透過
   void *handle = dlopen(filename, dlopenflags);
-  加載 .so 那麼就往上追
+  載入 .so 那麼就往上追
 ```
       // This code would work for all versions, we are avoiding access to interpreter
     // structure internals of 3.8 or higher.
@@ -116,7 +116,7 @@ vim  /usr/local/lib/python3.9/site-packages/nuitka/build/static_src/MetaPathBase
     void *handle = dlopen(filename, dlopenflags);
 ```
 
-往上追後 callIntoExtensionModule 這支function 是負責加載單一shardlib 的c function
+往上追後 callIntoExtensionModule 這支function 是負責載入單一shardlib 的c function
 ```
 #ifdef _WIN32
 static PyObject *callIntoExtensionModule(PyThreadState *tstate, char const *full_name, const wchar_t *filename) {
@@ -124,7 +124,7 @@ static PyObject *callIntoExtensionModule(PyThreadState *tstate, char const *full
 static PyObject *callIntoExtensionModule(PyThreadState *tstate, char const *full_name, const char *filename) {
 #endif
 ```
-透過一陣printf 大法 找到 filename 為我們要加載的lib 位置
+透過一陣printf 大法 找到 filename 為我們要載入的lib 位置
 ```
 // Pointers to bytecode data.
 static char **_bytecode_data = NULL;
@@ -328,7 +328,7 @@ drwxr-xr-x 2 root root    4096 May 11 06:13 lib
 到這邊就算改完了，目錄下就蠻乾淨的
 ![image](https://hackmd.io/_uploads/SkTu6KnzR.png)
 
-額外加碼，假設在 python 需要加載 package 的 module 的話你的目錄結構會變這樣
+額外加碼，假設在 python 需要載入 package 的 module 的話你的目錄結構會變這樣
 
 ```
 PIL   test.bin  contourpy  kiwisolver  lib  markupsafe  matplotlib  numpy  pandas  pytz
@@ -357,7 +357,7 @@ print(f'Local Time (New York): {local_time}')
 nuitka --standalone --onefile --show-memory --show-progress --static-libpython=yes --nofollow-imports --output-dir=out --mingw64 ./test.py
 ```
 
-以我們的情況來說，剛剛我們動的是最後 link time 和 c code，所以只有動到 動態和靜態的 shardlib 的路徑，所以，一些有關於 nuitka 架構，比如說 python 轉成 c++後，他是怎麼 import 對應到 c++ dlopen加載 lib 這情況我不清楚，這會導致架構上的東西是沒辦法動的，也就是加載so 確實都移動到 lib裡面了，但是最外層還是要保留一些package的folder 目錄結構，裡面是 nuitka 原本的架構設計，所以可能要維持他 python package 的目錄結構，但是裡面的.so都可以刪除.
+以我們的情況來說，剛剛我們動的是最後 link time 和 c code，所以只有動到 動態和靜態的 shardlib 的路徑，所以，一些有關於 nuitka 架構，比如說 python 轉成 c++後，他是怎麼 import 對應到 c++ dlopen載入 lib 這情況我不清楚，這會導致架構上的東西是沒辦法動的，也就是載入so 確實都移動到 lib裡面了，但是最外層還是要保留一些package的folder 目錄結構，裡面是 nuitka 原本的架構設計，所以可能要維持他 python package 的目錄結構，但是裡面的.so都可以刪除.
 所以lib 裡面 和 根目錄都有 python package name的資料夾，差別在 ./lib 裡面的是有 .so 的
 # root list
 ex.matplotlib裡面只有一些package預設的module 設定檔案

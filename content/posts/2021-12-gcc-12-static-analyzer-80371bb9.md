@@ -133,7 +133,7 @@ b /gcc/main.c:36
 ![](https://i.imgur.com/az4Y7rG.png)
 
 # execute_ipa_pass_list (opt_pass *pass)
-走 Lto流程，開始遍歷所有Pass,發現 pass_analyzer 分析器
+走 Lto流程，開始走訪所有Pass,發現 pass_analyzer 分析器
 ![](https://i.imgur.com/KoE4XI2.png)
 
 # (anonymous namespace)::pass_analyzer::gate

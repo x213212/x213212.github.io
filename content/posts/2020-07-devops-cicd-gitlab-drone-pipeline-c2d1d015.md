@@ -53,7 +53,7 @@ layout: post
 
 https://0-8-0.docs.drone.io/getting-started/
 
-host: 打印出容器內 /etc/hosts 內容
+host: 列印出容器內 /etc/hosts 內容
 echo: 印出 78523 內容
 dev-action: 印出 111111 內容
 

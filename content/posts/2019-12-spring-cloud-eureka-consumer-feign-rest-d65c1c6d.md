@@ -9,7 +9,7 @@ tags: ["feign", "Spring Cloud", "Tutorial"]
 layout: post
 ---
 
-![](https://i.imgur.com/PrtpDca.png) feign 如何調用 service 且傳入參數
+![](https://i.imgur.com/PrtpDca.png) feign 如何呼叫 service 且傳入參數
 
 比較常見就是這兩種  
 
@@ -58,7 +58,7 @@ public class EurekaServiceProviderApplication {
 
 }
 ```
-## Consumer 接口
+## Consumer 介面
 
 ```
 @FeignClient("eureka-provider")
@@ -105,7 +105,7 @@ public class EurekaServiceProviderApplication {
 
 }
 ```
-## Consumer 接口
+## Consumer 介面
 
 ```
 @FeignClient("eureka-provider")
@@ -203,7 +203,7 @@ public class UserEntity {
  }
 }
 ```
-## Consumer 接口
+## Consumer 介面
 
 ```
 @FeignClient("eureka-provider")

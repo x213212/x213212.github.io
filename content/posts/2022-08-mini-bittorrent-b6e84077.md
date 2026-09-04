@@ -19,7 +19,7 @@ https://github.com/x213212/Mini-BitTorrent
 ![](https://i.imgur.com/45v8LpY.png)
 
 ![](https://i.imgur.com/LSskvcS.png)
-整體流程就是跟一般bt差不多，client 上傳檔案分享，tracker 的seederlist 會記錄各個client傳送過來的種子檔(紀錄client要分享的檔案位置和port),當有另外一個client想下載檔案，client就會詢問tracker 然後 tracker在把seederlist可用的cleint在傳給使用者。
+整體流程就是跟一般bt差不多，client 上傳檔案分享，tracker 的seederlist 會記錄各個client傳送過來的種子檔(紀錄client要分享的檔案位置和port),當有另外一個client想下載檔案，client就會詢問tracker 然後 tracker再把seederlist可用的cleint在傳給使用者。
 目前改動傳輸的檔案不再是單一檔案，類似可以中斷下載，這樣後續如果各個分割檔案都分享出去，那麼就不再侷限只能分享一個檔案，可以分享一個檔案的chunk ,這樣檔案來源應該不容易死。
 ![](https://i.imgur.com/7Ci53cM.png)
 所以download我寫成分割檔

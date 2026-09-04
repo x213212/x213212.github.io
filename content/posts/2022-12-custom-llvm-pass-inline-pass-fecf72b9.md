@@ -42,7 +42,7 @@ git clone https://github.com/LeadroyaL/llvm-pass-tutorial.git
 https://github.com/LeadroyaL/llvm-pass-tutorial/tree/dev/ollvm
 和
 https://github.com/LeadroyaL/llvm-pass-tutorial/tree/dev/skeleton
-都有模板可以玩玩看，但是我的需求假設只能在llvm-10，在直接使用模板確實可以透過動態加載的方式直接呼叫我們的pass
+都有模板可以玩玩看，但是我的需求假設只能在llvm-10，在直接使用模板確實可以透過動態載入的方式直接呼叫我們的pass
 下面則是用skeleton
 https://github.com/LeadroyaL/llvm-pass-tutorial/tree/dev/skeleton
 
@@ -126,7 +126,7 @@ make
 ```
 ![](https://i.imgur.com/J73YjEo.png)
 
-那麼要真正的修改某一層的pass我們直接參考怎麼在llvm 的內部加載我們的pass
+那麼要真正的修改某一層的pass我們直接參考怎麼在llvm 的內部載入我們的pass
 以https://csstormq.github.io/blog/LLVM%20%E4%B9%8B%20IR%20%E7%AF%87%EF%BC%887%EF%BC%89%EF%BC%9A%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E5%86%85%E8%81%94%20Pass
 文章參考，他是llvm 12 他的程式碼可能要異動一下變為下列的版本
 https://codebrowser.dev/llvm/llvm/lib/Transforms/IPO/AlwaysInliner.cpp.html

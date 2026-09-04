@@ -13,7 +13,7 @@ layout: post
 
 # rust mutithread web-server
 我們來創建一個signle thread 的 web-server
-我們來監聽一下端口7878
+我們來監聽一下連接埠7878
 ```rust
 use std::net::TcpListener;
 fn main() {

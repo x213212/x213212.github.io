@@ -127,7 +127,7 @@ layout: post
 
   
 
-這邊可以看到到腳本已經運行完畢!，我們去開MSMS看一下，或者 visual stdion 旁邊的sql 瀏覽窗口也行  
+這邊可以看到到腳本已經運行完畢!，我們去開MSMS看一下，或者 visual stdion 旁邊的sql 瀏覽視窗也行  
 
 ![](https://i.imgur.com/ZU9nVYf.png)
 

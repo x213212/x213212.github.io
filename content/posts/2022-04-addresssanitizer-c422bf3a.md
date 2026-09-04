@@ -22,7 +22,7 @@ https://www.bynav.com/cn/resource/bywork/healthy-work/70.html
 https://llvm.org/doxygen/AddressSanitizer_8cpp_source.html
 這是官方的版本解釋
 # Short version
-運行時庫取代了malloc和free函數。被malloc的區域（紅色區域）周圍的內存被毒化。釋放的內存被放置在隔離區，也被毒化。程序中的每一個內存訪問都會被編譯器以如下方式進行轉換。
+運行時庫取代了malloc和free函式。被malloc的區域（紅色區域）周圍的記憶體被毒化。釋放的記憶體被放置在隔離區，也被毒化。程序中的每一個記憶體訪問都會被編譯器以如下方式進行轉換。
 
 之前。
 

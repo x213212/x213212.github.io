@@ -25,7 +25,7 @@ https://github.com/x213212/minispring
 https://www.itread01.com/content/1543345520.html
 由於我們的 interface 無法使用 annotation
 我在一開始的時候 讀取 myConfiguration 和 SqlInvocationHandler 和 m.getAnnotation(Select.class).value()
-分別是 讀 mysql 位置 帳號密碼等等，再來就是 我們要 對 interface 的函數去做攔截，再來就是 讀取 我們該 interface 裡面的註解 也就是 select.class 裡面的 值 這樣就是 不用再讀我們的 xml檔案啦~
+分別是 讀 mysql 位置 帳號密碼等等，再來就是 我們要 對 interface 的函式去做攔截，再來就是 讀取 我們該 interface 裡面的註解 也就是 select.class 裡面的 值 這樣就是 不用再讀我們的 xml檔案啦~
 ![](https://i.imgur.com/VZgtv9F.png)
 
 ```java
@@ -57,7 +57,7 @@ https://www.itread01.com/content/1543345520.html
 ```
 
 # SqlInvocationHandler
-這邊對 所有 有 interface 裡面的函數 去做一個攔截的動作
+這邊對 所有 有 interface 裡面的函式 去做一個攔截的動作
 ```java
 public class SqlInvocationHandler implements InvocationHandler {
 
@@ -95,7 +95,7 @@ public class SqlInvocationHandler implements InvocationHandler {
 ```
 
 # MySqlsession
- 指宣告一實體然後再加載到各處 代理
+ 指宣告一實體然後再載入到各處 代理
 ```java
 public class MySqlsession {
 	

@@ -114,7 +114,7 @@ https://github.com/microsoft/WSL/issues/4189
 # 進入 harbor
 這邊可以看到我還是用 ip 去做瀏覽，不知道為什麼我們的 https://activate.adobe.com/ 並沒有生效
 ![](https://i.imgur.com/ozc3RzJ.png)
-進入後我們來申請一下腳色權限
+進入後我們來申請一下角色權限
 
 ![](https://i.imgur.com/p9Mee1h.png)
 申請一組 管理員帳號 等等 docker login 要用

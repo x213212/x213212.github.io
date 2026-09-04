@@ -9,7 +9,7 @@ tags: ["Java", "spring boot", "Tutorial"]
 layout: post
 ---
 
-# 以 Spring Boot 集成 Spring Security 保護我們的 REST API
+# 以 Spring Boot 整合 Spring Security 保護我們的 REST API
 
 在我們前幾次的教學裡都已經造過一次輪子了，包括用Spring 操作 redis 實作 了 token 完成了權限的空共存等等，當然我來做一下總結
 1.帳號密碼登入驗證 session 保存認證結果存在 server 做存取。  
@@ -38,7 +38,7 @@ layout: post
   
   同時也可以增加一些額外的聲明訊息，該 token 也可直接被用於認證，也可被加密  
   
-  特別適用於分佈式站點的單點登錄（SSO）場景  
+  特別適用於分佈式站點的單點登入（SSO）場景  
   
   先來瞭解一般 session 和 jwt 的差別
 
@@ -383,7 +383,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     }
 }
 ```
-再來可以看到他 Overrride 兩個函數  
+再來可以看到他 Overrride 兩個函式  
 
 第一個是  
 
@@ -408,7 +408,7 @@ unsuccessfulAuthentication
         handleResponse(request, response, null, failed);
     }
 ```
-分別是成功和失敗要處理的是可以看到他們都共同呼叫* ** handleResponse 也就是 最下面的函數  
+分別是成功和失敗要處理的是可以看到他們都共同呼叫* ** handleResponse 也就是 最下面的函式  
 
 仔細看可以發現，請善用中斷點 xd  
 
@@ -595,7 +595,7 @@ private void handleResponse(HttpServletRequest request, HttpServletResponse resp
 ```
 # 觀看資料庫
 
-作者很貼心幫我們用 hashmap 模擬了一個資料庫方便我們做調用
+作者很貼心幫我們用 hashmap 模擬了一個資料庫方便我們做呼叫
 ```
 用户名 密码 权限
 jack  jack123 存 Bcrypt 加密后 ROLE_USER
@@ -699,7 +699,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 ```
 在下面原始碼可以看到JwtAuthorizationFilterr建構元，傳入authenticationManager()和  
 
-構造了一個cachingUserDetailsService 函數裡面的參數又塞了userDetailsServiceImpl
+構造了一個cachingUserDetailsService 函式裡面的參數又塞了userDetailsServiceImpl
 ```
 .addFilter(new JwtAuthorizationFilter(authenticationManager(), cachingUserDetailsService(userDetailsServiceImpl)))
 ```
@@ -711,7 +711,7 @@ cachingUserDetailsService
 
 userDetailsServiceImpl  
 
-先看這個函數
+先看這個函式
 # userDetailsServiceImpl
 
 可以發現這不是我們的 service 層嗎 裡面綁著 數據層 dao
@@ -775,7 +775,7 @@ UserEntity jack = new UserEntity(
 ```
 # SecurityConfiguration
 
-在 SecurityConfiguration中 可以發現 有一個地方也有 cachingUserDetailsService，那麼這個地方是在幹嘛呢，可以看到他的註解寫緩存處理  
+在 SecurityConfiguration中 可以發現 有一個地方也有 cachingUserDetailsService，那麼這個地方是在幹嘛呢，可以看到他的註解寫快取處理  
 
 CachingUserDetailsService 這個是幹嘛的呢?  
 
@@ -857,7 +857,7 @@ setUserCache,所以我們猜測正確可以確定CachingUserDetailsService就是
 
 你會說不對阿，裡面沒有看到邏輯诶  
 
-有看到springzz這個初始化函數?這個是我自己改的  
+有看到springzz這個初始化函式?這個是我自己改的  
 
 原本是SpringCacheBasedUserCache  
 
@@ -1089,7 +1089,7 @@ public UserDetails getUserFromCache(String username) {
 幾乎可以發現getUserFromCache就是 去 cache hit 看有沒有資料有資料就回傳 UserDetails 類型 沒有就 NULL
 這邊可以看到UserDetails 這不是剛剛在控制  
 
-cachingUserDetailsService 裡面函數loadUserByUsername函數有，我們來看看  
+cachingUserDetailsService 裡面函式loadUserByUsername函式有，我們來看看  
 
 UserDetails，繼續往下看，所以我們暫時做個總結
 ```

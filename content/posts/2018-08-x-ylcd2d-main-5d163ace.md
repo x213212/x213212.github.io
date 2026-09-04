@@ -20,7 +20,7 @@ layout: post
 ![](https://i.imgur.com/HClMJDz.png)
 
 預期功能要實作的功能是
-牆壁反射和得分區和腳色移動的球反射
+牆壁反射和得分區和角色移動的球反射
 [![](https://i.imgur.com/Nal1r33.jpg)](https://i.imgur.com/Nal1r33.jpg)
   
 

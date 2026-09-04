@@ -32,7 +32,7 @@ layout: post
 - 在登入的介面呢我想加入註冊的按鈕
 - 然後使用google按鈕做一鍵登入（應該會用安卓就有google帳號了）
 - 在銀行Api方面尚未接觸到所以暫且不做
-- 預約服務可能是想透過銀行轉帳後再者掛入數據庫做預約的處理
+- 預約服務可能是想透過銀行轉帳後再者掛入資料庫做預約的處理
 - 可能後台方面要用網頁做
 
 ## 詢問工程師（尚未問）
@@ -71,7 +71,7 @@ register(); }
 
   
 
-所以呢這是一個按鈕的呼叫，我寫了一個register()函數去做處理（不能隨便亂命名了呢private void register()  
+所以呢這是一個按鈕的呼叫，我寫了一個register()函式去做處理（不能隨便亂命名了呢private void register()  
 
 {  
 
@@ -91,7 +91,7 @@ setTitle("register");
 
   
 
-更改該目標窗口為regitster  
+更改該目標視窗為regitster  
 
 然後目前我們程式已經到這裡了  
 
@@ -246,7 +246,7 @@ GoogleMap方面我以前有做過如何申請apikey所以呢我們來看一下
 
 [![](https://i.imgur.com/n62XvQP.png)](https://i.imgur.com/n62XvQP.png)  
 
-系統可能幫你加載一些原件  
+系統可能幫你載入一些原件  
 
 [![](https://i.imgur.com/FbeMvyw.png)](https://i.imgur.com/FbeMvyw.png)  
 
@@ -353,7 +353,7 @@ ps.學校雲端網路每秒500mb的速度，應該亞於大公司ㄎㄎ
 
 和透過json去跟資料庫要資料  
 
-再新增一些map 附近地標搜索  
+再新增一些map 附近地標搜尋  
 
   
 

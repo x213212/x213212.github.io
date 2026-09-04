@@ -22,10 +22,10 @@ cb是 基於 c語言的 簡化版，目前好像有看到cbc 編譯 cb 文件，
 所以complier 裡面需要有 jdk 和 jre 才能把 net 重新 編譯一次  
 
 所以步驟就是
-下載鏡像
+下載映像檔
 > docker pull leungwensen/cbc-ubuntu-64bit
 
-開啟鏡像
+開啟映像檔
 > docker run -t -i leungwensen/cbc-ubuntu-64bit
 
 安裝 jdk

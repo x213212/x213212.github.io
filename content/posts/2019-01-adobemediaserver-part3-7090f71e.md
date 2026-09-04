@@ -37,8 +37,8 @@ Adobe宣布Flash不再更新2020年全面停用,HTML5淘汰Flash成為多媒體�
 
 [![](https://blackie1019.github.io/2017/04/02/HLS-js-for-Chrome-Desktop/hls.png)](https://blackie1019.github.io/2017/04/02/HLS-js-for-Chrome-Desktop/hls.png)  
 
-**HTTP Live Streaming**（縮寫是**HLS**）是一個由[蘋果公司](https://zh.wikipedia.org/wiki/%E8%8B%B9%E6%9E%9C%E5%85%AC%E5%8F%B8 "蘋果公司")提出的基於[HTTP](https://zh.wikipedia.org/wiki/HTTP "HTTP")的[流媒體](https://zh.wikipedia.org/wiki/%E6%B5%81%E5%AA%92%E4%BD%93 "流媒體")[網絡傳輸協議](https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE "網絡傳輸協議")。是蘋果公司[QuickTime X](https://zh.wikipedia.org/w/index.php?title=QuickTime_X&action=edit&redlink=1 "QuickTime X（頁面不存在）")和[iPhone](https://zh.wikipedia.org/wiki/IPhone "IPhone")軟體系統的一部分。它的工作原理是把整個流分成一個個小的基於HTTP的文件來下載，每次只下載一些。當媒體流正在播放時，客戶端可以選擇從許多不同的備用源中以不同的速率下載同樣的資源，允許流媒體會話適應不同的數據速率。在開始一個流媒體會話時，客戶端會下載一個包含元數據的[extended M3U (m3u8)](https://zh.wikipedia.org/w/index.php?title=Extended_M3U&action=edit&redlink=1 "Extended M3U（頁面不存在）") [playlist](https://zh.wikipedia.org/w/index.php?title=Playlist&action=edit&redlink=1 "Playlist（頁面不存在）")文件，用於尋找可用的媒體流。
-HLS只請求基本的HTTP報文，與[實時傳輸協議（RTP）](https://zh.wikipedia.org/wiki/%E5%AE%9E%E6%97%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE "實時傳輸協議")不同，HLS可以穿過任何允許HTTP數據通過的[防火牆](https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E5%A2%99 "防火牆")或者[代理伺服器](https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8 "代理伺服器")。它也很容易使用[內容分發網絡](https://zh.wikipedia.org/wiki/%E5%85%A7%E5%AE%B9%E5%88%86%E7%99%BC%E7%B6%B2%E7%B5%A1 "內容分發網絡")來傳輸媒體流。
+**HTTP Live Streaming**（縮寫是**HLS**）是一個由[蘋果公司](https://zh.wikipedia.org/wiki/%E8%8B%B9%E6%9E%9C%E5%85%AC%E5%8F%B8 "蘋果公司")提出的基於[HTTP](https://zh.wikipedia.org/wiki/HTTP "HTTP")的[流媒體](https://zh.wikipedia.org/wiki/%E6%B5%81%E5%AA%92%E4%BD%93 "流媒體")[網路傳輸協議](https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE "網絡傳輸協議")。是蘋果公司[QuickTime X](https://zh.wikipedia.org/w/index.php?title=QuickTime_X&action=edit&redlink=1 "QuickTime X（頁面不存在）")和[iPhone](https://zh.wikipedia.org/wiki/IPhone "IPhone")軟體系統的一部分。它的工作原理是把整個流分成一個個小的基於HTTP的文件來下載，每次只下載一些。當媒體流正在播放時，客戶端可以選擇從許多不同的備用源中以不同的速率下載同樣的資源，允許流媒體會話適應不同的數據速率。在開始一個流媒體會話時，客戶端會下載一個包含元數據的[extended M3U (m3u8)](https://zh.wikipedia.org/w/index.php?title=Extended_M3U&action=edit&redlink=1 "Extended M3U（頁面不存在）") [playlist](https://zh.wikipedia.org/w/index.php?title=Playlist&action=edit&redlink=1 "Playlist（頁面不存在）")文件，用於尋找可用的媒體流。
+HLS只請求基本的HTTP報文，與[實時傳輸協議（RTP）](https://zh.wikipedia.org/wiki/%E5%AE%9E%E6%97%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE "實時傳輸協議")不同，HLS可以穿過任何允許HTTP數據通過的[防火牆](https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E5%A2%99 "防火牆")或者[代理伺服器](https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8 "代理伺服器")。它也很容易使用[內容分發網路](https://zh.wikipedia.org/wiki/%E5%85%A7%E5%AE%B9%E5%88%86%E7%99%BC%E7%B6%B2%E7%B5%A1 "內容分發網絡")來傳輸媒體流。
 蘋果公司把HLS協議作為一個[網際網路草案](https://zh.wikipedia.org/w/index.php?title=Internet-Draft&action=edit&redlink=1 "Internet-Draft（頁面不存在）")（逐步提交），在第一階段中已作為一個非正式的標準提交到[IETF](https://zh.wikipedia.org/wiki/IETF "IETF")。2017年8月，RFC 8216發布，描述了HLS協議第7版的定義。
   
 
@@ -136,7 +136,7 @@ C:\Program Files\Adobe\Adobe Media Server5\applications\livepkgr\streams\_defins
 
   
 
-注意端口，和url文件位置與檔案格式  
+注意連接埠，和url文件位置與檔案格式  
 
   
 

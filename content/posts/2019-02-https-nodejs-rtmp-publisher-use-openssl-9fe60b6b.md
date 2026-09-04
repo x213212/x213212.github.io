@@ -17,7 +17,7 @@ https nodejs rtmp publisher use openssl
 
 新增https 功能  
 
-由於呢在chrome 呢 如果調用getUserMedia api 則必需要https 代理來小改造一下  
+由於呢在chrome 呢 如果呼叫getUserMedia api 則必需要https 代理來小改造一下  
 
   
 

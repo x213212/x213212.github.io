@@ -74,4 +74,4 @@ ab -c10 -n50000 http://localhost:6699/
 [![](https://i.imgur.com/VLi8ZNd.png)](https://i.imgur.com/VLi8ZNd.png)
   
 
-下一章節，就是 實作一下 附載平衡 可能會用 redis 叢集，或是單個 redis， 和結合 db 並 觀看 壓力測試工具來看看 有加 緩存的 系統和 一般 的 數據系統的差距。
+下一章節，就是 實作一下 附載平衡 可能會用 redis 叢集，或是單個 redis， 和結合 db 並 觀看 壓力測試工具來看看 有加 快取的 系統和 一般 的 數據系統的差距。

@@ -15,7 +15,7 @@ layout: post
 
 <https://www.tensorflow.org/install/install_windows>  
 
-參考官方網站後也陸續裝了最新v9.1後發現不兼容還我還多繞一條路  
+參考官方網站後也陸續裝了最新v9.1後發現不相容還我還多繞一條路  
 
 正常人應該裝完這下面兩個就ok了  
 

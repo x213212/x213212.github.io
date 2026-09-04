@@ -108,7 +108,7 @@ $ pip install pymessenger
 
 記得替換掉token  
 
-端口與ngork端口需要一至  
+連接埠與ngork連接埠需要一至  
 
 [![](https://i.imgur.com/UEEwwss.png)](https://i.imgur.com/UEEwwss.png)
 啟動伺服器
@@ -120,7 +120,7 @@ $ pip install pymessenger
   
 
 [![](https://i.imgur.com/PPEEood.png)](https://i.imgur.com/PPEEood.png)
-ngork伺服器響應時間有夠慢的，然後既然是免費的嗎算惹
+ngork伺服器回應時間有夠慢的，然後既然是免費的嗎算惹
   
 ## 如果在權杖有問題的話這邊可以把webhooks進行移除
 

@@ -27,12 +27,12 @@ layout: post
 
   
 
-**虛擬滾動 or 滾動加載**
+**虛擬滾動 or 滾動載入**
 <https://zhuanlan.zhihu.com/p/53455289>
 [![](https://pic4.zhimg.com/v2-687d84dca67e9e398bd44705c34d661b_r.jpg)](https://pic4.zhimg.com/v2-687d84dca67e9e398bd44705c34d661b_r.jpg)
   
 
-我寫的code是寫類似於 滾動加載，本來想進行優化的...底子不夠深再看一陣子
+我寫的code是寫類似於 滾動載入，本來想進行優化的...底子不夠深再看一陣子
   
 
   

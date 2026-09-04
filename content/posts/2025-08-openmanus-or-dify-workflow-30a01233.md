@@ -192,9 +192,9 @@ https://zhuanlan.zhihu.com/p/30090038284
 
 - **詳細分析：**
 
-  首先，根據靜態分析報告，`benchmark` 函數和總體指令數差異最大，因此我會優先關注這些區域。
+  首先，根據靜態分析報告，`benchmark` 函式和總體指令數差異最大，因此我會優先關注這些區域。
 
-  **1. `main` 函數比較 (PC Address 0xc0 - 0x106):**
+  **1. `main` 函式比較 (PC Address 0xc0 - 0x106):**
 
     - **指令數量差異：** *sglib-arrayheapsort533.super_main.super.asm* 在迴圈中有 `addiw` 指令，而 *sglib-arrayheapsort540.super_main.super.asm* 使用 `c.addiw`。*sglib-arrayheapsort533.super_main.super.asm* 還有 `c.mv` 指令，*sglib-arrayheapsort540.super_main.super.asm* 沒有。
     - **迴圈行為：** *sglib-arrayheapsort533.super_main.super.asm* 的迴圈從 `0xdc` 開始，*sglib-arrayheapsort540.super_main.super.asm* 的迴圈從 `0xd4` 開始。*sglib-arrayheapsort540.super_main.super.asm* 使用了壓縮指令 `c.bnez`，這可能略微提高了程式碼密度。
@@ -261,24 +261,24 @@ https://zhuanlan.zhihu.com/p/30090038284
 
   從 Runlog 數據來看，*sglib-arrayheapsort540.run.log* 的 Cycles 和 Instructions 數量都明顯高於 *sglib-arrayheapsort533.run.log*，但 Conditional branches misprediction 較低。這表示 *sglib-arrayheapsort540.super.asm* 執行了更多的指令，導致更高的 Cycles 數，但分支預測的準確性有所提升。
 
-  根據靜態分析報告，`benchmark` 函數的指令差異最大，因此我將重點分析這部分。
+  根據靜態分析報告，`benchmark` 函式的指令差異最大，因此我將重點分析這部分。
 
 ### 1. Function Inline 判斷
 
 - **sglib-arrayheapsort533.super.asm:**
-    - 在 `_start` 函數 (PC Address `0x64`) 呼叫 `memset` 函數 (PC Address `0x474000ef`)。
+    - 在 `_start` 函式 (PC Address `0x64`) 呼叫 `memset` 函式 (PC Address `0x474000ef`)。
 - **sglib-arrayheapsort540.super.asm:**
-    - 在 `_start` 函數 (PC Address `0x62`) 呼叫 `memset` 函數 (PC Address `0x4ae000ef`)。
+    - 在 `_start` 函式 (PC Address `0x62`) 呼叫 `memset` 函式 (PC Address `0x4ae000ef`)。
 
-**結論：** 雙方都有呼叫 `memset` 函數，沒有 inline 差異。
+**結論：** 雙方都有呼叫 `memset` 函式，沒有 inline 差異。
 
 ### 2. Loop Unrolling 分析
 
-在提供的 asm 片段中，沒有明顯的 loop unrolling 跡象。`benchmark` 函數中的迴圈 (PC Address `0x248` ~ `0x3bc` in *sglib-arrayheapsort533.super.asm*, PC Address `0x238` ~ `0x3dc` in *sglib-arrayheapsort540.super.asm*) 看起來都是標準的迴圈結構。
+在提供的 asm 片段中，沒有明顯的 loop unrolling 跡象。`benchmark` 函式中的迴圈 (PC Address `0x248` ~ `0x3bc` in *sglib-arrayheapsort533.super.asm*, PC Address `0x238` ~ `0x3dc` in *sglib-arrayheapsort540.super.asm*) 看起來都是標準的迴圈結構。
 
 ### 3. 指令排序
 
-由於沒有提供足夠的程式碼片段，難以進行全面的指令排序分析。但可以針對 `benchmark` 函數中的迴圈進行初步分析。
+由於沒有提供足夠的程式碼片段，難以進行全面的指令排序分析。但可以針對 `benchmark` 函式中的迴圈進行初步分析。
 
 ### 4. Code Generation 與其他疑似問題
 
@@ -317,15 +317,15 @@ https://zhuanlan.zhihu.com/p/30090038284
     dc: 347d      c.addiw    s0,-1 # 0xfff <ILM_SIZE+0xa4f>
     e0: f875      c.bnez     s0,0xd4 <main+0x14>
 ```
-- **差異：** *sglib-arrayheapsort540.super.asm* 在迴圈中呼叫了 `initialise_benchmark` 和 `benchmark` 函數，這會導致額外的函數呼叫開銷，增加 Cycles 和 Instructions 數量。
-- **`benchmark` 函數 (迴圈內部):**
+- **差異：** *sglib-arrayheapsort540.super.asm* 在迴圈中呼叫了 `initialise_benchmark` 和 `benchmark` 函式，這會導致額外的函式呼叫開銷，增加 Cycles 和 Instructions 數量。
+- **`benchmark` 函式 (迴圈內部):**
     - **sglib-arrayheapsort533.super.asm:** 使用 `nds.lea.w` 指令計算地址。
     - **sglib-arrayheapsort540.super.asm:** 使用 `nds.lea.w` 指令計算地址，但穿插了更多的 `sext.w` 指令。
     - **疑似問題：** `sext.w` 指令的增加可能與資料類型處理有關，但具體原因需要更詳細的程式碼分析。
 
 ### 5. 迴圈行為
 
-`benchmark` 函數中的迴圈行為大致相同，都是在一定條件下重複執行一段程式碼。但 *sglib-arrayheapsort540.super.asm* 在迴圈中呼叫了 `initialise_benchmark` 和 `benchmark` 函數，這會導致額外的函數呼叫開銷。
+`benchmark` 函式中的迴圈行為大致相同，都是在一定條件下重複執行一段程式碼。但 *sglib-arrayheapsort540.super.asm* 在迴圈中呼叫了 `initialise_benchmark` 和 `benchmark` 函式，這會導致額外的函式呼叫開銷。
 
 ### 6. 指令比較
 
@@ -359,15 +359,15 @@ https://zhuanlan.zhihu.com/p/30090038284
 
 以下是影響性能導致下降的原因，根據嚴重性由上往下排：
 
-1. **迴圈內額外的函數呼叫 (sglib-arrayheapsort540.super.asm):** 在 `main` 函數的迴圈中 (PC Address `0xd4` ~ `0xe0`)，*sglib-arrayheapsort540.super.asm* 呼叫了 `initialise_benchmark` 和 `benchmark` 函數，這會導致額外的函數呼叫開銷，增加 Cycles 和 Instructions 數量。
-2. **`benchmark` 函數中指令數增加 (sglib-arrayheapsort540.super.asm):** 在 `benchmark` 函數中，*sglib-arrayheapsort540.super.asm* 穿插了更多的 `sext.w` 指令，這可能與資料類型處理有關，但具體原因需要更詳細的程式碼分析。
-3. **迴圈開始處多餘的 `c.nop` 指令 (sglib-arrayheapsort540.super.asm):** 在 `benchmark` 函數的迴圈開始處 (PC Address `0x23e`)，*sglib-arrayheapsort540.super.asm* 多了一個 `c.nop` 指令，這會增加指令數量。
+1. **迴圈內額外的函式呼叫 (sglib-arrayheapsort540.super.asm):** 在 `main` 函式的迴圈中 (PC Address `0xd4` ~ `0xe0`)，*sglib-arrayheapsort540.super.asm* 呼叫了 `initialise_benchmark` 和 `benchmark` 函式，這會導致額外的函式呼叫開銷，增加 Cycles 和 Instructions 數量。
+2. **`benchmark` 函式中指令數增加 (sglib-arrayheapsort540.super.asm):** 在 `benchmark` 函式中，*sglib-arrayheapsort540.super.asm* 穿插了更多的 `sext.w` 指令，這可能與資料類型處理有關，但具體原因需要更詳細的程式碼分析。
+3. **迴圈開始處多餘的 `c.nop` 指令 (sglib-arrayheapsort540.super.asm):** 在 `benchmark` 函式的迴圈開始處 (PC Address `0x23e`)，*sglib-arrayheapsort540.super.asm* 多了一個 `c.nop` 指令，這會增加指令數量。
 
 **結論：**
 
-- *sglib-arrayheapsort540.super.asm* 的 Cycles 和 Instructions 數量都明顯高於 *sglib-arrayheapsort533.super.asm*，主要是因為在 `main` 函數的迴圈中呼叫了 `initialise_benchmark` 和 `benchmark` 函數，以及在 `benchmark` 函數中指令數增加。
+- *sglib-arrayheapsort540.super.asm* 的 Cycles 和 Instructions 數量都明顯高於 *sglib-arrayheapsort533.super.asm*，主要是因為在 `main` 函式的迴圈中呼叫了 `initialise_benchmark` 和 `benchmark` 函式，以及在 `benchmark` 函式中指令數增加。
 - *sglib-arrayheapsort540.super.asm* 的 Conditional branches misprediction 較低，可能是因為程式碼結構的調整，但具體原因需要更詳細的程式碼分析。
-- *sglib-arrayheapsort540.super.asm* 在 `_start` 函數中使用 `c.li` 指令代替 `li` 指令，這是一個優化。
+- *sglib-arrayheapsort540.super.asm* 在 `_start` 函式中使用 `c.li` 指令代替 `li` 指令，這是一個優化。
 
 請注意，以上分析是基於提供的資料，更精確的分析需要更詳細的程式碼和硬體架構資訊。
 

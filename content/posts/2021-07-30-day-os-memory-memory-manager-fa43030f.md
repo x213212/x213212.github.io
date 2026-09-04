@@ -16,7 +16,7 @@ layout: post
 https://mooc.study.163.com/course/1000002008?tid=2403044007
 但是還是要詳細抽取相關聯的地方，到時候再來決定要在linux kernel 0.11 上實作gui還是 在這個os 上實現其他功能等等
 # memory 統計
-這邊前面有稍微提到 計算機結構 memory spatial localit、、的一些東西，就是假設在一個迴圈裡，裡面的變數其實那些varable 的位置 可以被存在緩存裡，[spatial  ](https://zh.wikipedia.org/wiki/%E8%AE%BF%E9%97%AE%E5%B1%80%E9%83%A8%E6%80%A7)
+這邊前面有稍微提到 計算機結構 memory spatial localit、、的一些東西，就是假設在一個迴圈裡，裡面的變數其實那些varable 的位置 可以被存在快取裡，[spatial  ](https://zh.wikipedia.org/wiki/%E8%AE%BF%E9%97%AE%E5%B1%80%E9%83%A8%E6%80%A7)
 ![](https://i.imgur.com/oe8tOwz.png)
 這一章可能會教大家怎麼去讀出一共使用多少memory 空間
 

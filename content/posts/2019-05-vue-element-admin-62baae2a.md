@@ -226,7 +226,7 @@ npm install --save axios vue-axios
  }
 ```
 <https://ithelp.ithome.com.tw/articles/10194612>
-# spring boot 其他參數端口設定
+# spring boot 其他參數連接埠設定
 
 ![](https://i.imgur.com/gBDihWU.png)
 

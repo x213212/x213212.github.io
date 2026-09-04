@@ -79,7 +79,7 @@ module.exports = app;
 ![](https://i.imgur.com/j2IeQOH.png)
 
 # 使用 nodemon 快速開發
-修改原始碼自動刷新
+修改原始碼自動重新整理
 >yarn add nodemon --dev
 >
 # 新增nodemon.json
@@ -99,7 +99,7 @@ module.exports = app;
    "dev": "nodemon" 
 }
 ```
-# 自動刷新測試
+# 自動重新整理測試
 > yarn run dev
 >
 ![](https://i.imgur.com/h3FHHWt.png)

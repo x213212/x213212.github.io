@@ -290,4 +290,4 @@ api url : http://localhost:8080/users/del/1
 
 ![](https://i.imgur.com/owHA2kL.png)
 
-這些所有動作都交給我的Spring Boot 去幫我操作 Crud 所以我們就不用 學習每個資料庫只要知道怎調用就好，常常有人說 這樣的話 在進行一些 資料上比較要細部調教的話 會有效能的問題，一般來說 可以用 Mybatis 自己寫 sql。
+這些所有動作都交給我的Spring Boot 去幫我操作 Crud 所以我們就不用 學習每個資料庫只要知道怎呼叫就好，常常有人說 這樣的話 在進行一些 資料上比較要細部調教的話 會有效能的問題，一般來說 可以用 Mybatis 自己寫 sql。

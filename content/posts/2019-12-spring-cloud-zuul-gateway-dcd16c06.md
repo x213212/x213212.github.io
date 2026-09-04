@@ -25,7 +25,7 @@ layout: post
 @EnableZuulProxy @SpringBootApplication public class EurekaServiceZuulApplication { public static void main(String[] args) { SpringApplication.run(EurekaServiceZuulApplication.class, args); } }
 ```
 
-# 配置文件
+# 設定檔
 
 application.yml
 
