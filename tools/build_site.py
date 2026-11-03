@@ -534,6 +534,9 @@ def nav(config: dict[str, Any], current: str) -> str:
     items = "".join(
         f'<a href="{html.escape(output_relative_link(current, target), quote=True)}">{label}</a>' for label, target in links
     )
+    services_url = str(config.get("services_url", ""))
+    if services_url:
+        items += f'<a href="{html.escape(services_url, quote=True)}">Services</a>'
     home_url = output_relative_link(current, "index.html")
     icon_url = output_relative_link(current, "assets/original-blogger-icon.png")
     return f'''<header class="site-header">
@@ -1258,6 +1261,7 @@ def build_about(
     photo = output_relative_link(current, str(profile.get("photo_path", "assets/profile.jpg")))
     email = html.escape(str(profile.get("email", "")), quote=True)
     website = html.escape(str(profile.get("website", "")), quote=True)
+    services_url = html.escape(str(config.get("services_url", "")), quote=True)
     blogger_profile = html.escape(str(profile.get("blogger_profile_url", "")), quote=True)
     intro = html.escape(str(profile.get("introduction", "")))
     metadata = [
@@ -1276,6 +1280,7 @@ def build_about(
         for part in [
             f'<a href="mailto:{email}">{email}</a>' if email else "",
             f'<a href="{website}" target="_blank" rel="noopener">x213212.github.io ↗</a>' if website else "",
+            f'<a href="{services_url}">Excel / CSV services ↗</a>' if services_url else "",
             f'<a href="{blogger_profile}" target="_blank" rel="noopener">Original Blogger profile ↗</a>' if blogger_profile else "",
         ]
         if part
